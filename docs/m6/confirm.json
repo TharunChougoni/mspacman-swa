@@ -1,0 +1,4242 @@
+{
+ "n": 300,
+ "clear_rate": 0.06,
+ "clear_se": 0.013734218672418391,
+ "score": 2808.866666666667,
+ "score_se": 46.71978359448565,
+ "eaten": 134.01333333333332,
+ "eaten_se": 1.1239162830133718,
+ "deaths": 1.9866666666666666,
+ "action_frac": [
+  0.358,
+  0.166,
+  0.185,
+  0.29
+ ],
+ "steps": 991.16,
+ "ckpt": "runs/m6/best.pt",
+ "seed0": 50000,
+ "sticky": 0.25,
+ "games": [
+  {
+   "seed": 50000,
+   "cleared": false,
+   "steps": 1083,
+   "score": 4500.0,
+   "eaten": 144,
+   "deaths": 2,
+   "hist": [
+    374,
+    195,
+    209,
+    305
+   ]
+  },
+  {
+   "seed": 50001,
+   "cleared": false,
+   "steps": 1203,
+   "score": 2770.0,
+   "eaten": 151,
+   "deaths": 2,
+   "hist": [
+    436,
+    221,
+    199,
+    347
+   ]
+  },
+  {
+   "seed": 50002,
+   "cleared": false,
+   "steps": 981,
+   "score": 3270.0,
+   "eaten": 141,
+   "deaths": 2,
+   "hist": [
+    376,
+    137,
+    191,
+    277
+   ]
+  },
+  {
+   "seed": 50003,
+   "cleared": false,
+   "steps": 1199,
+   "score": 2950.0,
+   "eaten": 149,
+   "deaths": 2,
+   "hist": [
+    360,
+    196,
+    272,
+    371
+   ]
+  },
+  {
+   "seed": 50004,
+   "cleared": false,
+   "steps": 821,
+   "score": 2810.0,
+   "eaten": 135,
+   "deaths": 2,
+   "hist": [
+    324,
+    146,
+    106,
+    245
+   ]
+  },
+  {
+   "seed": 50005,
+   "cleared": false,
+   "steps": 671,
+   "score": 2550.0,
+   "eaten": 107,
+   "deaths": 2,
+   "hist": [
+    277,
+    112,
+    90,
+    192
+   ]
+  },
+  {
+   "seed": 50006,
+   "cleared": false,
+   "steps": 693,
+   "score": 1860.0,
+   "eaten": 118,
+   "deaths": 2,
+   "hist": [
+    235,
+    134,
+    124,
+    200
+   ]
+  },
+  {
+   "seed": 50007,
+   "cleared": false,
+   "steps": 1077,
+   "score": 3260.0,
+   "eaten": 140,
+   "deaths": 2,
+   "hist": [
+    358,
+    178,
+    220,
+    321
+   ]
+  },
+  {
+   "seed": 50008,
+   "cleared": false,
+   "steps": 1083,
+   "score": 3350.0,
+   "eaten": 149,
+   "deaths": 2,
+   "hist": [
+    382,
+    159,
+    223,
+    319
+   ]
+  },
+  {
+   "seed": 50009,
+   "cleared": false,
+   "steps": 913,
+   "score": 3110.0,
+   "eaten": 145,
+   "deaths": 2,
+   "hist": [
+    352,
+    143,
+    137,
+    281
+   ]
+  },
+  {
+   "seed": 50010,
+   "cleared": false,
+   "steps": 975,
+   "score": 3560.0,
+   "eaten": 134,
+   "deaths": 2,
+   "hist": [
+    386,
+    185,
+    121,
+    283
+   ]
+  },
+  {
+   "seed": 50011,
+   "cleared": false,
+   "steps": 921,
+   "score": 2160.0,
+   "eaten": 140,
+   "deaths": 2,
+   "hist": [
+    291,
+    127,
+    250,
+    253
+   ]
+  },
+  {
+   "seed": 50012,
+   "cleared": true,
+   "steps": 1151,
+   "score": 2800.0,
+   "eaten": 154,
+   "deaths": 1,
+   "hist": [
+    368,
+    220,
+    211,
+    352
+   ]
+  },
+  {
+   "seed": 50013,
+   "cleared": true,
+   "steps": 1113,
+   "score": 3300.0,
+   "eaten": 154,
+   "deaths": 2,
+   "hist": [
+    386,
+    212,
+    177,
+    338
+   ]
+  },
+  {
+   "seed": 50014,
+   "cleared": false,
+   "steps": 1059,
+   "score": 2450.0,
+   "eaten": 139,
+   "deaths": 2,
+   "hist": [
+    391,
+    195,
+    155,
+    318
+   ]
+  },
+  {
+   "seed": 50015,
+   "cleared": false,
+   "steps": 1273,
+   "score": 2260.0,
+   "eaten": 150,
+   "deaths": 2,
+   "hist": [
+    483,
+    203,
+    193,
+    394
+   ]
+  },
+  {
+   "seed": 50016,
+   "cleared": false,
+   "steps": 1055,
+   "score": 2060.0,
+   "eaten": 150,
+   "deaths": 2,
+   "hist": [
+    391,
+    179,
+    197,
+    288
+   ]
+  },
+  {
+   "seed": 50017,
+   "cleared": false,
+   "steps": 1477,
+   "score": 5180.0,
+   "eaten": 152,
+   "deaths": 2,
+   "hist": [
+    563,
+    263,
+    239,
+    412
+   ]
+  },
+  {
+   "seed": 50018,
+   "cleared": false,
+   "steps": 1011,
+   "score": 2820.0,
+   "eaten": 146,
+   "deaths": 2,
+   "hist": [
+    366,
+    193,
+    173,
+    279
+   ]
+  },
+  {
+   "seed": 50019,
+   "cleared": false,
+   "steps": 1027,
+   "score": 3140.0,
+   "eaten": 148,
+   "deaths": 2,
+   "hist": [
+    386,
+    171,
+    170,
+    300
+   ]
+  },
+  {
+   "seed": 50020,
+   "cleared": false,
+   "steps": 809,
+   "score": 2960.0,
+   "eaten": 124,
+   "deaths": 2,
+   "hist": [
+    305,
+    109,
+    180,
+    215
+   ]
+  },
+  {
+   "seed": 50021,
+   "cleared": false,
+   "steps": 1049,
+   "score": 3230.0,
+   "eaten": 147,
+   "deaths": 2,
+   "hist": [
+    381,
+    192,
+    168,
+    308
+   ]
+  },
+  {
+   "seed": 50022,
+   "cleared": false,
+   "steps": 1041,
+   "score": 3850.0,
+   "eaten": 133,
+   "deaths": 2,
+   "hist": [
+    343,
+    203,
+    184,
+    311
+   ]
+  },
+  {
+   "seed": 50023,
+   "cleared": false,
+   "steps": 839,
+   "score": 1820.0,
+   "eaten": 124,
+   "deaths": 2,
+   "hist": [
+    309,
+    178,
+    130,
+    222
+   ]
+  },
+  {
+   "seed": 50024,
+   "cleared": false,
+   "steps": 1369,
+   "score": 4660.0,
+   "eaten": 150,
+   "deaths": 2,
+   "hist": [
+    484,
+    258,
+    235,
+    392
+   ]
+  },
+  {
+   "seed": 50025,
+   "cleared": false,
+   "steps": 691,
+   "score": 2210.0,
+   "eaten": 93,
+   "deaths": 2,
+   "hist": [
+    246,
+    131,
+    108,
+    206
+   ]
+  },
+  {
+   "seed": 50026,
+   "cleared": false,
+   "steps": 567,
+   "score": 1610.0,
+   "eaten": 97,
+   "deaths": 2,
+   "hist": [
+    185,
+    143,
+    81,
+    158
+   ]
+  },
+  {
+   "seed": 50027,
+   "cleared": true,
+   "steps": 1113,
+   "score": 3300.0,
+   "eaten": 154,
+   "deaths": 2,
+   "hist": [
+    413,
+    163,
+    187,
+    350
+   ]
+  },
+  {
+   "seed": 50028,
+   "cleared": false,
+   "steps": 963,
+   "score": 2910.0,
+   "eaten": 145,
+   "deaths": 2,
+   "hist": [
+    320,
+    133,
+    231,
+    279
+   ]
+  },
+  {
+   "seed": 50029,
+   "cleared": false,
+   "steps": 1373,
+   "score": 2890.0,
+   "eaten": 153,
+   "deaths": 2,
+   "hist": [
+    472,
+    195,
+    289,
+    417
+   ]
+  },
+  {
+   "seed": 50030,
+   "cleared": false,
+   "steps": 751,
+   "score": 2450.0,
+   "eaten": 117,
+   "deaths": 2,
+   "hist": [
+    275,
+    148,
+    111,
+    217
+   ]
+  },
+  {
+   "seed": 50031,
+   "cleared": false,
+   "steps": 1281,
+   "score": 3380.0,
+   "eaten": 152,
+   "deaths": 2,
+   "hist": [
+    476,
+    203,
+    236,
+    366
+   ]
+  },
+  {
+   "seed": 50032,
+   "cleared": false,
+   "steps": 1325,
+   "score": 3730.0,
+   "eaten": 147,
+   "deaths": 2,
+   "hist": [
+    475,
+    177,
+    297,
+    376
+   ]
+  },
+  {
+   "seed": 50033,
+   "cleared": false,
+   "steps": 1003,
+   "score": 2790.0,
+   "eaten": 143,
+   "deaths": 2,
+   "hist": [
+    339,
+    159,
+    181,
+    324
+   ]
+  },
+  {
+   "seed": 50034,
+   "cleared": false,
+   "steps": 819,
+   "score": 2510.0,
+   "eaten": 129,
+   "deaths": 2,
+   "hist": [
+    289,
+    146,
+    123,
+    261
+   ]
+  },
+  {
+   "seed": 50035,
+   "cleared": false,
+   "steps": 1151,
+   "score": 3170.0,
+   "eaten": 151,
+   "deaths": 2,
+   "hist": [
+    447,
+    195,
+    176,
+    333
+   ]
+  },
+  {
+   "seed": 50036,
+   "cleared": false,
+   "steps": 1265,
+   "score": 2630.0,
+   "eaten": 147,
+   "deaths": 2,
+   "hist": [
+    445,
+    246,
+    233,
+    341
+   ]
+  },
+  {
+   "seed": 50037,
+   "cleared": false,
+   "steps": 691,
+   "score": 2160.0,
+   "eaten": 88,
+   "deaths": 2,
+   "hist": [
+    212,
+    91,
+    157,
+    231
+   ]
+  },
+  {
+   "seed": 50038,
+   "cleared": false,
+   "steps": 817,
+   "score": 2450.0,
+   "eaten": 133,
+   "deaths": 2,
+   "hist": [
+    313,
+    165,
+    127,
+    212
+   ]
+  },
+  {
+   "seed": 50039,
+   "cleared": false,
+   "steps": 1139,
+   "score": 2910.0,
+   "eaten": 145,
+   "deaths": 2,
+   "hist": [
+    395,
+    203,
+    245,
+    296
+   ]
+  },
+  {
+   "seed": 50040,
+   "cleared": false,
+   "steps": 627,
+   "score": 1890.0,
+   "eaten": 101,
+   "deaths": 2,
+   "hist": [
+    241,
+    107,
+    98,
+    181
+   ]
+  },
+  {
+   "seed": 50041,
+   "cleared": true,
+   "steps": 1071,
+   "score": 2900.0,
+   "eaten": 154,
+   "deaths": 2,
+   "hist": [
+    379,
+    215,
+    180,
+    297
+   ]
+  },
+  {
+   "seed": 50042,
+   "cleared": false,
+   "steps": 1193,
+   "score": 3340.0,
+   "eaten": 148,
+   "deaths": 2,
+   "hist": [
+    439,
+    197,
+    220,
+    337
+   ]
+  },
+  {
+   "seed": 50043,
+   "cleared": false,
+   "steps": 991,
+   "score": 2780.0,
+   "eaten": 142,
+   "deaths": 2,
+   "hist": [
+    367,
+    131,
+    213,
+    280
+   ]
+  },
+  {
+   "seed": 50044,
+   "cleared": false,
+   "steps": 985,
+   "score": 2720.0,
+   "eaten": 136,
+   "deaths": 2,
+   "hist": [
+    320,
+    184,
+    184,
+    297
+   ]
+  },
+  {
+   "seed": 50045,
+   "cleared": false,
+   "steps": 1177,
+   "score": 4190.0,
+   "eaten": 153,
+   "deaths": 2,
+   "hist": [
+    411,
+    175,
+    199,
+    392
+   ]
+  },
+  {
+   "seed": 50046,
+   "cleared": false,
+   "steps": 1119,
+   "score": 2620.0,
+   "eaten": 146,
+   "deaths": 2,
+   "hist": [
+    416,
+    200,
+    175,
+    328
+   ]
+  },
+  {
+   "seed": 50047,
+   "cleared": false,
+   "steps": 1223,
+   "score": 2780.0,
+   "eaten": 142,
+   "deaths": 2,
+   "hist": [
+    444,
+    180,
+    231,
+    368
+   ]
+  },
+  {
+   "seed": 50048,
+   "cleared": false,
+   "steps": 887,
+   "score": 2030.0,
+   "eaten": 131,
+   "deaths": 2,
+   "hist": [
+    328,
+    203,
+    123,
+    233
+   ]
+  },
+  {
+   "seed": 50049,
+   "cleared": false,
+   "steps": 481,
+   "score": 1500.0,
+   "eaten": 76,
+   "deaths": 2,
+   "hist": [
+    168,
+    72,
+    103,
+    138
+   ]
+  },
+  {
+   "seed": 50050,
+   "cleared": false,
+   "steps": 1325,
+   "score": 2860.0,
+   "eaten": 150,
+   "deaths": 2,
+   "hist": [
+    464,
+    234,
+    227,
+    400
+   ]
+  },
+  {
+   "seed": 50051,
+   "cleared": false,
+   "steps": 879,
+   "score": 2760.0,
+   "eaten": 124,
+   "deaths": 2,
+   "hist": [
+    331,
+    139,
+    144,
+    265
+   ]
+  },
+  {
+   "seed": 50052,
+   "cleared": false,
+   "steps": 959,
+   "score": 3310.0,
+   "eaten": 129,
+   "deaths": 2,
+   "hist": [
+    342,
+    183,
+    176,
+    258
+   ]
+  },
+  {
+   "seed": 50053,
+   "cleared": false,
+   "steps": 1147,
+   "score": 3700.0,
+   "eaten": 144,
+   "deaths": 2,
+   "hist": [
+    382,
+    202,
+    236,
+    327
+   ]
+  },
+  {
+   "seed": 50054,
+   "cleared": false,
+   "steps": 945,
+   "score": 4990.0,
+   "eaten": 143,
+   "deaths": 2,
+   "hist": [
+    328,
+    163,
+    175,
+    279
+   ]
+  },
+  {
+   "seed": 50055,
+   "cleared": false,
+   "steps": 541,
+   "score": 1520.0,
+   "eaten": 84,
+   "deaths": 2,
+   "hist": [
+    169,
+    118,
+    116,
+    138
+   ]
+  },
+  {
+   "seed": 50056,
+   "cleared": false,
+   "steps": 987,
+   "score": 2700.0,
+   "eaten": 144,
+   "deaths": 2,
+   "hist": [
+    386,
+    148,
+    173,
+    280
+   ]
+  },
+  {
+   "seed": 50057,
+   "cleared": false,
+   "steps": 833,
+   "score": 2650.0,
+   "eaten": 123,
+   "deaths": 2,
+   "hist": [
+    311,
+    126,
+    169,
+    227
+   ]
+  },
+  {
+   "seed": 50058,
+   "cleared": false,
+   "steps": 903,
+   "score": 3900.0,
+   "eaten": 144,
+   "deaths": 2,
+   "hist": [
+    251,
+    202,
+    164,
+    286
+   ]
+  },
+  {
+   "seed": 50059,
+   "cleared": false,
+   "steps": 981,
+   "score": 3500.0,
+   "eaten": 138,
+   "deaths": 2,
+   "hist": [
+    289,
+    148,
+    226,
+    318
+   ]
+  },
+  {
+   "seed": 50060,
+   "cleared": false,
+   "steps": 953,
+   "score": 1960.0,
+   "eaten": 134,
+   "deaths": 2,
+   "hist": [
+    383,
+    132,
+    169,
+    269
+   ]
+  },
+  {
+   "seed": 50061,
+   "cleared": false,
+   "steps": 1101,
+   "score": 2790.0,
+   "eaten": 153,
+   "deaths": 2,
+   "hist": [
+    384,
+    157,
+    227,
+    333
+   ]
+  },
+  {
+   "seed": 50062,
+   "cleared": true,
+   "steps": 1685,
+   "score": 4400.0,
+   "eaten": 154,
+   "deaths": 2,
+   "hist": [
+    635,
+    245,
+    349,
+    456
+   ]
+  },
+  {
+   "seed": 50063,
+   "cleared": false,
+   "steps": 859,
+   "score": 1170.0,
+   "eaten": 89,
+   "deaths": 2,
+   "hist": [
+    335,
+    165,
+    113,
+    246
+   ]
+  },
+  {
+   "seed": 50064,
+   "cleared": false,
+   "steps": 1235,
+   "score": 3460.0,
+   "eaten": 150,
+   "deaths": 2,
+   "hist": [
+    459,
+    176,
+    236,
+    364
+   ]
+  },
+  {
+   "seed": 50065,
+   "cleared": false,
+   "steps": 703,
+   "score": 2010.0,
+   "eaten": 103,
+   "deaths": 2,
+   "hist": [
+    286,
+    122,
+    133,
+    162
+   ]
+  },
+  {
+   "seed": 50066,
+   "cleared": false,
+   "steps": 907,
+   "score": 3340.0,
+   "eaten": 112,
+   "deaths": 2,
+   "hist": [
+    321,
+    96,
+    218,
+    272
+   ]
+  },
+  {
+   "seed": 50067,
+   "cleared": false,
+   "steps": 895,
+   "score": 2530.0,
+   "eaten": 137,
+   "deaths": 2,
+   "hist": [
+    297,
+    169,
+    197,
+    232
+   ]
+  },
+  {
+   "seed": 50068,
+   "cleared": false,
+   "steps": 699,
+   "score": 2040.0,
+   "eaten": 112,
+   "deaths": 2,
+   "hist": [
+    231,
+    131,
+    145,
+    192
+   ]
+  },
+  {
+   "seed": 50069,
+   "cleared": false,
+   "steps": 773,
+   "score": 2710.0,
+   "eaten": 119,
+   "deaths": 2,
+   "hist": [
+    248,
+    142,
+    193,
+    190
+   ]
+  },
+  {
+   "seed": 50070,
+   "cleared": false,
+   "steps": 799,
+   "score": 2160.0,
+   "eaten": 108,
+   "deaths": 2,
+   "hist": [
+    262,
+    110,
+    147,
+    280
+   ]
+  },
+  {
+   "seed": 50071,
+   "cleared": false,
+   "steps": 1079,
+   "score": 3000.0,
+   "eaten": 138,
+   "deaths": 2,
+   "hist": [
+    398,
+    189,
+    164,
+    328
+   ]
+  },
+  {
+   "seed": 50072,
+   "cleared": false,
+   "steps": 1053,
+   "score": 2830.0,
+   "eaten": 147,
+   "deaths": 2,
+   "hist": [
+    401,
+    178,
+    191,
+    283
+   ]
+  },
+  {
+   "seed": 50073,
+   "cleared": false,
+   "steps": 839,
+   "score": 2520.0,
+   "eaten": 130,
+   "deaths": 2,
+   "hist": [
+    305,
+    87,
+    198,
+    249
+   ]
+  },
+  {
+   "seed": 50074,
+   "cleared": false,
+   "steps": 1133,
+   "score": 3570.0,
+   "eaten": 151,
+   "deaths": 2,
+   "hist": [
+    403,
+    169,
+    214,
+    347
+   ]
+  },
+  {
+   "seed": 50075,
+   "cleared": false,
+   "steps": 863,
+   "score": 3580.0,
+   "eaten": 130,
+   "deaths": 2,
+   "hist": [
+    262,
+    145,
+    184,
+    272
+   ]
+  },
+  {
+   "seed": 50076,
+   "cleared": false,
+   "steps": 887,
+   "score": 2430.0,
+   "eaten": 131,
+   "deaths": 2,
+   "hist": [
+    341,
+    144,
+    136,
+    266
+   ]
+  },
+  {
+   "seed": 50077,
+   "cleared": false,
+   "steps": 909,
+   "score": 2530.0,
+   "eaten": 115,
+   "deaths": 2,
+   "hist": [
+    338,
+    153,
+    158,
+    260
+   ]
+  },
+  {
+   "seed": 50078,
+   "cleared": false,
+   "steps": 651,
+   "score": 1890.0,
+   "eaten": 101,
+   "deaths": 2,
+   "hist": [
+    249,
+    134,
+    113,
+    155
+   ]
+  },
+  {
+   "seed": 50079,
+   "cleared": false,
+   "steps": 1137,
+   "score": 3180.0,
+   "eaten": 142,
+   "deaths": 2,
+   "hist": [
+    416,
+    198,
+    181,
+    342
+   ]
+  },
+  {
+   "seed": 50080,
+   "cleared": false,
+   "steps": 1117,
+   "score": 3020.0,
+   "eaten": 146,
+   "deaths": 2,
+   "hist": [
+    347,
+    199,
+    254,
+    317
+   ]
+  },
+  {
+   "seed": 50081,
+   "cleared": false,
+   "steps": 1181,
+   "score": 3770.0,
+   "eaten": 141,
+   "deaths": 2,
+   "hist": [
+    398,
+    220,
+    178,
+    385
+   ]
+  },
+  {
+   "seed": 50082,
+   "cleared": false,
+   "steps": 1217,
+   "score": 2390.0,
+   "eaten": 153,
+   "deaths": 2,
+   "hist": [
+    455,
+    201,
+    189,
+    372
+   ]
+  },
+  {
+   "seed": 50083,
+   "cleared": false,
+   "steps": 1255,
+   "score": 3650.0,
+   "eaten": 149,
+   "deaths": 2,
+   "hist": [
+    436,
+    192,
+    243,
+    384
+   ]
+  },
+  {
+   "seed": 50084,
+   "cleared": false,
+   "steps": 945,
+   "score": 2640.0,
+   "eaten": 138,
+   "deaths": 2,
+   "hist": [
+    404,
+    144,
+    144,
+    253
+   ]
+  },
+  {
+   "seed": 50085,
+   "cleared": false,
+   "steps": 659,
+   "score": 1810.0,
+   "eaten": 113,
+   "deaths": 2,
+   "hist": [
+    267,
+    120,
+    112,
+    160
+   ]
+  },
+  {
+   "seed": 50086,
+   "cleared": false,
+   "steps": 919,
+   "score": 2400.0,
+   "eaten": 144,
+   "deaths": 2,
+   "hist": [
+    293,
+    159,
+    200,
+    267
+   ]
+  },
+  {
+   "seed": 50087,
+   "cleared": false,
+   "steps": 1055,
+   "score": 2600.0,
+   "eaten": 134,
+   "deaths": 2,
+   "hist": [
+    424,
+    197,
+    130,
+    304
+   ]
+  },
+  {
+   "seed": 50088,
+   "cleared": false,
+   "steps": 1061,
+   "score": 2430.0,
+   "eaten": 137,
+   "deaths": 2,
+   "hist": [
+    412,
+    157,
+    200,
+    292
+   ]
+  },
+  {
+   "seed": 50089,
+   "cleared": false,
+   "steps": 937,
+   "score": 2390.0,
+   "eaten": 133,
+   "deaths": 2,
+   "hist": [
+    272,
+    149,
+    209,
+    307
+   ]
+  },
+  {
+   "seed": 50090,
+   "cleared": false,
+   "steps": 809,
+   "score": 2610.0,
+   "eaten": 135,
+   "deaths": 2,
+   "hist": [
+    289,
+    106,
+    186,
+    228
+   ]
+  },
+  {
+   "seed": 50091,
+   "cleared": false,
+   "steps": 1413,
+   "score": 3380.0,
+   "eaten": 152,
+   "deaths": 2,
+   "hist": [
+    443,
+    219,
+    320,
+    431
+   ]
+  },
+  {
+   "seed": 50092,
+   "cleared": false,
+   "steps": 659,
+   "score": 1280.0,
+   "eaten": 120,
+   "deaths": 2,
+   "hist": [
+    254,
+    134,
+    115,
+    156
+   ]
+  },
+  {
+   "seed": 50093,
+   "cleared": false,
+   "steps": 577,
+   "score": 1390.0,
+   "eaten": 75,
+   "deaths": 2,
+   "hist": [
+    213,
+    86,
+    97,
+    181
+   ]
+  },
+  {
+   "seed": 50094,
+   "cleared": false,
+   "steps": 879,
+   "score": 2800.0,
+   "eaten": 134,
+   "deaths": 2,
+   "hist": [
+    287,
+    168,
+    160,
+    264
+   ]
+  },
+  {
+   "seed": 50095,
+   "cleared": false,
+   "steps": 989,
+   "score": 3940.0,
+   "eaten": 138,
+   "deaths": 2,
+   "hist": [
+    370,
+    108,
+    204,
+    307
+   ]
+  },
+  {
+   "seed": 50096,
+   "cleared": false,
+   "steps": 691,
+   "score": 1650.0,
+   "eaten": 117,
+   "deaths": 2,
+   "hist": [
+    258,
+    113,
+    124,
+    196
+   ]
+  },
+  {
+   "seed": 50097,
+   "cleared": false,
+   "steps": 979,
+   "score": 2530.0,
+   "eaten": 137,
+   "deaths": 2,
+   "hist": [
+    332,
+    204,
+    146,
+    297
+   ]
+  },
+  {
+   "seed": 50098,
+   "cleared": false,
+   "steps": 1023,
+   "score": 4650.0,
+   "eaten": 149,
+   "deaths": 2,
+   "hist": [
+    335,
+    125,
+    247,
+    316
+   ]
+  },
+  {
+   "seed": 50099,
+   "cleared": false,
+   "steps": 1003,
+   "score": 4580.0,
+   "eaten": 142,
+   "deaths": 2,
+   "hist": [
+    344,
+    160,
+    219,
+    280
+   ]
+  },
+  {
+   "seed": 50100,
+   "cleared": false,
+   "steps": 979,
+   "score": 2630.0,
+   "eaten": 141,
+   "deaths": 2,
+   "hist": [
+    389,
+    162,
+    147,
+    281
+   ]
+  },
+  {
+   "seed": 50101,
+   "cleared": false,
+   "steps": 1089,
+   "score": 2810.0,
+   "eaten": 145,
+   "deaths": 2,
+   "hist": [
+    433,
+    166,
+    182,
+    308
+   ]
+  },
+  {
+   "seed": 50102,
+   "cleared": false,
+   "steps": 1131,
+   "score": 2910.0,
+   "eaten": 145,
+   "deaths": 2,
+   "hist": [
+    427,
+    185,
+    174,
+    345
+   ]
+  },
+  {
+   "seed": 50103,
+   "cleared": false,
+   "steps": 1175,
+   "score": 4110.0,
+   "eaten": 145,
+   "deaths": 2,
+   "hist": [
+    438,
+    137,
+    287,
+    313
+   ]
+  },
+  {
+   "seed": 50104,
+   "cleared": false,
+   "steps": 1267,
+   "score": 4240.0,
+   "eaten": 148,
+   "deaths": 2,
+   "hist": [
+    463,
+    191,
+    247,
+    366
+   ]
+  },
+  {
+   "seed": 50105,
+   "cleared": false,
+   "steps": 1249,
+   "score": 4190.0,
+   "eaten": 153,
+   "deaths": 2,
+   "hist": [
+    471,
+    210,
+    210,
+    358
+   ]
+  },
+  {
+   "seed": 50106,
+   "cleared": false,
+   "steps": 521,
+   "score": 1430.0,
+   "eaten": 85,
+   "deaths": 2,
+   "hist": [
+    182,
+    82,
+    120,
+    137
+   ]
+  },
+  {
+   "seed": 50107,
+   "cleared": false,
+   "steps": 1049,
+   "score": 3410.0,
+   "eaten": 139,
+   "deaths": 2,
+   "hist": [
+    374,
+    149,
+    225,
+    301
+   ]
+  },
+  {
+   "seed": 50108,
+   "cleared": false,
+   "steps": 1179,
+   "score": 2880.0,
+   "eaten": 152,
+   "deaths": 2,
+   "hist": [
+    443,
+    160,
+    237,
+    339
+   ]
+  },
+  {
+   "seed": 50109,
+   "cleared": true,
+   "steps": 1425,
+   "score": 2400.0,
+   "eaten": 154,
+   "deaths": 2,
+   "hist": [
+    528,
+    221,
+    255,
+    421
+   ]
+  },
+  {
+   "seed": 50110,
+   "cleared": false,
+   "steps": 819,
+   "score": 2130.0,
+   "eaten": 131,
+   "deaths": 2,
+   "hist": [
+    310,
+    132,
+    130,
+    247
+   ]
+  },
+  {
+   "seed": 50111,
+   "cleared": false,
+   "steps": 785,
+   "score": 2500.0,
+   "eaten": 122,
+   "deaths": 2,
+   "hist": [
+    257,
+    160,
+    139,
+    229
+   ]
+  },
+  {
+   "seed": 50112,
+   "cleared": false,
+   "steps": 1107,
+   "score": 2980.0,
+   "eaten": 152,
+   "deaths": 2,
+   "hist": [
+    422,
+    188,
+    175,
+    322
+   ]
+  },
+  {
+   "seed": 50113,
+   "cleared": false,
+   "steps": 971,
+   "score": 2970.0,
+   "eaten": 135,
+   "deaths": 2,
+   "hist": [
+    369,
+    150,
+    172,
+    280
+   ]
+  },
+  {
+   "seed": 50114,
+   "cleared": false,
+   "steps": 1341,
+   "score": 2960.0,
+   "eaten": 150,
+   "deaths": 2,
+   "hist": [
+    428,
+    242,
+    286,
+    385
+   ]
+  },
+  {
+   "seed": 50115,
+   "cleared": true,
+   "steps": 1307,
+   "score": 3100.0,
+   "eaten": 154,
+   "deaths": 2,
+   "hist": [
+    475,
+    237,
+    245,
+    350
+   ]
+  },
+  {
+   "seed": 50116,
+   "cleared": false,
+   "steps": 901,
+   "score": 2520.0,
+   "eaten": 130,
+   "deaths": 2,
+   "hist": [
+    315,
+    142,
+    147,
+    297
+   ]
+  },
+  {
+   "seed": 50117,
+   "cleared": false,
+   "steps": 1123,
+   "score": 2850.0,
+   "eaten": 149,
+   "deaths": 2,
+   "hist": [
+    379,
+    200,
+    210,
+    334
+   ]
+  },
+  {
+   "seed": 50118,
+   "cleared": false,
+   "steps": 1309,
+   "score": 3370.0,
+   "eaten": 151,
+   "deaths": 2,
+   "hist": [
+    469,
+    237,
+    213,
+    390
+   ]
+  },
+  {
+   "seed": 50119,
+   "cleared": false,
+   "steps": 987,
+   "score": 2970.0,
+   "eaten": 141,
+   "deaths": 2,
+   "hist": [
+    345,
+    177,
+    208,
+    257
+   ]
+  },
+  {
+   "seed": 50120,
+   "cleared": false,
+   "steps": 883,
+   "score": 3220.0,
+   "eaten": 140,
+   "deaths": 2,
+   "hist": [
+    362,
+    96,
+    174,
+    251
+   ]
+  },
+  {
+   "seed": 50121,
+   "cleared": false,
+   "steps": 1079,
+   "score": 3150.0,
+   "eaten": 149,
+   "deaths": 2,
+   "hist": [
+    360,
+    175,
+    221,
+    323
+   ]
+  },
+  {
+   "seed": 50122,
+   "cleared": false,
+   "steps": 1039,
+   "score": 3530.0,
+   "eaten": 121,
+   "deaths": 2,
+   "hist": [
+    418,
+    163,
+    162,
+    296
+   ]
+  },
+  {
+   "seed": 50123,
+   "cleared": false,
+   "steps": 1163,
+   "score": 2590.0,
+   "eaten": 143,
+   "deaths": 2,
+   "hist": [
+    474,
+    206,
+    149,
+    334
+   ]
+  },
+  {
+   "seed": 50124,
+   "cleared": false,
+   "steps": 1403,
+   "score": 3790.0,
+   "eaten": 153,
+   "deaths": 2,
+   "hist": [
+    536,
+    228,
+    265,
+    374
+   ]
+  },
+  {
+   "seed": 50125,
+   "cleared": false,
+   "steps": 983,
+   "score": 2240.0,
+   "eaten": 138,
+   "deaths": 2,
+   "hist": [
+    398,
+    161,
+    157,
+    267
+   ]
+  },
+  {
+   "seed": 50126,
+   "cleared": false,
+   "steps": 897,
+   "score": 2520.0,
+   "eaten": 146,
+   "deaths": 2,
+   "hist": [
+    301,
+    169,
+    151,
+    276
+   ]
+  },
+  {
+   "seed": 50127,
+   "cleared": false,
+   "steps": 1095,
+   "score": 2680.0,
+   "eaten": 152,
+   "deaths": 2,
+   "hist": [
+    404,
+    172,
+    164,
+    355
+   ]
+  },
+  {
+   "seed": 50128,
+   "cleared": false,
+   "steps": 1187,
+   "score": 3390.0,
+   "eaten": 153,
+   "deaths": 2,
+   "hist": [
+    449,
+    185,
+    209,
+    344
+   ]
+  },
+  {
+   "seed": 50129,
+   "cleared": false,
+   "steps": 999,
+   "score": 4110.0,
+   "eaten": 135,
+   "deaths": 2,
+   "hist": [
+    374,
+    160,
+    178,
+    287
+   ]
+  },
+  {
+   "seed": 50130,
+   "cleared": false,
+   "steps": 945,
+   "score": 2910.0,
+   "eaten": 139,
+   "deaths": 2,
+   "hist": [
+    350,
+    140,
+    167,
+    288
+   ]
+  },
+  {
+   "seed": 50131,
+   "cleared": false,
+   "steps": 1075,
+   "score": 3200.0,
+   "eaten": 144,
+   "deaths": 2,
+   "hist": [
+    391,
+    187,
+    139,
+    358
+   ]
+  },
+  {
+   "seed": 50132,
+   "cleared": false,
+   "steps": 493,
+   "score": 1440.0,
+   "eaten": 80,
+   "deaths": 2,
+   "hist": [
+    171,
+    87,
+    90,
+    145
+   ]
+  },
+  {
+   "seed": 50133,
+   "cleared": false,
+   "steps": 945,
+   "score": 2850.0,
+   "eaten": 139,
+   "deaths": 2,
+   "hist": [
+    338,
+    149,
+    174,
+    284
+   ]
+  },
+  {
+   "seed": 50134,
+   "cleared": false,
+   "steps": 1091,
+   "score": 2930.0,
+   "eaten": 141,
+   "deaths": 2,
+   "hist": [
+    375,
+    199,
+    207,
+    310
+   ]
+  },
+  {
+   "seed": 50135,
+   "cleared": false,
+   "steps": 1117,
+   "score": 3070.0,
+   "eaten": 151,
+   "deaths": 2,
+   "hist": [
+    419,
+    158,
+    195,
+    345
+   ]
+  },
+  {
+   "seed": 50136,
+   "cleared": false,
+   "steps": 715,
+   "score": 1930.0,
+   "eaten": 105,
+   "deaths": 2,
+   "hist": [
+    242,
+    118,
+    141,
+    214
+   ]
+  },
+  {
+   "seed": 50137,
+   "cleared": false,
+   "steps": 1179,
+   "score": 1880.0,
+   "eaten": 152,
+   "deaths": 2,
+   "hist": [
+    369,
+    165,
+    260,
+    385
+   ]
+  },
+  {
+   "seed": 50138,
+   "cleared": false,
+   "steps": 555,
+   "score": 1080.0,
+   "eaten": 84,
+   "deaths": 2,
+   "hist": [
+    168,
+    117,
+    111,
+    159
+   ]
+  },
+  {
+   "seed": 50139,
+   "cleared": false,
+   "steps": 1071,
+   "score": 4060.0,
+   "eaten": 150,
+   "deaths": 2,
+   "hist": [
+    425,
+    170,
+    170,
+    306
+   ]
+  },
+  {
+   "seed": 50140,
+   "cleared": false,
+   "steps": 883,
+   "score": 2860.0,
+   "eaten": 120,
+   "deaths": 2,
+   "hist": [
+    316,
+    144,
+    176,
+    247
+   ]
+  },
+  {
+   "seed": 50141,
+   "cleared": true,
+   "steps": 1297,
+   "score": 2600.0,
+   "eaten": 154,
+   "deaths": 2,
+   "hist": [
+    470,
+    242,
+    191,
+    394
+   ]
+  },
+  {
+   "seed": 50142,
+   "cleared": false,
+   "steps": 1135,
+   "score": 3260.0,
+   "eaten": 150,
+   "deaths": 2,
+   "hist": [
+    455,
+    179,
+    182,
+    319
+   ]
+  },
+  {
+   "seed": 50143,
+   "cleared": false,
+   "steps": 1267,
+   "score": 2590.0,
+   "eaten": 153,
+   "deaths": 2,
+   "hist": [
+    502,
+    211,
+    204,
+    350
+   ]
+  },
+  {
+   "seed": 50144,
+   "cleared": false,
+   "steps": 839,
+   "score": 2060.0,
+   "eaten": 134,
+   "deaths": 2,
+   "hist": [
+    303,
+    123,
+    183,
+    230
+   ]
+  },
+  {
+   "seed": 50145,
+   "cleared": false,
+   "steps": 1199,
+   "score": 3280.0,
+   "eaten": 152,
+   "deaths": 2,
+   "hist": [
+    386,
+    211,
+    239,
+    363
+   ]
+  },
+  {
+   "seed": 50146,
+   "cleared": false,
+   "steps": 1337,
+   "score": 3170.0,
+   "eaten": 151,
+   "deaths": 2,
+   "hist": [
+    422,
+    247,
+    242,
+    426
+   ]
+  },
+  {
+   "seed": 50147,
+   "cleared": false,
+   "steps": 929,
+   "score": 3590.0,
+   "eaten": 123,
+   "deaths": 2,
+   "hist": [
+    339,
+    139,
+    187,
+    264
+   ]
+  },
+  {
+   "seed": 50148,
+   "cleared": false,
+   "steps": 1129,
+   "score": 2670.0,
+   "eaten": 151,
+   "deaths": 2,
+   "hist": [
+    425,
+    198,
+    199,
+    307
+   ]
+  },
+  {
+   "seed": 50149,
+   "cleared": false,
+   "steps": 1195,
+   "score": 3080.0,
+   "eaten": 152,
+   "deaths": 2,
+   "hist": [
+    398,
+    190,
+    222,
+    385
+   ]
+  },
+  {
+   "seed": 50150,
+   "cleared": false,
+   "steps": 949,
+   "score": 3280.0,
+   "eaten": 136,
+   "deaths": 2,
+   "hist": [
+    374,
+    128,
+    182,
+    265
+   ]
+  },
+  {
+   "seed": 50151,
+   "cleared": false,
+   "steps": 1157,
+   "score": 2590.0,
+   "eaten": 147,
+   "deaths": 2,
+   "hist": [
+    406,
+    217,
+    199,
+    335
+   ]
+  },
+  {
+   "seed": 50152,
+   "cleared": false,
+   "steps": 1103,
+   "score": 2840.0,
+   "eaten": 148,
+   "deaths": 2,
+   "hist": [
+    402,
+    192,
+    196,
+    313
+   ]
+  },
+  {
+   "seed": 50153,
+   "cleared": false,
+   "steps": 821,
+   "score": 2660.0,
+   "eaten": 124,
+   "deaths": 2,
+   "hist": [
+    308,
+    140,
+    147,
+    226
+   ]
+  },
+  {
+   "seed": 50154,
+   "cleared": false,
+   "steps": 729,
+   "score": 2040.0,
+   "eaten": 106,
+   "deaths": 2,
+   "hist": [
+    251,
+    135,
+    123,
+    220
+   ]
+  },
+  {
+   "seed": 50155,
+   "cleared": false,
+   "steps": 817,
+   "score": 1860.0,
+   "eaten": 114,
+   "deaths": 2,
+   "hist": [
+    263,
+    130,
+    174,
+    250
+   ]
+  },
+  {
+   "seed": 50156,
+   "cleared": false,
+   "steps": 961,
+   "score": 3590.0,
+   "eaten": 143,
+   "deaths": 2,
+   "hist": [
+    319,
+    136,
+    224,
+    282
+   ]
+  },
+  {
+   "seed": 50157,
+   "cleared": false,
+   "steps": 1025,
+   "score": 3290.0,
+   "eaten": 153,
+   "deaths": 2,
+   "hist": [
+    375,
+    152,
+    207,
+    291
+   ]
+  },
+  {
+   "seed": 50158,
+   "cleared": false,
+   "steps": 1183,
+   "score": 2690.0,
+   "eaten": 153,
+   "deaths": 2,
+   "hist": [
+    423,
+    183,
+    225,
+    352
+   ]
+  },
+  {
+   "seed": 50159,
+   "cleared": false,
+   "steps": 1013,
+   "score": 5540.0,
+   "eaten": 148,
+   "deaths": 2,
+   "hist": [
+    348,
+    189,
+    163,
+    313
+   ]
+  },
+  {
+   "seed": 50160,
+   "cleared": false,
+   "steps": 1011,
+   "score": 2670.0,
+   "eaten": 129,
+   "deaths": 2,
+   "hist": [
+    359,
+    161,
+    200,
+    291
+   ]
+  },
+  {
+   "seed": 50161,
+   "cleared": false,
+   "steps": 1087,
+   "score": 2450.0,
+   "eaten": 149,
+   "deaths": 2,
+   "hist": [
+    387,
+    164,
+    226,
+    310
+   ]
+  },
+  {
+   "seed": 50162,
+   "cleared": false,
+   "steps": 1217,
+   "score": 3270.0,
+   "eaten": 151,
+   "deaths": 2,
+   "hist": [
+    437,
+    228,
+    198,
+    354
+   ]
+  },
+  {
+   "seed": 50163,
+   "cleared": false,
+   "steps": 803,
+   "score": 2670.0,
+   "eaten": 125,
+   "deaths": 2,
+   "hist": [
+    265,
+    122,
+    199,
+    217
+   ]
+  },
+  {
+   "seed": 50164,
+   "cleared": false,
+   "steps": 795,
+   "score": 2180.0,
+   "eaten": 106,
+   "deaths": 2,
+   "hist": [
+    315,
+    137,
+    123,
+    220
+   ]
+  },
+  {
+   "seed": 50165,
+   "cleared": false,
+   "steps": 797,
+   "score": 1880.0,
+   "eaten": 120,
+   "deaths": 2,
+   "hist": [
+    264,
+    184,
+    144,
+    205
+   ]
+  },
+  {
+   "seed": 50166,
+   "cleared": false,
+   "steps": 775,
+   "score": 2600.0,
+   "eaten": 118,
+   "deaths": 2,
+   "hist": [
+    259,
+    112,
+    169,
+    235
+   ]
+  },
+  {
+   "seed": 50167,
+   "cleared": false,
+   "steps": 1151,
+   "score": 2940.0,
+   "eaten": 148,
+   "deaths": 2,
+   "hist": [
+    413,
+    151,
+    244,
+    343
+   ]
+  },
+  {
+   "seed": 50168,
+   "cleared": true,
+   "steps": 1195,
+   "score": 3700.0,
+   "eaten": 154,
+   "deaths": 2,
+   "hist": [
+    410,
+    168,
+    277,
+    340
+   ]
+  },
+  {
+   "seed": 50169,
+   "cleared": false,
+   "steps": 889,
+   "score": 2000.0,
+   "eaten": 128,
+   "deaths": 2,
+   "hist": [
+    286,
+    181,
+    180,
+    242
+   ]
+  },
+  {
+   "seed": 50170,
+   "cleared": false,
+   "steps": 809,
+   "score": 2780.0,
+   "eaten": 116,
+   "deaths": 2,
+   "hist": [
+    259,
+    148,
+    169,
+    233
+   ]
+  },
+  {
+   "seed": 50171,
+   "cleared": false,
+   "steps": 1345,
+   "score": 2070.0,
+   "eaten": 151,
+   "deaths": 2,
+   "hist": [
+    509,
+    237,
+    225,
+    374
+   ]
+  },
+  {
+   "seed": 50172,
+   "cleared": false,
+   "steps": 609,
+   "score": 1470.0,
+   "eaten": 89,
+   "deaths": 2,
+   "hist": [
+    198,
+    72,
+    157,
+    182
+   ]
+  },
+  {
+   "seed": 50173,
+   "cleared": false,
+   "steps": 1109,
+   "score": 4580.0,
+   "eaten": 152,
+   "deaths": 2,
+   "hist": [
+    392,
+    164,
+    230,
+    323
+   ]
+  },
+  {
+   "seed": 50174,
+   "cleared": false,
+   "steps": 749,
+   "score": 1860.0,
+   "eaten": 112,
+   "deaths": 2,
+   "hist": [
+    250,
+    136,
+    143,
+    220
+   ]
+  },
+  {
+   "seed": 50175,
+   "cleared": false,
+   "steps": 827,
+   "score": 2520.0,
+   "eaten": 130,
+   "deaths": 2,
+   "hist": [
+    256,
+    132,
+    212,
+    227
+   ]
+  },
+  {
+   "seed": 50176,
+   "cleared": false,
+   "steps": 1119,
+   "score": 3780.0,
+   "eaten": 152,
+   "deaths": 2,
+   "hist": [
+    435,
+    170,
+    215,
+    299
+   ]
+  },
+  {
+   "seed": 50177,
+   "cleared": false,
+   "steps": 1099,
+   "score": 3680.0,
+   "eaten": 142,
+   "deaths": 2,
+   "hist": [
+    419,
+    169,
+    163,
+    348
+   ]
+  },
+  {
+   "seed": 50178,
+   "cleared": false,
+   "steps": 955,
+   "score": 2050.0,
+   "eaten": 133,
+   "deaths": 2,
+   "hist": [
+    386,
+    158,
+    127,
+    284
+   ]
+  },
+  {
+   "seed": 50179,
+   "cleared": true,
+   "steps": 1243,
+   "score": 2900.0,
+   "eaten": 154,
+   "deaths": 1,
+   "hist": [
+    460,
+    221,
+    208,
+    354
+   ]
+  },
+  {
+   "seed": 50180,
+   "cleared": false,
+   "steps": 1101,
+   "score": 3020.0,
+   "eaten": 146,
+   "deaths": 2,
+   "hist": [
+    378,
+    169,
+    226,
+    328
+   ]
+  },
+  {
+   "seed": 50181,
+   "cleared": false,
+   "steps": 1177,
+   "score": 2650.0,
+   "eaten": 149,
+   "deaths": 2,
+   "hist": [
+    446,
+    170,
+    247,
+    314
+   ]
+  },
+  {
+   "seed": 50182,
+   "cleared": true,
+   "steps": 1349,
+   "score": 2800.0,
+   "eaten": 154,
+   "deaths": 2,
+   "hist": [
+    489,
+    216,
+    231,
+    413
+   ]
+  },
+  {
+   "seed": 50183,
+   "cleared": false,
+   "steps": 1029,
+   "score": 2230.0,
+   "eaten": 147,
+   "deaths": 2,
+   "hist": [
+    367,
+    180,
+    194,
+    288
+   ]
+  },
+  {
+   "seed": 50184,
+   "cleared": false,
+   "steps": 955,
+   "score": 2460.0,
+   "eaten": 134,
+   "deaths": 2,
+   "hist": [
+    359,
+    163,
+    155,
+    278
+   ]
+  },
+  {
+   "seed": 50185,
+   "cleared": false,
+   "steps": 723,
+   "score": 1720.0,
+   "eaten": 120,
+   "deaths": 2,
+   "hist": [
+    252,
+    104,
+    148,
+    219
+   ]
+  },
+  {
+   "seed": 50186,
+   "cleared": false,
+   "steps": 925,
+   "score": 3330.0,
+   "eaten": 137,
+   "deaths": 2,
+   "hist": [
+    290,
+    152,
+    210,
+    273
+   ]
+  },
+  {
+   "seed": 50187,
+   "cleared": false,
+   "steps": 1037,
+   "score": 3590.0,
+   "eaten": 133,
+   "deaths": 2,
+   "hist": [
+    317,
+    201,
+    222,
+    297
+   ]
+  },
+  {
+   "seed": 50188,
+   "cleared": false,
+   "steps": 1081,
+   "score": 3340.0,
+   "eaten": 148,
+   "deaths": 2,
+   "hist": [
+    416,
+    153,
+    187,
+    325
+   ]
+  },
+  {
+   "seed": 50189,
+   "cleared": false,
+   "steps": 1091,
+   "score": 2790.0,
+   "eaten": 143,
+   "deaths": 2,
+   "hist": [
+    364,
+    196,
+    200,
+    331
+   ]
+  },
+  {
+   "seed": 50190,
+   "cleared": false,
+   "steps": 535,
+   "score": 1620.0,
+   "eaten": 74,
+   "deaths": 2,
+   "hist": [
+    175,
+    93,
+    126,
+    141
+   ]
+  },
+  {
+   "seed": 50191,
+   "cleared": false,
+   "steps": 1049,
+   "score": 2850.0,
+   "eaten": 139,
+   "deaths": 2,
+   "hist": [
+    370,
+    141,
+    215,
+    323
+   ]
+  },
+  {
+   "seed": 50192,
+   "cleared": false,
+   "steps": 1479,
+   "score": 3980.0,
+   "eaten": 152,
+   "deaths": 2,
+   "hist": [
+    529,
+    267,
+    243,
+    440
+   ]
+  },
+  {
+   "seed": 50193,
+   "cleared": false,
+   "steps": 1049,
+   "score": 3720.0,
+   "eaten": 146,
+   "deaths": 2,
+   "hist": [
+    359,
+    216,
+    156,
+    318
+   ]
+  },
+  {
+   "seed": 50194,
+   "cleared": false,
+   "steps": 949,
+   "score": 3810.0,
+   "eaten": 145,
+   "deaths": 2,
+   "hist": [
+    346,
+    185,
+    138,
+    280
+   ]
+  },
+  {
+   "seed": 50195,
+   "cleared": false,
+   "steps": 1415,
+   "score": 3270.0,
+   "eaten": 151,
+   "deaths": 2,
+   "hist": [
+    545,
+    215,
+    233,
+    422
+   ]
+  },
+  {
+   "seed": 50196,
+   "cleared": false,
+   "steps": 669,
+   "score": 1790.0,
+   "eaten": 91,
+   "deaths": 2,
+   "hist": [
+    232,
+    119,
+    132,
+    186
+   ]
+  },
+  {
+   "seed": 50197,
+   "cleared": false,
+   "steps": 571,
+   "score": 1610.0,
+   "eaten": 97,
+   "deaths": 2,
+   "hist": [
+    204,
+    124,
+    77,
+    166
+   ]
+  },
+  {
+   "seed": 50198,
+   "cleared": false,
+   "steps": 1157,
+   "score": 2280.0,
+   "eaten": 152,
+   "deaths": 2,
+   "hist": [
+    414,
+    232,
+    170,
+    341
+   ]
+  },
+  {
+   "seed": 50199,
+   "cleared": false,
+   "steps": 947,
+   "score": 3300.0,
+   "eaten": 128,
+   "deaths": 2,
+   "hist": [
+    365,
+    142,
+    141,
+    299
+   ]
+  },
+  {
+   "seed": 50200,
+   "cleared": false,
+   "steps": 857,
+   "score": 3360.0,
+   "eaten": 134,
+   "deaths": 2,
+   "hist": [
+    349,
+    143,
+    119,
+    246
+   ]
+  },
+  {
+   "seed": 50201,
+   "cleared": false,
+   "steps": 1123,
+   "score": 4300.0,
+   "eaten": 144,
+   "deaths": 2,
+   "hist": [
+    440,
+    165,
+    190,
+    328
+   ]
+  },
+  {
+   "seed": 50202,
+   "cleared": false,
+   "steps": 843,
+   "score": 1730.0,
+   "eaten": 131,
+   "deaths": 2,
+   "hist": [
+    299,
+    152,
+    149,
+    243
+   ]
+  },
+  {
+   "seed": 50203,
+   "cleared": false,
+   "steps": 1017,
+   "score": 2340.0,
+   "eaten": 128,
+   "deaths": 2,
+   "hist": [
+    398,
+    115,
+    219,
+    285
+   ]
+  },
+  {
+   "seed": 50204,
+   "cleared": false,
+   "steps": 1013,
+   "score": 3150.0,
+   "eaten": 139,
+   "deaths": 2,
+   "hist": [
+    381,
+    168,
+    205,
+    259
+   ]
+  },
+  {
+   "seed": 50205,
+   "cleared": false,
+   "steps": 1151,
+   "score": 3360.0,
+   "eaten": 150,
+   "deaths": 2,
+   "hist": [
+    418,
+    178,
+    209,
+    346
+   ]
+  },
+  {
+   "seed": 50206,
+   "cleared": false,
+   "steps": 981,
+   "score": 1820.0,
+   "eaten": 114,
+   "deaths": 2,
+   "hist": [
+    414,
+    101,
+    190,
+    276
+   ]
+  },
+  {
+   "seed": 50207,
+   "cleared": false,
+   "steps": 767,
+   "score": 2300.0,
+   "eaten": 118,
+   "deaths": 2,
+   "hist": [
+    225,
+    168,
+    150,
+    224
+   ]
+  },
+  {
+   "seed": 50208,
+   "cleared": false,
+   "steps": 1059,
+   "score": 2380.0,
+   "eaten": 142,
+   "deaths": 2,
+   "hist": [
+    316,
+    170,
+    228,
+    345
+   ]
+  },
+  {
+   "seed": 50209,
+   "cleared": false,
+   "steps": 1229,
+   "score": 5690.0,
+   "eaten": 143,
+   "deaths": 2,
+   "hist": [
+    459,
+    186,
+    227,
+    357
+   ]
+  },
+  {
+   "seed": 50210,
+   "cleared": false,
+   "steps": 887,
+   "score": 2540.0,
+   "eaten": 116,
+   "deaths": 2,
+   "hist": [
+    305,
+    173,
+    160,
+    249
+   ]
+  },
+  {
+   "seed": 50211,
+   "cleared": false,
+   "steps": 1163,
+   "score": 3370.0,
+   "eaten": 151,
+   "deaths": 2,
+   "hist": [
+    443,
+    182,
+    194,
+    344
+   ]
+  },
+  {
+   "seed": 50212,
+   "cleared": false,
+   "steps": 1033,
+   "score": 3100.0,
+   "eaten": 134,
+   "deaths": 2,
+   "hist": [
+    382,
+    133,
+    219,
+    299
+   ]
+  },
+  {
+   "seed": 50213,
+   "cleared": false,
+   "steps": 785,
+   "score": 4860.0,
+   "eaten": 108,
+   "deaths": 2,
+   "hist": [
+    323,
+    143,
+    96,
+    223
+   ]
+  },
+  {
+   "seed": 50214,
+   "cleared": false,
+   "steps": 907,
+   "score": 2000.0,
+   "eaten": 128,
+   "deaths": 2,
+   "hist": [
+    358,
+    138,
+    152,
+    259
+   ]
+  },
+  {
+   "seed": 50215,
+   "cleared": false,
+   "steps": 1383,
+   "score": 3290.0,
+   "eaten": 153,
+   "deaths": 2,
+   "hist": [
+    541,
+    240,
+    212,
+    390
+   ]
+  },
+  {
+   "seed": 50216,
+   "cleared": false,
+   "steps": 1041,
+   "score": 3040.0,
+   "eaten": 148,
+   "deaths": 2,
+   "hist": [
+    351,
+    155,
+    211,
+    324
+   ]
+  },
+  {
+   "seed": 50217,
+   "cleared": false,
+   "steps": 919,
+   "score": 2570.0,
+   "eaten": 125,
+   "deaths": 2,
+   "hist": [
+    332,
+    130,
+    198,
+    259
+   ]
+  },
+  {
+   "seed": 50218,
+   "cleared": false,
+   "steps": 663,
+   "score": 1700.0,
+   "eaten": 102,
+   "deaths": 2,
+   "hist": [
+    235,
+    113,
+    128,
+    187
+   ]
+  },
+  {
+   "seed": 50219,
+   "cleared": false,
+   "steps": 813,
+   "score": 2900.0,
+   "eaten": 128,
+   "deaths": 2,
+   "hist": [
+    252,
+    160,
+    158,
+    243
+   ]
+  },
+  {
+   "seed": 50220,
+   "cleared": false,
+   "steps": 1327,
+   "score": 1990.0,
+   "eaten": 153,
+   "deaths": 2,
+   "hist": [
+    485,
+    264,
+    190,
+    388
+   ]
+  },
+  {
+   "seed": 50221,
+   "cleared": false,
+   "steps": 1049,
+   "score": 2960.0,
+   "eaten": 140,
+   "deaths": 2,
+   "hist": [
+    416,
+    163,
+    176,
+    294
+   ]
+  },
+  {
+   "seed": 50222,
+   "cleared": false,
+   "steps": 1099,
+   "score": 3050.0,
+   "eaten": 129,
+   "deaths": 2,
+   "hist": [
+    323,
+    184,
+    243,
+    349
+   ]
+  },
+  {
+   "seed": 50223,
+   "cleared": false,
+   "steps": 691,
+   "score": 2160.0,
+   "eaten": 114,
+   "deaths": 2,
+   "hist": [
+    245,
+    109,
+    139,
+    198
+   ]
+  },
+  {
+   "seed": 50224,
+   "cleared": false,
+   "steps": 695,
+   "score": 1910.0,
+   "eaten": 103,
+   "deaths": 2,
+   "hist": [
+    259,
+    109,
+    140,
+    187
+   ]
+  },
+  {
+   "seed": 50225,
+   "cleared": false,
+   "steps": 521,
+   "score": 1690.0,
+   "eaten": 81,
+   "deaths": 2,
+   "hist": [
+    192,
+    66,
+    122,
+    141
+   ]
+  },
+  {
+   "seed": 50226,
+   "cleared": false,
+   "steps": 889,
+   "score": 2580.0,
+   "eaten": 122,
+   "deaths": 2,
+   "hist": [
+    342,
+    140,
+    145,
+    262
+   ]
+  },
+  {
+   "seed": 50227,
+   "cleared": false,
+   "steps": 791,
+   "score": 2220.0,
+   "eaten": 120,
+   "deaths": 2,
+   "hist": [
+    255,
+    147,
+    150,
+    239
+   ]
+  },
+  {
+   "seed": 50228,
+   "cleared": true,
+   "steps": 1269,
+   "score": 2300.0,
+   "eaten": 154,
+   "deaths": 2,
+   "hist": [
+    478,
+    164,
+    284,
+    343
+   ]
+  },
+  {
+   "seed": 50229,
+   "cleared": false,
+   "steps": 1109,
+   "score": 4630.0,
+   "eaten": 147,
+   "deaths": 2,
+   "hist": [
+    387,
+    190,
+    210,
+    322
+   ]
+  },
+  {
+   "seed": 50230,
+   "cleared": false,
+   "steps": 927,
+   "score": 2760.0,
+   "eaten": 144,
+   "deaths": 2,
+   "hist": [
+    338,
+    148,
+    200,
+    241
+   ]
+  },
+  {
+   "seed": 50231,
+   "cleared": false,
+   "steps": 1063,
+   "score": 2840.0,
+   "eaten": 148,
+   "deaths": 2,
+   "hist": [
+    405,
+    175,
+    165,
+    318
+   ]
+  },
+  {
+   "seed": 50232,
+   "cleared": true,
+   "steps": 1195,
+   "score": 2100.0,
+   "eaten": 154,
+   "deaths": 1,
+   "hist": [
+    404,
+    229,
+    238,
+    324
+   ]
+  },
+  {
+   "seed": 50233,
+   "cleared": false,
+   "steps": 891,
+   "score": 2730.0,
+   "eaten": 121,
+   "deaths": 2,
+   "hist": [
+    296,
+    153,
+    192,
+    250
+   ]
+  },
+  {
+   "seed": 50234,
+   "cleared": false,
+   "steps": 639,
+   "score": 2130.0,
+   "eaten": 85,
+   "deaths": 2,
+   "hist": [
+    218,
+    125,
+    98,
+    198
+   ]
+  },
+  {
+   "seed": 50235,
+   "cleared": false,
+   "steps": 689,
+   "score": 1350.0,
+   "eaten": 107,
+   "deaths": 2,
+   "hist": [
+    272,
+    145,
+    102,
+    170
+   ]
+  },
+  {
+   "seed": 50236,
+   "cleared": false,
+   "steps": 1087,
+   "score": 2620.0,
+   "eaten": 140,
+   "deaths": 2,
+   "hist": [
+    401,
+    161,
+    175,
+    350
+   ]
+  },
+  {
+   "seed": 50237,
+   "cleared": false,
+   "steps": 1249,
+   "score": 2240.0,
+   "eaten": 148,
+   "deaths": 2,
+   "hist": [
+    466,
+    190,
+    233,
+    360
+   ]
+  },
+  {
+   "seed": 50238,
+   "cleared": false,
+   "steps": 1053,
+   "score": 3410.0,
+   "eaten": 145,
+   "deaths": 2,
+   "hist": [
+    297,
+    171,
+    251,
+    334
+   ]
+  },
+  {
+   "seed": 50239,
+   "cleared": false,
+   "steps": 935,
+   "score": 2940.0,
+   "eaten": 138,
+   "deaths": 2,
+   "hist": [
+    300,
+    183,
+    169,
+    283
+   ]
+  },
+  {
+   "seed": 50240,
+   "cleared": false,
+   "steps": 1047,
+   "score": 3310.0,
+   "eaten": 145,
+   "deaths": 2,
+   "hist": [
+    330,
+    146,
+    209,
+    362
+   ]
+  },
+  {
+   "seed": 50241,
+   "cleared": false,
+   "steps": 1007,
+   "score": 2710.0,
+   "eaten": 135,
+   "deaths": 2,
+   "hist": [
+    378,
+    170,
+    169,
+    290
+   ]
+  },
+  {
+   "seed": 50242,
+   "cleared": false,
+   "steps": 859,
+   "score": 2820.0,
+   "eaten": 130,
+   "deaths": 2,
+   "hist": [
+    288,
+    96,
+    213,
+    262
+   ]
+  },
+  {
+   "seed": 50243,
+   "cleared": true,
+   "steps": 1205,
+   "score": 2400.0,
+   "eaten": 154,
+   "deaths": 2,
+   "hist": [
+    398,
+    226,
+    262,
+    319
+   ]
+  },
+  {
+   "seed": 50244,
+   "cleared": false,
+   "steps": 1127,
+   "score": 3480.0,
+   "eaten": 152,
+   "deaths": 2,
+   "hist": [
+    345,
+    199,
+    251,
+    332
+   ]
+  },
+  {
+   "seed": 50245,
+   "cleared": false,
+   "steps": 697,
+   "score": 1680.0,
+   "eaten": 100,
+   "deaths": 2,
+   "hist": [
+    241,
+    160,
+    109,
+    187
+   ]
+  },
+  {
+   "seed": 50246,
+   "cleared": true,
+   "steps": 1161,
+   "score": 3200.0,
+   "eaten": 154,
+   "deaths": 2,
+   "hist": [
+    412,
+    194,
+    215,
+    340
+   ]
+  },
+  {
+   "seed": 50247,
+   "cleared": false,
+   "steps": 1061,
+   "score": 3970.0,
+   "eaten": 131,
+   "deaths": 2,
+   "hist": [
+    373,
+    191,
+    166,
+    331
+   ]
+  },
+  {
+   "seed": 50248,
+   "cleared": false,
+   "steps": 605,
+   "score": 1480.0,
+   "eaten": 84,
+   "deaths": 2,
+   "hist": [
+    234,
+    123,
+    82,
+    166
+   ]
+  },
+  {
+   "seed": 50249,
+   "cleared": false,
+   "steps": 1077,
+   "score": 2350.0,
+   "eaten": 133,
+   "deaths": 2,
+   "hist": [
+    359,
+    172,
+    222,
+    324
+   ]
+  },
+  {
+   "seed": 50250,
+   "cleared": false,
+   "steps": 1387,
+   "score": 3660.0,
+   "eaten": 150,
+   "deaths": 2,
+   "hist": [
+    522,
+    256,
+    186,
+    423
+   ]
+  },
+  {
+   "seed": 50251,
+   "cleared": false,
+   "steps": 837,
+   "score": 1690.0,
+   "eaten": 107,
+   "deaths": 2,
+   "hist": [
+    313,
+    143,
+    150,
+    231
+   ]
+  },
+  {
+   "seed": 50252,
+   "cleared": false,
+   "steps": 1041,
+   "score": 2670.0,
+   "eaten": 151,
+   "deaths": 2,
+   "hist": [
+    416,
+    118,
+    210,
+    297
+   ]
+  },
+  {
+   "seed": 50253,
+   "cleared": false,
+   "steps": 675,
+   "score": 1690.0,
+   "eaten": 101,
+   "deaths": 2,
+   "hist": [
+    240,
+    113,
+    153,
+    169
+   ]
+  },
+  {
+   "seed": 50254,
+   "cleared": false,
+   "steps": 1231,
+   "score": 2630.0,
+   "eaten": 147,
+   "deaths": 2,
+   "hist": [
+    403,
+    245,
+    215,
+    368
+   ]
+  },
+  {
+   "seed": 50255,
+   "cleared": false,
+   "steps": 1175,
+   "score": 2450.0,
+   "eaten": 149,
+   "deaths": 2,
+   "hist": [
+    322,
+    239,
+    229,
+    385
+   ]
+  },
+  {
+   "seed": 50256,
+   "cleared": false,
+   "steps": 677,
+   "score": 1460.0,
+   "eaten": 98,
+   "deaths": 2,
+   "hist": [
+    220,
+    130,
+    141,
+    186
+   ]
+  },
+  {
+   "seed": 50257,
+   "cleared": false,
+   "steps": 1117,
+   "score": 2430.0,
+   "eaten": 137,
+   "deaths": 2,
+   "hist": [
+    405,
+    200,
+    219,
+    293
+   ]
+  },
+  {
+   "seed": 50258,
+   "cleared": false,
+   "steps": 967,
+   "score": 3120.0,
+   "eaten": 136,
+   "deaths": 2,
+   "hist": [
+    332,
+    162,
+    187,
+    286
+   ]
+  },
+  {
+   "seed": 50259,
+   "cleared": false,
+   "steps": 1127,
+   "score": 2630.0,
+   "eaten": 147,
+   "deaths": 2,
+   "hist": [
+    361,
+    179,
+    238,
+    349
+   ]
+  },
+  {
+   "seed": 50260,
+   "cleared": false,
+   "steps": 495,
+   "score": 1300.0,
+   "eaten": 66,
+   "deaths": 2,
+   "hist": [
+    187,
+    103,
+    75,
+    130
+   ]
+  },
+  {
+   "seed": 50261,
+   "cleared": false,
+   "steps": 1123,
+   "score": 2670.0,
+   "eaten": 151,
+   "deaths": 2,
+   "hist": [
+    453,
+    166,
+    207,
+    297
+   ]
+  },
+  {
+   "seed": 50262,
+   "cleared": false,
+   "steps": 689,
+   "score": 1490.0,
+   "eaten": 101,
+   "deaths": 2,
+   "hist": [
+    253,
+    74,
+    148,
+    214
+   ]
+  },
+  {
+   "seed": 50263,
+   "cleared": false,
+   "steps": 841,
+   "score": 2740.0,
+   "eaten": 122,
+   "deaths": 2,
+   "hist": [
+    275,
+    131,
+    193,
+    242
+   ]
+  },
+  {
+   "seed": 50264,
+   "cleared": false,
+   "steps": 669,
+   "score": 1980.0,
+   "eaten": 110,
+   "deaths": 2,
+   "hist": [
+    277,
+    111,
+    123,
+    158
+   ]
+  },
+  {
+   "seed": 50265,
+   "cleared": false,
+   "steps": 741,
+   "score": 1980.0,
+   "eaten": 110,
+   "deaths": 2,
+   "hist": [
+    263,
+    166,
+    125,
+    187
+   ]
+  },
+  {
+   "seed": 50266,
+   "cleared": false,
+   "steps": 563,
+   "score": 1720.0,
+   "eaten": 94,
+   "deaths": 2,
+   "hist": [
+    243,
+    112,
+    63,
+    145
+   ]
+  },
+  {
+   "seed": 50267,
+   "cleared": false,
+   "steps": 951,
+   "score": 3620.0,
+   "eaten": 136,
+   "deaths": 2,
+   "hist": [
+    316,
+    166,
+    184,
+    285
+   ]
+  },
+  {
+   "seed": 50268,
+   "cleared": false,
+   "steps": 999,
+   "score": 2900.0,
+   "eaten": 134,
+   "deaths": 2,
+   "hist": [
+    385,
+    165,
+    177,
+    272
+   ]
+  },
+  {
+   "seed": 50269,
+   "cleared": false,
+   "steps": 1059,
+   "score": 3430.0,
+   "eaten": 147,
+   "deaths": 2,
+   "hist": [
+    399,
+    150,
+    200,
+    310
+   ]
+  },
+  {
+   "seed": 50270,
+   "cleared": true,
+   "steps": 1285,
+   "score": 3100.0,
+   "eaten": 154,
+   "deaths": 2,
+   "hist": [
+    475,
+    209,
+    238,
+    363
+   ]
+  },
+  {
+   "seed": 50271,
+   "cleared": false,
+   "steps": 1035,
+   "score": 4010.0,
+   "eaten": 145,
+   "deaths": 2,
+   "hist": [
+    363,
+    168,
+    213,
+    291
+   ]
+  },
+  {
+   "seed": 50272,
+   "cleared": false,
+   "steps": 1075,
+   "score": 2950.0,
+   "eaten": 149,
+   "deaths": 2,
+   "hist": [
+    335,
+    203,
+    244,
+    293
+   ]
+  },
+  {
+   "seed": 50273,
+   "cleared": false,
+   "steps": 979,
+   "score": 2500.0,
+   "eaten": 138,
+   "deaths": 2,
+   "hist": [
+    320,
+    161,
+    223,
+    275
+   ]
+  },
+  {
+   "seed": 50274,
+   "cleared": false,
+   "steps": 761,
+   "score": 2170.0,
+   "eaten": 115,
+   "deaths": 2,
+   "hist": [
+    255,
+    129,
+    151,
+    226
+   ]
+  },
+  {
+   "seed": 50275,
+   "cleared": false,
+   "steps": 1025,
+   "score": 2260.0,
+   "eaten": 134,
+   "deaths": 2,
+   "hist": [
+    408,
+    166,
+    146,
+    305
+   ]
+  },
+  {
+   "seed": 50276,
+   "cleared": false,
+   "steps": 651,
+   "score": 1230.0,
+   "eaten": 95,
+   "deaths": 2,
+   "hist": [
+    229,
+    117,
+    116,
+    189
+   ]
+  },
+  {
+   "seed": 50277,
+   "cleared": false,
+   "steps": 1183,
+   "score": 2330.0,
+   "eaten": 147,
+   "deaths": 2,
+   "hist": [
+    342,
+    205,
+    266,
+    370
+   ]
+  },
+  {
+   "seed": 50278,
+   "cleared": false,
+   "steps": 1039,
+   "score": 2720.0,
+   "eaten": 146,
+   "deaths": 2,
+   "hist": [
+    385,
+    182,
+    139,
+    333
+   ]
+  },
+  {
+   "seed": 50279,
+   "cleared": false,
+   "steps": 1123,
+   "score": 3170.0,
+   "eaten": 151,
+   "deaths": 2,
+   "hist": [
+    406,
+    205,
+    205,
+    307
+   ]
+  },
+  {
+   "seed": 50280,
+   "cleared": false,
+   "steps": 1211,
+   "score": 2640.0,
+   "eaten": 148,
+   "deaths": 2,
+   "hist": [
+    459,
+    200,
+    187,
+    365
+   ]
+  },
+  {
+   "seed": 50281,
+   "cleared": false,
+   "steps": 1023,
+   "score": 5560.0,
+   "eaten": 144,
+   "deaths": 2,
+   "hist": [
+    401,
+    146,
+    207,
+    269
+   ]
+  },
+  {
+   "seed": 50282,
+   "cleared": true,
+   "steps": 1553,
+   "score": 3900.0,
+   "eaten": 154,
+   "deaths": 1,
+   "hist": [
+    541,
+    226,
+    285,
+    501
+   ]
+  },
+  {
+   "seed": 50283,
+   "cleared": false,
+   "steps": 1063,
+   "score": 4060.0,
+   "eaten": 150,
+   "deaths": 2,
+   "hist": [
+    361,
+    170,
+    243,
+    289
+   ]
+  },
+  {
+   "seed": 50284,
+   "cleared": false,
+   "steps": 1051,
+   "score": 2680.0,
+   "eaten": 142,
+   "deaths": 2,
+   "hist": [
+    412,
+    123,
+    213,
+    303
+   ]
+  },
+  {
+   "seed": 50285,
+   "cleared": false,
+   "steps": 747,
+   "score": 2540.0,
+   "eaten": 112,
+   "deaths": 2,
+   "hist": [
+    237,
+    153,
+    151,
+    206
+   ]
+  },
+  {
+   "seed": 50286,
+   "cleared": false,
+   "steps": 987,
+   "score": 2740.0,
+   "eaten": 138,
+   "deaths": 2,
+   "hist": [
+    331,
+    192,
+    178,
+    286
+   ]
+  },
+  {
+   "seed": 50287,
+   "cleared": false,
+   "steps": 825,
+   "score": 1990.0,
+   "eaten": 117,
+   "deaths": 2,
+   "hist": [
+    279,
+    139,
+    154,
+    253
+   ]
+  },
+  {
+   "seed": 50288,
+   "cleared": false,
+   "steps": 1075,
+   "score": 4190.0,
+   "eaten": 153,
+   "deaths": 2,
+   "hist": [
+    430,
+    150,
+    218,
+    277
+   ]
+  },
+  {
+   "seed": 50289,
+   "cleared": false,
+   "steps": 839,
+   "score": 2640.0,
+   "eaten": 122,
+   "deaths": 2,
+   "hist": [
+    337,
+    159,
+    137,
+    206
+   ]
+  },
+  {
+   "seed": 50290,
+   "cleared": false,
+   "steps": 619,
+   "score": 2540.0,
+   "eaten": 106,
+   "deaths": 2,
+   "hist": [
+    242,
+    81,
+    154,
+    142
+   ]
+  },
+  {
+   "seed": 50291,
+   "cleared": false,
+   "steps": 817,
+   "score": 2320.0,
+   "eaten": 120,
+   "deaths": 2,
+   "hist": [
+    288,
+    116,
+    168,
+    245
+   ]
+  },
+  {
+   "seed": 50292,
+   "cleared": false,
+   "steps": 797,
+   "score": 1780.0,
+   "eaten": 126,
+   "deaths": 2,
+   "hist": [
+    265,
+    148,
+    125,
+    259
+   ]
+  },
+  {
+   "seed": 50293,
+   "cleared": false,
+   "steps": 635,
+   "score": 1860.0,
+   "eaten": 98,
+   "deaths": 2,
+   "hist": [
+    224,
+    132,
+    103,
+    176
+   ]
+  },
+  {
+   "seed": 50294,
+   "cleared": false,
+   "steps": 961,
+   "score": 3300.0,
+   "eaten": 144,
+   "deaths": 2,
+   "hist": [
+    322,
+    167,
+    197,
+    275
+   ]
+  },
+  {
+   "seed": 50295,
+   "cleared": true,
+   "steps": 1143,
+   "score": 2100.0,
+   "eaten": 154,
+   "deaths": 2,
+   "hist": [
+    406,
+    221,
+    215,
+    301
+   ]
+  },
+  {
+   "seed": 50296,
+   "cleared": false,
+   "steps": 947,
+   "score": 2240.0,
+   "eaten": 138,
+   "deaths": 2,
+   "hist": [
+    341,
+    126,
+    201,
+    279
+   ]
+  },
+  {
+   "seed": 50297,
+   "cleared": false,
+   "steps": 911,
+   "score": 2970.0,
+   "eaten": 151,
+   "deaths": 2,
+   "hist": [
+    324,
+    163,
+    167,
+    257
+   ]
+  },
+  {
+   "seed": 50298,
+   "cleared": false,
+   "steps": 1153,
+   "score": 3880.0,
+   "eaten": 152,
+   "deaths": 2,
+   "hist": [
+    413,
+    236,
+    195,
+    309
+   ]
+  },
+  {
+   "seed": 50299,
+   "cleared": false,
+   "steps": 731,
+   "score": 2110.0,
+   "eaten": 113,
+   "deaths": 2,
+   "hist": [
+    283,
+    140,
+    118,
+    190
+   ]
+  }
+ ],
+ "source": "runs/m6/train_r2/best.pt",
+ "seeds_0_99": {
+  "n": 100,
+  "clear_rate": 0.08,
+  "clear_se": 0.027265992434429072,
+  "score": 2812.5,
+  "score_se": 84.98786306695132,
+  "eaten": 138.61,
+  "eaten_se": 1.5793423385137948,
+  "deaths": 1.97,
+  "action_frac": [
+   0.361,
+   0.161,
+   0.187,
+   0.29
+  ],
+  "steps": 1021.96,
+  "step": 10000,
+  "secs": 321
+ }
+}
