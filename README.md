@@ -39,7 +39,9 @@ cd ~/HermesWorkspace/mspacman-clear
 | M4 tuning | `WORKERS=16 .venv/bin/python scripts/m4_tune.py`, then `CFG="$(cat runs/m4/best.json)" TAG=m4 .venv/bin/python scripts/m3_eval.py` | `runs/m4/trials.jsonl`, `best.json`, `m4_eval.json` |
 
 | M4 refine | `WORKERS=16 .venv/bin/python scripts/m4_refine.py` (extends the w_g grid around `best.json`) | `runs/m4/refine.log` |
-| bigger M1 model + eval | `scripts/m1_big_then_eval.sh` | `runs/m1_big/`, `runs/m4/m4big_eval.log` |
+| bigger M1 model + eval | `scripts/m1_big_then_eval.sh` | `runs/m1_big/` (now moved to `runs/m1/`), `runs/m4/m4big_eval.log` |
+| board-clear video | `.venv/bin/python scripts/video_clear.py` (needs pillow, imageio, imageio-ffmpeg) | `runs/videos/board_clear_seed<N>.mp4` |
+| failure analysis | `N=320 .venv/bin/python scripts/failure_analysis.py` | `runs/analysis/summary.json`, `death_heatmap.png` |
 
 Long runs go in tmux session `msclear`, one window per job, output `tee -a` to the log and
 `runs/LATEST.log` pointing at the current job's log:
@@ -56,5 +58,9 @@ tail -F runs/LATEST.log
 - Level byte `ram[101]`: 20, 42, 64 on boards 1, 2, 3.
 - Frightened: `ram[1..4]` bit 7 per ghost (99.8 % vs sprite colour); `ram[116]` is the global frightened timer
   (counts down 1 per 8 frames).
+- Default model `runs/m1/model.pkl` = the 16 x 1M-decision model (old 16 x 300k model kept in `runs/m1_300k/`).
+  Best config with it: 300 check seeds 0.773 ± 0.024 (300k model 0.687 ± 0.027, ~2.4 SE better);
+  seeds 0..99 0.620 ± 0.049 (300k model 0.590 ± 0.049, within noise). Items 148.7/154, score 4031 ± 116, deaths 1.51.
+- Video: `scripts/video_clear.py` -> `runs/videos/`; failure analysis: `scripts/failure_analysis.py` -> `runs/analysis/`.
 - M1 tables are the only learned artifact: transition model + GVFs from ~5M decisions of random play with ghosts
   pinned (6 min on 16 cores). The M3 agent combines them online; no emulator lookahead at play time.
