@@ -1,0 +1,75 @@
+{
+ "games": 320,
+ "clears": 256,
+ "deaths": 474,
+ "unlocated": 0,
+ "deaths_by_killer": {
+  "sue": 48,
+  "pinky": 120,
+  "blinky": 237,
+  "inky": 69
+ },
+ "deaths_by_phase_items_left": {
+  "154-121": 5,
+  "120-81": 45,
+  "80-41": 120,
+  "40-11": 176,
+  "10-1": 128
+ },
+ "failed_games_by_items_left": {
+  "154-121": 0,
+  "120-81": 0,
+  "80-41": 5,
+  "40-11": 24,
+  "10-1": 35
+ },
+ "failed_items_left_median": 9.0,
+ "trapped": 134,
+ "during_fright": 13,
+ "within_10_of_fright_end": 8,
+ "within_20_of_fright_end": 15,
+ "at_junction": 45,
+ "in_corridor": 429,
+ "power_left_at_death": {
+  "0": 171,
+  "1": 157,
+  "2": 98,
+  "3": 41,
+  "4": 7
+ },
+ "nearest_steps_median": 4.2,
+ "top_death_tiles": [
+  [
+   "134,50",
+   30
+  ],
+  [
+   "118,134",
+   22
+  ],
+  [
+   "158,158",
+   19
+  ],
+  [
+   "42,50",
+   16
+  ],
+  [
+   "58,2",
+   14
+  ],
+  [
+   "118,2",
+   13
+  ],
+  [
+   "42,2",
+   13
+  ],
+  [
+   "134,2",
+   11
+  ]
+ ]
+}

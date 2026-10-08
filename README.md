@@ -42,6 +42,8 @@ cd ~/HermesWorkspace/mspacman-clear
 | bigger M1 model + eval | `scripts/m1_big_then_eval.sh` | `runs/m1_big/` (now moved to `runs/m1/`), `runs/m4/m4big_eval.log` |
 | board-clear video | `.venv/bin/python scripts/video_clear.py` (needs pillow, imageio, imageio-ffmpeg) | `runs/videos/board_clear_seed<N>.mp4` |
 | failure analysis | `N=320 .venv/bin/python scripts/failure_analysis.py` | `runs/analysis/summary.json`, `death_heatmap.png` |
+| M5 fixes ablation | `scripts/tmux_job.sh m5 runs/m5/ablation.log 'bash scripts/m5_run_all.sh'` (resumable; skips configs already in `ablation.jsonl`) | `runs/m5/ablation.jsonl`, `ablation.md`, `best.json`, then `runs/analysis_m5/` |
+| M5 video | `CFG="$(cat configs/hra_best.json)" TAG=_m5 .venv/bin/python scripts/video_clear.py` | `runs/videos/board_clear_m5_seed<N>.mp4` |
 
 Long runs go in tmux session `msclear`, one window per job, output `tee -a` to the log and
 `runs/LATEST.log` pointing at the current job's log:
@@ -64,3 +66,23 @@ tail -F runs/LATEST.log
 - Video: `scripts/video_clear.py` -> `runs/videos/`; failure analysis: `scripts/failure_analysis.py` -> `runs/analysis/`.
 - M1 tables are the only learned artifact: transition model + GVFs from ~5M decisions of random play with ghosts
   pinned (6 min on 16 cores). The M3 agent combines them online; no emulator lookahead at play time.
+
+## M5: endgame / corridor-trap / Blinky fixes
+Flags in `HRAConfig` (all off by default). **Default config: `configs/hra_best.json`** (M4 best + endgame + light escape).
+- Endgame (`eg_n`, `eg_m0`, `eg_tau`, `eg_floor`): with ≤ `eg_n` items left, the pellet head targets dots by
+  route safety, i.e. the minimum over cells on the greedy route of ghost arrival time minus Ms. Pac-Man arrival time.
+  `pp_hold`: keep the last power pellet until ≤ `pp_hold` items are left.
+- Escape (`esc_w`, `esc_slack`): softly penalise a move if a non-frightened ghost reaches the next junction first.
+- Blinky (`blinky_w`, `blinky_lead`): larger weight on Blinky, or aim at a point L steps ahead of him.
+
+Check seeds 20000–20299 (full table: `docs/m5_ablation.md`): baseline 0.773 ± 0.024; endgame eg_n=40 + pp_hold=15
+0.780; escape esc_w=0.3, slack 0 0.787 (stronger escape hurts: esc_w=2, slack 2 gave 0.377); Blinky never beat the
+baseline (best: lead 4, 0.763); endgame + escape **0.813 ± 0.023**.
+
+| config | held-out 50000–50299 | seeds 0–99 | items | score | deaths |
+|---|---|---|---|---|---|
+| M4 baseline | 0.693 ± 0.027 | 0.620 ± 0.049 | 149.1 | 4116 | 1.45 |
+| M5 best (endgame + escape) | **0.797 ± 0.023** | **0.800 ± 0.040** | 151.1 | 4080 | 1.30 |
+
+Failure analysis (same 320 seeds, 40000+): clears 244 → 256, deaths 544 → 474, trapped deaths 197 → 134,
+deaths with ≤ 40 items left 374 → 304. Blinky still causes half of all deaths (270 → 237).
