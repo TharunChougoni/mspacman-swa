@@ -1,0 +1,22 @@
+{
+ "games": 480,
+ "transitions": 503518,
+ "clear_rate": 0.09375,
+ "transitions_from_clears": 58863,
+ "frac_from_clears": 0.1169034672047474,
+ "items": 135.87708333333333,
+ "score": 2993.7291666666665,
+ "deaths": 1.96875,
+ "disk_gb": 0.135624656,
+ "by_sticky": {
+  "0.25": {
+   "games": 480,
+   "clear_rate": 0.09375
+  }
+ },
+ "by_eps": {
+  "0.0": 0.09375
+ },
+ "agree": 0.8121750660044895,
+ "student": "runs/m6/train_r1/best.pt"
+}
