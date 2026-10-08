@@ -61,7 +61,7 @@ EVAL_WORKERS = int(E("EVAL_WORKERS", "8"))
 LOADER = int(E("LOADER_WORKERS", "6"))
 DEADLINE = float(E("DEADLINE", "0")) or float("inf")
 SEED = int(E("SEED", "0"))
-TEMP_MAX = int(E("TEMP_MAX", "88"))
+TEMP_MAX = int(E("TEMP_MAX", "0"))          # 0 = no thermal pause (the driver throttles the GPU itself)
 ARCH = dict(n_actions=4, d=512, n_heads=8, n_layers=2, window=W, lam=0.05)
 
 
@@ -253,7 +253,7 @@ def main():
                 f"best eval {best_s}  "
                 f"ETA {(STEPS - step) / max(sps, 1e-9) / 60:.0f} min")
             acc_t = torch.zeros(4, device=dev); n_acc = 0; t_log = now
-            while temp >= TEMP_MAX:
+            while TEMP_MAX and temp >= TEMP_MAX:
                 log(f"GPU at {temp}C >= {TEMP_MAX}C: pausing 30 s"); time.sleep(30); temp = gpu_temp()
         if now - t_ck >= CKPT_S:
             save(); t_ck = now

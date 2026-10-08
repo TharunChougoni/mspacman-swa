@@ -106,15 +106,17 @@ def _shard(i):
 def summarize():
     from msclear.demos import read_shard  # noqa: F401
     eps = []
-    nbytes = 0
+    nbytes = 0; hit = n_mv = 0
     for p in sorted(OUT.glob("shard_*.npz")):
         if p.name.endswith(".tmp.npz"):
             continue
         nbytes += p.stat().st_size
         with np.load(p) as z:
             eps += json.loads(bytes(z["episodes"]).decode())
+            mv = z["moved"] == 1
+            hit += int(z["equiv"][np.arange(len(mv)), z["act"]][mv].sum()); n_mv += int(mv.sum())
     n = np.array([e["len"] for e in eps]); cl = np.array([e["cleared"] for e in eps])
-    agree = None
+    agree = hit / max(n_mv, 1)        # executed action in HRA's equivalent set (on-policy agreement in DAgger)
     s = dict(games=len(eps), transitions=int(n.sum()), clear_rate=float(cl.mean()),
              transitions_from_clears=int(n[cl].sum()), frac_from_clears=float(n[cl].sum() / n.sum()),
              items=float(np.mean([e["eaten"] for e in eps])), score=float(np.mean([e["score"] for e in eps])),

@@ -46,7 +46,7 @@ def main():
     import imageio.v2 as imageio
     st = Student(m6eval._net(CK))
     g = PixelGame(sticky=0.25)
-    path = OUT / f"board_clear_pixel_m6_seed{seed}.mp4"
+    path = OUT / f"board_clear_pixel_m6{('_' + os.environ['TAG']) if os.environ.get('TAG') else ''}_seed{seed}.mp4"
     wr = imageio.get_writer(path, fps=30, codec="libx264", quality=7, macro_block_size=1)
     S = 3; fc = [0]
 

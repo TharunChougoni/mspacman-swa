@@ -86,3 +86,22 @@ baseline (best: lead 4, 0.763); endgame + escape **0.813 ± 0.023**.
 
 Failure analysis (same 320 seeds, 40000+): clears 244 → 256, deaths 544 → 474, trapped deaths 197 → 134,
 deaths with ≤ 40 items left 374 → 304. Blinky still causes half of all deaths (270 → 237).
+
+## M6: pixel student distilled from HRA (overnight, resumable)
+SWA-v2 net (CNN token per 4x84x84 stack, causal recency-biased attention over W=8 tokens, dueling head; ported
+from the archived mspacman-rainbow) learns HRA's actions from pixels only. Pixel pipeline `msclear/pixenv.py`:
+ALE v5 at frameskip=1 underneath, 4 frames per agent step done once in the env, max of frames 3-4, 84x84 gray,
+4-stack (tested frame-for-frame against gymnasium AtariPreprocessing; one step = exactly 4 ALE frames).
+Label = the set of actions equivalent to HRA's choice (same next state in the M1 model); loss = set
+cross-entropy + DQfD large margin; EMA weights for eval. Stages: HRA demos (1.63M steps) -> BC -> DAgger rounds
+(student acts, HRA labels) -> 300-game confirm -> video. Alignment check: `scripts/m6_check_alignment.py`.
+
+**Start / resume after a power cut or reboot (one command; finished stages are skipped, training resumes from
+its last 5-min checkpoint, auto-stop at `DEADLINE_ISO` in `scripts/m6_run.sh`):**
+```bash
+cd ~/HermesWorkspace/mspacman-clear && scripts/tmux_job.sh m6 runs/m6/driver.log 'bash scripts/m6_run.sh'
+```
+Watch: `tmux attach -t msclear` (window `m6`) or `tail -F runs/m6/driver.log`; metrics in
+`runs/m6/<phase>/metrics.jsonl`; stage summaries are committed to `docs/m6/`. There is deliberately no
+@reboot/cron/systemd hook (nothing outside the repo is changed); after a reboot run the command above.
+`scripts/m6_run.sh` retries a failed driver up to 3 times. Best pixel checkpoint: `runs/m6/best.pt`.
