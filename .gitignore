@@ -1,0 +1,8 @@
+runs/
+seeds/*.pkl
+*.npz
+*.pt
+.venv/
+__pycache__/
+.pytest_cache/
+.uv-cache/
