@@ -17,15 +17,16 @@ import numpy as np
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from msclear.maze import Model, collect, teleported  # noqa: E402
 
-OUT = Path("runs/m1"); OUT.mkdir(parents=True, exist_ok=True)
+OUT = Path(os.environ.get("OUT", "runs/m1")); OUT.mkdir(parents=True, exist_ok=True)
 W = int(os.environ.get("WORKERS", "12")); N = int(os.environ.get("N_DEC", "300000"))
 log = lambda *a: print(*a, flush=True)  # noqa: E731
 
 t0 = time.time()
-trans, flips = collect(workers=W, n_dec=N, seed0=0)
+log(f"M1 start: {W} workers x {N:,} decisions (+ validation {W} x {N // 4:,})")
+trans, flips = collect(workers=W, n_dec=N, seed0=0, progress=log)
 log(f"collected {W}x{N} decisions in {time.time() - t0:.0f}s: {len(trans)} distinct transitions, {sum(flips.values())} dot flips, {collect.teleports} teleport steps dropped")
 t1 = time.time()
-vtrans, vflips = collect(workers=W, n_dec=max(N // 4, 1000), seed0=1000)   # independent validation run
+vtrans, vflips = collect(workers=W, n_dec=max(N // 4, 1000), seed0=1000, progress=log)   # independent validation run
 log(f"validation run {W}x{N // 4} in {time.time() - t1:.0f}s")
 m = Model(trans, flips)
 log(f"model: {m.nS} states (x,y,heading), {len(m.positions)} positions, {len(m.cells)} cells, {len(m.o_sa)} outcomes; eat offsets {dict(m.offsets)}")
@@ -50,7 +51,7 @@ log(f"eat zones: {ok}/{tot} validation dot flips inside the predicted zone ({ok 
 nd = len(m.zones)      # 150 dots + 4 power pellets
 log(f"power pellet zones: sizes {[len(z) for z in m.zones[m.n_dots:]]}")
 t2 = time.time(); Gd, hd = m.solve(targets=range(nd), log=log); log(f"dot+power GVFs: {len(hd)} sweeps, final max change {hd[-1]:.2e}, {time.time() - t2:.0f}s")
-t3 = time.time(); Gc, hc = m.solve(targets=range(nd, m.nT), log=None); log(f"cell GVFs: {len(hc)} sweeps, final max change {hc[-1]:.2e}, {time.time() - t3:.0f}s")
+t3 = time.time(); Gc, hc = m.solve(targets=range(nd, m.nT), log=log); log(f"cell GVFs: {len(hc)} sweeps, final max change {hc[-1]:.2e}, {time.time() - t3:.0f}s")
 
 # BFS cross-check on the frame-level position graph
 adj = collections.defaultdict(set)
@@ -78,6 +79,7 @@ for k in range(len(m.starts)):
     st = m.starts[k]; en = m.starts[k + 1] if k + 1 < len(m.starts) else len(m.o_sa)
     idx_sa[int(m.o_sa[st])] = (st, en)
 full_states = [i for i in range(m.nS) if (m.sa_count[i] > 0).all()]
+log("BFS cross-check ...")
 for t in range(m.n_dots):
     d = bfs(list(m.zones[t]))
     for si in rng.choice(full_states, size=min(300, len(full_states)), replace=False):
@@ -104,4 +106,4 @@ m.save(OUT / "model.pkl", Gd=Gd.astype(np.float32), Gc=Gc.astype(np.float16))
 json.dump(dict(workers=W, n_dec=N, nS=m.nS, positions=len(m.positions), cells=len(m.cells), cov_any=cov_any, cov_full=cov_full,
                sa_frac=sa_frac, zone_recall=ok / max(tot, 1), dot_sweeps=len(hd), dot_final=hd[-1], cell_sweeps=len(hc), cell_final=hc[-1],
                bfs_agree=agree / max(n, 1), bfs_n=n, bfs_corr=r, seconds=time.time() - t0), open(OUT / "m1.json", "w"), indent=1)
-log(f"saved runs/m1/model.pkl; total {time.time() - t0:.0f}s")
+log(f"saved {OUT}/model.pkl; total {time.time() - t0:.0f}s")

@@ -14,6 +14,7 @@ from __future__ import annotations
 
 import math
 import pickle
+import time
 from dataclasses import asdict, dataclass, field
 
 import numpy as np
@@ -34,6 +35,7 @@ class HRAConfig:
     pp_weight: float = 1.0            # weight of power-pellet targets in the pellet head (dots = 1)
     kappa: float = 0.01
     fright_margin: float = 1.0        # chase a blue ghost only if timer (decisions) > margin * est. steps to it
+    lead: float = 0.0                 # also score each normal ghost at its position extrapolated `lead` decisions ahead
     max_steps: int = 6000
 
     def name(self):
@@ -66,7 +68,7 @@ class HRAAgent:
         self.reset()
 
     def reset(self):
-        self.n = {}; self.h = 2
+        self.n = {}; self.h = 2; self.prev_g = None
 
     def act(self, ram, h):
         T, c = self.T, self.cfg
@@ -83,11 +85,18 @@ class HRAAgent:
             p = np.zeros(4)
         q = p.copy()
         fr = R.frightened(ram); timer = int(ram[R.FRIGHT_TIMER])
+        gpos = [(int(ram[R.GHOST_X[gi]]), int(ram[R.GHOST_Y[gi]])) for gi in range(4)]
         for gi in range(4):
-            ci = T.cell_index(ram[R.GHOST_X[gi]], ram[R.GHOST_Y[gi]])
+            ci = T.cell_index(*gpos[gi])
             if ci is None:
                 continue
             gc = np.clip(T.Gc[si][:, ci], 1e-6, 1.0)
+            if c.lead and self.prev_g is not None and not fr[gi]:
+                vx, vy = gpos[gi][0] - self.prev_g[gi][0], gpos[gi][1] - self.prev_g[gi][1]
+                if abs(vx) + abs(vy) <= 8:
+                    cj = T.cell_index(gpos[gi][0] + c.lead * vx, gpos[gi][1] + c.lead * vy)
+                    if cj is not None:
+                        gc = np.maximum(gc, np.clip(T.Gc[si][:, cj], 1e-6, 1.0))
             if fr[gi]:
                 steps = math.log(gc.max()) / math.log(0.99)
                 if 2 * timer > c.fright_margin * steps:      # ram[116] drops 1 per 8 frames = 2 decisions
@@ -95,6 +104,7 @@ class HRAAgent:
                 continue
             for k in self.kg:
                 q -= (c.w_g / len(self.kg)) * gc ** k
+        self.prev_g = gpos
         q -= c.kappa * np.array([self.n.get((si, b), 0) for b in range(4)])
         a = int(np.argmax(q))
         self.n[(si, a)] = self.n.get((si, a), 0) + 1
@@ -146,14 +156,23 @@ def _job(args):
     return run_episode(_T, cfg, seed, sticky)
 
 
-def evaluate(cfg: HRAConfig, seeds, workers=12, sticky=0.25, path="runs/m1/model.pkl", pool=None):
+def evaluate(cfg: HRAConfig, seeds, workers=12, sticky=0.25, path="runs/m1/model.pkl", pool=None, progress=None, every=30.0):
     import multiprocessing as mp
     jobs = [(cfg, s, sticky) for s in seeds]
-    if pool is not None:
-        res = pool.map(_job, jobs)
-    else:
-        with mp.Pool(workers, initializer=_init, initargs=(path,)) as p:
-            res = p.map(_job, jobs)
+    own = pool is None
+    if own:
+        pool = mp.Pool(workers, initializer=_init, initargs=(path,))
+    res = []; t0 = time.time(); last = t0
+    for r in pool.imap_unordered(_job, jobs):
+        res.append(r)
+        if progress and (time.time() - last >= every or len(res) == len(jobs)):
+            last = time.time(); el = last - t0; n = len(res)
+            progress(f"  episodes {n}/{len(jobs)}  clears {sum(x['cleared'] for x in res)} ({np.mean([x['cleared'] for x in res]):.0%})  "
+                     f"items eaten {np.mean([x['eaten'] for x in res]):.1f}/154  score {np.mean([x['score'] for x in res]):.0f}  "
+                     f"elapsed {el:.0f}s  ETA {el / n * (len(jobs) - n):.0f}s")
+    if own:
+        pool.close()
+    res.sort(key=lambda r: r["seed"])
     return summarize(res), res
 
 

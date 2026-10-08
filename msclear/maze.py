@@ -111,12 +111,15 @@ class PinnedGame:
             self.ale.setRAM(R.POWER, int(r[R.POWER]) | 0x3C)
 
 
-def _collect(seed, n_dec, q, p_switch=0.2):
+def _collect(seed, n_dec, q, p_switch=0.2, counter=None):
     g = PinnedGame(seed=seed); rng = np.random.default_rng(seed)
     trans = collections.Counter(); flips = collections.Counter(); a = 3
     stats = dict(teleports=0, lives=[])
     s = (*g.pos(), g.h)
-    for _ in range(n_dec):
+    for it in range(n_dec):
+        if counter is not None and it % 5000 == 4999:
+            with counter.get_lock():
+                counter.value += 5000
         if rng.random() < p_switch:
             a = int(rng.integers(1, 5))
         vis, fl, _ = g.step(a)
@@ -133,13 +136,25 @@ def _collect(seed, n_dec, q, p_switch=0.2):
     q.put((trans, flips, stats))
 
 
-def collect(workers=12, n_dec=200_000, seed0=0):
-    q = mp.Queue()
-    ps = [mp.Process(target=_collect, args=(seed0 + w, n_dec, q)) for w in range(workers)]
+def collect(workers=12, n_dec=200_000, seed0=0, progress=None, every=30.0):
+    """progress: callable(str) for a status line every `every` seconds (decisions done, rate, ETA)."""
+    import queue as _queue
+    q = mp.Queue(); counter = mp.Value("q", 0); t0 = time.time()
+    ps = [mp.Process(target=_collect, args=(seed0 + w, n_dec, q, 0.2, counter)) for w in range(workers)]
     [p.start() for p in ps]
-    trans, flips = collections.Counter(), collections.Counter(); tel = 0
-    for _ in ps:
-        t, f, st = q.get(); trans.update(t); flips.update(f); tel += st["teleports"]
+    trans, flips = collections.Counter(), collections.Counter(); tel = 0; got = 0; last = t0
+    total = workers * n_dec
+    while got < len(ps):
+        try:
+            t, f, st = q.get(timeout=2.0)
+        except _queue.Empty:
+            t = None
+        if t is not None:
+            trans.update(t); flips.update(f); tel += st["teleports"]; got += 1
+        if progress and time.time() - last >= every:
+            last = time.time(); done = counter.value; el = last - t0; rate = done / max(el, 1e-9)
+            progress(f"  collect: {done:,}/{total:,} decisions ({100 * done / total:.0f}%), {rate:,.0f}/s, "
+                     f"elapsed {el / 60:.1f} min, ETA {(total - done) / max(rate, 1e-9) / 60:.1f} min")
     collect.teleports = tel
     [p.join() for p in ps]
     return trans, flips
@@ -206,6 +221,7 @@ class Model:
         self.sa_seen = self.o_sa[self.starts]
 
     def solve(self, targets=None, tol=1e-3, max_iter=2000, log=None):
+        t_start = time.time()
         """Value iteration for the given target indices (default: all). Returns G [nS, 4, nT'] and history."""
         T = np.arange(self.nT) if targets is None else np.asarray(targets)
         col = {t: j for j, t in enumerate(T)}
@@ -225,7 +241,7 @@ class Model:
             Gn[self.sa_seen] = np.add.reduceat(tgt, self.starts, axis=0)
             delta = float(np.abs(Gn - G).max()); G = Gn; hist.append(delta)
             if log and it % 25 == 0:
-                log(f"  sweep {it}: max change {delta:.2e}")
+                log(f"  sweep {it}: max change {delta:.2e} (target 1e-3), elapsed {time.time() - t_start:.0f}s")
             if delta < tol:
                 break
         return G.reshape(self.nS, 4, -1), hist
