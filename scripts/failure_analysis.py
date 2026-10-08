@@ -26,7 +26,7 @@ from msclear.env import INTRO_FRAMES, make_env  # noqa: E402
 from msclear.hra import HRAAgent, HRAConfig, Tables  # noqa: E402
 from msclear.pngio import write_png  # noqa: E402
 
-OUT = Path("runs/analysis"); OUT.mkdir(parents=True, exist_ok=True)
+OUT = Path(os.environ.get("OUT", "runs/analysis")); OUT.mkdir(parents=True, exist_ok=True)
 TRAP = 6
 CTX = 4          # decisions before first contact used as the decision context
 _T = _cfg = None

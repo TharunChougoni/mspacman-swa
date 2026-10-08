@@ -36,7 +36,7 @@ from PIL import Image, ImageDraw  # noqa: E402
 import imageio.v2 as imageio  # noqa: E402
 
 env = make_env(frameskip=1, sticky=0.25); env.reset(seed=seed); ale = env.unwrapped.ale; aset = env.unwrapped._action_set
-path = OUT / f"board_clear_seed{seed}.mp4"
+path = OUT / f"board_clear{os.environ.get('TAG', '')}_seed{seed}.mp4"
 wr = imageio.get_writer(path, fps=30, codec="libx264", quality=7, macro_block_size=1)
 score = 0.0; fcount = 0; S = 3
 

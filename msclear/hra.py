@@ -36,10 +36,29 @@ class HRAConfig:
     kappa: float = 0.01
     fright_margin: float = 1.0        # chase a blue ghost only if timer (decisions) > margin * est. steps to it
     lead: float = 0.0                 # also score each normal ghost at its position extrapolated `lead` decisions ahead
+    # --- fix 1: endgame route safety + hold back the last power pellet ---
+    eg_n: int = 0                     # when <= eg_n items are left, weight each target by the safety of its route
+    eg_m0: float = 2.0                # route margin (ghost arrival - Ms. Pac-Man arrival, steps) considered safe
+    eg_tau: float = 1.5               # softness of the margin weight
+    eg_floor: float = 0.02            # minimum weight of an unsafe target
+    pp_hold: int = 0                  # if > 0: the LAST power pellet gets weight pp_hold_w until <= pp_hold items left
+    pp_hold_w: float = 0.05
+    # --- fix 2: escape route (corridor traps) ---
+    esc_w: float = 0.0                # penalty if a non-frightened ghost reaches the next junction first
+    esc_slack: float = 0.0            # ghost counts as first if D_ghost(J) <= k_pac(J) + slack
+    esc_tau: float = 1.0
+    esc_max: int = 30
+    # --- fix 3: Blinky ---
+    blinky_w: float = 1.0             # multiplier on Blinky's ghost head
+    blinky_lead: int = 0              # if > 0: Blinky threat at Ms. Pac-Man's position `blinky_lead` steps ahead per action
+    blinky_lead_w: float = 0.5
+    blinky_tau: float = 1.5
     max_steps: int = 6000
 
     def name(self):
-        return ",".join(f"{k}={v}" for k, v in asdict(self).items() if k != "max_steps")
+        """Only fields that differ from the defaults (short, readable)."""
+        d = HRAConfig.__dataclass_fields__
+        return ",".join(f"{k}={v}" for k, v in asdict(self).items() if k != "max_steps" and v != d[k].default) or "defaults"
 
 
 class Tables:
@@ -48,6 +67,69 @@ class Tables:
         self.m = D["model"]; self.Gd = D["Gd"]; self.Gc = D["Gc"].astype(np.float32)
         self.bits = np.array(self.m.dot_bits)
         self.cid = self.m.cid
+        self._build_walk()
+
+    def _build_walk(self):
+        """Most likely next state per (s, a), moving actions, junction cells, state->cell, ghost-state lookup."""
+        m = self.m; nS = m.nS
+        self.nxt = -np.ones((nS, 4), np.int64)
+        ends = np.r_[m.starts[1:], len(m.o_sa)]
+        for st, en in zip(m.starts, ends):
+            o = st + int(np.argmax(m.o_p[st:en])); sa = int(m.o_sa[st]); self.nxt[sa // 4, sa % 4] = int(m.o_next[o])
+        pos = np.array([(s[0], s[1]) for s in m.states])
+        self.scell = np.array([self.cid.get((x // 4, y // 4), -1) for x, y in pos])
+        self.moves = np.zeros((nS, 4), bool); self.mdir = -np.ones((nS, 4), np.int64)
+        cell_dirs = {}
+        for si in range(nS):
+            for a in range(4):
+                n2 = self.nxt[si, a]
+                if n2 >= 0 and tuple(pos[n2]) != tuple(pos[si]):
+                    d = maze.heading(tuple(pos[si]), tuple(pos[n2]), -1)
+                    self.moves[si, a] = True; self.mdir[si, a] = d
+                    cell_dirs.setdefault(self.scell[si], set()).add(d)
+        self.junction = np.zeros(len(self.m.cells), bool)
+        for c, ds in cell_dirs.items():
+            if c >= 0 and len(ds) >= 3:
+                self.junction[c] = True
+        self.pos_states = {}
+        for si, (x, y) in enumerate(pos):
+            self.pos_states.setdefault((int(x), int(y)), []).append(si)
+        self.cell_states = {}
+        for si, c in enumerate(self.scell):
+            self.cell_states.setdefault(int(c), []).append(si)
+
+    def ghost_state(self, x, y):
+        st = self.pos_states.get((int(x), int(y)))
+        if st:
+            return st
+        ci = self.cell_index(x, y)
+        return self.cell_states.get(ci) if ci is not None else None
+
+    def dist_from(self, states):
+        """Steps (0.99-GVF) from the best of `states` to every cell (vector over cells)."""
+        g = np.clip(self.Gc[states].max(axis=(0, 1)), 1e-9, 1.0)
+        return np.log(g) / math.log(0.99)
+
+    def walk(self, si, a, max_steps, stop_at_junction=True, steps=None):
+        """Follow action a, then keep going (same direction if possible, else any non-reverse move).
+        Returns list of (step k, cell) visited and the final state."""
+        out = []; s = si; d = self.mdir[si, a] if self.moves[si, a] else -1
+        if d < 0:
+            return out, si
+        s = self.nxt[si, a]; out.append((1, int(self.scell[s]))); k = 1; start_cell = self.scell[si]
+        rev = {0: 3, 3: 0, 1: 2, 2: 1}
+        while k < (steps or max_steps):
+            if stop_at_junction and self.scell[s] != start_cell and self.scell[s] >= 0 and self.junction[self.scell[s]]:
+                break
+            if self.moves[s, d]:
+                a2 = d
+            else:
+                c = [b for b in range(4) if self.moves[s, b] and self.mdir[s, b] != rev[d]]
+                if not c:
+                    break
+                a2 = c[0]
+            d = self.mdir[s, a2]; s = self.nxt[s, a2]; k += 1; out.append((k, int(self.scell[s])))
+        return out, s
 
     def cell_index(self, x, y):
         c = (int(x) // 4, int(y) // 4)
@@ -70,22 +152,70 @@ class HRAAgent:
     def reset(self):
         self.n = {}; self.h = 2; self.prev_g = None
 
+    def _route_weight(self, si, t, Dmin, max_steps=80):
+        """Safety of the greedy route to target t: min over route cells of (ghost arrival - Ms. Pac-Man arrival)."""
+        T, c = self.T, self.cfg; s = si; margin = 1e9
+        for k in range(1, max_steps + 1):
+            gq = T.Gd[s, :, t]
+            a = int(np.argmax(np.where(T.moves[s], gq, -1)))
+            if gq[a] <= 0 or not T.moves[s, a]:
+                break
+            s = T.nxt[s, a]; cj = T.scell[s]
+            if cj >= 0:
+                margin = min(margin, Dmin[cj] - k)
+            if gq[a] >= 0.995:              # reached the target on this step
+                break
+        if margin >= 1e8:
+            return 1.0
+        return max(c.eg_floor, 1.0 / (1.0 + math.exp(-(margin - c.eg_m0) / c.eg_tau)))
+
     def act(self, ram, h):
         T, c = self.T, self.cfg
         x, y = int(ram[R.PLAYER_X]), int(ram[R.PLAYER_Y])
         si = T.m.nearest_state(x, y, h)
         left = np.r_[R.bits(ram)[T.bits].astype(bool), R.power_left(ram)]
+        n_left = int(left.sum())
+        fr = R.frightened(ram); timer = int(ram[R.FRIGHT_TIMER])
+        gpos = [(int(ram[R.GHOST_X[gi]]), int(ram[R.GHOST_Y[gi]])) for gi in range(4)]
+        need_d = c.eg_n > 0 or c.esc_w > 0 or c.blinky_lead > 0
+        Dg = {}
+        if need_d:
+            for gi in range(4):
+                if not fr[gi]:
+                    st = T.ghost_state(*gpos[gi])
+                    if st:
+                        Dg[gi] = T.dist_from(st)
+        Dmin = np.min(np.stack(list(Dg.values())), 0) if Dg else None
         g = T.Gd[si][:, left]
         if g.shape[1]:
             is_pp = np.r_[np.zeros(len(T.bits), bool), np.ones(4, bool)][left]
-            gw = g * np.where(is_pp, c.pp_weight, 1.0)
+            wt = np.where(is_pp, c.pp_weight, 1.0)
+            if c.pp_hold and is_pp.sum() == 1 and n_left > c.pp_hold:
+                wt = np.where(is_pp, c.pp_hold_w, wt)
+            if c.eg_n and n_left <= c.eg_n and Dmin is not None:
+                idx = np.flatnonzero(left)
+                for j, t in enumerate(idx):
+                    wt[j] *= self._route_weight(si, t, Dmin)
+            gw = g * wt
             p = gw.max(1) + c.mix * gw.mean(1)
             p = p / max(p.max(), 1e-9)
         else:
             p = np.zeros(4)
         q = p.copy()
-        fr = R.frightened(ram); timer = int(ram[R.FRIGHT_TIMER])
-        gpos = [(int(ram[R.GHOST_X[gi]]), int(ram[R.GHOST_Y[gi]])) for gi in range(4)]
+        if c.esc_w and Dmin is not None:
+            for a in range(4):
+                path, _ = T.walk(si, a, c.esc_max)
+                if path:
+                    k, cj = path[-1]
+                    if cj >= 0:
+                        q[a] -= c.esc_w / (1 + math.exp((Dmin[cj] - k - c.esc_slack) / c.esc_tau))
+        if c.blinky_lead and 3 in Dg:
+            for a in range(4):
+                path, _ = T.walk(si, a, c.blinky_lead, stop_at_junction=False, steps=c.blinky_lead)
+                if path:
+                    k, cj = path[-1]
+                    if cj >= 0:
+                        q[a] -= c.blinky_lead_w / (1 + math.exp((Dg[3][cj] - k) / c.blinky_tau))
         for gi in range(4):
             ci = T.cell_index(*gpos[gi])
             if ci is None:
@@ -102,8 +232,9 @@ class HRAAgent:
                 if 2 * timer > c.fright_margin * steps:      # ram[116] drops 1 per 8 frames = 2 decisions
                     q += c.w_b * gc ** self.kb
                 continue
+            wg = c.w_g * (c.blinky_w if gi == 3 else 1.0)
             for k in self.kg:
-                q -= (c.w_g / len(self.kg)) * gc ** k
+                q -= (wg / len(self.kg)) * gc ** k
         self.prev_g = gpos
         q -= c.kappa * np.array([self.n.get((si, b), 0) for b in range(4)])
         a = int(np.argmax(q))
