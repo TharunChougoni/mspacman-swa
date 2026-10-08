@@ -1,6 +1,10 @@
 """M6 training: distil the HRA teacher into the SWA-v2 pixel student.
 
-loss = CE(Q, a_HRA) + LAM_M * DQfD large margin  [max_a (Q(s,a) + MARGIN*[a != a_HRA]) - Q(s,a_HRA)]
+The label is the SET A* of actions equivalent to HRA's choice (same next state in the M1 model;
+in corridors several inputs do the same thing and HRA's pick among them is an invisible tie-break).
+loss = set CE  -log sum_{a in A*} softmax(Q)_a
+     + LAM_M * DQfD large margin  max(0, max_{a not in A*} Q(s,a) + MARGIN - max_{a in A*} Q(s,a))
+Agreement = student argmax in A*.
 An EMA of the weights (decay EMA) is kept next to the raw weights; validation agreement is
 logged for both, pixel evals and best.pt use the EMA weights.
 
@@ -39,7 +43,7 @@ INIT = E("INIT", "")
 ARCHIVE = str(Path.home() / "HermesWorkspace/_archive/mspacman-rainbow-2026-10-08/ckpts/swa_rtc_attn_c3_300k.pt")
 STEPS = int(E("STEPS", "60000"))
 B = int(E("BATCH", "128"))
-W = int(E("W", "16"))
+W = int(E("W", "8"))
 LR = float(E("LR", "3e-4"))
 WD = float(E("WD", "0.01"))
 WARMUP = int(E("WARMUP", "1000"))
@@ -93,10 +97,14 @@ def lr_at(step):
     return LR * (LR_MIN + (1 - LR_MIN) * 0.5 * (1 + math.cos(math.pi * p)))
 
 
-def losses(Q, lab):
-    ce = F.cross_entropy(Q, lab)
-    marg = (Q + MARGIN * (1 - F.one_hot(lab, Q.shape[1]))).max(1).values - Q.gather(1, lab[:, None])[:, 0]
-    return ce, marg.mean()
+def losses(Q, eq):
+    big = 1e9
+    ce = torch.logsumexp(Q, 1) - torch.logsumexp(Q.masked_fill(~eq, -big), 1)
+    q_in = Q.masked_fill(~eq, -big).max(1).values
+    q_out = Q.masked_fill(eq, -big).max(1).values
+    marg = torch.where(eq.all(1), torch.zeros_like(q_in), F.relu(q_out + MARGIN - q_in))
+    hit = eq.gather(1, Q.argmax(1, keepdim=True))[:, 0].float()
+    return ce.mean(), marg.mean(), hit.mean()
 
 
 @torch.no_grad()
@@ -105,21 +113,25 @@ def validate(nets, val, vset, dev):
     out = {}
     for name, net in nets.items():
         net.eval()
-        hit, cl, ph = [], [], []
+        hit, cl, ph, exact, ssz = [], [], [], [], []
         ce_sum = 0.0
         for pi, rows in vset:
             meta = val.packs[pi].meta
             for k in range(0, len(rows), 256):
                 t = rows[k:k + 256]
-                f, lab, _ = val.gather(pi, t)
+                f, lab, eq = val.gather(pi, t)
                 with torch.autocast(dev.type, dtype=torch.bfloat16):
                     Q = net.forward_seq(torch.from_numpy(f).to(dev)).float()
-                lab_t = torch.from_numpy(lab).to(dev)
-                ce_sum += float(F.cross_entropy(Q, lab_t, reduction="sum"))
-                hit.append((Q.argmax(1) == lab_t).cpu().numpy())
+                eq_t = torch.from_numpy(eq).to(dev)
+                ce, _, _ = losses(Q, eq_t)
+                ce_sum += float(ce) * len(t)
+                am = Q.argmax(1)
+                hit.append(eq_t.gather(1, am[:, None])[:, 0].cpu().numpy())
+                exact.append((am.cpu().numpy() == lab)); ssz.append(eq.sum(1))
                 cl.append(meta["cleared"][t]); ph.append(meta["items"][t])
         hit, cl, ph = np.concatenate(hit), np.concatenate(cl), np.concatenate(ph)
-        out[name] = dict(agree=float(hit.mean()), ce=ce_sum / len(hit), agree_cleared=float(hit[cl].mean()) if cl.any() else None,
+        out[name] = dict(agree=float(hit.mean()), ce=ce_sum / len(hit), agree_exact=float(np.concatenate(exact).mean()),
+                         agree_decision=float(hit[np.concatenate(ssz) <= 2].mean()), agree_cleared=float(hit[cl].mean()) if cl.any() else None,
                          agree_failed=float(hit[~cl].mean()) if (~cl).any() else None,
                          agree_endgame=float(hit[ph <= 20].mean()) if (ph <= 20).any() else None)
         net.train()
@@ -192,17 +204,17 @@ def main():
     acc_t = torch.zeros(4, device=dev); n_acc = 0
     temp = gpu_temp(); stopped = "steps"
     net.train()
-    for f, lab, _q in loader:
+    for f, lab, eq in loader:
         step = st["step"]
         if time.time() > DEADLINE:
             stopped = "deadline"; break
         for g in opt.param_groups:
             g["lr"] = lr_at(step)
-        f = f.to(dev, non_blocking=True); lab = lab.to(dev, non_blocking=True)
+        f = f.to(dev, non_blocking=True); eq = eq.to(dev, non_blocking=True)
         with torch.autocast(dev.type, dtype=torch.bfloat16):
             Q = net.forward_seq(f)
         Q = Q.float()
-        ce, marg = losses(Q, lab)
+        ce, marg, hit = losses(Q, eq)
         loss = ce + LAM_M * marg
         opt.zero_grad(set_to_none=True)
         loss.backward()
@@ -213,7 +225,7 @@ def main():
             for pe, p in zip(ema.parameters(), net.parameters()):
                 pe.lerp_(p, 1 - d)
         st["step"] = step = step + 1
-        acc_t = acc_t + torch.stack([loss.detach(), ce.detach(), marg.detach(), (Q.argmax(1) == lab).float().mean()])
+        acc_t = acc_t + torch.stack([loss.detach(), ce.detach(), marg.detach(), hit.detach()])
         n_acc += 1
 
         if pending is not None and pending[2].ready():
@@ -222,7 +234,7 @@ def main():
             v = validate(dict(ema=ema, raw=net), val, vset, dev)
             st["vals"].append(dict(step=step, **v)); jwrite(dict(type="val", step=step, **v))
             log(f"VAL step {step}: agree ema {v['ema']['agree']:.3f} raw {v['raw']['agree']:.3f}  "
-                f"(cleared {v['ema']['agree_cleared']}, failed {v['ema']['agree_failed']}, endgame {v['ema']['agree_endgame']})  "
+                f"decision pts {v['ema']['agree_decision']:.3f}  exact-label {v['ema']['agree_exact']:.3f}  (cleared {v['ema']['agree_cleared']}, failed {v['ema']['agree_failed']}, endgame {v['ema']['agree_endgame']})  "
                 f"ce ema {v['ema']['ce']:.3f}")
         if step % EVAL_EVERY == 0 and pending is None:
             pending = start_eval(step)

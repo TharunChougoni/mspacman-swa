@@ -1,7 +1,9 @@
 """M6 rollouts and demo shards.
 
 `rollout` plays one game in PixelGame. The HRA teacher reads RAM every step and gives the
-label; the executed action is the teacher's (demos), a random action with prob eps
+label; besides the HRA action, `equiv` marks every action with the same next state in
+the M1 model (in a corridor a perpendicular input does the same as going on), so the label
+is a set, not an arbitrary tie-break. The executed action is the teacher's (demos), a random action with prob eps
 (noise injection), or the student's (DAgger / eval). Every step records the newest 84x84
 frame the student saw BEFORE acting, so obs t = frames[t-3..t] (clamped to the episode start).
 
@@ -20,7 +22,8 @@ import numpy as np
 from msclear.pixenv import PixelGame
 
 STEP_FIELDS = dict(frames=np.uint8, label=np.int8, act=np.int8, reward=np.float32, done=np.uint8,
-                   items=np.int16, lives=np.int8, lost=np.uint8, moved=np.uint8, q=np.float16, ep=np.int32)
+                   items=np.int16, lives=np.int8, lost=np.uint8, moved=np.uint8, q=np.float16, equiv=np.uint8,
+                   ram=np.uint8, h=np.int8, ep=np.int32)
 
 
 def rollout(game: PixelGame, seed: int, teacher=None, student=None, eps: float = 0.0, rng=None, record=True):
@@ -32,10 +35,11 @@ def rollout(game: PixelGame, seed: int, teacher=None, student=None, eps: float =
     rows = collections.defaultdict(list)
     rng = rng or np.random.default_rng(seed)
     while not game.done:
-        a_t, q = -1, np.zeros(4, np.float32)
+        a_t, q, eq = -1, np.zeros(4, np.float32), np.ones(4, np.uint8)
+        ram_t, h_t = game.ram.copy(), game.h
         if teacher is not None:
             a_t = teacher.act(game.ram, game.h) - 1
-            q = teacher.last_q
+            q, eq = teacher.last_q, teacher.last_equiv
         if student is not None:
             a = student.act(stack)
         elif eps and rng.random() < eps:
@@ -45,6 +49,7 @@ def rollout(game: PixelGame, seed: int, teacher=None, student=None, eps: float =
         if record:
             rows["frames"].append(game.frame.copy()); rows["label"].append(a_t); rows["act"].append(a)
             rows["items"].append(game.items_left()); rows["lives"].append(int(game.prev_lives)); rows["q"].append(q)
+            rows["equiv"].append(np.asarray(eq, np.uint8)); rows["ram"].append(ram_t); rows["h"].append(h_t)
         stack, r, done, info = game.step(a)
         if record:
             rows["reward"].append(r); rows["done"].append(done)

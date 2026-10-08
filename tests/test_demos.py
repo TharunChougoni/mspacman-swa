@@ -25,3 +25,5 @@ def test_rollout_and_shard_roundtrip(tmp_path):
     e2, a = read_shard(tmp_path / "s.npz")
     assert n == 120 and a["frames"].shape == (120, 84, 84) and e2[1]["start"] == 60
     assert np.array_equal(a["frames"][60], rows[1]["frames"][0]) and a["q"].shape == (120, 4)
+    assert a["equiv"].shape == (120, 4) and a["ram"].shape == (120, 128)
+    assert all(a["equiv"][i, a["label"][i]] for i in range(120))          # HRA's own action is in its set

@@ -239,6 +239,8 @@ class HRAAgent:
         q -= c.kappa * np.array([self.n.get((si, b), 0) for b in range(4)])
         a = int(np.argmax(q))
         self.n[(si, a)] = self.n.get((si, a), 0) + 1
+        nx = T.nxt[si]                      # actions with the same model next state are equivalent
+        self.last_equiv = ((nx == nx[a]) & (nx >= 0)) | (np.arange(4) == a)
         self.last_q = q
         return a + 1
 

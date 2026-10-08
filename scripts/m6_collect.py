@@ -94,7 +94,7 @@ def _shard(i):
                 def act(self, ram, h):
                     a = teacher.act(ram, h)
                     actor.teacher_a = a - 1
-                    self.last_q = teacher.last_q
+                    self.last_q, self.last_equiv = teacher.last_q, teacher.last_equiv
                     return a
             res, rows = rollout(game, seed, teacher=T2(), student=actor, rng=rng)
         eps_l.append(dict(res, sticky=sticky, eps=eps, mode=MODE, beta=BETA))

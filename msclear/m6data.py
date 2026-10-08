@@ -5,7 +5,7 @@ lists exactly the shards present; rebuilt otherwise (a cut mid-pack leaves only 
 
 A training row t = one decision. Its input is the W+3 consecutive frames ending at t
 (clamped at the episode start, which reproduces the repeat-padding of the live student),
-its label the HRA action. Rows where Ms. Pac-Man did not move during the step (death and
+its label the set of actions equivalent to the HRA action (`equiv`). Rows where Ms. Pac-Man did not move during the step (death and
 respawn freezes, ghost-eaten pauses, the end-of-board flash) are kept as context but not trained on.
 """
 from __future__ import annotations
@@ -18,7 +18,7 @@ import numpy as np
 
 from msclear.demos import read_shard
 
-META = ("label", "act", "items", "lives", "lost", "moved", "done", "q")
+META = ("label", "act", "items", "lives", "lost", "moved", "done", "q", "equiv", "h")
 
 
 def shard_files(src: Path) -> list[Path]:
@@ -92,7 +92,7 @@ class Pack:
 
 
 class Windows:
-    """Batches of (frames (B, W+3, 84, 84) uint8, label (B,), q (B, 4)) from one or more packs.
+    """Batches of (frames (B, W+3, 84, 84) uint8, label (B,), equiv (B, 4) bool) from one or more packs.
 
     Batch k is a pure function of (seed, k), so training resumes onto the same sample stream.
     """
@@ -115,7 +115,7 @@ class Windows:
         pk = self.packs[pi]
         idx = t[:, None] + np.arange(-(self.W + 2), 1)[None]
         idx = np.maximum(idx, pk.meta["ep_start"][t][:, None])
-        return pk.frames[idx], pk.meta["label"][t].astype(np.int64), pk.meta["q"][t].astype(np.float32)
+        return pk.frames[idx], pk.meta["label"][t].astype(np.int64), pk.meta["equiv"][t].astype(bool)
 
     def sample(self, k: int):
         rng = np.random.default_rng([self.seed, k])
