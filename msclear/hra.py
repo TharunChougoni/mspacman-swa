@@ -239,6 +239,7 @@ class HRAAgent:
         q -= c.kappa * np.array([self.n.get((si, b), 0) for b in range(4)])
         a = int(np.argmax(q))
         self.n[(si, a)] = self.n.get((si, a), 0) + 1
+        self.last_q = q
         return a + 1
 
 
