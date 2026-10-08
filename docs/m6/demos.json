@@ -1,0 +1,30 @@
+{
+ "games": 1280,
+ "transitions": 1627080,
+ "clear_rate": 0.775,
+ "transitions_from_clears": 1273196,
+ "frac_from_clears": 0.7825036261277872,
+ "items": 151.14765625,
+ "score": 4102.3359375,
+ "deaths": 1.3953125,
+ "disk_gb": 0.397278835,
+ "by_sticky": {
+  "0.1": {
+   "games": 256,
+   "clear_rate": 0.80859375
+  },
+  "0.25": {
+   "games": 768,
+   "clear_rate": 0.79296875
+  },
+  "0.4": {
+   "games": 256,
+   "clear_rate": 0.6875
+  }
+ },
+ "by_eps": {
+  "0.0": 0.8083333333333333,
+  "0.05": 0.675
+ },
+ "agree": null
+}
