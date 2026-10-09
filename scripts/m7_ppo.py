@@ -11,6 +11,10 @@ Rollout N envs x T steps; the SWA token window (W=8) is cached per env during ro
 Eval    every EVAL_EVERY updates: greedy pixel eval, 100 games, seeds 0..99, sticky 0.25 (same as M6 periodic
         evals) in a background CPU pool; best.pt by (clear rate, items). Final 300-game confirm is run by m7_run.sh.
 Resume  RUN/ckpt_last.pt every CKPT_S s (+ at exit); the envs restart fresh episodes on resume (new seeds).
+        Touch RUN/STOP for a clean stop: saves ckpt_last.pt and exits 3 (no final.json; m7_run.sh does not retry).
+Tweak   at update ~2360 (13:40 IST 9 Oct): 15 evals flat (clear 0.02-0.07, items 136-143, deaths 2.0), kl_ref ~0.03,
+        approx_kl_old ~5e-4 -> policy barely moving. Defaults changed: LR_PI 2e-5 -> 5e-5, death penalty 2.5 -> 5.0,
+        BETA0 0.5 -> 0.25 and KL_ANNEAL 6000 -> 4000 (beta ~0.32 -> ~0.13 at the resume point, 0.05 from update ~4015).
 """
 from __future__ import annotations
 
@@ -42,13 +46,13 @@ EPOCHS = int(E("EPOCHS", "3"))
 NMB = int(E("MINIBATCHES", "3"))
 GAMMA, LAM = float(E("GAMMA", "0.995")), float(E("GAE_LAMBDA", "0.95"))
 CLIP = float(E("CLIP", "0.1"))
-LR_PI, LR_V = float(E("LR_PI", "2e-5")), float(E("LR_V", "3e-4"))
+LR_PI, LR_V = float(E("LR_PI", "5e-5")), float(E("LR_V", "3e-4"))
 VF, ENT = float(E("VF", "0.5")), float(E("ENT", "0.001"))
-BETA0, BETA1, KL_ANNEAL = float(E("BETA0", "0.5")), float(E("BETA1", "0.05")), int(E("KL_ANNEAL", "6000"))
+BETA0, BETA1, KL_ANNEAL = float(E("BETA0", "0.25")), float(E("BETA1", "0.05")), int(E("KL_ANNEAL", "4000"))
 TAU = float(E("TAU", "0.25"))   # sampled pi at tau 1 eats ~100 items (greedy 134); tau 0.25 ~ greedy (131, measured)
 VWARM = int(E("VWARM", "15"))
 MAX_GRAD = float(E("MAX_GRAD", "0.5"))
-RW = tuple(float(x) for x in E("RW", "0.1,0.0005,5.0,2.5").split(","))   # item, score, clear, death
+RW = tuple(float(x) for x in E("RW", "0.1,0.0005,5.0,5.0").split(","))   # item, score, clear, death
 UPDATES = int(E("UPDATES", "100000"))
 DEADLINE = float(E("DEADLINE", "0")) or float("inf")
 EVAL_EVERY = int(E("EVAL_EVERY", "150"))
@@ -169,6 +173,9 @@ def main():
     while st["update"] < UPDATES:
         if time.time() > DEADLINE:
             stopped = "deadline"; break
+        if (RUN / "STOP").exists():
+            save(); envs.close(); log(f"STOP file: saved ckpt_last.pt at update {st['update']}, exiting 3")
+            (RUN / "STOP").unlink(missing_ok=True); pool.terminate(); os._exit(3)
         u = st["update"]; t_u = time.time()
         # ------------------------------------------------------------- rollout
         pi.eval()

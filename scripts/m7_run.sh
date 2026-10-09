@@ -14,6 +14,7 @@ if [ ! -f runs/m7/final.json ]; then
   for try in 1 2 3 4 5; do
     $PY scripts/m7_ppo.py && break
     rc=$?
+    if [ "$rc" -eq 3 ]; then echo "=== clean STOP requested; not retrying"; exit 0; fi
     if [ "$(date +%s)" -ge "$DEADLINE" ]; then echo "past deadline, not retrying"; break; fi
     echo "=== m7_ppo exit $rc (try $try); retrying in 120 s"; sleep 120
   done
