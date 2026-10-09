@@ -46,7 +46,8 @@ def main():
     import imageio.v2 as imageio
     st = Student(m6eval._net(CK))
     g = PixelGame(sticky=0.25)
-    path = OUT / f"board_clear_pixel_m6{('_' + os.environ['TAG']) if os.environ.get('TAG') else ''}_seed{seed}.mp4"
+    prefix = os.environ.get("PREFIX", "board_clear_pixel_m6")
+    path = OUT / f"{prefix}{('_' + os.environ['TAG']) if os.environ.get('TAG') else ''}_seed{seed}.mp4"
     wr = imageio.get_writer(path, fps=30, codec="libx264", quality=7, macro_block_size=1)
     S = 3; fc = [0]
 
@@ -81,7 +82,7 @@ def main():
     wr.close()
     info = dict(path=str(path), seed=seed, cleared=bool(cleared_at), score=g.score, steps=g.steps, deaths=g.deaths,
                 mb=path.stat().st_size / 1e6, eval_run=ref)
-    Path("runs/m6/video.json").write_text(json.dumps(info))
+    Path(os.environ.get("VIDEO_JSON", "runs/m6/video.json")).write_text(json.dumps(info))
     print(f"wrote {path} ({info['mb']:.1f} MB) in {time.time() - t0:.0f}s", flush=True)
 
 
