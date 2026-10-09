@@ -23,6 +23,7 @@ from __future__ import annotations
 
 import collections
 import multiprocessing as mp
+import sys
 
 import numpy as np
 
@@ -118,6 +119,11 @@ class VecGames:
                  seed_off=0, p_pool=0.6, pool_cap=200):
         ctx = mp.get_context("spawn")
         self.n = n_workers * per_worker; self.per = per_worker
+        # spawn children re-import the parent's __main__ (the trainer -> torch, ~400 MB per worker).
+        # The workers only need msclear, so hide __main__'s file while starting them (~5 GB RAM saved).
+        main = sys.modules["__main__"]
+        saved = {k: main.__dict__.pop(k) for k in ("__file__", "__spec__") if k in main.__dict__}
+        main.__spec__ = None
         self.remotes, self.procs = [], []
         self.pool_size = 0
         for w in range(n_workers):
@@ -127,6 +133,8 @@ class VecGames:
                             daemon=True)
             p.start(); b.close()
             self.remotes.append(a); self.procs.append(p)
+        del main.__spec__
+        main.__dict__.update(saved)
 
     def reset(self):
         for r in self.remotes:
