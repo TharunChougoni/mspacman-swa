@@ -16,6 +16,9 @@ All in fp32 (no bf16 anywhere).
 from __future__ import annotations
 
 import collections
+import contextlib
+import copy
+import threading
 import json
 import math
 import os
@@ -43,6 +46,7 @@ REF_AT_TRAIN = E("REF_AT_TRAIN", "1") != "0"
 CHECK_REF = E("CHECK_REF", "0") == "1"
 EVAL_MODE = E("EVAL_MODE", "gpu")
 EVAL_BF16 = E("EVAL_BF16", "0") == "1"
+OVERLAP = E("OVERLAP", "0") == "1"   # double-buffered rollout/train: exact but no faster here (GIL-bound), off
 STALL = None if E("STALL", "10,150,0.005,0.01") == "0" else tuple(float(x) for x in E("STALL", "10,150,0.005,0.01").split(","))
 P_POOL = float(E("P_POOL", "0.6"))
 POOL_CAP = int(E("POOL_CAP", "200"))
@@ -119,7 +123,7 @@ class ValueHead(nn.Module):
 def main():
     RUN.mkdir(parents=True, exist_ok=True)
     dev = torch.device(E("DEV", "cuda"))
-    tf32 = E("TF32", "0") == "1"                          # default strict fp32 (M8 trained with TF32 on)
+    tf32 = E("TF32", "1") == "1"   # TF32 matmul/conv for training as in M8 (strict fp32 was 2.5x slower); evals are strict fp32
     torch.backends.cuda.matmul.allow_tf32 = tf32; torch.backends.cudnn.allow_tf32 = tf32
     torch.backends.cudnn.benchmark = True
     torch.set_num_threads(4)
@@ -143,7 +147,7 @@ def main():
         log(f"init actor from {INIT} (step {ck0.get('step')}), {msg}")
     cfg = dict(INIT=INIT, N=NW * PER, T=T, EPOCHS=EPOCHS, NMB=NMB, GAMMA=GAMMA, LAM=LAM, CLIP=CLIP, LR_PI=LR_PI, LR_V=LR_V,
                VF=VF, ENT=ENT, BETA0=BETA0, BETA1=BETA1, KL_ANNEAL=KL_ANNEAL, TAU=TAU, VWARM=VWARM, RW=RW, ARCH=ARCH,
-               EVAL_EVERY=EVAL_EVERY, REF_AT_TRAIN=REF_AT_TRAIN, EVAL_MODE=EVAL_MODE, EVAL_BF16=EVAL_BF16, STALL=STALL, TF32=E("TF32", "0") == "1",
+               EVAL_EVERY=EVAL_EVERY, REF_AT_TRAIN=REF_AT_TRAIN, EVAL_MODE=EVAL_MODE, EVAL_BF16=EVAL_BF16, STALL=STALL, TF32=E("TF32", "1") == "1", OVERLAP=OVERLAP,
                FAST_LAST=__import__("msclear.swa_net", fromlist=["x"]).FAST_LAST, P_POOL=P_POOL, POOL_CAP=POOL_CAP, VH_INIT=VH_INIT, EVAL_N=EVAL_N, EVAL_SEED0=EVAL_SEED0, MAX_STEPS=MAX_STEPS)
     (RUN / "config.json").write_text(json.dumps(cfg, indent=1))
     N = NW * PER
@@ -182,26 +186,106 @@ def main():
         log(f"EVAL update {u} ({es / 1e6:.2f}M steps): clear {s['clear_rate']:.2f} ± {s['clear_se']:.2f}  items {s['eaten']:.1f}  "
             f"score {s['score']:.0f}  deaths {s['deaths']:.2f}  steps {s['steps']:.0f}  ({s['secs']}s){'  *best*' if better else ''}")
 
-    # ---- rollout state
-    stack = torch.from_numpy(envs.reset()).to(dev).contiguous()      # (N, 4, 84, 84)
-    new = torch.ones(N, dtype=torch.bool, device=dev)
-    H = torch.zeros(N, W - 1 + T, 4, 84, 84, dtype=torch.uint8, device=dev)
-    estart = torch.full((N,), W - 1, dtype=torch.long, device=dev)
-    tok = torch.zeros(N, W, ARCH["d"], device=dev); rtok = torch.zeros_like(tok)
-    A = torch.zeros(N, T, dtype=torch.long, device=dev); LP = torch.zeros(N, T, device=dev)
-    V = torch.zeros(N, T + 1, device=dev); R = torch.zeros(N, T, device=dev); D = torch.zeros(N, T, device=dev)
-    RLP = torch.zeros(N, T, 4, device=dev); ES = torch.zeros(N, T, dtype=torch.long, device=dev)
+    # ---- rollout state (S: carried across segments; B: per-segment buffers, two of them when OVERLAP)
+    S = dict(stack=torch.from_numpy(envs.reset()).to(dev).contiguous(),            # (N, 4, 84, 84)
+             new=torch.ones(N, dtype=torch.bool, device=dev),
+             estart=torch.full((N,), W - 1, dtype=torch.long, device=dev),
+             tok=torch.zeros(N, W, ARCH["d"], device=dev), rtok=torch.zeros(N, W, ARCH["d"], device=dev))
+
+    def make_buf():
+        return dict(H=torch.zeros(N, W - 1 + T, 4, 84, 84, dtype=torch.uint8, device=dev),
+                    A=torch.zeros(N, T, dtype=torch.long, device=dev), LP=torch.zeros(N, T, device=dev),
+                    V=torch.zeros(N, T + 1, device=dev), R=torch.zeros(N, T, device=dev), D=torch.zeros(N, T, device=dev),
+                    RLP=torch.zeros(N, T, 4, device=dev), ES=torch.zeros(N, T, dtype=torch.long, device=dev))
+    bufs = [make_buf()] + ([make_buf()] if OVERLAP else [])
+    # behaviour copies: with OVERLAP the next segment is collected by the pre-update policy while the GPU trains on
+    # the current one (one update of policy lag; the PPO ratio uses the logged behaviour log-probs LP, V is behaviour V)
+    beh, bvh = (copy.deepcopy(pi).eval().requires_grad_(False), copy.deepcopy(vh).eval().requires_grad_(False)) if OVERLAP else (pi, vh)
+
+    main_stream = torch.cuda.current_stream() if dev.type == "cuda" else None
+    rstream = torch.cuda.Stream() if (OVERLAP and dev.type == "cuda") else None
+
+    def rollout(B, prev, net, vnet):
+        """Fill buffer B with T steps of all N envs using (net, vnet). prev = buffer of the previous segment (context)."""
+        t0 = time.time(); comp_sum = 0; res_all = []
+        H, A, LP, V, R, D, RLP, ES = (B[k] for k in ("H", "A", "LP", "V", "R", "D", "RLP", "ES"))
+        if rstream is not None:                               # own CUDA stream so small rollout kernels don't queue
+            rstream.wait_stream(main_stream)                  # behind training kernels; sees the latest beh weights
+        with torch.no_grad(), (torch.cuda.stream(rstream) if rstream is not None else contextlib.nullcontext()):
+            if prev is not None:                              # carry the last W-1 stacks as context
+                H[:, :W - 1] = prev["H"][:, T:T + W - 1]
+                S["estart"] = (S["estart"] - T).clamp(min=0)
+            stack, new, estart, tok, rtok = S["stack"], S["new"], S["estart"], S["tok"], S["rtok"]
+            for t in range(T):
+                pos = W - 1 + t
+                H[:, pos] = stack
+                estart = torch.where(new, torch.full_like(estart, pos), estart)
+                ES[:, t] = estart
+                z = net.embed(stack)
+                nn_ = new[:, None, None]
+                tok = torch.where(nn_, z[:, None].expand(-1, W, -1), torch.cat([tok[:, 1:], z[:, None]], 1))
+                if not REF_AT_TRAIN or CHECK_REF:                 # old path: frozen reference every rollout step
+                    rz = ref.embed(stack)
+                    rtok = torch.where(nn_, rz[:, None].expand(-1, W, -1), torch.cat([rtok[:, 1:], rz[:, None]], 1))
+                    RLP[:, t] = F.log_softmax(logits_of(ref, trunk(ref, rtok)), -1)
+                h = trunk(net, tok)
+                lg = logits_of(net, h); V[:, t] = vnet(h)
+                a = torch.distributions.Categorical(logits=lg).sample()
+                A[:, t] = a; LP[:, t] = F.log_softmax(lg, -1).gather(1, a[:, None])[:, 0]
+                fr, rew, done, comp, results, starts = envs.step(a.cpu().numpy())
+                R[:, t] = torch.from_numpy(rew).to(dev); dn = torch.from_numpy(done).to(dev)
+                D[:, t] = dn.float(); comp_sum = comp_sum + comp.sum(0)
+                fr = torch.from_numpy(fr).to(dev)
+                new = dn.bool()
+                stack = torch.cat([stack[:, 1:], fr[:, None]], 1)
+                for i, s0 in starts.items():                              # new episode: its own start stack
+                    stack[i] = torch.from_numpy(s0).to(dev)               # (normal: 4 x first frame; pool: stored)
+                stack = stack.contiguous()
+                res_all.extend(results)
+            # bootstrap value of the obs after the last step (token window of the next obs)
+            z = net.embed(stack)
+            btok = torch.where(new[:, None, None], z[:, None].expand(-1, W, -1), torch.cat([tok[:, 1:], z[:, None]], 1))
+            V[:, T] = vnet(trunk(net, btok))
+            if dev.type == "cuda":
+                torch.cuda.synchronize()
+        S.update(stack=stack, new=new, estart=estart, tok=tok, rtok=rtok)
+        return dict(B=B, comp=comp_sum, results=res_all, t_roll=time.time() - t0)
+
+    class Job:                                                # rollout in a background thread (OVERLAP) or inline
+        def __init__(self, *args):
+            self.out = None; self.err = None
+            if OVERLAP:
+                self.th = threading.Thread(target=self._run, args=args, daemon=True); self.th.start()
+            else:
+                self.out = rollout(*args)
+
+        def _run(self, *args):
+            try:
+                self.out = rollout(*args)
+            except BaseException as e:                        # re-raised in the main thread
+                self.err = e
+
+        def result(self):
+            if OVERLAP:
+                self.th.join()
+            if self.err is not None:
+                raise self.err
+            return self.out
+
     ar = torch.arange(W, device=dev)
     recent = collections.deque(maxlen=200)
     recent_pool = collections.deque(maxlen=300)
     comp_acc = np.zeros(6 if STALL else 5); t_ck = time.time(); t_run0 = time.time(); steps0 = st["env_steps"]
     stopped = "updates"
 
-    t_eval = 0.0
+    t_eval = 0.0; k_buf = 0
+    job = Job(bufs[0], None, beh, bvh) if OVERLAP else None
     while st["update"] < UPDATES:
         if time.time() > DEADLINE:
             stopped = "deadline"; break
         if (RUN / "STOP").exists():
+            if job is not None:
+                job.result()
             save(); envs.close(); log(f"STOP file: saved ckpt_last.pt at update {st['update']}, exiting 3")
             (RUN / "STOP").unlink(missing_ok=True)
             if pool is not None:
@@ -211,40 +295,19 @@ def main():
             os._exit(3)
         u = st["update"]; t_u = time.time()
         # ------------------------------------------------------------- rollout
-        pi.eval()
-        with torch.no_grad():
-            for t in range(T):
-                pos = W - 1 + t
-                H[:, pos] = stack
-                estart = torch.where(new, torch.full_like(estart, pos), estart)
-                ES[:, t] = estart
-                z = pi.embed(stack)
-                nn_ = new[:, None, None]
-                tok = torch.where(nn_, z[:, None].expand(-1, W, -1), torch.cat([tok[:, 1:], z[:, None]], 1))
-                if not REF_AT_TRAIN or CHECK_REF:                 # old path: frozen reference every rollout step
-                    rz = ref.embed(stack)
-                    rtok = torch.where(nn_, rz[:, None].expand(-1, W, -1), torch.cat([rtok[:, 1:], rz[:, None]], 1))
-                    RLP[:, t] = F.log_softmax(logits_of(ref, trunk(ref, rtok)), -1)
-                h = trunk(pi, tok)
-                lg = logits_of(pi, h); V[:, t] = vh(h)
-                a = torch.distributions.Categorical(logits=lg).sample()
-                A[:, t] = a; LP[:, t] = F.log_softmax(lg, -1).gather(1, a[:, None])[:, 0]
-                fr, rew, done, comp, results, starts = envs.step(a.cpu().numpy())
-                R[:, t] = torch.from_numpy(rew).to(dev); dn = torch.from_numpy(done).to(dev)
-                D[:, t] = dn.float(); comp_acc += comp.sum(0)
-                fr = torch.from_numpy(fr).to(dev)
-                new = dn.bool()
-                stack = torch.cat([stack[:, 1:], fr[:, None]], 1)
-                for i, s0 in starts.items():                              # new episode: its own start stack
-                    stack[i] = torch.from_numpy(s0).to(dev)               # (normal: 4 x first frame; pool: stored)
-                stack = stack.contiguous()
-                for r in results:
-                    (recent if r["start"] == "normal" else recent_pool).append(r); st["episodes"] += 1
-            # bootstrap value of the obs after the last step (token window of the next obs)
-            z = pi.embed(stack)
-            btok = torch.where(new[:, None, None], z[:, None].expand(-1, W, -1), torch.cat([tok[:, 1:], z[:, None]], 1))
-            V[:, T] = vh(trunk(pi, btok))
-        t_roll = time.time() - t_u
+        if OVERLAP:
+            out = job.result(); t_wait = time.time() - t_u
+            beh.load_state_dict(pi.state_dict()); bvh.load_state_dict(vh.state_dict())    # pre-update policy
+            k_buf ^= 1
+            job = Job(bufs[k_buf], out["B"], beh, bvh)       # next segment collected while we train on this one
+        else:
+            pi.eval()
+            out = rollout(bufs[0], bufs[0] if u > 0 or st["env_steps"] > 0 else None, pi, vh); t_wait = out["t_roll"]
+        B = out["B"]; t_roll = out["t_roll"]
+        comp_acc += out["comp"]
+        for r in out["results"]:
+            (recent if r["start"] == "normal" else recent_pool).append(r); st["episodes"] += 1
+        H, A, LP, V, R, D, RLP, ES = (B[k] for k in ("H", "A", "LP", "V", "R", "D", "RLP", "ES"))
         st["env_steps"] += N * T
         # ------------------------------------------------------------- GAE
         adv = torch.zeros(N, T, device=dev); g = torch.zeros(N, device=dev)
@@ -260,17 +323,20 @@ def main():
         t_ref = time.time()
         if REF_AT_TRAIN:                                      # KL reference, batched once per update (fp32)
             rlp_old = RLP.clone() if CHECK_REF else None
+            prev_tf32 = (torch.backends.cuda.matmul.allow_tf32, torch.backends.cudnn.allow_tf32)
+            torch.backends.cuda.matmul.allow_tf32 = False; torch.backends.cudnn.allow_tf32 = False   # ref in strict fp32
             with torch.no_grad():
                 for mb in torch.arange(N, device=dev).chunk(NMB):
                     nb = len(mb)
                     Zr = ref.embed(H[mb].reshape(-1, 4, 84, 84)).view(nb, W - 1 + T, -1)
                     win = Zr[torch.arange(nb, device=dev)[:, None, None], IDX[mb]]
                     RLP[mb] = F.log_softmax(logits_of(ref, trunk(ref, win.reshape(nb * T, W, -1))), -1).view(nb, T, 4)
+            torch.backends.cuda.matmul.allow_tf32, torch.backends.cudnn.allow_tf32 = prev_tf32
             if CHECK_REF:
                 dmax = float((RLP - rlp_old).abs().max())
                 log(f"CHECK_REF update {u}: max |ref logp (train-time batched) - ref logp (per rollout step)| = {dmax:.2e}")
                 jwrite(dict(type="check_ref", update=u, max_abs_diff=dmax))
-                assert dmax < 1e-4, dmax
+                assert dmax < (3e-2 if prev_tf32[0] else 1e-4), dmax   # TF32 per-step path is only ~1e-2 exact
             if dev.type == "cuda":
                 torch.cuda.synchronize()                      # so t_ref measures the pre-pass, not just its launch
         t_ref = time.time() - t_ref
@@ -314,9 +380,6 @@ def main():
         with torch.no_grad():
             yv = ret.reshape(-1); ev = 1 - torch.var(yv - V[:, :T].reshape(-1)) / (torch.var(yv) + 1e-8)
         t_train = time.time() - t_tr
-        # carry the last W-1 stacks as context for the next segment
-        H[:, :W - 1] = H[:, T:T + W - 1].clone()
-        estart = (estart - T).clamp(min=0)
         st["update"] = u = u + 1
         # ------------------------------------------------------------- logging / eval / ckpt
         m = {k: float(np.mean(v)) for k, v in stats.items()}
@@ -329,14 +392,14 @@ def main():
         pl = dict(clear=float(np.mean([r["cleared"] for r in rp])) if rp else None,
                   items0=float(np.mean([r["items0"] for r in rp])) if rp else None, n=len(rp), size=envs.pool_size)
         row = dict(type="train", update=u, env_steps=st["env_steps"], episodes=st["episodes"], warm=warm, beta=beta,
-                   sps=sps, t_roll=t_roll, t_ref=t_ref, t_train=t_train, t_eval=t_eval, expl_var=float(ev), rew_items=comp_acc[0], rew_score=comp_acc[1],
+                   sps=sps, t_roll=t_roll, t_wait=t_wait, t_ref=t_ref, t_train=t_train, t_eval=t_eval, expl_var=float(ev), rew_items=comp_acc[0], rew_score=comp_acc[1],
                    n_clear=comp_acc[2], n_death=comp_acc[3], end_bonus=comp_acc[4], stall_pen=float(comp_acc[5]) if STALL else 0.0, train_recent=tr, pool=pl, **m)
         jwrite(row); comp_acc[:] = 0
         if u % 5 == 0 or u <= 3:
             best = st["best"]; bs = "-" if not best else f"{best['clear_rate']:.2f}@{best['update']}"
             trs = "-" if not rc else f"clear {tr['clear']:.3f} items {tr['items']:.1f} deaths {tr['deaths']:.2f} (last {tr['n']})"
             log(f"upd {u}{' [value warm-up]' if warm else ''}  {st['env_steps'] / 1e6:.2f}M steps  {sps:.0f} steps/s "
-                f"(roll {t_roll:.1f}s ref {t_ref:.2f}s train {t_train:.1f}s eval {t_eval:.0f}s)  eps {st['episodes']}  normal-start games: {trs}  "
+                f"(roll {t_roll:.1f}s wait {t_wait:.1f}s ref {t_ref:.2f}s train {t_train:.1f}s eval {t_eval:.0f}s)  eps {st['episodes']}  normal-start games: {trs}  "
                 f"pool {pl['size']} pool-start clear {('-' if pl['clear'] is None else format(pl['clear'], '.3f'))} "
                 f"(from {('-' if pl['items0'] is None else format(pl['items0'], '.1f'))} items left, last {pl['n']})  "
                 f"kl_ref {m['kl']:.3f} beta {beta:.3f}  ent {m['ent']:.3f}  clipfrac {m['clipfrac']:.3f}  "
@@ -351,6 +414,8 @@ def main():
         t_eval = time.time() - t_eval
         if time.time() - t_ck >= CKPT_S:
             save(); t_ck = time.time()
+    if job is not None:
+        job.result()
     save()
     envs.close()
     if pending is not None:
