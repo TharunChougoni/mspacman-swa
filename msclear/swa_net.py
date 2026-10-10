@@ -12,9 +12,14 @@ tensors; goal and 9-way advantage weights are skipped). The ViT/RTC variants are
 from __future__ import annotations
 
 import math
+import os
 
 import torch
 import torch.nn as nn
+import torch.nn.functional as F
+
+# Last block emits only the newest token (causal; the head reads that one). MSCLEAR_FAST_LAST=0 disables it.
+FAST_LAST = os.environ.get("MSCLEAR_FAST_LAST", "1") != "0"
 
 
 class RecencyCausalAttention(nn.Module):
@@ -38,6 +43,21 @@ class RecencyCausalAttention(nn.Module):
         y = torch.matmul(torch.softmax(scores, dim=-1), v)
         return self.out(y.transpose(1, 2).contiguous().view(b, t, d))
 
+    def forward_last(self, x: torch.Tensor) -> torch.Tensor:
+        """x (B, T, d), already layer-normed -> (B, 1, d) for the newest query. K and V still cover all T."""
+        b, t, d = x.shape
+        w, bias = self.qkv.weight, self.qkv.bias
+        # qkv rows are [0:d]=q, [d:2d]=k, [2d:3d]=v, matching .view(..., 3, n_heads, d_head).
+        q = F.linear(x[:, -1:], w[:d], bias[:d]).view(b, 1, self.n_heads, self.d_head)
+        kv = F.linear(x, w[d:], bias[d:]).view(b, t, 2, self.n_heads, self.d_head)
+        k, v = kv.unbind(dim=2)
+        q, k, v = (z.transpose(1, 2) for z in (q, k, v))
+        scores = torch.matmul(q, k.transpose(-2, -1)) * (1.0 / math.sqrt(self.d_head))
+        age = (t - 1) - torch.arange(t, device=x.device)          # newest query: -lam * (T-1-j), no future keys
+        scores = scores - self.lam * age.to(scores.dtype)
+        y = torch.matmul(torch.softmax(scores, dim=-1), v)
+        return self.out(y.transpose(1, 2).contiguous().view(b, 1, d))
+
 
 class SWABlock(nn.Module):
     def __init__(self, d: int, n_heads: int, lam: float):
@@ -49,6 +69,11 @@ class SWABlock(nn.Module):
     def forward(self, x):
         x = x + self.attn(self.ln1(x))
         return x + self.mlp(self.ln2(x))
+
+    def forward_last(self, x):
+        """(B, T, d) -> (B, 1, d): newest token only. This block's K,V still see all T."""
+        h = x[:, -1:] + self.attn.forward_last(self.ln1(x))
+        return h + self.mlp(self.ln2(h))
 
 
 class SWAv2(nn.Module):
@@ -75,15 +100,27 @@ class SWAv2(nn.Module):
         x = stacks.float() / 255.0
         return torch.relu(self.fc(self.conv(x).flatten(1)))
 
-    def head(self, z: torch.Tensor) -> torch.Tensor:
-        """(B, T, d) tokens, oldest first, T <= window -> Q (B, n_actions) at the newest token."""
+    def trunk(self, z: torch.Tensor, last_only: bool | None = None) -> torch.Tensor:
+        """(B, T, d) tokens, oldest first -> (B, d) ln_f at the newest token (what head feeds to val/adv)."""
+        if last_only is None:
+            last_only = FAST_LAST
         t = z.shape[1]
         if t > self.window:
             raise ValueError(f"T={t} > window={self.window}")
         z = z + self.pe_age(torch.arange(t, device=z.device))[None]
-        for blk in self.blocks:
-            z = blk(z)
-        h = self.ln_f(z[:, -1])
+        if last_only and len(self.blocks):
+            for blk in self.blocks[:-1]:
+                z = blk(z)
+            h = self.blocks[-1].forward_last(z)[:, 0]
+        else:
+            for blk in self.blocks:
+                z = blk(z)
+            h = z[:, -1]
+        return self.ln_f(h)
+
+    def head(self, z: torch.Tensor) -> torch.Tensor:
+        """(B, T, d) tokens, oldest first, T <= window -> Q (B, n_actions) at the newest token."""
+        h = self.trunk(z)
         a = self.adv(h)
         return self.val(h) + a - a.mean(dim=1, keepdim=True)
 
