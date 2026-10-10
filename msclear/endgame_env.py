@@ -15,6 +15,10 @@ current-policy play, so it refreshes continuously:
   * pre-death snapshots: a ring of every 5th step (13 deep) per game; when a life is lost with
     <= 40 items left, the ring entry 40-60 steps before the death is added (normal or pool starts)
 
+Stall penalty (M9; default stall=None = M8 behaviour): stall=(items, n, pen, cap). On board 1 with <= `items` left and
+no item eaten for more than `n` decisions: reward -= min(cap, pen + pen * (since - n) / n) per decision
+(M8 failure mode: 23% of games ran into the 6000-step cap with a few pellets left).
+
 Reward per decision (weights rw = item, score, clear, death, k_end):
   item term  rw_item * sum over eaten items of (1 + k_end * (1 - rem/30)) for rem < 30 (else 1)
   + rw_score * score delta + rw_clear * clear - rw_death * death   (death incl. the final, non-decrementing one)
@@ -36,7 +40,7 @@ def _book(g):
                 steps=g.steps, max_eaten=g.max_eaten)
 
 
-def _worker(remote, gids, sticky, max_steps, rw, seed_off, p_pool, pool_cap, wid):
+def _worker(remote, gids, sticky, max_steps, rw, seed_off, p_pool, pool_cap, wid, stall=None):
     from msclear.pixenv import PixelGame
     from msclear import ram as R
     rng = np.random.default_rng(seed_off * 7919 + wid)
@@ -57,11 +61,11 @@ def _worker(remote, gids, sticky, max_steps, rw, seed_off, p_pool, pool_cap, wid
             g.steps, g.max_eaten = b["steps"], b["max_eaten"]
             g.det.__dict__.update(b["det"])
             g.ram = g.ale.getRAM().copy(); g.stack = stack.copy(); g.cleared = False; g.done = False
-            meta[i] = dict(start="pool", seed=-1, items0=g.items_left(), thr=set(THRESH), ring=collections.deque(maxlen=13))
+            meta[i] = dict(start="pool", seed=-1, items0=g.items_left(), thr=set(THRESH), ring=collections.deque(maxlen=13), since=0)
         else:
             seed = SEED_BASE + gids[i] * 100_000 + seed_off + epn[i]; epn[i] += 1
             g.reset(seed)
-            meta[i] = dict(start="normal", seed=seed, items0=154, thr=set(), ring=collections.deque(maxlen=13))
+            meta[i] = dict(start="normal", seed=seed, items0=154, thr=set(), ring=collections.deque(maxlen=13), since=0)
         return g.stack.copy()
 
     try:
@@ -73,7 +77,7 @@ def _worker(remote, gids, sticky, max_steps, rw, seed_off, p_pool, pool_cap, wid
                 n = len(games)
                 frames = np.empty((n, 84, 84), np.uint8)
                 rew = np.zeros(n, np.float32); done = np.zeros(n, np.uint8)
-                comp = np.zeros((n, 5), np.float32)           # items, score, clear, death, endgame-bonus
+                comp = np.zeros((n, 6 if stall else 5), np.float32)   # items, score, clear, death, endgame-bonus[, stall penalty]
                 results, starts = [], {}
                 for i, (g, a) in enumerate(zip(games, data)):
                     m = meta[i]
@@ -88,9 +92,13 @@ def _worker(remote, gids, sticky, max_steps, rw, seed_off, p_pool, pool_cap, wid
                     over = d and g.ale.game_over() and not g.cleared
                     death = float(info["lost_life"] or over)
                     clear = float(d and g.cleared)
-                    comp[i] = (items, sc, clear, death, bonus)
-                    rew[i] = rw[0] * (items + bonus) + rw[1] * sc + rw[2] * clear - rw[3] * death
                     left = g.items_left() if R.board(g.ram) == 1 else 154
+                    m["since"] = 0 if items else m["since"] + 1
+                    stall_pen = 0.0
+                    if stall is not None and left <= stall[0] and m["since"] > stall[1]:
+                        stall_pen = min(stall[3], stall[2] * (m["since"] - stall[1]) / stall[1] + stall[2])
+                    comp[i] = (items, sc, clear, death, bonus, stall_pen)[:comp.shape[1]]
+                    rew[i] = rw[0] * (items + bonus) + rw[1] * sc + rw[2] * clear - rw[3] * death - stall_pen
                     if not d:
                         if m["start"] == "normal" and R.board(g.ram) == 1:
                             for th in THRESH:
@@ -116,7 +124,7 @@ def _worker(remote, gids, sticky, max_steps, rw, seed_off, p_pool, pool_cap, wid
 
 class VecGames:
     def __init__(self, n_workers, per_worker, sticky=0.25, max_steps=6000, rw=(0.1, 0.0005, 10.0, 5.0, 2.0),
-                 seed_off=0, p_pool=0.6, pool_cap=200):
+                 seed_off=0, p_pool=0.6, pool_cap=200, stall=None):
         ctx = mp.get_context("spawn")
         self.n = n_workers * per_worker; self.per = per_worker
         # spawn children re-import the parent's __main__ (the trainer -> torch, ~400 MB per worker).
@@ -129,7 +137,8 @@ class VecGames:
         for w in range(n_workers):
             a, b = ctx.Pipe()
             gids = list(range(w * per_worker, (w + 1) * per_worker))
-            p = ctx.Process(target=_worker, args=(b, gids, sticky, max_steps, tuple(rw), seed_off, p_pool, pool_cap, w),
+            p = ctx.Process(target=_worker, args=(b, gids, sticky, max_steps, tuple(rw), seed_off, p_pool, pool_cap, w,
+                                                                tuple(stall) if stall else None),
                             daemon=True)
             p.start(); b.close()
             self.remotes.append(a); self.procs.append(p)
