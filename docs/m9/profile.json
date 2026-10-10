@@ -1,0 +1,52 @@
+{
+ "macs": {
+  "stem": 9342976,
+  "layer_per_token": 3145728,
+  "attn_scores_per_layer_window": 65536,
+  "trunk_full": 50462720,
+  "trunk_last": 32055296,
+  "trunk_kvcache_relpos": 6307840
+ },
+ "params": {
+  "conv": 77984,
+  "fc": 1606144,
+  "pe_age": 4096,
+  "blocks.0.attn": 1050624,
+  "blocks.0.mlp": 2099712,
+  "blocks.1.attn": 1050624,
+  "blocks.1.mlp": 2099712,
+  "blocks.0.ln": 2048,
+  "blocks.1.ln": 2048,
+  "ln_f": 1024,
+  "val": 513,
+  "adv": 2052,
+  "total": 7996581
+ },
+ "trunk_last_maxdiff": 9.5367431640625e-07,
+ "cpu_1thread_ms": {
+  "stem_B1": 0.4278357499970298,
+  "trunk_B1": 2.8184711749963753,
+  "trunk_last_B1": 2.0040806350016283,
+  "block_attn_B1": 0.4374601750032525,
+  "block_mlp_B1": 0.7453694200012251,
+  "student_act_B1": 3.5439099599989277
+ },
+ "env_step_ms_1core": 0.6735521426665703,
+ "gpu_ms": {
+  "stem_B42": 0.4164751200005412,
+  "trunk_B42": 1.4269340600003488,
+  "trunk_last_B42": 0.8293878000040422,
+  "stem_bf16_B42": 0.3089105000071868,
+  "trunk_bf16_B42": 0.6761204600115889,
+  "stem_B512": 2.8342937600064033,
+  "trunk_B512": 7.17655990001731,
+  "trunk_last_B512": 4.787438019993715,
+  "stem_bf16_B512": 2.755437619998702,
+  "trunk_bf16_B512": 4.055303179993643,
+  "rollout_step_N42": 2.255238570005531,
+  "train_mb_fwdbwd": 96.73467894999703,
+  "train_mb_fwdbwd_lasttok": 79.6127899500334,
+  "train_mb_stem_only_fwdbwd": 24.421628399977635,
+  "trunk_B42_compiled": 0.9710096599974349
+ }
+}
