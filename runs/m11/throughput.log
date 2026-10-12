@@ -1,0 +1,16 @@
+=== 2026-10-12 11:57:07 start [m11tp]
+== config 14x3
+[11:57:25] upd 5 0.03M sps 2265 (roll 1.7s train 0.6s) kl1 0.000 ent 0.000 cf 0.000 vl 0.627 EV 0.25 boards>=3 0.27 b1-start clears None b3-start clear 0.0 items 17.0 harvest 0
+[11:57:37] upd 10 0.05M sps 2268 (roll 1.8s train 0.6s) kl1 0.000 ent 0.000 cf 0.000 vl 1.035 EV 0.30 boards>=3 0.14 b1-start clears 0.0 b3-start clear 0.0 items 17.7 harvest 0
+Mem:              15           4           5           0           5          10
+== config 18x6
+Mem:              15           4           5           0           5          10
+== config 19x8
+Mem:              15           4           5           0           5          10
+=== 2026-10-12 11:58:12 finished [m11tp] exit 0
+=== 2026-10-12 12:04:27 start [m11tp]
+== config 18x6
+Mem:              15           5           4           0           5           9
+== config 19x8
+Mem:              15           5           4           0           5           9
+=== 2026-10-12 12:04:52 finished [m11tp] exit 0

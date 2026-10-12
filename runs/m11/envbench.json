@@ -1,0 +1,27 @@
+{
+ "14x3": {
+  "envs": 42,
+  "ms_per_step": 3.69,
+  "env_steps_per_s": 11373
+ },
+ "18x3": {
+  "envs": 54,
+  "ms_per_step": 4.55,
+  "env_steps_per_s": 11856
+ },
+ "18x6": {
+  "envs": 108,
+  "ms_per_step": 8.77,
+  "env_steps_per_s": 12313
+ },
+ "18x10": {
+  "envs": 180,
+  "ms_per_step": 14.79,
+  "env_steps_per_s": 12174
+ },
+ "19x12": {
+  "envs": 228,
+  "ms_per_step": 18.76,
+  "env_steps_per_s": 12151
+ }
+}

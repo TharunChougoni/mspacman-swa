@@ -43,6 +43,18 @@ class AlibiAttention(nn.Module):
         y = F.scaled_dot_product_attention(q, k, v, attn_mask=bias.to(q.dtype))
         return self.out(y.transpose(1, 2).reshape(b, s, d))
 
+    def forward_q(self, x, nq):
+        b, s, d = x.shape
+        w, bb = self.qkv.weight, self.qkv.bias
+        q = F.linear(x[:, -nq:], w[:d], bb[:d]).view(b, nq, self.h, self.dh).transpose(1, 2)
+        k, v = self.kv(x)
+        qi = torch.arange(s - nq, s, device=x.device); ki = torch.arange(s, device=x.device)
+        age = (qi[:, None] - ki[None, :]).to(x.dtype)
+        bias = -self.slope.view(1, -1, 1, 1) * age.clamp(min=0)
+        bias = bias.masked_fill(((age < 0) | (age >= self.W)), float("-inf"))
+        y = F.scaled_dot_product_attention(q, k, v, attn_mask=bias.to(q.dtype))
+        return self.out(y.transpose(1, 2).reshape(b, nq, d))
+
     def kv(self, x):
         """(B, S, d) normed -> k, v (B, H, S, dh)."""
         b, s, d = x.shape
@@ -73,6 +85,12 @@ class Block(nn.Module):
         x = x + self.attn(self.ln1(x))
         return x + self.mlp(self.ln2(x))
 
+    def forward_q(self, x, nq):
+        """(B, S, d) -> (B, nq, d): outputs for the nq newest positions only (keys/values over all S)."""
+        h = self.ln1(x)
+        y = x[:, -nq:] + self.attn.forward_q(h, nq)
+        return y + self.mlp(self.ln2(y))
+
 
 class M10Net(nn.Module):
     def __init__(self, n_actions=4, d=512, n_heads=8, n_layers=2, window=8, lam=0.05):
@@ -96,8 +114,14 @@ class M10Net(nn.Module):
         return self.ln_f(z)
 
     def trunk_last(self, z):
-        """(B, S, d) history (S >= ctx for exactness, clamped at episode start) -> h (B, d) newest."""
-        return self.trunk_seq(z[:, -self.ctx:])[:, -1]
+        """(B, S, d) history (S >= ctx for exactness, clamped at episode start) -> h (B, d) newest.
+        Pruned: layer l only computes the (L-1-l)*(W-1)+1 newest positions the layers above need (exact)."""
+        x = z[:, -self.ctx:]
+        L = self.n_layers
+        for l, blk in enumerate(self.blocks):
+            nq = (L - 1 - l) * (self.window - 1) + 1
+            x = blk.forward_q(x, nq)
+        return self.ln_f(x[:, -1])
 
     def q_of(self, h):
         a = self.adv(h)
