@@ -1,0 +1,62 @@
+=== 2026-10-12 11:10:12 start [multiboard]
+multiboard eval runs/m9run/best.pt: seeds 50000..50099, cap 20000, fp32 greedy, sticky 0.25
+
+
+
+
+
+  games 74/100 step 2897 max-board {1: 12, 2: 50, 3: 12} elapsed 30s
+  games 100/100 step 9381 max-board {1: 13, 2: 60, 3: 27} elapsed 45s
+{
+ "ckpt": "runs/m9run/best.pt",
+ "seed0": 50000,
+ "n": 100,
+ "cap": 20000,
+ "sticky": 0.25,
+ "fp32": true,
+ "greedy": true,
+ "reach_frac": {
+  "1": 1.0,
+  "2": 0.87,
+  "3": 0.27
+ },
+ "clears_dist": {
+  "0": 13,
+  "1": 60,
+  "2": 27
+ },
+ "mean_clears": 1.14,
+ "mean_score": 4838.3,
+ "mean_total_items": 275.01,
+ "deaths_by_board": {
+  "1": 143,
+  "2": 123,
+  "3": 34
+ },
+ "death_frac_by_board": {
+  "1": 0.4766666666666667,
+  "2": 0.41,
+  "3": 0.11333333333333333
+ },
+ "mean_items_by_board_reached": {
+  "1": 153.46,
+  "2": 134.29885057471265,
+  "3": 17.444444444444443
+ },
+ "n_reached_by_board": {
+  "1": 100,
+  "2": 87,
+  "3": 27
+ },
+ "cap_hits": 0,
+ "mean_steps": 2485.82,
+ "states": 114,
+ "best_game": {
+  "seed": 50035,
+  "max_board": 3,
+  "score": 8200.0,
+  "steps": 3425
+ }
+}
+wall 45.5s
+=== 2026-10-12 11:10:58 finished [multiboard] exit 0
