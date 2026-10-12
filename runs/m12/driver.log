@@ -1,0 +1,46 @@
+=== 2026-10-12 23:17:53 start [m12run]
+=== M12 deadline 2026-10-13 05:05:00
+[23:17:55] config {"INIT": "runs/m11/ckpt_last.pt", "NW": 18, "PER": 6, "T": 128, "EPOCHS": 2, "NMB": 9, "GAMMA": 0.995, "LAM": 0.95, "CLIP": 0.1, "LR_PI": 5e-05, "LR_V": 0.0003, "VF": 0.5, "ENT": 0.001, "BETA": 0.05, "TAU": 0.25, "VWARM": 3, "MAX_GRAD": 0.5, "RW": [0.1, 0.0005, 10.0, 5.0, 2.0], "STALL": [10.0, 150.0, 0.005, 0.01], "P_B1": 0.2, "P_B2": 0.25, "P_HARVEST": 0.5, "P_LATE": 0.6, "P_VLATE": 0.5, "EVAL_LATE_REP": 2, "POOL_CAP": 60, "MAX_STEPS": 8000, "EVAL_EVERY": 40, "EVAL_MB_N": 50, "EVAL_SNAP_REP": 4, "EVAL_WORKERS": 8, "MIN_B1": 0.75, "N_TEST": 7, "CKPT_S": 120.0, "DEADLINE": 1791848100.0, "MAX_UPDATES": 1000000, "ARCH": {"n_actions": 4, "d": 512, "n_heads": 8, "n_layers": 2, "window": 8, "lam": 0.05}, "N": 108, "b3_train": 39, "b3_test": 7, "test_seeds": [50005, 50008, 50024, 50030, 50044, 50057, 50073], "b2": 87, "late_files": 315, "late_test": 36, "init_update": 3949}
+
+
+
+
+
+
+
+
+[23:19:38] EVAL upd 0 (0.00M): b1 clear 0.96  multiboard clears 1.50 reach3 0.56 reach4 0.00 b3 items 92.17857142857143  snap3 clear 0.00 items 87.9 deaths 1.11  late3 clear 0.00 (from 60 left, ate 0.11)  (99s)  *best*
+[23:19:54] upd 5 0.07M sps 3843 (roll 1.7s train 1.9s) kl1 0.005 ent 0.399 cf 0.081 vl 0.209 EV 0.94 boards>=3 0.30 b1-start clears None b3-start clear 0.0 items 77.2 late-start clear 0.0 pools {'early': 57, 'late': 1080, 'vlate': 143}
+[23:20:13] upd 10 0.14M sps 3550 (roll 1.8s train 2.0s) kl1 0.008 ent 0.297 cf 0.032 vl 0.252 EV 0.97 boards>=3 0.37 b1-start clears 0.0 b3-start clear 0.0 items 85.9 late-start clear 0.0 pools {'early': 95, 'late': 1080, 'vlate': 168}
+[23:20:34] upd 15 0.21M sps 3435 (roll 1.9s train 2.2s) kl1 0.018 ent 0.345 cf 0.056 vl 0.403 EV 0.95 boards>=3 0.42 b1-start clears 0.64 b3-start clear 0.0 items 77.2 late-start clear 0.0 pools {'early': 146, 'late': 1080, 'vlate': 198}
+[23:20:55] upd 20 0.28M sps 3142 (roll 2.2s train 2.2s) kl1 0.019 ent 0.315 cf 0.065 vl 0.303 EV 0.96 boards>=3 0.54 b1-start clears 0.76 b3-start clear 0.0 items 74.0 late-start clear 0.0 pools {'early': 231, 'late': 1080, 'vlate': 263}
+[23:21:17] upd 25 0.35M sps 3332 (roll 1.9s train 2.2s) kl1 0.015 ent 0.310 cf 0.055 vl 0.218 EV 0.97 boards>=3 0.54 b1-start clears 0.89 b3-start clear 0.0 items 71.3 late-start clear 0.0 pools {'early': 282, 'late': 1080, 'vlate': 288}
+[23:21:38] upd 30 0.41M sps 3238 (roll 2.0s train 2.2s) kl1 0.019 ent 0.317 cf 0.051 vl 0.183 EV 0.97 boards>=3 0.53 b1-start clears 0.93 b3-start clear 0.0 items 74.9 late-start clear 0.0 pools {'early': 312, 'late': 1080, 'vlate': 333}
+[23:21:59] upd 35 0.48M sps 3113 (roll 2.2s train 2.3s) kl1 0.026 ent 0.305 cf 0.056 vl 0.254 EV 0.96 boards>=3 0.60 b1-start clears 0.94 b3-start clear 0.0 items 73.6 late-start clear 0.0 pools {'early': 366, 'late': 1080, 'vlate': 353}
+[23:22:22] upd 40 0.55M sps 3188 (roll 2.1s train 2.3s) kl1 0.023 ent 0.305 cf 0.078 vl 0.148 EV 0.98 boards>=3 0.61 b1-start clears 1.08 b3-start clear 0.0 items 70.3 late-start clear 0.0 pools {'early': 415, 'late': 1080, 'vlate': 428}
+[23:23:46] EVAL upd 40 (0.55M): b1 clear 0.97  multiboard clears 1.36 reach3 0.38 reach4 0.00 b3 items 93.26315789473684  snap3 clear 0.00 items 90.9 deaths 1.14  late3 clear 0.00 (from 60 left, ate 0.12)  (84s)
+[23:24:06] upd 45 0.62M sps 3408 (roll 1.9s train 2.2s) kl1 0.025 ent 0.348 cf 0.053 vl 0.243 EV 0.97 boards>=3 0.62 b1-start clears 1.2 b3-start clear 0.0 items 71.9 late-start clear 0.0 pools {'early': 466, 'late': 1080, 'vlate': 508}
+[23:24:27] upd 50 0.69M sps 3249 (roll 2.0s train 2.2s) kl1 0.025 ent 0.335 cf 0.063 vl 0.164 EV 0.97 boards>=3 0.57 b1-start clears 1.32 b3-start clear 0.0 items 74.2 late-start clear 0.0 pools {'early': 512, 'late': 1080, 'vlate': 557}
+[23:24:49] upd 55 0.76M sps 3158 (roll 2.1s train 2.3s) kl1 0.023 ent 0.289 cf 0.050 vl 0.254 EV 0.97 boards>=3 0.64 b1-start clears 1.26 b3-start clear 0.0 items 74.2 late-start clear 0.0 pools {'early': 565, 'late': 1080, 'vlate': 601}
+[23:25:11] upd 60 0.83M sps 3060 (roll 2.3s train 2.3s) kl1 0.031 ent 0.324 cf 0.064 vl 0.382 EV 0.94 boards>=3 0.61 b1-start clears 1.34 b3-start clear 0.0 items 70.1 late-start clear 0.0 pools {'early': 606, 'late': 1080, 'vlate': 650}
+[23:25:34] upd 65 0.90M sps 3129 (roll 2.1s train 2.3s) kl1 0.027 ent 0.329 cf 0.081 vl 0.217 EV 0.97 boards>=3 0.53 b1-start clears 1.39 b3-start clear 0.0 items 69.0 late-start clear 0.0 pools {'early': 645, 'late': 1080, 'vlate': 700}
+[23:25:56] upd 70 0.97M sps 3181 (roll 2.1s train 2.3s) kl1 0.027 ent 0.334 cf 0.071 vl 0.227 EV 0.97 boards>=3 0.45 b1-start clears 1.35 b3-start clear 0.0 items 72.6 late-start clear 0.0 pools {'early': 666, 'late': 1080, 'vlate': 744}
+[23:26:19] upd 75 1.04M sps 3185 (roll 2.1s train 2.3s) kl1 0.030 ent 0.315 cf 0.047 vl 0.224 EV 0.97 boards>=3 0.48 b1-start clears 1.3 b3-start clear 0.0 items 72.1 late-start clear 0.0 pools {'early': 714, 'late': 1080, 'vlate': 774}
+[23:26:41] upd 80 1.11M sps 3159 (roll 2.1s train 2.3s) kl1 0.028 ent 0.353 cf 0.062 vl 0.315 EV 0.96 boards>=3 0.46 b1-start clears 1.29 b3-start clear 0.0 items 72.0 late-start clear 0.0 pools {'early': 751, 'late': 1080, 'vlate': 804}
+[23:28:09] EVAL upd 80 (1.11M): b1 clear 0.89  multiboard clears 1.42 reach3 0.50 reach4 0.00 b3 items 92.28  snap3 clear 0.00 items 86.1 deaths 1.14  late3 clear 0.00 (from 60 left, ate 0.12)  (88s)
+[23:28:30] upd 85 1.18M sps 3153 (roll 2.2s train 2.2s) kl1 0.028 ent 0.323 cf 0.060 vl 0.367 EV 0.95 boards>=3 0.56 b1-start clears 1.25 b3-start clear 0.0 items 74.4 late-start clear 0.0 pools {'early': 803, 'late': 1080, 'vlate': 837}
+[23:28:52] upd 90 1.24M sps 3052 (roll 2.3s train 2.2s) kl1 0.033 ent 0.312 cf 0.052 vl 0.261 EV 0.96 boards>=3 0.54 b1-start clears 1.2 b3-start clear 0.0 items 76.7 late-start clear 0.0 pools {'early': 856, 'late': 1080, 'vlate': 851}
+[23:29:13] upd 95 1.31M sps 3145 (roll 2.1s train 2.3s) kl1 0.036 ent 0.323 cf 0.057 vl 0.288 EV 0.97 boards>=3 0.61 b1-start clears 1.11 b3-start clear 0.0 items 76.2 late-start clear 0.0 pools {'early': 909, 'late': 1080, 'vlate': 890}
+[23:29:36] upd 100 1.38M sps 2973 (roll 2.4s train 2.3s) kl1 0.027 ent 0.327 cf 0.055 vl 0.251 EV 0.96 boards>=3 0.61 b1-start clears 1.13 b3-start clear 0.0 items 74.5 late-start clear 0.0 pools {'early': 948, 'late': 1080, 'vlate': 929}
+[23:29:58] upd 105 1.45M sps 2924 (roll 2.5s train 2.3s) kl1 0.028 ent 0.279 cf 0.065 vl 0.234 EV 0.96 boards>=3 0.54 b1-start clears 1.13 b3-start clear 0.0 items 74.4 late-start clear 0.0 pools {'early': 982, 'late': 1080, 'vlate': 949}
+[23:30:21] upd 110 1.52M sps 2913 (roll 2.5s train 2.2s) kl1 0.030 ent 0.297 cf 0.055 vl 0.161 EV 0.98 boards>=3 0.54 b1-start clears 1.2 b3-start clear 0.0 items 74.6 late-start clear 0.0 pools {'early': 1017, 'late': 1080, 'vlate': 978}
+[23:30:43] upd 115 1.59M sps 3250 (roll 2.0s train 2.3s) kl1 0.035 ent 0.290 cf 0.054 vl 0.189 EV 0.97 boards>=3 0.57 b1-start clears 1.17 b3-start clear 0.0 items 74.7 late-start clear 0.0 pools {'early': 1045, 'late': 1080, 'vlate': 991}
+[23:31:06] upd 120 1.66M sps 2996 (roll 2.3s train 2.3s) kl1 0.030 ent 0.298 cf 0.061 vl 0.225 EV 0.96 boards>=3 0.53 b1-start clears 1.15 b3-start clear 0.0 items 75.4 late-start clear 0.0 pools {'early': 1056, 'late': 1080, 'vlate': 999}
+[23:32:51] EVAL upd 120 (1.66M): b1 clear 0.98  multiboard clears 1.44 reach3 0.48 reach4 0.00 b3 items 91.95833333333333  snap3 clear 0.00 items 90.3 deaths 1.14  late3 clear 0.00 (from 60 left, ate 0.10)  (105s)
+[23:33:12] upd 125 1.73M sps 3122 (roll 2.2s train 2.2s) kl1 0.032 ent 0.268 cf 0.038 vl 0.174 EV 0.97 boards>=3 0.58 b1-start clears 1.18 b3-start clear 0.0 items 76.2 late-start clear 0.0 pools {'early': 1072, 'late': 1080, 'vlate': 1004}
+[23:33:33] upd 130 1.80M sps 3214 (roll 2.1s train 2.2s) kl1 0.038 ent 0.300 cf 0.040 vl 0.143 EV 0.97 boards>=3 0.61 b1-start clears 1.1 b3-start clear 0.0 items 77.7 late-start clear 0.0 pools {'early': 1074, 'late': 1080, 'vlate': 1009}
+[23:33:55] upd 135 1.87M sps 3250 (roll 2.0s train 2.3s) kl1 0.030 ent 0.287 cf 0.067 vl 0.164 EV 0.97 boards>=3 0.58 b1-start clears 1.17 b3-start clear 0.0 items 74.4 late-start clear 0.0 pools {'early': 1080, 'late': 1080, 'vlate': 1009}
+[23:34:17] upd 140 1.94M sps 3225 (roll 2.0s train 2.2s) kl1 0.037 ent 0.276 cf 0.068 vl 0.171 EV 0.97 boards>=3 0.60 b1-start clears 1.16 b3-start clear 0.0 items 78.9 late-start clear 0.0 pools {'early': 1080, 'late': 1080, 'vlate': 1039}
+[23:34:40] upd 145 2.00M sps 3176 (roll 2.1s train 2.3s) kl1 0.043 ent 0.281 cf 0.085 vl 0.224 EV 0.97 boards>=3 0.64 b1-start clears 1.21 b3-start clear 0.0 items 76.4 late-start clear 0.0 pools {'early': 1080, 'late': 1080, 'vlate': 1048}
+[23:35:03] upd 150 2.07M sps 3105 (roll 2.2s train 2.3s) kl1 0.036 ent 0.303 cf 0.052 vl 0.102 EV 0.98 boards>=3 0.60 b1-start clears 1.33 b3-start clear 0.0 items 76.3 late-start clear 0.0 pools {'early': 1080, 'late': 1080, 'vlate': 1058}
+[23:35:25] upd 155 2.14M sps 2970 (roll 2.4s train 2.3s) kl1 0.034 ent 0.276 cf 0.082 vl 0.245 EV 0.97 boards>=3 0.60 b1-start clears 1.35 b3-start clear 0.0 items 73.0 late-start clear 0.0 pools {'early': 1080, 'late': 1080, 'vlate': 1062}
