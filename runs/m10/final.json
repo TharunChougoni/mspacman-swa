@@ -1,0 +1,1 @@
+{"update": 350, "env_steps": 1881600, "best": {"n": 100, "clear_rate": 0.87, "clear_se": 0.03379976689896311, "score": 2755.3, "score_se": 69.43428766128666, "eaten": 153.37, "eaten_se": 0.3329255080936183, "deaths": 1.33, "action_frac": [0.319, 0.189, 0.227, 0.265], "steps": 1457.9, "update": 350, "env_steps": 1881600, "secs": 39}}

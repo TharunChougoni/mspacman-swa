@@ -1,0 +1,63 @@
+=== 2026-10-12 11:47:06 start [m10confirm]
+eval runs/m10/best.pt: seeds 50000..50299, sticky 0.25, workers 14, bf16 0
+  games 0/300  clears 0  step 350  elapsed 32s
+  games 144/300  clears 124  items 153.3  ETA 67s  step 1139  elapsed 62s
+  games 300/300  clears 241  items 153.3  ETA 0s  step 5055  elapsed 82s
+{"n": 300, "clear_rate": 0.8033333333333333, "clear_se": 0.02298675559401019, "score": 2753.8, "score_se": 41.61736677627868, "eaten": 153.34, "eaten_se": 0.10979457863814478, "deaths": 1.39, "action_frac": [0.319, 0.186, 0.23, 0.264], "steps": 1300.02, "ckpt": "runs/m10/best.pt", "seed0": 50000, "sticky": 0.25}
+wall 82.6s
+multiboard eval runs/m10/best.pt: seeds 50000..50099, cap 20000, fp32 greedy, sticky 0.25
+  games 23/100 step 1450 max-board {1: 15, 2: 8} elapsed 30s
+  games 100/100 step 4323 max-board {1: 23, 2: 58, 3: 19} elapsed 48s
+{
+ "ckpt": "runs/m10/best.pt",
+ "seed0": 50000,
+ "n": 100,
+ "cap": 20000,
+ "sticky": 0.25,
+ "fp32": true,
+ "greedy": true,
+ "reach_frac": {
+  "1": 1.0,
+  "2": 0.77,
+  "3": 0.19
+ },
+ "clears_dist": {
+  "0": 23,
+  "1": 58,
+  "2": 19
+ },
+ "mean_clears": 0.96,
+ "mean_score": 4394.2,
+ "mean_total_items": 253.12,
+ "deaths_by_board": {
+  "1": 163,
+  "2": 110,
+  "3": 27
+ },
+ "death_frac_by_board": {
+  "1": 0.5433333333333333,
+  "2": 0.36666666666666664,
+  "3": 0.09
+ },
+ "mean_items_by_board_reached": {
+  "1": 153.37,
+  "2": 125.33766233766234,
+  "3": 17.05263157894737
+ },
+ "n_reached_by_board": {
+  "1": 100,
+  "2": 77,
+  "3": 19
+ },
+ "cap_hits": 0,
+ "mean_steps": 2162.04,
+ "states": 96,
+ "best_game": {
+  "seed": 50035,
+  "max_board": 3,
+  "score": 8470.0,
+  "steps": 4323
+ }
+}
+wall 48.3s
+=== 2026-10-12 11:49:18 finished [m10confirm] exit 0

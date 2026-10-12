@@ -1,0 +1,90 @@
+=== 2026-10-12 11:23:08 start [m10distill]
+[11:23:10] init from runs/m9run/best.pt: 38 tensors loaded (missing: ['blocks.0.attn.slope', 'blocks.1.attn.slope'])
+[11:23:10] config {"TEACH": "runs/m9run/best.pt", "NW": 14, "PER": 3, "T": 128, "TAU": 0.25, "LR": 0.0001, "EPOCHS": 2, "NMB": 3, "VAL_W": 0.001, "P_SNAP": 0.3, "P_TEACH0": 0.5, "TEACH_ANNEAL": 300, "EVAL_EVERY": 50, "TARGET": 0.85, "PATIENCE": 8, "MAX_UPDATES": 5000, "MAX_STEPS": 8000, "ARCH": {"n_actions": 4, "d": 512, "n_heads": 8, "n_layers": 2, "window": 8, "lam": 0.05}}
+
+
+
+
+
+
+[11:23:53] EVAL update 0 (0.00M): clear 0.09 ± 0.03 items 139.7 deaths 1.96 (40s) *best*
+[11:24:06] upd 5 0.03M kl 0.1426 agree 0.829 vmse 46.75 p_teach 0.49 sps 2126 (roll 1.3s train 1.2s) recent {'normal_clears': None, 'normal_score': None, 'board2_clears': 0.0}
+[11:24:20] upd 10 0.05M kl 0.0915 agree 0.888 vmse 33.41 p_teach 0.48 sps 1488 (roll 2.2s train 1.4s) recent {'normal_clears': 0.0, 'normal_score': 2457.5, 'board2_clears': 0.0}
+[11:24:34] upd 15 0.08M kl 0.0883 agree 0.877 vmse 30.28 p_teach 0.48 sps 2042 (roll 1.4s train 1.2s) recent {'normal_clears': 0.07692307692307693, 'normal_score': 2648.4615384615386, 'board2_clears': 0.0}
+[11:24:48] upd 20 0.11M kl 0.0865 agree 0.889 vmse 26.98 p_teach 0.47 sps 1803 (roll 1.7s train 1.3s) recent {'normal_clears': 0.32, 'normal_score': 3192.4, 'board2_clears': 0.0}
+[11:25:02] upd 25 0.13M kl 0.0809 agree 0.891 vmse 27.87 p_teach 0.46 sps 1878 (roll 1.6s train 1.3s) recent {'normal_clears': 0.37142857142857144, 'normal_score': 3338.5714285714284, 'board2_clears': 0.0}
+[11:25:17] upd 30 0.16M kl 0.0837 agree 0.888 vmse 26.88 p_teach 0.45 sps 1984 (roll 1.4s train 1.3s) recent {'normal_clears': 0.4375, 'normal_score': 3476.0416666666665, 'board2_clears': 0.034482758620689655}
+[11:25:31] upd 35 0.19M kl 0.0773 agree 0.895 vmse 28.33 p_teach 0.44 sps 2081 (roll 1.2s train 1.4s) recent {'normal_clears': 0.49122807017543857, 'normal_score': 3558.7719298245615, 'board2_clears': 0.06060606060606061}
+[11:25:46] upd 40 0.22M kl 0.0797 agree 0.892 vmse 27.66 p_teach 0.43 sps 1729 (roll 1.7s train 1.4s) recent {'normal_clears': 0.5384615384615384, 'normal_score': 3701.076923076923, 'board2_clears': 0.07692307692307693}
+[11:26:00] upd 45 0.24M kl 0.0790 agree 0.893 vmse 29.60 p_teach 0.43 sps 1811 (roll 1.5s train 1.5s) recent {'normal_clears': 0.5866666666666667, 'normal_score': 3797.4666666666667, 'board2_clears': 0.075}
+[11:26:15] upd 50 0.27M kl 0.0734 agree 0.901 vmse 24.67 p_teach 0.42 sps 1859 (roll 1.6s train 1.3s) recent {'normal_clears': 0.6022727272727273, 'normal_score': 4000.2272727272725, 'board2_clears': 0.08888888888888889}
+[11:26:45] EVAL update 50 (0.27M): clear 0.79 ± 0.04 items 153.2 deaths 1.41 (30s) *best*
+[11:26:59] upd 55 0.30M kl 0.0746 agree 0.899 vmse 24.40 p_teach 0.41 sps 1800 (roll 1.7s train 1.3s) recent {'normal_clears': 0.5858585858585859, 'normal_score': 3885.3535353535353, 'board2_clears': 0.08333333333333333}
+[11:27:14] upd 60 0.32M kl 0.0740 agree 0.907 vmse 25.75 p_teach 0.40 sps 1721 (roll 1.7s train 1.5s) recent {'normal_clears': 0.6146788990825688, 'normal_score': 3893.577981651376, 'board2_clears': 0.07547169811320754}
+[11:27:30] upd 65 0.35M kl 0.0645 agree 0.900 vmse 23.73 p_teach 0.39 sps 1779 (roll 1.6s train 1.4s) recent {'normal_clears': 0.632, 'normal_score': 3835.2, 'board2_clears': 0.07017543859649122}
+[11:27:45] upd 70 0.38M kl 0.0715 agree 0.896 vmse 24.16 p_teach 0.39 sps 1831 (roll 1.5s train 1.5s) recent {'normal_clears': 0.6589147286821705, 'normal_score': 3883.4883720930234, 'board2_clears': 0.07575757575757576}
+[11:28:00] upd 75 0.40M kl 0.0777 agree 0.891 vmse 25.79 p_teach 0.38 sps 1908 (roll 1.3s train 1.5s) recent {'normal_clears': 0.6715328467153284, 'normal_score': 3902.6277372262775, 'board2_clears': 0.07936507936507936}
+[11:28:15] upd 80 0.43M kl 0.0761 agree 0.897 vmse 25.29 p_teach 0.37 sps 1810 (roll 1.6s train 1.4s) recent {'normal_clears': 0.7266187050359713, 'normal_score': 4028.9208633093526, 'board2_clears': 0.08196721311475409}
+[11:28:32] upd 85 0.46M kl 0.0632 agree 0.913 vmse 22.56 p_teach 0.36 sps 1801 (roll 1.5s train 1.5s) recent {'normal_clears': 0.7714285714285715, 'normal_score': 4101.142857142857, 'board2_clears': 0.11666666666666667}
+[11:28:46] upd 90 0.48M kl 0.0687 agree 0.891 vmse 20.63 p_teach 0.35 sps 1704 (roll 1.7s train 1.5s) recent {'normal_clears': 0.7832167832167832, 'normal_score': 4115.874125874126, 'board2_clears': 0.12280701754385964}
+[11:29:01] upd 95 0.51M kl 0.0683 agree 0.904 vmse 23.66 p_teach 0.34 sps 1740 (roll 1.6s train 1.5s) recent {'normal_clears': 0.7931034482758621, 'normal_score': 4165.931034482759, 'board2_clears': 0.12727272727272726}
+[11:29:17] upd 100 0.54M kl 0.0748 agree 0.895 vmse 21.53 p_teach 0.33 sps 1620 (roll 1.9s train 1.4s) recent {'normal_clears': 0.8275862068965517, 'normal_score': 4243.586206896552, 'board2_clears': 0.09090909090909091}
+[11:29:54] EVAL update 100 (0.54M): clear 0.78 ± 0.04 items 153.1 deaths 1.33 (37s)
+[11:30:09] upd 105 0.56M kl 0.0689 agree 0.898 vmse 22.78 p_teach 0.33 sps 2047 (roll 1.1s train 1.5s) recent {'normal_clears': 0.8287671232876712, 'normal_score': 4260.2054794520545, 'board2_clears': 0.09259259259259259}
+[11:30:25] upd 110 0.59M kl 0.0637 agree 0.908 vmse 20.06 p_teach 0.32 sps 1710 (roll 1.8s train 1.3s) recent {'normal_clears': 0.8194444444444444, 'normal_score': 4225.069444444444, 'board2_clears': 0.07142857142857142}
+[11:30:40] upd 115 0.62M kl 0.0605 agree 0.905 vmse 21.16 p_teach 0.31 sps 1598 (roll 1.8s train 1.5s) recent {'normal_clears': 0.8309859154929577, 'normal_score': 4213.661971830986, 'board2_clears': 0.06896551724137931}
+[11:30:56] upd 120 0.65M kl 0.0666 agree 0.904 vmse 23.30 p_teach 0.30 sps 2029 (roll 1.1s train 1.6s) recent {'normal_clears': 0.8214285714285714, 'normal_score': 4159.785714285715, 'board2_clears': 0.05}
+[11:31:11] upd 125 0.67M kl 0.0614 agree 0.901 vmse 21.14 p_teach 0.29 sps 1752 (roll 1.5s train 1.5s) recent {'normal_clears': 0.8188405797101449, 'normal_score': 4179.492753623188, 'board2_clears': 0.06451612903225806}
+[11:31:26] upd 130 0.70M kl 0.0630 agree 0.914 vmse 20.55 p_teach 0.29 sps 1730 (roll 1.7s train 1.4s) recent {'normal_clears': 0.8235294117647058, 'normal_score': 4216.764705882353, 'board2_clears': 0.078125}
+[11:31:42] upd 135 0.73M kl 0.0545 agree 0.906 vmse 19.77 p_teach 0.28 sps 1535 (roll 2.0s train 1.6s) recent {'normal_clears': 0.8235294117647058, 'normal_score': 4245.882352941177, 'board2_clears': 0.078125}
+[11:31:59] upd 140 0.75M kl 0.0611 agree 0.905 vmse 20.32 p_teach 0.27 sps 1770 (roll 1.5s train 1.6s) recent {'normal_clears': 0.8014705882352942, 'normal_score': 4212.573529411765, 'board2_clears': 0.078125}
+[11:32:15] upd 145 0.78M kl 0.0550 agree 0.920 vmse 19.54 p_teach 0.26 sps 1502 (roll 2.1s train 1.5s) recent {'normal_clears': 0.7753623188405797, 'normal_score': 4142.028985507246, 'board2_clears': 0.08064516129032258}
+[11:32:30] upd 150 0.81M kl 0.0566 agree 0.912 vmse 19.46 p_teach 0.25 sps 1721 (roll 1.5s train 1.6s) recent {'normal_clears': 0.7681159420289855, 'normal_score': 4134.63768115942, 'board2_clears': 0.06451612903225806}
+[11:33:04] EVAL update 150 (0.81M): clear 0.81 ± 0.04 items 153.1 deaths 1.50 (34s) *best*
+[11:33:23] upd 155 0.83M kl 0.0564 agree 0.915 vmse 21.39 p_teach 0.24 sps 1427 (roll 2.1s train 1.7s) recent {'normal_clears': 0.7391304347826086, 'normal_score': 4111.449275362319, 'board2_clears': 0.06451612903225806}
+[11:33:39] upd 160 0.86M kl 0.0508 agree 0.914 vmse 16.62 p_teach 0.23 sps 1897 (roll 1.2s train 1.6s) recent {'normal_clears': 0.725925925925926, 'normal_score': 4073.6296296296296, 'board2_clears': 0.06153846153846154}
+[11:33:56] upd 165 0.89M kl 0.0593 agree 0.915 vmse 20.27 p_teach 0.23 sps 1352 (roll 2.4s train 1.6s) recent {'normal_clears': 0.7352941176470589, 'normal_score': 4064.705882352941, 'board2_clears': 0.109375}
+[11:34:13] upd 170 0.91M kl 0.0495 agree 0.922 vmse 17.19 p_teach 0.22 sps 1631 (roll 1.6s train 1.7s) recent {'normal_clears': 0.7164179104477612, 'normal_score': 4067.910447761194, 'board2_clears': 0.12121212121212122}
+[11:34:31] upd 175 0.94M kl 0.0510 agree 0.923 vmse 17.07 p_teach 0.21 sps 1540 (roll 1.8s train 1.7s) recent {'normal_clears': 0.7266187050359713, 'normal_score': 4075.971223021583, 'board2_clears': 0.13114754098360656}
+[11:34:50] upd 180 0.97M kl 0.0505 agree 0.919 vmse 17.77 p_teach 0.20 sps 1632 (roll 1.6s train 1.7s) recent {'normal_clears': 0.7285714285714285, 'normal_score': 4024.714285714286, 'board2_clears': 0.18333333333333332}
+[11:35:05] upd 185 0.99M kl 0.0479 agree 0.923 vmse 16.65 p_teach 0.19 sps 1773 (roll 1.5s train 1.6s) recent {'normal_clears': 0.7266187050359713, 'normal_score': 4008.273381294964, 'board2_clears': 0.19672131147540983}
+[11:35:22] upd 190 1.02M kl 0.0639 agree 0.905 vmse 18.58 p_teach 0.18 sps 1214 (roll 2.8s train 1.7s) recent {'normal_clears': 0.7464788732394366, 'normal_score': 3998.450704225352, 'board2_clears': 0.22413793103448276}
+[11:35:39] upd 195 1.05M kl 0.0556 agree 0.910 vmse 19.77 p_teach 0.18 sps 1737 (roll 1.5s train 1.6s) recent {'normal_clears': 0.7397260273972602, 'normal_score': 3980.27397260274, 'board2_clears': 0.24074074074074073}
+[11:35:55] upd 200 1.08M kl 0.0584 agree 0.903 vmse 19.22 p_teach 0.17 sps 1537 (roll 1.8s train 1.7s) recent {'normal_clears': 0.7103448275862069, 'normal_score': 4004.206896551724, 'board2_clears': 0.23636363636363636}
+[11:36:30] EVAL update 200 (1.08M): clear 0.82 ± 0.04 items 153.0 deaths 1.44 (35s) *best*
+[11:36:47] upd 205 1.10M kl 0.0554 agree 0.915 vmse 17.97 p_teach 0.16 sps 1578 (roll 1.7s train 1.7s) recent {'normal_clears': 0.6845637583892618, 'normal_score': 3902.0805369127515, 'board2_clears': 0.27450980392156865}
+[11:37:06] upd 210 1.13M kl 0.0543 agree 0.914 vmse 18.30 p_teach 0.15 sps 1535 (roll 1.7s train 1.8s) recent {'normal_clears': 0.7248322147651006, 'normal_score': 3999.6644295302012, 'board2_clears': 0.27450980392156865}
+[11:37:24] upd 215 1.16M kl 0.0524 agree 0.918 vmse 19.61 p_teach 0.14 sps 1583 (roll 1.7s train 1.7s) recent {'normal_clears': 0.7, 'normal_score': 3986.266666666667, 'board2_clears': 0.28}
+[11:37:41] upd 220 1.18M kl 0.0593 agree 0.912 vmse 20.01 p_teach 0.14 sps 1690 (roll 1.5s train 1.7s) recent {'normal_clears': 0.7, 'normal_score': 3986.6666666666665, 'board2_clears': 0.28}
+[11:37:59] upd 225 1.21M kl 0.0517 agree 0.916 vmse 19.21 p_teach 0.13 sps 1442 (roll 2.0s train 1.7s) recent {'normal_clears': 0.7142857142857143, 'normal_score': 3983.809523809524, 'board2_clears': 0.24528301886792453}
+[11:38:17] upd 230 1.24M kl 0.0527 agree 0.914 vmse 17.91 p_teach 0.12 sps 1448 (roll 2.0s train 1.7s) recent {'normal_clears': 0.7248322147651006, 'normal_score': 3988.2550335570468, 'board2_clears': 0.2549019607843137}
+[11:38:35] upd 235 1.26M kl 0.0526 agree 0.909 vmse 17.06 p_teach 0.11 sps 1387 (roll 2.1s train 1.7s) recent {'normal_clears': 0.7054794520547946, 'normal_score': 3986.3698630136987, 'board2_clears': 0.2222222222222222}
+[11:38:53] upd 240 1.29M kl 0.0511 agree 0.919 vmse 17.14 p_teach 0.10 sps 1522 (roll 1.7s train 1.8s) recent {'normal_clears': 0.7132867132867133, 'normal_score': 3971.048951048951, 'board2_clears': 0.22807017543859648}
+[11:39:10] upd 245 1.32M kl 0.0543 agree 0.919 vmse 19.85 p_teach 0.09 sps 1579 (roll 1.5s train 2.0s) recent {'normal_clears': 0.7021276595744681, 'normal_score': 3975.0354609929077, 'board2_clears': 0.22033898305084745}
+[11:39:28] upd 250 1.34M kl 0.0621 agree 0.902 vmse 21.18 p_teach 0.09 sps 1428 (roll 1.9s train 1.9s) recent {'normal_clears': 0.7163120567375887, 'normal_score': 4042.198581560284, 'board2_clears': 0.22033898305084745}
+[11:40:07] EVAL update 250 (1.34M): clear 0.83 ± 0.04 items 153.7 deaths 1.52 (38s) *best*
+[11:40:26] upd 255 1.37M kl 0.0526 agree 0.924 vmse 18.47 p_teach 0.08 sps 1424 (roll 1.9s train 1.9s) recent {'normal_clears': 0.7375886524822695, 'normal_score': 4165.106382978724, 'board2_clears': 0.1694915254237288}
+[11:40:44] upd 260 1.40M kl 0.0476 agree 0.916 vmse 17.81 p_teach 0.07 sps 1774 (roll 1.3s train 1.7s) recent {'normal_clears': 0.7194244604316546, 'normal_score': 4154.3884892086335, 'board2_clears': 0.13114754098360656}
+[11:41:00] upd 265 1.42M kl 0.0502 agree 0.921 vmse 18.62 p_teach 0.06 sps 1585 (roll 1.7s train 1.7s) recent {'normal_clears': 0.7318840579710145, 'normal_score': 4120.072463768116, 'board2_clears': 0.12903225806451613}
+[11:41:15] upd 270 1.45M kl 0.0551 agree 0.914 vmse 19.46 p_teach 0.05 sps 1792 (roll 1.3s train 1.7s) recent {'normal_clears': 0.7410071942446043, 'normal_score': 4136.402877697842, 'board2_clears': 0.11475409836065574}
+[11:41:31] upd 275 1.48M kl 0.0495 agree 0.923 vmse 16.95 p_teach 0.04 sps 1918 (roll 1.4s train 1.4s) recent {'normal_clears': 0.7664233576642335, 'normal_score': 4222.846715328467, 'board2_clears': 0.1111111111111111}
+[11:41:47] upd 280 1.51M kl 0.0548 agree 0.917 vmse 18.58 p_teach 0.03 sps 1799 (roll 1.5s train 1.4s) recent {'normal_clears': 0.7851851851851852, 'normal_score': 4218.814814814815, 'board2_clears': 0.1076923076923077}
+[11:42:03] upd 285 1.53M kl 0.0606 agree 0.914 vmse 22.22 p_teach 0.03 sps 1816 (roll 1.4s train 1.6s) recent {'normal_clears': 0.7878787878787878, 'normal_score': 4173.030303030303, 'board2_clears': 0.10294117647058823}
+[11:42:20] upd 290 1.56M kl 0.0524 agree 0.921 vmse 18.74 p_teach 0.02 sps 1768 (roll 1.5s train 1.5s) recent {'normal_clears': 0.7786259541984732, 'normal_score': 4155.343511450382, 'board2_clears': 0.13043478260869565}
+[11:42:36] upd 295 1.59M kl 0.0475 agree 0.923 vmse 17.90 p_teach 0.01 sps 1782 (roll 1.6s train 1.4s) recent {'normal_clears': 0.7615384615384615, 'normal_score': 4150.0, 'board2_clears': 0.14285714285714285}
+[11:42:52] upd 300 1.61M kl 0.0592 agree 0.907 vmse 19.93 p_teach 0.00 sps 1480 (roll 2.0s train 1.6s) recent {'normal_clears': 0.753731343283582, 'normal_score': 4118.6567164179105, 'board2_clears': 0.13636363636363635}
+[11:43:27] EVAL update 300 (1.61M): clear 0.86 ± 0.03 items 153.6 deaths 1.43 (35s) *best*
+[11:43:42] upd 305 1.64M kl 0.0454 agree 0.919 vmse 17.02 p_teach 0.00 sps 1614 (roll 1.9s train 1.5s) recent {'normal_clears': 0.753731343283582, 'normal_score': 4087.089552238806, 'board2_clears': 0.10606060606060606}
+[11:43:57] upd 310 1.67M kl 0.0573 agree 0.903 vmse 17.30 p_teach 0.00 sps 1669 (roll 1.6s train 1.6s) recent {'normal_clears': 0.7481481481481481, 'normal_score': 4072.814814814815, 'board2_clears': 0.12307692307692308}
+[11:44:14] upd 315 1.69M kl 0.0469 agree 0.931 vmse 15.28 p_teach 0.00 sps 1326 (roll 2.4s train 1.7s) recent {'normal_clears': 0.7463768115942029, 'normal_score': 4045.6521739130435, 'board2_clears': 0.11290322580645161}
+[11:44:31] upd 320 1.72M kl 0.0525 agree 0.912 vmse 17.85 p_teach 0.00 sps 1798 (roll 1.3s train 1.7s) recent {'normal_clears': 0.7410071942446043, 'normal_score': 4037.7697841726617, 'board2_clears': 0.11475409836065574}
+[11:44:48] upd 325 1.75M kl 0.0517 agree 0.918 vmse 17.69 p_teach 0.00 sps 1566 (roll 1.8s train 1.6s) recent {'normal_clears': 0.7338129496402878, 'normal_score': 3990.6474820143885, 'board2_clears': 0.13114754098360656}
+[11:45:07] upd 330 1.77M kl 0.0506 agree 0.918 vmse 16.72 p_teach 0.00 sps 1300 (roll 2.2s train 1.9s) recent {'normal_clears': 0.7328767123287672, 'normal_score': 3999.5205479452056, 'board2_clears': 0.14814814814814814}
+[11:45:23] upd 335 1.80M kl 0.0442 agree 0.925 vmse 16.26 p_teach 0.00 sps 1828 (roll 1.2s train 1.8s) recent {'normal_clears': 0.7397260273972602, 'normal_score': 4001.3698630136987, 'board2_clears': 0.14814814814814814}
+[11:45:39] upd 340 1.83M kl 0.0483 agree 0.916 vmse 15.30 p_teach 0.00 sps 1521 (roll 1.8s train 1.8s) recent {'normal_clears': 0.7272727272727273, 'normal_score': 3957.2727272727275, 'board2_clears': 0.15789473684210525}
+[11:45:57] upd 345 1.85M kl 0.0461 agree 0.924 vmse 16.49 p_teach 0.00 sps 1613 (roll 1.5s train 1.8s) recent {'normal_clears': 0.7278911564625851, 'normal_score': 3983.673469387755, 'board2_clears': 0.1320754716981132}
+[11:46:14] upd 350 1.88M kl 0.0507 agree 0.919 vmse 17.82 p_teach 0.00 sps 1774 (roll 1.5s train 1.5s) recent {'normal_clears': 0.7315436241610739, 'normal_score': 4049.3959731543623, 'board2_clears': 0.13725490196078433}
+[11:46:53] EVAL update 350 (1.88M): clear 0.87 ± 0.03 items 153.4 deaths 1.33 (39s) *best*
+[11:46:53] stop: hit 2 since_best 0
+[11:46:53] done
+=== 2026-10-12 11:46:54 finished [m10distill] exit 0
