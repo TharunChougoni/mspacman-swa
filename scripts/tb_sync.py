@@ -46,7 +46,41 @@ def flat(d, prefix):
                 yield f"{prefix}/{k}_{i}", float(x)
 
 
-def rows_to_scalars(row):
+# Per-run field renames onto the shared tag names of M7-M9 (train/v, train/kl, eval/clear_rate, ...).
+# A new name containing "/" routes the field to its own section (tag = that name).
+RENAME = {
+    "m10": {"train": {"kl": "distill/kl_teacher", "val_mse": "distill/val_mse", "agree": "distill/agree",
+                      "p_teach": "distill/p_teach"}},
+    "m11": {"train": {"vloss": "v", "kl_ref_maze1": "kl", "maze1_frac": "multiboard/maze1_frac",
+                      "board_mean": "multiboard/train_board_mean", "board3p_frac": "multiboard/train_board3p_frac"},
+            "eval": {"b1_clear": "clear_rate", "b1_items": "eaten",
+                     "mb_clears": "multiboard/clears_per_game", "mb_score": "multiboard/score",
+                     "mb_reach3": "multiboard/reach3", "mb_reach4": "multiboard/reach4", "mb_b3_items": "multiboard/b3_items",
+                     "snap3_clear": "snap3/clear", "snap3_items": "snap3/items", "snap3_deaths": "snap3/deaths"}},
+}
+
+
+def renamed(run, row):
+    rn = RENAME.get(run, {}).get(row.get("type"), {})
+    out, extra = {}, {}
+    for k, v in row.items():
+        n = rn.get(k, k)
+        if "/" in n:
+            if isinstance(v, (int, float)) and not isinstance(v, bool) and math.isfinite(v):
+                extra[n] = float(v)
+        else:
+            out[n] = v
+    return out, extra
+
+
+def rows_to_scalars(row, run=""):
+    row, extra = renamed(run, row)
+    sc = _rows_to_scalars(row)
+    sc.update(extra)
+    return sc
+
+
+def _rows_to_scalars(row):
     t = row.get("type")
     if t == "train":
         out = {}
@@ -104,7 +138,7 @@ class RunSync:
             if not isinstance(step, (int, float)):
                 continue
             step = int(step)
-            sc = rows_to_scalars(row)
+            sc = rows_to_scalars(row, self.name)
             if not sc:
                 continue
             if row.get("type") == "train" and isinstance(row.get("update"), (int, float)):
