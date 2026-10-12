@@ -1,0 +1,17 @@
+=== 2026-10-12 10:57:39 start [m9confirm]
+=== confirm: 300 held-out games (seeds 50000-50299) of runs/m9run/best.pt (fp32 GPU fasteval)
+eval runs/m9run/best.pt: seeds 50000..50299, sticky 0.25, workers 14, bf16 0
+
+
+
+  games 0/300  clears 0  step 350  elapsed 31s
+  games 134/300  clears 117  items 153.6  ETA 76s  step 1147  elapsed 61s
+  games 300/300  clears 251  items 153.4  ETA 0s  step 6000  elapsed 85s
+{"n": 300, "clear_rate": 0.8366666666666667, "clear_se": 0.021378540451223522, "score": 2787.0, "score_se": 45.82910186203184, "eaten": 153.38, "eaten_se": 0.11501926550855335, "deaths": 1.37, "action_frac": [0.32, 0.191, 0.223, 0.266], "steps": 1382.8733333333332, "ckpt": "runs/m9run/best.pt", "seed0": 50000, "sticky": 0.25}
+wall 84.8s
+=== confirm clear 0.8366666666666667 > 0.223 (M8): recording video
+seed 0: cleared=True items=154 score=3200 (30s)
+board 1 cleared at decision 1793, score 3200
+wrote runs/videos/board_clear_pixel_m9_seed0.mp4 (3.1 MB) in 63s
+=== M9 run finished
+=== 2026-10-12 11:00:10 finished [m9confirm] exit 0

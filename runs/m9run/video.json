@@ -1,0 +1,1 @@
+{"path": "runs/videos/board_clear_pixel_m9_seed0.mp4", "seed": 0, "cleared": true, "score": 3360.0, "steps": 1883, "deaths": 1, "mb": 3.141604, "eval_run": {"seed": 0, "cleared": true, "steps": 1793, "score": 3200.0, "eaten": 154, "deaths": 1, "hist": [593, 405, 333, 462]}}

@@ -1,0 +1,53 @@
+{
+ "INIT": "runs/m8/best.pt",
+ "N": 42,
+ "T": 128,
+ "EPOCHS": 3,
+ "NMB": 3,
+ "GAMMA": 0.995,
+ "LAM": 0.95,
+ "CLIP": 0.1,
+ "LR_PI": 5e-05,
+ "LR_V": 0.0003,
+ "VF": 0.5,
+ "ENT": 0.001,
+ "BETA0": 0.05,
+ "BETA1": 0.05,
+ "KL_ANNEAL": 4000,
+ "TAU": 0.25,
+ "VWARM": 10,
+ "RW": [
+  0.1,
+  0.0005,
+  10.0,
+  5.0,
+  2.0
+ ],
+ "ARCH": {
+  "n_actions": 4,
+  "d": 512,
+  "n_heads": 8,
+  "n_layers": 2,
+  "window": 8,
+  "lam": 0.05
+ },
+ "EVAL_EVERY": 150,
+ "REF_AT_TRAIN": true,
+ "EVAL_MODE": "gpu",
+ "EVAL_BF16": false,
+ "STALL": [
+  10.0,
+  150.0,
+  0.005,
+  0.01
+ ],
+ "TF32": true,
+ "OVERLAP": false,
+ "FAST_LAST": true,
+ "P_POOL": 0.6,
+ "POOL_CAP": 200,
+ "VH_INIT": "runs/m8/ckpt_last.pt",
+ "EVAL_N": 100,
+ "EVAL_SEED0": 0,
+ "MAX_STEPS": 6000
+}
