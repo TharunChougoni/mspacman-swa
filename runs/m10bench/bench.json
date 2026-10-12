@@ -1,0 +1,26 @@
+{
+ "net_m9_B42_fp32_steps_per_s": 33850,
+ "net_m10_B42_fp32_steps_per_s": 52547,
+ "net_m9_B42_tf32_steps_per_s": 46581,
+ "net_m10_B42_tf32_steps_per_s": 59743,
+ "net_m9_B100_fp32_steps_per_s": 39917,
+ "net_m10_B100_fp32_steps_per_s": 65321,
+ "net_m9_B100_tf32_steps_per_s": 51189,
+ "net_m10_B100_tf32_steps_per_s": 76336,
+ "net_m9_B256_fp32_steps_per_s": 42595,
+ "net_m10_B256_fp32_steps_per_s": 76900,
+ "net_m9_B256_tf32_steps_per_s": 51544,
+ "net_m10_B256_tf32_steps_per_s": 80908,
+ "m9_fasteval": {
+  "wall": 31.1,
+  "env_steps_per_s": 4544,
+  "clear_rate": 0.91,
+  "eaten": 153.56
+ },
+ "m10_kv": {
+  "wall": 41.3,
+  "env_steps_per_s": 4973,
+  "clear_rate": 0.09,
+  "eaten": 139.65
+ }
+}
