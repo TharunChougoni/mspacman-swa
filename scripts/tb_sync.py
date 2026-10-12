@@ -48,7 +48,8 @@ def flat(d, prefix):
 
 # Per-run field renames onto the shared tag names of M7-M9 (train/v, train/kl, eval/clear_rate, ...).
 # A new name containing "/" routes the field to its own section (tag = that name).
-RENAME = {
+RENAME = {}
+RENAME_BASE = {
     "m10": {"train": {"kl": "distill/kl_teacher", "val_mse": "distill/val_mse", "agree": "distill/agree",
                       "p_teach": "distill/p_teach"}},
     "m11": {"train": {"vloss": "v", "kl_ref_maze1": "kl", "maze1_frac": "multiboard/maze1_frac",
@@ -58,6 +59,11 @@ RENAME = {
                      "mb_reach3": "multiboard/reach3", "mb_reach4": "multiboard/reach4", "mb_b3_items": "multiboard/b3_items",
                      "snap3_clear": "snap3/clear", "snap3_items": "snap3/items", "snap3_deaths": "snap3/deaths"}},
 }
+
+RENAME.update(RENAME_BASE)
+RENAME["m12"] = {"train": dict(RENAME_BASE["m11"]["train"]),
+                 "eval": dict(RENAME_BASE["m11"]["eval"], late3_clear="late3/clear", late3_left0="late3/left0",
+                              late3_items_frac="late3/items_frac")}
 
 
 def renamed(run, row):

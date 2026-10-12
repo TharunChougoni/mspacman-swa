@@ -1,0 +1,6 @@
+=== 2026-10-12 23:04:42 start [m12late]
+test seeds [50005, 50008, 50024, 50030, 50044, 50057, 50073]; 134 games, 48 late states in 138s
+=== 2026-10-12 23:07:01 finished [m12late] exit 0
+=== 2026-10-12 23:11:00 start [m12late]
+test seeds [50005, 50008, 50024, 50030, 50044, 50057, 50073]; 240 games, 79 late states in 229s
+=== 2026-10-12 23:14:51 finished [m12late] exit 0
