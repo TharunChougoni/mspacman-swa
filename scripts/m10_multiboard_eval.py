@@ -42,7 +42,11 @@ def main():
         print(f"  games {info['done']}/{info['n']} step {info['step']} max-board {dict(sorted(mb.items()))} "
               f"elapsed {time.time() - t0:.0f}s", flush=True)
 
-    with fasteval.FastEvaluator(workers=workers, device="cuda", bf16=False) as ev:
+    import torch
+    Ev = fasteval.FastEvaluator
+    if torch.load(ck, map_location="cpu", weights_only=False).get("kind") == "m10":
+        from msclear.m10_fasteval import M10Evaluator as Ev
+    with Ev(workers=workers, device="cuda", bf16=False) as ev:
         _, res = ev.evaluate(ck, seeds, sticky=0.25, progress=progress)
     N = len(res)
     maxb = max(r["max_board"] for r in res)

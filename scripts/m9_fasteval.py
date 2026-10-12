@@ -46,7 +46,12 @@ def main():
         print(f"  games {done}/{total}  clears {clears}{extra}  step {info['step']}  elapsed {el:.0f}s",
               flush=True)
 
-    with FastEvaluator(workers=workers, device="cuda", bf16=bf16) as ev:
+    import torch
+    Ev = FastEvaluator
+    if torch.load(ck, map_location="cpu", weights_only=False).get("kind") == "m10":   # M10Net: KV-cache evaluator
+        from msclear.m10_fasteval import M10Evaluator as Ev
+        assert not bf16
+    with Ev(workers=workers, device="cuda", bf16=bf16) as ev:
         s, res = ev.evaluate(ck, seeds, sticky=sticky, progress=progress)
     s.update(ckpt=ck, seed0=s0, sticky=sticky)
     out.parent.mkdir(parents=True, exist_ok=True)
