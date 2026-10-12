@@ -61,3 +61,915 @@
 [12:50:56] upd 210 2.90M sps 1978 (roll 3.5s train 3.5s) kl1 0.068 ent 0.429 cf 0.072 vl 0.433 EV 0.93 boards>=3 0.18 b1-start clears 0.94 b3-start clear 0.0 items 35.0 harvest 914
 [12:51:29] upd 215 2.97M sps 2044 (roll 3.0s train 3.7s) kl1 0.083 ent 0.410 cf 0.076 vl 0.406 EV 0.94 boards>=3 0.18 b1-start clears 0.91 b3-start clear 0.0 items 32.6 harvest 952
 [12:52:02] upd 220 3.04M sps 2176 (roll 3.0s train 3.4s) kl1 0.068 ent 0.437 cf 0.072 vl 0.291 EV 0.94 boards>=3 0.14 b1-start clears 0.85 b3-start clear 0.0 items 34.9 harvest 976
+[12:52:35] upd 225 3.11M sps 2187 (roll 2.9s train 3.4s) kl1 0.079 ent 0.448 cf 0.072 vl 0.426 EV 0.93 boards>=3 0.24 b1-start clears 0.82 b3-start clear 0.0 items 36.1 harvest 1010
+[12:53:08] upd 230 3.18M sps 2320 (roll 2.6s train 3.3s) kl1 0.069 ent 0.455 cf 0.080 vl 0.280 EV 0.95 boards>=3 0.13 b1-start clears 0.81 b3-start clear 0.0 items 34.5 harvest 1033
+[12:53:39] upd 235 3.25M sps 2092 (roll 3.1s train 3.5s) kl1 0.081 ent 0.455 cf 0.073 vl 0.447 EV 0.94 boards>=3 0.19 b1-start clears 0.84 b3-start clear 0.0 items 34.9 harvest 1047
+[12:54:13] upd 240 3.32M sps 2063 (roll 3.2s train 3.5s) kl1 0.079 ent 0.403 cf 0.064 vl 0.431 EV 0.94 boards>=3 0.18 b1-start clears 0.84 b3-start clear 0.0 items 35.4 harvest 1059
+[12:55:27] EVAL upd 240 (3.32M): b1 clear 0.71  multiboard clears 0.90 reach3 0.16 reach4 0.00 b3 items 52.375  snap3 clear 0.00 items 51.0 deaths 1.14  (74s)
+[12:55:58] upd 245 3.39M sps 2006 (roll 3.4s train 3.5s) kl1 0.086 ent 0.403 cf 0.067 vl 0.490 EV 0.93 boards>=3 0.17 b1-start clears 0.86 b3-start clear 0.0 items 36.1 harvest 1068
+[12:56:30] upd 250 3.46M sps 2219 (roll 3.0s train 3.3s) kl1 0.078 ent 0.419 cf 0.063 vl 0.417 EV 0.93 boards>=3 0.15 b1-start clears 0.88 b3-start clear 0.0 items 34.7 harvest 1073
+[12:57:05] upd 255 3.53M sps 2162 (roll 3.1s train 3.3s) kl1 0.081 ent 0.416 cf 0.073 vl 0.512 EV 0.91 boards>=3 0.23 b1-start clears 0.88 b3-start clear 0.0 items 37.8 harvest 1077
+[12:57:37] upd 260 3.59M sps 2307 (roll 2.6s train 3.4s) kl1 0.064 ent 0.433 cf 0.069 vl 0.253 EV 0.96 boards>=3 0.20 b1-start clears 0.95 b3-start clear 0.0 items 38.8 harvest 1077
+[12:58:06] upd 265 3.66M sps 2464 (roll 2.6s train 3.0s) kl1 0.077 ent 0.480 cf 0.092 vl 0.278 EV 0.95 boards>=3 0.24 b1-start clears 0.93 b3-start clear 0.0 items 38.4 harvest 1078
+[12:58:38] upd 270 3.73M sps 2106 (roll 3.3s train 3.2s) kl1 0.078 ent 0.415 cf 0.079 vl 0.396 EV 0.94 boards>=3 0.17 b1-start clears 0.88 b3-start clear 0.0 items 39.3 harvest 1080
+[12:59:09] upd 275 3.80M sps 2224 (roll 2.9s train 3.3s) kl1 0.071 ent 0.444 cf 0.086 vl 0.320 EV 0.94 boards>=3 0.24 b1-start clears 0.92 b3-start clear 0.0 items 38.1 harvest 1080
+[12:59:39] upd 280 3.87M sps 2622 (roll 2.3s train 3.0s) kl1 0.074 ent 0.445 cf 0.063 vl 0.404 EV 0.94 boards>=3 0.17 b1-start clears 0.87 b3-start clear 0.0 items 38.7 harvest 1080
+[13:01:00] EVAL upd 280 (3.87M): b1 clear 0.89  multiboard clears 1.16 reach3 0.26 reach4 0.00 b3 items 54.46153846153846  snap3 clear 0.00 items 51.6 deaths 1.14  (82s)
+[13:01:28] upd 285 3.94M sps 2383 (roll 2.7s train 3.1s) kl1 0.080 ent 0.457 cf 0.070 vl 0.478 EV 0.92 boards>=3 0.15 b1-start clears 0.87 b3-start clear 0.0 items 37.2 harvest 1080
+[13:01:59] upd 290 4.01M sps 2387 (roll 2.7s train 3.1s) kl1 0.068 ent 0.427 cf 0.069 vl 0.427 EV 0.94 boards>=3 0.21 b1-start clears 0.87 b3-start clear 0.0 items 37.2 harvest 1080
+[13:02:33] upd 295 4.08M sps 1983 (roll 3.0s train 4.0s) kl1 0.078 ent 0.414 cf 0.080 vl 0.315 EV 0.96 boards>=3 0.21 b1-start clears 0.86 b3-start clear 0.0 items 36.4 harvest 1080
+[13:03:03] upd 300 4.15M sps 2270 (roll 2.8s train 3.3s) kl1 0.082 ent 0.418 cf 0.084 vl 0.501 EV 0.94 boards>=3 0.20 b1-start clears 0.88 b3-start clear 0.0 items 35.6 harvest 1080
+[13:03:34] upd 305 4.22M sps 2054 (roll 2.9s train 3.8s) kl1 0.090 ent 0.426 cf 0.110 vl 0.470 EV 0.94 boards>=3 0.25 b1-start clears 0.96 b3-start clear 0.0 items 36.2 harvest 1080
+[13:04:07] upd 310 4.29M sps 2129 (roll 2.6s train 3.9s) kl1 0.083 ent 0.439 cf 0.080 vl 0.438 EV 0.95 boards>=3 0.24 b1-start clears 0.98 b3-start clear 0.0 items 36.4 harvest 1080
+[13:04:40] upd 315 4.35M sps 2045 (roll 3.0s train 3.8s) kl1 0.081 ent 0.439 cf 0.072 vl 0.455 EV 0.93 boards>=3 0.18 b1-start clears 0.92 b3-start clear 0.0 items 36.1 harvest 1080
+[13:05:13] upd 320 4.42M sps 2047 (roll 3.1s train 3.7s) kl1 0.085 ent 0.376 cf 0.058 vl 0.383 EV 0.95 boards>=3 0.20 b1-start clears 0.85 b3-start clear 0.0 items 35.9 harvest 1080
+[13:06:29] EVAL upd 320 (4.42M): b1 clear 0.87  multiboard clears 1.02 reach3 0.20 reach4 0.00 b3 items 53.0  snap3 clear 0.00 items 49.5 deaths 1.14  (76s)
+[13:07:01] upd 325 4.49M sps 2010 (roll 3.6s train 3.3s) kl1 0.076 ent 0.409 cf 0.095 vl 0.398 EV 0.95 boards>=3 0.25 b1-start clears 0.84 b3-start clear 0.0 items 34.3 harvest 1080
+[13:07:32] upd 330 4.56M sps 2531 (roll 2.3s train 3.2s) kl1 0.087 ent 0.447 cf 0.075 vl 0.417 EV 0.94 boards>=3 0.19 b1-start clears 0.86 b3-start clear 0.0 items 34.2 harvest 1080
+[13:08:02] upd 335 4.63M sps 2237 (roll 3.0s train 3.2s) kl1 0.096 ent 0.417 cf 0.096 vl 0.437 EV 0.94 boards>=3 0.20 b1-start clears 0.84 b3-start clear 0.0 items 37.7 harvest 1080
+[13:08:32] upd 340 4.70M sps 2384 (roll 2.7s train 3.1s) kl1 0.083 ent 0.431 cf 0.076 vl 0.278 EV 0.96 boards>=3 0.21 b1-start clears 0.89 b3-start clear 0.0 items 36.5 harvest 1080
+[13:09:00] upd 345 4.77M sps 2208 (roll 2.9s train 3.3s) kl1 0.081 ent 0.423 cf 0.098 vl 0.532 EV 0.93 boards>=3 0.20 b1-start clears 0.9 b3-start clear 0.0 items 37.9 harvest 1080
+[13:09:31] upd 350 4.84M sps 2255 (roll 2.6s train 3.5s) kl1 0.085 ent 0.436 cf 0.073 vl 0.279 EV 0.95 boards>=3 0.20 b1-start clears 0.98 b3-start clear 0.0 items 38.1 harvest 1080
+[13:10:02] upd 355 4.91M sps 2449 (roll 2.4s train 3.2s) kl1 0.093 ent 0.424 cf 0.099 vl 0.440 EV 0.94 boards>=3 0.18 b1-start clears 1.0 b3-start clear 0.0 items 38.3 harvest 1080
+[13:10:31] upd 360 4.98M sps 2265 (roll 2.5s train 3.6s) kl1 0.093 ent 0.430 cf 0.061 vl 0.485 EV 0.92 boards>=3 0.22 b1-start clears 0.91 b3-start clear 0.0 items 38.6 harvest 1080
+[13:11:39] EVAL upd 360 (4.98M): b1 clear 0.81  multiboard clears 1.12 reach3 0.28 reach4 0.00 b3 items 59.142857142857146  snap3 clear 0.00 items 51.6 deaths 1.14  (68s)
+[13:12:06] upd 365 5.05M sps 2280 (roll 2.9s train 3.1s) kl1 0.089 ent 0.417 cf 0.073 vl 0.317 EV 0.95 boards>=3 0.23 b1-start clears 0.92 b3-start clear 0.0 items 38.3 harvest 1080
+[13:12:36] upd 370 5.11M sps 2419 (roll 2.9s train 2.8s) kl1 0.096 ent 0.394 cf 0.101 vl 0.343 EV 0.95 boards>=3 0.28 b1-start clears 0.89 b3-start clear 0.0 items 41.1 harvest 1080
+[13:13:05] upd 375 5.18M sps 2307 (roll 2.9s train 3.1s) kl1 0.103 ent 0.413 cf 0.072 vl 0.402 EV 0.95 boards>=3 0.23 b1-start clears 0.94 b3-start clear 0.0 items 41.5 harvest 1080
+[13:13:36] upd 380 5.25M sps 2236 (roll 2.7s train 3.5s) kl1 0.087 ent 0.395 cf 0.068 vl 0.381 EV 0.94 boards>=3 0.20 b1-start clears 0.86 b3-start clear 0.0 items 42.3 harvest 1080
+[13:14:07] upd 385 5.32M sps 2417 (roll 2.6s train 3.1s) kl1 0.089 ent 0.427 cf 0.082 vl 0.560 EV 0.93 boards>=3 0.20 b1-start clears 0.83 b3-start clear 0.0 items 41.1 harvest 1080
+[13:14:38] upd 390 5.39M sps 1986 (roll 3.1s train 3.8s) kl1 0.084 ent 0.401 cf 0.073 vl 0.402 EV 0.94 boards>=3 0.21 b1-start clears 0.82 b3-start clear 0.0 items 39.2 harvest 1080
+[13:15:11] upd 395 5.46M sps 2224 (roll 2.7s train 3.6s) kl1 0.086 ent 0.400 cf 0.075 vl 0.318 EV 0.95 boards>=3 0.23 b1-start clears 0.8 b3-start clear 0.0 items 38.8 harvest 1080
+[13:15:43] upd 400 5.53M sps 2272 (roll 2.8s train 3.3s) kl1 0.101 ent 0.421 cf 0.065 vl 0.436 EV 0.95 boards>=3 0.29 b1-start clears 0.85 b3-start clear 0.0 items 40.9 harvest 1080
+[13:16:53] EVAL upd 400 (5.53M): b1 clear 0.79  multiboard clears 1.30 reach3 0.40 reach4 0.00 b3 items 58.0  snap3 clear 0.00 items 53.0 deaths 1.14  (70s)  *best*
+[13:17:22] upd 405 5.60M sps 2281 (roll 2.9s train 3.1s) kl1 0.079 ent 0.437 cf 0.064 vl 0.255 EV 0.96 boards>=3 0.22 b1-start clears 0.92 b3-start clear 0.0 items 43.2 harvest 1080
+[13:17:52] upd 410 5.67M sps 2157 (roll 3.0s train 3.4s) kl1 0.087 ent 0.426 cf 0.057 vl 0.359 EV 0.95 boards>=3 0.19 b1-start clears 0.9 b3-start clear 0.0 items 44.0 harvest 1080
+[13:18:23] upd 415 5.74M sps 2270 (roll 2.5s train 3.6s) kl1 0.112 ent 0.424 cf 0.086 vl 0.606 EV 0.93 boards>=3 0.21 b1-start clears 0.93 b3-start clear 0.0 items 42.6 harvest 1080
+[13:18:53] upd 420 5.81M sps 2265 (roll 2.9s train 3.2s) kl1 0.080 ent 0.362 cf 0.063 vl 0.279 EV 0.96 boards>=3 0.25 b1-start clears 0.93 b3-start clear 0.0 items 41.4 harvest 1080
+[13:19:25] upd 425 5.88M sps 2170 (roll 2.6s train 3.8s) kl1 0.102 ent 0.383 cf 0.068 vl 0.428 EV 0.95 boards>=3 0.23 b1-start clears 0.9 b3-start clear 0.0 items 42.7 harvest 1080
+[13:19:56] upd 430 5.94M sps 2194 (roll 2.8s train 3.5s) kl1 0.090 ent 0.398 cf 0.072 vl 0.318 EV 0.96 boards>=3 0.29 b1-start clears 0.84 b3-start clear 0.0 items 40.9 harvest 1080
+[13:20:27] upd 435 6.01M sps 2239 (roll 2.6s train 3.6s) kl1 0.085 ent 0.409 cf 0.074 vl 0.278 EV 0.96 boards>=3 0.25 b1-start clears 0.83 b3-start clear 0.0 items 42.8 harvest 1080
+[13:21:01] upd 440 6.08M sps 2020 (roll 3.1s train 3.7s) kl1 0.098 ent 0.411 cf 0.069 vl 0.399 EV 0.95 boards>=3 0.21 b1-start clears 0.88 b3-start clear 0.0 items 43.5 harvest 1080
+[13:22:14] EVAL upd 440 (6.08M): b1 clear 0.75  multiboard clears 1.00 reach3 0.22 reach4 0.00 b3 items 53.18181818181818  snap3 clear 0.00 items 52.0 deaths 1.14  (74s)
+[13:22:43] upd 445 6.15M sps 2302 (roll 2.8s train 3.2s) kl1 0.092 ent 0.416 cf 0.073 vl 0.376 EV 0.94 boards>=3 0.27 b1-start clears 0.83 b3-start clear 0.0 items 40.1 harvest 1080
+[13:23:14] upd 450 6.22M sps 2025 (roll 3.3s train 3.5s) kl1 0.095 ent 0.368 cf 0.072 vl 0.447 EV 0.95 boards>=3 0.22 b1-start clears 1.02 b3-start clear 0.0 items 42.3 harvest 1080
+[13:23:44] upd 455 6.29M sps 2134 (roll 3.2s train 3.3s) kl1 0.090 ent 0.396 cf 0.062 vl 0.343 EV 0.95 boards>=3 0.21 b1-start clears 0.97 b3-start clear 0.0 items 43.4 harvest 1080
+[13:24:16] upd 460 6.36M sps 2146 (roll 3.2s train 3.3s) kl1 0.092 ent 0.374 cf 0.059 vl 0.385 EV 0.96 boards>=3 0.25 b1-start clears 0.95 b3-start clear 0.0 items 44.3 harvest 1080
+[13:24:51] upd 465 6.43M sps 2233 (roll 3.3s train 2.9s) kl1 0.093 ent 0.388 cf 0.048 vl 0.366 EV 0.96 boards>=3 0.22 b1-start clears 0.98 b3-start clear 0.0 items 45.9 harvest 1080
+[13:25:23] upd 470 6.50M sps 2191 (roll 3.1s train 3.2s) kl1 0.090 ent 0.362 cf 0.061 vl 0.401 EV 0.95 boards>=3 0.13 b1-start clears 0.97 b3-start clear 0.0 items 42.3 harvest 1080
+[13:25:54] upd 475 6.57M sps 1943 (roll 3.8s train 3.3s) kl1 0.093 ent 0.381 cf 0.086 vl 0.459 EV 0.95 boards>=3 0.22 b1-start clears 0.87 b3-start clear 0.0 items 41.0 harvest 1080
+[13:26:27] upd 480 6.64M sps 2176 (roll 3.1s train 3.3s) kl1 0.092 ent 0.363 cf 0.058 vl 0.473 EV 0.95 boards>=3 0.21 b1-start clears 0.87 b3-start clear 0.0 items 36.6 harvest 1080
+[13:27:46] EVAL upd 480 (6.64M): b1 clear 0.86  multiboard clears 1.06 reach3 0.22 reach4 0.00 b3 items 56.0  snap3 clear 0.00 items 53.0 deaths 1.14  (80s)
+[13:28:14] upd 485 6.70M sps 2384 (roll 3.1s train 2.7s) kl1 0.090 ent 0.368 cf 0.101 vl 0.322 EV 0.96 boards>=3 0.23 b1-start clears 0.86 b3-start clear 0.0 items 37.1 harvest 1080
+[13:28:42] upd 490 6.77M sps 2496 (roll 2.4s train 3.1s) kl1 0.091 ent 0.349 cf 0.055 vl 0.382 EV 0.95 boards>=3 0.32 b1-start clears 0.83 b3-start clear 0.0 items 34.9 harvest 1080
+[13:29:12] upd 495 6.84M sps 2105 (roll 3.2s train 3.4s) kl1 0.077 ent 0.391 cf 0.058 vl 0.335 EV 0.95 boards>=3 0.25 b1-start clears 0.96 b3-start clear 0.0 items 39.3 harvest 1080
+[13:29:41] upd 500 6.91M sps 2494 (roll 2.5s train 3.1s) kl1 0.098 ent 0.385 cf 0.062 vl 0.369 EV 0.96 boards>=3 0.31 b1-start clears 0.94 b3-start clear 0.0 items 41.2 harvest 1080
+[13:30:12] upd 505 6.98M sps 2360 (roll 2.6s train 3.2s) kl1 0.085 ent 0.419 cf 0.059 vl 0.411 EV 0.95 boards>=3 0.25 b1-start clears 0.95 b3-start clear 0.0 items 41.2 harvest 1080
+[13:30:41] upd 510 7.05M sps 2316 (roll 2.9s train 3.1s) kl1 0.093 ent 0.412 cf 0.074 vl 0.411 EV 0.94 boards>=3 0.29 b1-start clears 1.02 b3-start clear 0.0 items 41.7 harvest 1080
+[13:31:10] upd 515 7.12M sps 2338 (roll 2.8s train 3.1s) kl1 0.090 ent 0.436 cf 0.075 vl 0.328 EV 0.95 boards>=3 0.24 b1-start clears 0.91 b3-start clear 0.0 items 41.7 harvest 1080
+[13:31:39] upd 520 7.19M sps 2506 (roll 2.6s train 2.9s) kl1 0.099 ent 0.409 cf 0.099 vl 0.502 EV 0.93 boards>=3 0.22 b1-start clears 0.98 b3-start clear 0.0 items 40.6 harvest 1080
+[13:32:39] EVAL upd 520 (7.19M): b1 clear 0.75  multiboard clears 1.02 reach3 0.26 reach4 0.00 b3 items 62.23076923076923  snap3 clear 0.00 items 49.3 deaths 1.14  (60s)
+[13:33:05] upd 525 7.26M sps 2512 (roll 2.8s train 2.7s) kl1 0.099 ent 0.398 cf 0.060 vl 0.464 EV 0.95 boards>=3 0.23 b1-start clears 0.95 b3-start clear 0.0 items 40.0 harvest 1080
+[13:33:32] upd 530 7.33M sps 2466 (roll 2.5s train 3.1s) kl1 0.103 ent 0.408 cf 0.089 vl 0.560 EV 0.93 boards>=3 0.24 b1-start clears 0.98 b3-start clear 0.0 items 40.9 harvest 1080
+[13:33:59] upd 535 7.40M sps 2608 (roll 2.2s train 3.2s) kl1 0.101 ent 0.395 cf 0.093 vl 0.347 EV 0.96 boards>=3 0.32 b1-start clears 0.91 b3-start clear 0.0 items 40.1 harvest 1080
+[13:34:27] upd 540 7.46M sps 2667 (roll 2.3s train 2.9s) kl1 0.093 ent 0.401 cf 0.071 vl 0.383 EV 0.95 boards>=3 0.28 b1-start clears 0.8 b3-start clear 0.0 items 39.7 harvest 1080
+[13:34:54] upd 545 7.53M sps 2456 (roll 2.9s train 2.8s) kl1 0.094 ent 0.421 cf 0.075 vl 0.429 EV 0.93 boards>=3 0.24 b1-start clears 0.88 b3-start clear 0.0 items 40.9 harvest 1080
+[13:35:23] upd 550 7.60M sps 2592 (roll 2.3s train 3.0s) kl1 0.088 ent 0.393 cf 0.068 vl 0.279 EV 0.96 boards>=3 0.21 b1-start clears 0.88 b3-start clear 0.0 items 39.1 harvest 1080
+[13:35:50] upd 555 7.67M sps 2581 (roll 2.4s train 3.0s) kl1 0.096 ent 0.400 cf 0.073 vl 0.380 EV 0.96 boards>=3 0.23 b1-start clears 0.98 b3-start clear 0.0 items 37.8 harvest 1080
+[13:36:18] upd 560 7.74M sps 2329 (roll 2.7s train 3.2s) kl1 0.107 ent 0.383 cf 0.051 vl 0.568 EV 0.94 boards>=3 0.28 b1-start clears 1.02 b3-start clear 0.0 items 37.4 harvest 1080
+[13:37:18] EVAL upd 560 (7.74M): b1 clear 0.85  multiboard clears 1.22 reach3 0.38 reach4 0.00 b3 items 55.421052631578945  snap3 clear 0.00 items 51.6 deaths 1.14  (61s)
+[13:37:44] upd 565 7.81M sps 2581 (roll 2.6s train 2.8s) kl1 0.095 ent 0.414 cf 0.101 vl 0.349 EV 0.95 boards>=3 0.28 b1-start clears 1.04 b3-start clear 0.0 items 35.4 harvest 1080
+[13:38:11] upd 570 7.88M sps 2413 (roll 2.9s train 2.9s) kl1 0.094 ent 0.398 cf 0.073 vl 0.370 EV 0.96 boards>=3 0.31 b1-start clears 1.0 b3-start clear 0.0 items 34.8 harvest 1080
+[13:38:38] upd 575 7.95M sps 2664 (roll 2.4s train 2.8s) kl1 0.090 ent 0.396 cf 0.068 vl 0.393 EV 0.95 boards>=3 0.23 b1-start clears 1.03 b3-start clear 0.0 items 35.9 harvest 1080
+[13:39:05] upd 580 8.02M sps 2450 (roll 2.8s train 2.9s) kl1 0.083 ent 0.416 cf 0.100 vl 0.420 EV 0.96 boards>=3 0.29 b1-start clears 1.07 b3-start clear 0.0 items 34.9 harvest 1080
+[13:39:33] upd 585 8.09M sps 2358 (roll 2.8s train 3.0s) kl1 0.082 ent 0.398 cf 0.084 vl 0.264 EV 0.96 boards>=3 0.22 b1-start clears 1.02 b3-start clear 0.0 items 33.8 harvest 1080
+[13:40:00] upd 590 8.16M sps 2655 (roll 2.4s train 2.8s) kl1 0.084 ent 0.417 cf 0.054 vl 0.330 EV 0.95 boards>=3 0.22 b1-start clears 1.04 b3-start clear 0.0 items 36.1 harvest 1080
+[13:40:28] upd 595 8.23M sps 2506 (roll 2.7s train 2.8s) kl1 0.089 ent 0.390 cf 0.072 vl 0.380 EV 0.95 boards>=3 0.20 b1-start clears 0.9 b3-start clear 0.0 items 36.1 harvest 1080
+[13:40:55] upd 600 8.29M sps 2466 (roll 2.7s train 2.9s) kl1 0.090 ent 0.436 cf 0.065 vl 0.481 EV 0.93 boards>=3 0.15 b1-start clears 0.81 b3-start clear 0.0 items 35.4 harvest 1080
+[13:42:00] EVAL upd 600 (8.29M): b1 clear 0.86  multiboard clears 1.18 reach3 0.36 reach4 0.00 b3 items 60.333333333333336  snap3 clear 0.00 items 55.8 deaths 1.14  (65s)
+[13:42:25] upd 605 8.36M sps 2929 (roll 2.1s train 2.6s) kl1 0.080 ent 0.395 cf 0.060 vl 0.194 EV 0.97 boards>=3 0.19 b1-start clears 0.84 b3-start clear 0.0 items 36.0 harvest 1080
+[13:42:51] upd 610 8.43M sps 2545 (roll 2.6s train 2.8s) kl1 0.097 ent 0.435 cf 0.086 vl 0.271 EV 0.96 boards>=3 0.20 b1-start clears 0.89 b3-start clear 0.0 items 38.0 harvest 1080
+[13:43:18] upd 615 8.50M sps 2435 (roll 2.9s train 2.8s) kl1 0.095 ent 0.412 cf 0.093 vl 0.423 EV 0.94 boards>=3 0.24 b1-start clears 0.82 b3-start clear 0.0 items 38.6 harvest 1080
+[13:43:46] upd 620 8.57M sps 2575 (roll 2.3s train 3.1s) kl1 0.111 ent 0.403 cf 0.063 vl 0.461 EV 0.94 boards>=3 0.27 b1-start clears 0.89 b3-start clear 0.0 items 39.5 harvest 1080
+[13:44:13] upd 625 8.64M sps 2508 (roll 2.7s train 2.8s) kl1 0.105 ent 0.417 cf 0.048 vl 0.400 EV 0.95 boards>=3 0.30 b1-start clears 0.85 b3-start clear 0.0 items 42.3 harvest 1080
+[13:44:40] upd 630 8.71M sps 2565 (roll 2.5s train 2.9s) kl1 0.100 ent 0.404 cf 0.082 vl 0.326 EV 0.96 boards>=3 0.25 b1-start clears 0.8 b3-start clear 0.0 items 42.8 harvest 1080
+[13:45:06] upd 635 8.78M sps 2594 (roll 2.4s train 2.9s) kl1 0.089 ent 0.422 cf 0.094 vl 0.368 EV 0.95 boards>=3 0.24 b1-start clears 0.88 b3-start clear 0.0 items 44.6 harvest 1080
+[13:45:34] upd 640 8.85M sps 2599 (roll 2.3s train 3.0s) kl1 0.100 ent 0.417 cf 0.069 vl 0.503 EV 0.93 boards>=3 0.29 b1-start clears 0.87 b3-start clear 0.0 items 46.1 harvest 1080
+[13:46:34] EVAL upd 640 (8.85M): b1 clear 0.83  multiboard clears 1.28 reach3 0.36 reach4 0.00 b3 items 55.5  snap3 clear 0.00 items 56.0 deaths 1.14  (60s)
+[13:46:58] upd 645 8.92M sps 2703 (roll 2.4s train 2.7s) kl1 0.091 ent 0.414 cf 0.067 vl 0.361 EV 0.95 boards>=3 0.30 b1-start clears 0.96 b3-start clear 0.0 items 47.9 harvest 1080
+[13:47:25] upd 650 8.99M sps 2551 (roll 2.7s train 2.7s) kl1 0.096 ent 0.412 cf 0.079 vl 0.286 EV 0.96 boards>=3 0.28 b1-start clears 1.07 b3-start clear 0.0 items 48.0 harvest 1080
+[13:47:52] upd 655 9.05M sps 2414 (roll 2.7s train 3.0s) kl1 0.098 ent 0.452 cf 0.067 vl 0.440 EV 0.95 boards>=3 0.34 b1-start clears 1.04 b3-start clear 0.0 items 47.2 harvest 1080
+[13:48:20] upd 660 9.12M sps 2485 (roll 2.6s train 2.9s) kl1 0.089 ent 0.371 cf 0.066 vl 0.339 EV 0.95 boards>=3 0.21 b1-start clears 1.06 b3-start clear 0.0 items 48.7 harvest 1080
+[13:48:47] upd 665 9.19M sps 2446 (roll 2.7s train 2.9s) kl1 0.100 ent 0.415 cf 0.066 vl 0.356 EV 0.96 boards>=3 0.25 b1-start clears 0.96 b3-start clear 0.0 items 47.8 harvest 1080
+[13:49:14] upd 670 9.26M sps 2541 (roll 2.6s train 2.9s) kl1 0.097 ent 0.431 cf 0.071 vl 0.401 EV 0.94 boards>=3 0.31 b1-start clears 0.86 b3-start clear 0.0 items 47.2 harvest 1080
+[13:49:41] upd 675 9.33M sps 2615 (roll 2.4s train 2.8s) kl1 0.087 ent 0.403 cf 0.070 vl 0.384 EV 0.95 boards>=3 0.28 b1-start clears 0.96 b3-start clear 0.0 items 45.9 harvest 1080
+[13:50:10] upd 680 9.40M sps 2373 (roll 3.0s train 2.9s) kl1 0.083 ent 0.383 cf 0.083 vl 0.404 EV 0.95 boards>=3 0.31 b1-start clears 0.95 b3-start clear 0.0 items 45.1 harvest 1080
+[13:51:09] EVAL upd 680 (9.40M): b1 clear 0.89  multiboard clears 1.30 reach3 0.42 reach4 0.00 b3 items 58.285714285714285  snap3 clear 0.00 items 56.1 deaths 1.14  (60s)
+[13:51:34] upd 685 9.47M sps 2737 (roll 2.4s train 2.6s) kl1 0.101 ent 0.381 cf 0.060 vl 0.480 EV 0.95 boards>=3 0.27 b1-start clears 0.98 b3-start clear 0.0 items 45.4 harvest 1080
+[13:52:00] upd 690 9.54M sps 2350 (roll 3.1s train 2.8s) kl1 0.092 ent 0.383 cf 0.062 vl 0.310 EV 0.96 boards>=3 0.28 b1-start clears 1.0 b3-start clear 0.0 items 47.6 harvest 1080
+[13:52:26] upd 695 9.61M sps 2702 (roll 2.4s train 2.8s) kl1 0.089 ent 0.419 cf 0.060 vl 0.378 EV 0.95 boards>=3 0.28 b1-start clears 0.92 b3-start clear 0.0 items 48.2 harvest 1080
+[13:52:53] upd 700 9.68M sps 2484 (roll 2.7s train 2.8s) kl1 0.085 ent 0.409 cf 0.096 vl 0.406 EV 0.96 boards>=3 0.35 b1-start clears 0.95 b3-start clear 0.0 items 47.6 harvest 1080
+[13:53:20] upd 705 9.75M sps 2599 (roll 2.3s train 3.0s) kl1 0.095 ent 0.389 cf 0.088 vl 0.322 EV 0.96 boards>=3 0.30 b1-start clears 0.95 b3-start clear 0.0 items 45.6 harvest 1080
+[13:53:48] upd 710 9.82M sps 2371 (roll 2.8s train 3.0s) kl1 0.101 ent 0.395 cf 0.059 vl 0.322 EV 0.96 boards>=3 0.30 b1-start clears 1.09 b3-start clear 0.0 items 43.9 harvest 1080
+[13:54:14] upd 715 9.88M sps 2682 (roll 2.5s train 2.7s) kl1 0.086 ent 0.357 cf 0.069 vl 0.370 EV 0.96 boards>=3 0.33 b1-start clears 1.12 b3-start clear 0.0 items 46.3 harvest 1080
+[13:54:41] upd 720 9.95M sps 2678 (roll 2.2s train 2.9s) kl1 0.088 ent 0.381 cf 0.066 vl 0.265 EV 0.96 boards>=3 0.24 b1-start clears 1.08 b3-start clear 0.0 items 46.9 harvest 1080
+[13:55:43] EVAL upd 720 (9.95M): b1 clear 0.90  multiboard clears 1.40 reach3 0.48 reach4 0.00 b3 items 61.666666666666664  snap3 clear 0.00 items 61.9 deaths 1.14  (63s)  *best*
+[13:56:08] upd 725 10.02M sps 2860 (roll 2.2s train 2.6s) kl1 0.098 ent 0.367 cf 0.082 vl 0.510 EV 0.93 boards>=3 0.28 b1-start clears 1.07 b3-start clear 0.0 items 48.3 harvest 1080
+[13:56:35] upd 730 10.09M sps 2681 (roll 2.4s train 2.8s) kl1 0.088 ent 0.389 cf 0.100 vl 0.356 EV 0.95 boards>=3 0.31 b1-start clears 0.96 b3-start clear 0.0 items 48.5 harvest 1080
+[13:57:03] upd 735 10.16M sps 2230 (roll 2.8s train 3.4s) kl1 0.084 ent 0.406 cf 0.058 vl 0.406 EV 0.95 boards>=3 0.30 b1-start clears 0.94 b3-start clear 0.0 items 47.5 harvest 1080
+[13:57:33] upd 740 10.23M sps 2215 (roll 2.9s train 3.4s) kl1 0.100 ent 0.419 cf 0.098 vl 0.403 EV 0.93 boards>=3 0.29 b1-start clears 0.98 b3-start clear 0.0 items 47.2 harvest 1080
+[13:58:03] upd 745 10.30M sps 2428 (roll 2.4s train 3.3s) kl1 0.091 ent 0.400 cf 0.060 vl 0.283 EV 0.96 boards>=3 0.22 b1-start clears 0.92 b3-start clear 0.0 items 47.8 harvest 1080
+[13:58:34] upd 750 10.37M sps 2279 (roll 2.7s train 3.4s) kl1 0.092 ent 0.439 cf 0.082 vl 0.261 EV 0.95 boards>=3 0.23 b1-start clears 0.96 b3-start clear 0.0 items 48.7 harvest 1080
+[13:59:07] upd 755 10.44M sps 2096 (roll 2.8s train 3.8s) kl1 0.090 ent 0.409 cf 0.087 vl 0.450 EV 0.95 boards>=3 0.29 b1-start clears 0.96 b3-start clear 0.0 items 48.6 harvest 1080
+[13:59:38] upd 760 10.51M sps 2190 (roll 2.6s train 3.7s) kl1 0.096 ent 0.390 cf 0.076 vl 0.416 EV 0.95 boards>=3 0.30 b1-start clears 1.03 b3-start clear 0.0 items 48.5 harvest 1080
+[14:00:46] EVAL upd 760 (10.51M): b1 clear 0.90  multiboard clears 1.28 reach3 0.40 reach4 0.00 b3 items 59.1  snap3 clear 0.00 items 54.2 deaths 1.14  (68s)
+[14:01:16] upd 765 10.58M sps 2557 (roll 2.5s train 2.9s) kl1 0.081 ent 0.392 cf 0.084 vl 0.325 EV 0.94 boards>=3 0.24 b1-start clears 1.15 b3-start clear 0.0 items 45.6 harvest 1080
+[14:01:45] upd 770 10.64M sps 2480 (roll 2.4s train 3.1s) kl1 0.076 ent 0.428 cf 0.073 vl 0.209 EV 0.96 boards>=3 0.20 b1-start clears 1.05 b3-start clear 0.0 items 44.8 harvest 1080
+[14:02:15] upd 775 10.71M sps 2093 (roll 3.3s train 3.3s) kl1 0.080 ent 0.417 cf 0.071 vl 0.287 EV 0.96 boards>=3 0.27 b1-start clears 0.98 b3-start clear 0.0 items 43.5 harvest 1080
+[14:02:47] upd 780 10.78M sps 2062 (roll 2.8s train 3.9s) kl1 0.084 ent 0.422 cf 0.071 vl 0.265 EV 0.95 boards>=3 0.22 b1-start clears 0.92 b3-start clear 0.0 items 42.3 harvest 1080
+[14:03:19] upd 785 10.85M sps 2211 (roll 2.6s train 3.6s) kl1 0.086 ent 0.420 cf 0.063 vl 0.342 EV 0.96 boards>=3 0.22 b1-start clears 0.9 b3-start clear 0.0 items 43.6 harvest 1080
+[14:03:51] upd 790 10.92M sps 2063 (roll 3.0s train 3.7s) kl1 0.095 ent 0.434 cf 0.056 vl 0.439 EV 0.95 boards>=3 0.28 b1-start clears 0.92 b3-start clear 0.0 items 44.2 harvest 1080
+[14:04:23] upd 795 10.99M sps 2396 (roll 2.4s train 3.4s) kl1 0.093 ent 0.401 cf 0.066 vl 0.320 EV 0.97 boards>=3 0.24 b1-start clears 1.06 b3-start clear 0.0 items 44.1 harvest 1080
+[14:04:53] upd 800 11.06M sps 2339 (roll 2.5s train 3.4s) kl1 0.117 ent 0.438 cf 0.073 vl 0.405 EV 0.94 boards>=3 0.24 b1-start clears 1.11 b3-start clear 0.0 items 44.4 harvest 1080
+[14:05:59] EVAL upd 800 (11.06M): b1 clear 0.92  multiboard clears 1.06 reach3 0.22 reach4 0.00 b3 items 62.27272727272727  snap3 clear 0.00 items 60.0 deaths 1.14  (65s)
+[14:06:27] upd 805 11.13M sps 2429 (roll 2.7s train 3.0s) kl1 0.087 ent 0.448 cf 0.080 vl 0.364 EV 0.96 boards>=3 0.34 b1-start clears 1.04 b3-start clear 0.0 items 43.9 harvest 1080
+[14:06:56] upd 810 11.20M sps 2410 (roll 2.5s train 3.3s) kl1 0.085 ent 0.417 cf 0.081 vl 0.359 EV 0.95 boards>=3 0.25 b1-start clears 1.07 b3-start clear 0.0 items 45.0 harvest 1080
+[14:07:24] upd 815 11.27M sps 2280 (roll 2.9s train 3.2s) kl1 0.094 ent 0.441 cf 0.089 vl 0.362 EV 0.96 boards>=3 0.30 b1-start clears 1.0 b3-start clear 0.0 items 46.5 harvest 1080
+[14:07:54] upd 820 11.34M sps 2215 (roll 2.9s train 3.4s) kl1 0.093 ent 0.479 cf 0.070 vl 0.279 EV 0.95 boards>=3 0.28 b1-start clears 1.01 b3-start clear 0.0 items 48.5 harvest 1080
+[14:08:25] upd 825 11.40M sps 2256 (roll 2.9s train 3.3s) kl1 0.096 ent 0.435 cf 0.068 vl 0.401 EV 0.94 boards>=3 0.23 b1-start clears 0.97 b3-start clear 0.0 items 50.1 harvest 1080
+[14:08:55] upd 830 11.47M sps 2111 (roll 3.2s train 3.3s) kl1 0.104 ent 0.447 cf 0.060 vl 0.416 EV 0.95 boards>=3 0.29 b1-start clears 0.94 b3-start clear 0.0 items 48.6 harvest 1080
+[14:09:24] upd 835 11.54M sps 2201 (roll 2.8s train 3.5s) kl1 0.093 ent 0.445 cf 0.095 vl 0.341 EV 0.96 boards>=3 0.33 b1-start clears 0.97 b3-start clear 0.0 items 48.8 harvest 1080
+[14:09:55] upd 840 11.61M sps 2143 (roll 2.9s train 3.5s) kl1 0.102 ent 0.407 cf 0.065 vl 0.395 EV 0.96 boards>=3 0.28 b1-start clears 1.0 b3-start clear 0.0 items 46.4 harvest 1080
+[14:11:01] EVAL upd 840 (11.61M): b1 clear 0.84  multiboard clears 1.24 reach3 0.34 reach4 0.00 b3 items 62.8235294117647  snap3 clear 0.00 items 61.2 deaths 1.14  (66s)
+[14:11:30] upd 845 11.68M sps 2168 (roll 3.0s train 3.4s) kl1 0.091 ent 0.431 cf 0.061 vl 0.328 EV 0.96 boards>=3 0.33 b1-start clears 0.98 b3-start clear 0.0 items 46.8 harvest 1080
+[14:12:01] upd 850 11.75M sps 2448 (roll 2.3s train 3.3s) kl1 0.097 ent 0.419 cf 0.088 vl 0.408 EV 0.95 boards>=3 0.32 b1-start clears 1.05 b3-start clear 0.0 items 45.8 harvest 1080
+[14:12:31] upd 855 11.82M sps 2340 (roll 2.5s train 3.4s) kl1 0.093 ent 0.401 cf 0.066 vl 0.286 EV 0.96 boards>=3 0.22 b1-start clears 1.07 b3-start clear 0.0 items 46.5 harvest 1080
+[14:13:00] upd 860 11.89M sps 2564 (roll 2.3s train 3.1s) kl1 0.101 ent 0.399 cf 0.061 vl 0.334 EV 0.95 boards>=3 0.29 b1-start clears 1.0 b3-start clear 0.0 items 48.0 harvest 1080
+[14:13:29] upd 865 11.96M sps 2288 (roll 2.8s train 3.3s) kl1 0.100 ent 0.423 cf 0.083 vl 0.493 EV 0.95 boards>=3 0.31 b1-start clears 1.06 b3-start clear 0.0 items 44.6 harvest 1080
+[14:14:00] upd 870 12.03M sps 2269 (roll 2.9s train 3.2s) kl1 0.099 ent 0.412 cf 0.068 vl 0.454 EV 0.95 boards>=3 0.30 b1-start clears 1.06 b3-start clear 0.0 items 45.0 harvest 1080
+[14:14:29] upd 875 12.10M sps 2330 (roll 2.8s train 3.1s) kl1 0.082 ent 0.401 cf 0.060 vl 0.257 EV 0.97 boards>=3 0.28 b1-start clears 0.93 b3-start clear 0.0 items 45.5 harvest 1080
+[14:15:00] upd 880 12.17M sps 2567 (roll 2.3s train 3.1s) kl1 0.094 ent 0.391 cf 0.062 vl 0.320 EV 0.96 boards>=3 0.22 b1-start clears 0.92 b3-start clear 0.0 items 46.5 harvest 1080
+[14:15:59] EVAL upd 880 (12.17M): b1 clear 0.86  multiboard clears 1.30 reach3 0.38 reach4 0.00 b3 items 61.68421052631579  snap3 clear 0.00 items 56.0 deaths 1.14  (59s)
+[14:16:26] upd 885 12.23M sps 2518 (roll 2.6s train 2.9s) kl1 0.097 ent 0.406 cf 0.043 vl 0.416 EV 0.95 boards>=3 0.18 b1-start clears 0.87 b3-start clear 0.0 items 45.2 harvest 1080
+[14:16:55] upd 890 12.30M sps 2493 (roll 2.3s train 3.2s) kl1 0.088 ent 0.414 cf 0.066 vl 0.380 EV 0.95 boards>=3 0.21 b1-start clears 0.81 b3-start clear 0.0 items 42.9 harvest 1080
+[14:17:26] upd 895 12.37M sps 2315 (roll 2.8s train 3.2s) kl1 0.079 ent 0.361 cf 0.055 vl 0.239 EV 0.97 boards>=3 0.24 b1-start clears 0.87 b3-start clear 0.0 items 41.2 harvest 1080
+[14:17:57] upd 900 12.44M sps 2223 (roll 2.7s train 3.5s) kl1 0.100 ent 0.433 cf 0.041 vl 0.481 EV 0.95 boards>=3 0.17 b1-start clears 0.89 b3-start clear 0.0 items 40.4 harvest 1080
+[14:18:29] upd 905 12.51M sps 2244 (roll 2.6s train 3.6s) kl1 0.094 ent 0.413 cf 0.069 vl 0.277 EV 0.97 boards>=3 0.29 b1-start clears 0.89 b3-start clear 0.0 items 39.9 harvest 1080
+[14:19:01] upd 910 12.58M sps 2299 (roll 2.6s train 3.4s) kl1 0.102 ent 0.401 cf 0.064 vl 0.310 EV 0.96 boards>=3 0.24 b1-start clears 0.97 b3-start clear 0.0 items 41.8 harvest 1080
+[14:19:31] upd 915 12.65M sps 2276 (roll 2.7s train 3.4s) kl1 0.122 ent 0.406 cf 0.040 vl 0.553 EV 0.93 boards>=3 0.24 b1-start clears 1.02 b3-start clear 0.0 items 43.5 harvest 1080
+[14:20:00] upd 920 12.72M sps 2246 (roll 2.8s train 3.3s) kl1 0.110 ent 0.398 cf 0.066 vl 0.451 EV 0.95 boards>=3 0.25 b1-start clears 1.06 b3-start clear 0.0 items 43.6 harvest 1080
+[14:21:06] EVAL upd 920 (12.72M): b1 clear 0.88  multiboard clears 1.18 reach3 0.32 reach4 0.00 b3 items 62.75  snap3 clear 0.00 items 59.2 deaths 1.14  (66s)
+[14:21:33] upd 925 12.79M sps 2458 (roll 2.8s train 2.8s) kl1 0.098 ent 0.397 cf 0.093 vl 0.428 EV 0.93 boards>=3 0.17 b1-start clears 1.1 b3-start clear 0.0 items 43.1 harvest 1080
+[14:22:02] upd 930 12.86M sps 2235 (roll 2.8s train 3.4s) kl1 0.113 ent 0.399 cf 0.054 vl 0.509 EV 0.95 boards>=3 0.28 b1-start clears 1.04 b3-start clear 0.0 items 45.7 harvest 1080
+[14:22:34] upd 935 12.93M sps 2043 (roll 3.3s train 3.4s) kl1 0.093 ent 0.407 cf 0.060 vl 0.273 EV 0.96 boards>=3 0.24 b1-start clears 1.03 b3-start clear 0.0 items 44.9 harvest 1080
+[14:23:03] upd 940 12.99M sps 2382 (roll 2.6s train 3.2s) kl1 0.106 ent 0.382 cf 0.089 vl 0.402 EV 0.95 boards>=3 0.26 b1-start clears 1.07 b3-start clear 0.0 items 44.1 harvest 1080
+[14:23:32] upd 945 13.06M sps 2456 (roll 2.5s train 3.1s) kl1 0.101 ent 0.392 cf 0.065 vl 0.424 EV 0.95 boards>=3 0.33 b1-start clears 1.1 b3-start clear 0.0 items 43.4 harvest 1080
+[14:24:03] upd 950 13.13M sps 2139 (roll 2.9s train 3.6s) kl1 0.108 ent 0.405 cf 0.068 vl 0.384 EV 0.96 boards>=3 0.30 b1-start clears 1.16 b3-start clear 0.0 items 42.1 harvest 1080
+[14:24:32] upd 955 13.20M sps 2466 (roll 2.5s train 3.1s) kl1 0.102 ent 0.358 cf 0.060 vl 0.311 EV 0.97 boards>=3 0.25 b1-start clears 1.18 b3-start clear 0.0 items 42.2 harvest 1080
+[14:25:01] upd 960 13.27M sps 2376 (roll 2.5s train 3.4s) kl1 0.126 ent 0.395 cf 0.051 vl 0.448 EV 0.95 boards>=3 0.24 b1-start clears 1.12 b3-start clear 0.0 items 43.5 harvest 1080
+[14:26:12] EVAL upd 960 (13.27M): b1 clear 0.90  multiboard clears 1.32 reach3 0.40 reach4 0.00 b3 items 60.6  snap3 clear 0.00 items 58.2 deaths 1.14  (72s)
+[14:26:40] upd 965 13.34M sps 2397 (roll 2.7s train 3.0s) kl1 0.082 ent 0.334 cf 0.066 vl 0.278 EV 0.96 boards>=3 0.35 b1-start clears 1.11 b3-start clear 0.0 items 44.2 harvest 1080
+[14:27:15] upd 970 13.41M sps 1984 (roll 3.7s train 3.3s) kl1 0.088 ent 0.342 cf 0.056 vl 0.268 EV 0.97 boards>=3 0.22 b1-start clears 1.11 b3-start clear 0.0 items 46.6 harvest 1080
+[14:27:48] upd 975 13.48M sps 2082 (roll 3.3s train 3.4s) kl1 0.114 ent 0.338 cf 0.063 vl 0.587 EV 0.95 boards>=3 0.24 b1-start clears 1.17 b3-start clear 0.0 items 48.9 harvest 1080
+[14:28:20] upd 980 13.55M sps 2076 (roll 3.0s train 3.7s) kl1 0.092 ent 0.360 cf 0.073 vl 0.218 EV 0.97 boards>=3 0.26 b1-start clears 1.13 b3-start clear 0.0 items 49.3 harvest 1080
+[14:28:51] upd 985 13.62M sps 2131 (roll 3.3s train 3.2s) kl1 0.118 ent 0.367 cf 0.055 vl 0.285 EV 0.97 boards>=3 0.29 b1-start clears 1.16 b3-start clear 0.0 items 50.8 harvest 1080
+[14:29:21] upd 990 13.69M sps 2173 (roll 3.0s train 3.4s) kl1 0.099 ent 0.379 cf 0.067 vl 0.259 EV 0.96 boards>=3 0.30 b1-start clears 1.11 b3-start clear 0.0 items 49.0 harvest 1080
+[14:29:52] upd 995 13.75M sps 2128 (roll 3.6s train 2.9s) kl1 0.105 ent 0.359 cf 0.101 vl 0.319 EV 0.96 boards>=3 0.26 b1-start clears 1.08 b3-start clear 0.0 items 46.6 harvest 1080
+[14:30:24] upd 1000 13.82M sps 2038 (roll 3.4s train 3.3s) kl1 0.103 ent 0.354 cf 0.061 vl 0.223 EV 0.97 boards>=3 0.30 b1-start clears 1.11 b3-start clear 0.0 items 46.9 harvest 1080
+[14:31:26] EVAL upd 1000 (13.82M): b1 clear 0.92  multiboard clears 1.22 reach3 0.26 reach4 0.00 b3 items 60.84615384615385  snap3 clear 0.00 items 59.9 deaths 1.14  (62s)
+[14:31:54] upd 1005 13.89M sps 2442 (roll 2.7s train 3.0s) kl1 0.100 ent 0.368 cf 0.076 vl 0.258 EV 0.96 boards>=3 0.30 b1-start clears 1.14 b3-start clear 0.0 items 46.1 harvest 1080
+[14:32:22] upd 1010 13.96M sps 2479 (roll 2.6s train 2.9s) kl1 0.109 ent 0.364 cf 0.070 vl 0.410 EV 0.96 boards>=3 0.31 b1-start clears 1.11 b3-start clear 0.0 items 45.9 harvest 1080
+[14:32:49] upd 1015 14.03M sps 2330 (roll 3.0s train 2.9s) kl1 0.095 ent 0.428 cf 0.094 vl 0.276 EV 0.96 boards>=3 0.32 b1-start clears 1.08 b3-start clear 0.0 items 46.2 harvest 1080
+[14:33:17] upd 1020 14.10M sps 2509 (roll 2.5s train 3.0s) kl1 0.099 ent 0.397 cf 0.088 vl 0.177 EV 0.97 boards>=3 0.27 b1-start clears 1.0 b3-start clear 0.0 items 47.9 harvest 1080
+[14:33:45] upd 1025 14.17M sps 2589 (roll 2.5s train 2.9s) kl1 0.111 ent 0.396 cf 0.072 vl 0.269 EV 0.96 boards>=3 0.21 b1-start clears 1.0 b3-start clear 0.0 items 49.3 harvest 1080
+[14:34:13] upd 1030 14.24M sps 2397 (roll 2.8s train 3.0s) kl1 0.114 ent 0.423 cf 0.102 vl 0.295 EV 0.95 boards>=3 0.28 b1-start clears 1.0 b3-start clear 0.0 items 50.0 harvest 1080
+[14:34:40] upd 1035 14.31M sps 2211 (roll 3.2s train 3.0s) kl1 0.100 ent 0.392 cf 0.108 vl 0.498 EV 0.95 boards>=3 0.30 b1-start clears 0.97 b3-start clear 0.0 items 53.1 harvest 1080
+[14:35:09] upd 1040 14.38M sps 2535 (roll 2.4s train 3.0s) kl1 0.112 ent 0.417 cf 0.077 vl 0.298 EV 0.96 boards>=3 0.14 b1-start clears 1.0 b3-start clear 0.0 items 52.9 harvest 1080
+[14:36:09] EVAL upd 1040 (14.38M): b1 clear 0.91  multiboard clears 1.30 reach3 0.36 reach4 0.00 b3 items 71.66666666666667  snap3 clear 0.00 items 67.0 deaths 1.14  (60s)
+[14:36:34] upd 1045 14.45M sps 2695 (roll 2.2s train 2.9s) kl1 0.101 ent 0.421 cf 0.055 vl 0.366 EV 0.97 boards>=3 0.25 b1-start clears 0.98 b3-start clear 0.0 items 52.3 harvest 1080
+[14:37:00] upd 1050 14.52M sps 2418 (roll 2.9s train 2.9s) kl1 0.103 ent 0.393 cf 0.084 vl 0.357 EV 0.94 boards>=3 0.23 b1-start clears 1.0 b3-start clear 0.0 items 46.5 harvest 1080
+[14:37:27] upd 1055 14.58M sps 2601 (roll 2.4s train 2.9s) kl1 0.100 ent 0.363 cf 0.061 vl 0.367 EV 0.96 boards>=3 0.32 b1-start clears 1.08 b3-start clear 0.0 items 48.6 harvest 1080
+[14:37:54] upd 1060 14.65M sps 2619 (roll 2.4s train 2.9s) kl1 0.107 ent 0.420 cf 0.082 vl 0.503 EV 0.93 boards>=3 0.31 b1-start clears 1.09 b3-start clear 0.0 items 48.8 harvest 1080
+[14:38:22] upd 1065 14.72M sps 2451 (roll 2.5s train 3.1s) kl1 0.096 ent 0.446 cf 0.065 vl 0.353 EV 0.95 boards>=3 0.32 b1-start clears 1.14 b3-start clear 0.0 items 49.4 harvest 1080
+[14:38:50] upd 1070 14.79M sps 2571 (roll 2.1s train 3.2s) kl1 0.114 ent 0.428 cf 0.065 vl 0.545 EV 0.92 boards>=3 0.27 b1-start clears 1.21 b3-start clear 0.0 items 51.6 harvest 1080
+[14:39:17] upd 1075 14.86M sps 2568 (roll 2.5s train 2.9s) kl1 0.098 ent 0.438 cf 0.093 vl 0.462 EV 0.93 boards>=3 0.28 b1-start clears 1.18 b3-start clear 0.0 items 51.4 harvest 1080
+[14:39:45] upd 1080 14.93M sps 2301 (roll 2.9s train 3.1s) kl1 0.103 ent 0.441 cf 0.084 vl 0.463 EV 0.93 boards>=3 0.31 b1-start clears 1.14 b3-start clear 0.0 items 52.3 harvest 1080
+[14:40:45] EVAL upd 1080 (14.93M): b1 clear 0.89  multiboard clears 1.22 reach3 0.38 reach4 0.00 b3 items 74.15789473684211  snap3 clear 0.00 items 69.6 deaths 1.14  (60s)
+[14:41:13] upd 1085 15.00M sps 2150 (roll 3.3s train 3.2s) kl1 0.119 ent 0.420 cf 0.112 vl 0.567 EV 0.93 boards>=3 0.27 b1-start clears 1.11 b3-start clear 0.0 items 54.1 harvest 1080
+[14:41:42] upd 1090 15.07M sps 2337 (roll 2.9s train 3.0s) kl1 0.091 ent 0.443 cf 0.072 vl 0.287 EV 0.96 boards>=3 0.34 b1-start clears 1.03 b3-start clear 0.0 items 53.0 harvest 1080
+[14:42:12] upd 1095 15.14M sps 2549 (roll 2.4s train 3.0s) kl1 0.117 ent 0.450 cf 0.065 vl 0.282 EV 0.97 boards>=3 0.32 b1-start clears 1.09 b3-start clear 0.0 items 52.2 harvest 1080
+[14:42:44] upd 1100 15.21M sps 2106 (roll 3.1s train 3.4s) kl1 0.115 ent 0.426 cf 0.062 vl 0.432 EV 0.95 boards>=3 0.29 b1-start clears 1.09 b3-start clear 0.0 items 50.1 harvest 1080
+[14:43:16] upd 1105 15.28M sps 2079 (roll 2.9s train 3.8s) kl1 0.111 ent 0.456 cf 0.068 vl 0.374 EV 0.95 boards>=3 0.28 b1-start clears 1.09 b3-start clear 0.0 items 50.7 harvest 1080
+[14:43:47] upd 1110 15.34M sps 2332 (roll 2.5s train 3.4s) kl1 0.095 ent 0.483 cf 0.085 vl 0.357 EV 0.95 boards>=3 0.29 b1-start clears 1.17 b3-start clear 0.0 items 50.9 harvest 1080
+[14:44:16] upd 1115 15.41M sps 2325 (roll 2.7s train 3.3s) kl1 0.108 ent 0.426 cf 0.081 vl 0.402 EV 0.94 boards>=3 0.27 b1-start clears 1.09 b3-start clear 0.0 items 51.6 harvest 1080
+[14:44:46] upd 1120 15.48M sps 2191 (roll 2.7s train 3.6s) kl1 0.116 ent 0.455 cf 0.074 vl 0.332 EV 0.95 boards>=3 0.31 b1-start clears 1.03 b3-start clear 0.0 items 54.9 harvest 1080
+[14:45:52] EVAL upd 1120 (15.48M): b1 clear 0.92  multiboard clears 1.40 reach3 0.50 reach4 0.00 b3 items 81.84  snap3 clear 0.00 items 72.0 deaths 1.14  (66s)
+[14:46:21] upd 1125 15.55M sps 2301 (roll 2.5s train 3.5s) kl1 0.116 ent 0.458 cf 0.063 vl 0.419 EV 0.94 boards>=3 0.32 b1-start clears 1.07 b3-start clear 0.0 items 55.9 harvest 1080
+[14:46:51] upd 1130 15.62M sps 2252 (roll 2.8s train 3.3s) kl1 0.109 ent 0.455 cf 0.095 vl 0.375 EV 0.95 boards>=3 0.27 b1-start clears 1.0 b3-start clear 0.0 items 58.2 harvest 1080
+[14:47:20] upd 1135 15.69M sps 2348 (roll 2.7s train 3.1s) kl1 0.114 ent 0.406 cf 0.064 vl 0.323 EV 0.96 boards>=3 0.21 b1-start clears 0.98 b3-start clear 0.0 items 58.3 harvest 1080
+[14:47:48] upd 1140 15.76M sps 2496 (roll 2.4s train 3.1s) kl1 0.123 ent 0.439 cf 0.087 vl 0.329 EV 0.96 boards>=3 0.30 b1-start clears 1.0 b3-start clear 0.0 items 56.5 harvest 1080
+[14:48:17] upd 1145 15.83M sps 2378 (roll 2.6s train 3.2s) kl1 0.106 ent 0.400 cf 0.094 vl 0.275 EV 0.96 boards>=3 0.32 b1-start clears 0.95 b3-start clear 0.0 items 55.2 harvest 1080
+[14:48:46] upd 1150 15.90M sps 2316 (roll 2.7s train 3.3s) kl1 0.111 ent 0.365 cf 0.049 vl 0.361 EV 0.95 boards>=3 0.26 b1-start clears 0.98 b3-start clear 0.0 items 54.6 harvest 1080
+[14:49:16] upd 1155 15.97M sps 2356 (roll 2.8s train 3.1s) kl1 0.103 ent 0.379 cf 0.077 vl 0.249 EV 0.97 boards>=3 0.33 b1-start clears 0.98 b3-start clear 0.0 items 51.5 harvest 1080
+[14:49:45] upd 1160 16.04M sps 2231 (roll 3.0s train 3.2s) kl1 0.110 ent 0.384 cf 0.084 vl 0.272 EV 0.97 boards>=3 0.32 b1-start clears 1.07 b3-start clear 0.0 items 51.7 harvest 1080
+[14:50:55] EVAL upd 1160 (16.04M): b1 clear 0.85  multiboard clears 1.38 reach3 0.48 reach4 0.00 b3 items 66.20833333333333  snap3 clear 0.00 items 63.4 deaths 1.14  (70s)
+[14:51:23] upd 1165 16.10M sps 2263 (roll 2.5s train 3.6s) kl1 0.113 ent 0.379 cf 0.074 vl 0.466 EV 0.94 boards>=3 0.37 b1-start clears 1.18 b3-start clear 0.0 items 52.9 harvest 1080
+[14:51:56] upd 1170 16.17M sps 2155 (roll 2.8s train 3.6s) kl1 0.104 ent 0.423 cf 0.097 vl 0.442 EV 0.94 boards>=3 0.31 b1-start clears 1.16 b3-start clear 0.0 items 51.4 harvest 1080
+[14:52:25] upd 1175 16.24M sps 2412 (roll 2.6s train 3.1s) kl1 0.114 ent 0.418 cf 0.078 vl 0.318 EV 0.94 boards>=3 0.36 b1-start clears 1.14 b3-start clear 0.0 items 53.2 harvest 1080
+[14:52:55] upd 1180 16.31M sps 2341 (roll 2.8s train 3.1s) kl1 0.105 ent 0.430 cf 0.101 vl 0.298 EV 0.96 boards>=3 0.28 b1-start clears 1.13 b3-start clear 0.0 items 52.3 harvest 1080
+[14:53:25] upd 1185 16.38M sps 2355 (roll 2.9s train 3.0s) kl1 0.092 ent 0.395 cf 0.063 vl 0.239 EV 0.97 boards>=3 0.28 b1-start clears 1.09 b3-start clear 0.0 items 52.3 harvest 1080
+[14:53:53] upd 1190 16.45M sps 2387 (roll 2.6s train 3.2s) kl1 0.103 ent 0.398 cf 0.054 vl 0.349 EV 0.96 boards>=3 0.23 b1-start clears 1.09 b3-start clear 0.0 items 52.5 harvest 1080
+[14:54:22] upd 1195 16.52M sps 2208 (roll 2.9s train 3.3s) kl1 0.091 ent 0.422 cf 0.120 vl 0.282 EV 0.96 boards>=3 0.28 b1-start clears 1.06 b3-start clear 0.0 items 51.7 harvest 1080
+[14:54:50] upd 1200 16.59M sps 2260 (roll 2.8s train 3.3s) kl1 0.102 ent 0.412 cf 0.084 vl 0.437 EV 0.95 boards>=3 0.30 b1-start clears 1.07 b3-start clear 0.0 items 50.7 harvest 1080
+[14:56:07] EVAL upd 1200 (16.59M): b1 clear 0.86  multiboard clears 1.20 reach3 0.40 reach4 0.00 b3 items 72.45  snap3 clear 0.00 items 70.5 deaths 1.14  (76s)
+[14:56:35] upd 1205 16.66M sps 2354 (roll 2.9s train 2.9s) kl1 0.092 ent 0.407 cf 0.099 vl 0.351 EV 0.95 boards>=3 0.33 b1-start clears 1.06 b3-start clear 0.0 items 50.9 harvest 1080
+[14:57:04] upd 1210 16.73M sps 2071 (roll 3.4s train 3.3s) kl1 0.107 ent 0.433 cf 0.093 vl 0.432 EV 0.93 boards>=3 0.26 b1-start clears 1.05 b3-start clear 0.0 items 50.1 harvest 1080
+[14:57:34] upd 1215 16.80M sps 2419 (roll 2.5s train 3.3s) kl1 0.100 ent 0.431 cf 0.098 vl 0.528 EV 0.93 boards>=3 0.37 b1-start clears 1.0 b3-start clear 0.0 items 50.6 harvest 1080
+[14:58:06] upd 1220 16.87M sps 2339 (roll 2.9s train 3.0s) kl1 0.114 ent 0.407 cf 0.076 vl 0.495 EV 0.94 boards>=3 0.26 b1-start clears 1.05 b3-start clear 0.0 items 51.7 harvest 1080
+[14:58:37] upd 1225 16.93M sps 2250 (roll 3.1s train 3.1s) kl1 0.113 ent 0.429 cf 0.084 vl 0.419 EV 0.96 boards>=3 0.26 b1-start clears 1.06 b3-start clear 0.0 items 51.6 harvest 1080
+[14:59:06] upd 1230 17.00M sps 2536 (roll 2.6s train 2.9s) kl1 0.117 ent 0.401 cf 0.063 vl 0.474 EV 0.94 boards>=3 0.20 b1-start clears 1.05 b3-start clear 0.0 items 51.3 harvest 1080
+[14:59:35] upd 1235 17.07M sps 2472 (roll 2.5s train 3.1s) kl1 0.122 ent 0.384 cf 0.084 vl 0.395 EV 0.95 boards>=3 0.32 b1-start clears 1.07 b3-start clear 0.0 items 50.5 harvest 1080
+[15:00:06] upd 1240 17.14M sps 2287 (roll 2.6s train 3.5s) kl1 0.109 ent 0.388 cf 0.044 vl 0.406 EV 0.95 boards>=3 0.30 b1-start clears 1.12 b3-start clear 0.0 items 50.2 harvest 1080
+[15:01:26] EVAL upd 1240 (17.14M): b1 clear 0.87  multiboard clears 1.38 reach3 0.48 reach4 0.00 b3 items 78.41666666666667  snap3 clear 0.00 items 70.5 deaths 1.14  (80s)
+[15:01:55] upd 1245 17.21M sps 2263 (roll 2.8s train 3.3s) kl1 0.110 ent 0.380 cf 0.077 vl 0.304 EV 0.97 boards>=3 0.36 b1-start clears 1.1 b3-start clear 0.0 items 50.3 harvest 1080
+[15:02:28] upd 1250 17.28M sps 2012 (roll 3.3s train 3.6s) kl1 0.105 ent 0.397 cf 0.066 vl 0.334 EV 0.95 boards>=3 0.30 b1-start clears 1.07 b3-start clear 0.0 items 51.6 harvest 1080
+[15:02:58] upd 1255 17.35M sps 2440 (roll 2.6s train 3.1s) kl1 0.098 ent 0.401 cf 0.083 vl 0.472 EV 0.94 boards>=3 0.38 b1-start clears 1.09 b3-start clear 0.0 items 54.8 harvest 1080
+[15:03:30] upd 1260 17.42M sps 2348 (roll 2.6s train 3.3s) kl1 0.099 ent 0.371 cf 0.068 vl 0.376 EV 0.94 boards>=3 0.41 b1-start clears 1.09 b3-start clear 0.0 items 57.5 harvest 1080
+[15:04:03] upd 1265 17.49M sps 2199 (roll 2.9s train 3.3s) kl1 0.102 ent 0.383 cf 0.077 vl 0.407 EV 0.95 boards>=3 0.33 b1-start clears 1.06 b3-start clear 0.0 items 57.5 harvest 1080
+[15:04:36] upd 1270 17.56M sps 1981 (roll 3.3s train 3.7s) kl1 0.110 ent 0.360 cf 0.061 vl 0.354 EV 0.95 boards>=3 0.35 b1-start clears 1.0 b3-start clear 0.0 items 55.2 harvest 1080
+[15:05:07] upd 1275 17.63M sps 2348 (roll 2.6s train 3.3s) kl1 0.101 ent 0.381 cf 0.061 vl 0.252 EV 0.97 boards>=3 0.26 b1-start clears 0.93 b3-start clear 0.0 items 53.5 harvest 1080
+[15:05:37] upd 1280 17.69M sps 2326 (roll 2.7s train 3.3s) kl1 0.098 ent 0.379 cf 0.047 vl 0.390 EV 0.94 boards>=3 0.32 b1-start clears 0.98 b3-start clear 0.0 items 51.6 harvest 1080
+[15:06:42] EVAL upd 1280 (17.69M): b1 clear 0.94  multiboard clears 1.20 reach3 0.32 reach4 0.00 b3 items 70.625  snap3 clear 0.00 items 69.7 deaths 1.14  (66s)
+[15:07:10] upd 1285 17.76M sps 2278 (roll 2.8s train 3.3s) kl1 0.089 ent 0.364 cf 0.092 vl 0.328 EV 0.96 boards>=3 0.38 b1-start clears 1.07 b3-start clear 0.0 items 53.1 harvest 1080
+[15:07:40] upd 1290 17.83M sps 2373 (roll 2.7s train 3.1s) kl1 0.094 ent 0.359 cf 0.063 vl 0.292 EV 0.96 boards>=3 0.38 b1-start clears 1.11 b3-start clear 0.0 items 52.2 harvest 1080
+[15:08:09] upd 1295 17.90M sps 2409 (roll 2.5s train 3.3s) kl1 0.091 ent 0.378 cf 0.091 vl 0.283 EV 0.96 boards>=3 0.31 b1-start clears 1.14 b3-start clear 0.0 items 53.0 harvest 1080
+[15:08:41] upd 1300 17.97M sps 2372 (roll 2.7s train 3.1s) kl1 0.104 ent 0.398 cf 0.075 vl 0.344 EV 0.94 boards>=3 0.26 b1-start clears 1.1 b3-start clear 0.0 items 51.8 harvest 1080
+[15:09:12] upd 1305 18.04M sps 2238 (roll 2.8s train 3.4s) kl1 0.108 ent 0.391 cf 0.084 vl 0.293 EV 0.96 boards>=3 0.31 b1-start clears 1.03 b3-start clear 0.0 items 51.1 harvest 1080
+[15:09:43] upd 1310 18.11M sps 2125 (roll 3.0s train 3.5s) kl1 0.099 ent 0.360 cf 0.056 vl 0.265 EV 0.96 boards>=3 0.34 b1-start clears 1.0 b3-start clear 0.0 items 50.1 harvest 1080
+[15:10:14] upd 1315 18.18M sps 2277 (roll 2.5s train 3.5s) kl1 0.099 ent 0.365 cf 0.069 vl 0.304 EV 0.96 boards>=3 0.34 b1-start clears 0.98 b3-start clear 0.0 items 48.8 harvest 1080
+[15:10:46] upd 1320 18.25M sps 2373 (roll 2.5s train 3.3s) kl1 0.098 ent 0.361 cf 0.056 vl 0.229 EV 0.97 boards>=3 0.40 b1-start clears 0.97 b3-start clear 0.0 items 49.2 harvest 1080
+[15:12:02] EVAL upd 1320 (18.25M): b1 clear 0.85  multiboard clears 1.26 reach3 0.36 reach4 0.00 b3 items 76.55555555555556  snap3 clear 0.00 items 70.6 deaths 1.14  (76s)
+[15:12:32] upd 1325 18.32M sps 2193 (roll 3.0s train 3.3s) kl1 0.112 ent 0.377 cf 0.067 vl 0.335 EV 0.95 boards>=3 0.38 b1-start clears 0.97 b3-start clear 0.0 items 48.8 harvest 1080
+[15:13:05] upd 1330 18.39M sps 1970 (roll 3.2s train 3.8s) kl1 0.109 ent 0.354 cf 0.051 vl 0.294 EV 0.96 boards>=3 0.30 b1-start clears 1.02 b3-start clear 0.0 items 53.3 harvest 1080
+[15:13:35] upd 1335 18.46M sps 2370 (roll 2.6s train 3.2s) kl1 0.099 ent 0.370 cf 0.093 vl 0.322 EV 0.96 boards>=3 0.35 b1-start clears 0.95 b3-start clear 0.0 items 56.9 harvest 1080
+[15:14:05] upd 1340 18.52M sps 2277 (roll 2.8s train 3.3s) kl1 0.121 ent 0.381 cf 0.069 vl 0.339 EV 0.95 boards>=3 0.35 b1-start clears 0.92 b3-start clear 0.0 items 59.2 harvest 1080
+[15:14:35] upd 1345 18.59M sps 2381 (roll 2.6s train 3.2s) kl1 0.103 ent 0.414 cf 0.053 vl 0.292 EV 0.96 boards>=3 0.33 b1-start clears 0.96 b3-start clear 0.0 items 62.0 harvest 1080
+[15:15:05] upd 1350 18.66M sps 2315 (roll 2.6s train 3.4s) kl1 0.097 ent 0.382 cf 0.060 vl 0.324 EV 0.96 boards>=3 0.34 b1-start clears 0.98 b3-start clear 0.0 items 60.6 harvest 1080
+[15:15:35] upd 1355 18.73M sps 2288 (roll 2.8s train 3.3s) kl1 0.103 ent 0.398 cf 0.065 vl 0.392 EV 0.95 boards>=3 0.37 b1-start clears 1.02 b3-start clear 0.0 items 56.4 harvest 1080
+[15:16:05] upd 1360 18.80M sps 2507 (roll 2.3s train 3.2s) kl1 0.109 ent 0.396 cf 0.058 vl 0.428 EV 0.95 boards>=3 0.39 b1-start clears 0.98 b3-start clear 0.0 items 55.3 harvest 1080
+[15:17:10] EVAL upd 1360 (18.80M): b1 clear 0.91  multiboard clears 1.50 reach3 0.56 reach4 0.00 b3 items 80.92857142857143  snap3 clear 0.00 items 71.0 deaths 1.14  (65s)  *best*
+[15:17:38] upd 1365 18.87M sps 2552 (roll 2.3s train 3.1s) kl1 0.090 ent 0.396 cf 0.070 vl 0.330 EV 0.96 boards>=3 0.41 b1-start clears 1.12 b3-start clear 0.0 items 54.7 harvest 1080
+[15:18:08] upd 1370 18.94M sps 2076 (roll 3.0s train 3.7s) kl1 0.100 ent 0.402 cf 0.074 vl 0.322 EV 0.95 boards>=3 0.38 b1-start clears 1.13 b3-start clear 0.0 items 55.8 harvest 1080
+[15:18:38] upd 1375 19.01M sps 2159 (roll 2.8s train 3.6s) kl1 0.100 ent 0.382 cf 0.064 vl 0.388 EV 0.95 boards>=3 0.37 b1-start clears 1.16 b3-start clear 0.0 items 56.6 harvest 1080
+[15:19:11] upd 1380 19.08M sps 2081 (roll 3.2s train 3.5s) kl1 0.108 ent 0.376 cf 0.084 vl 0.411 EV 0.95 boards>=3 0.38 b1-start clears 1.18 b3-start clear 0.0 items 59.8 harvest 1080
+[15:19:42] upd 1385 19.15M sps 2359 (roll 2.9s train 3.0s) kl1 0.099 ent 0.389 cf 0.048 vl 0.250 EV 0.96 boards>=3 0.32 b1-start clears 1.15 b3-start clear 0.0 items 58.0 harvest 1080
+[15:20:11] upd 1390 19.22M sps 2323 (roll 2.3s train 3.7s) kl1 0.126 ent 0.398 cf 0.097 vl 0.376 EV 0.95 boards>=3 0.37 b1-start clears 1.09 b3-start clear 0.0 items 58.3 harvest 1080
+[15:20:43] upd 1395 19.28M sps 2048 (roll 2.9s train 3.9s) kl1 0.094 ent 0.397 cf 0.106 vl 0.237 EV 0.96 boards>=3 0.35 b1-start clears 1.03 b3-start clear 0.0 items 57.1 harvest 1080
+[15:21:14] upd 1400 19.35M sps 2098 (roll 3.2s train 3.4s) kl1 0.093 ent 0.357 cf 0.056 vl 0.292 EV 0.95 boards>=3 0.33 b1-start clears 1.04 b3-start clear 0.0 items 57.0 harvest 1080
+[15:22:28] EVAL upd 1400 (19.35M): b1 clear 0.92  multiboard clears 1.30 reach3 0.42 reach4 0.00 b3 items 79.71428571428571  snap3 clear 0.00 items 73.7 deaths 1.14  (74s)
+[15:22:56] upd 1405 19.42M sps 2582 (roll 2.2s train 3.2s) kl1 0.106 ent 0.343 cf 0.048 vl 0.353 EV 0.96 boards>=3 0.31 b1-start clears 1.0 b3-start clear 0.0 items 55.5 harvest 1080
+[15:23:26] upd 1410 19.49M sps 2204 (roll 2.8s train 3.5s) kl1 0.102 ent 0.370 cf 0.075 vl 0.323 EV 0.95 boards>=3 0.31 b1-start clears 0.95 b3-start clear 0.0 items 55.4 harvest 1080
+[15:23:56] upd 1415 19.56M sps 2509 (roll 2.2s train 3.3s) kl1 0.094 ent 0.370 cf 0.062 vl 0.306 EV 0.96 boards>=3 0.34 b1-start clears 0.95 b3-start clear 0.0 items 55.7 harvest 1080
+[15:24:24] upd 1420 19.63M sps 2456 (roll 2.4s train 3.3s) kl1 0.093 ent 0.372 cf 0.055 vl 0.277 EV 0.96 boards>=3 0.31 b1-start clears 1.02 b3-start clear 0.0 items 56.6 harvest 1080
+[15:24:54] upd 1425 19.70M sps 2285 (roll 3.0s train 3.0s) kl1 0.113 ent 0.356 cf 0.063 vl 0.381 EV 0.96 boards>=3 0.44 b1-start clears 0.99 b3-start clear 0.0 items 57.3 harvest 1080
+[15:25:25] upd 1430 19.77M sps 2295 (roll 2.9s train 3.2s) kl1 0.087 ent 0.379 cf 0.082 vl 0.240 EV 0.97 boards>=3 0.44 b1-start clears 1.1 b3-start clear 0.0 items 59.4 harvest 1080
+[15:25:53] upd 1435 19.84M sps 2211 (roll 3.1s train 3.1s) kl1 0.116 ent 0.382 cf 0.079 vl 0.299 EV 0.96 boards>=3 0.40 b1-start clears 1.12 b3-start clear 0.0 items 58.7 harvest 1080
+[15:26:23] upd 1440 19.91M sps 2445 (roll 2.3s train 3.4s) kl1 0.102 ent 0.365 cf 0.099 vl 0.266 EV 0.97 boards>=3 0.35 b1-start clears 1.15 b3-start clear 0.0 items 57.9 harvest 1080
+[15:27:30] EVAL upd 1440 (19.91M): b1 clear 0.89  multiboard clears 1.32 reach3 0.48 reach4 0.00 b3 items 75.625  snap3 clear 0.00 items 71.6 deaths 1.14  (68s)
+[15:27:57] upd 1445 19.98M sps 2598 (roll 2.5s train 2.8s) kl1 0.117 ent 0.385 cf 0.065 vl 0.331 EV 0.97 boards>=3 0.37 b1-start clears 1.16 b3-start clear 0.0 items 59.0 harvest 1080
+[15:28:26] upd 1450 20.04M sps 2347 (roll 2.8s train 3.1s) kl1 0.109 ent 0.380 cf 0.079 vl 0.260 EV 0.97 boards>=3 0.38 b1-start clears 1.17 b3-start clear 0.0 items 57.5 harvest 1080
+[15:28:55] upd 1455 20.11M sps 2301 (roll 2.9s train 3.1s) kl1 0.100 ent 0.351 cf 0.082 vl 0.225 EV 0.97 boards>=3 0.41 b1-start clears 1.08 b3-start clear 0.0 items 56.9 harvest 1080
+[15:29:28] upd 1460 20.18M sps 2094 (roll 3.0s train 3.6s) kl1 0.095 ent 0.359 cf 0.073 vl 0.335 EV 0.96 boards>=3 0.31 b1-start clears 1.03 b3-start clear 0.0 items 59.3 harvest 1080
+[15:29:58] upd 1465 20.25M sps 2350 (roll 2.5s train 3.4s) kl1 0.130 ent 0.367 cf 0.071 vl 0.401 EV 0.96 boards>=3 0.37 b1-start clears 1.09 b3-start clear 0.0 items 60.4 harvest 1080
+[15:30:29] upd 1470 20.32M sps 2400 (roll 2.4s train 3.3s) kl1 0.097 ent 0.338 cf 0.054 vl 0.278 EV 0.97 boards>=3 0.39 b1-start clears 1.04 b3-start clear 0.0 items 60.7 harvest 1080
+[15:30:59] upd 1475 20.39M sps 2274 (roll 2.9s train 3.1s) kl1 0.110 ent 0.373 cf 0.078 vl 0.337 EV 0.96 boards>=3 0.32 b1-start clears 1.01 b3-start clear 0.0 items 58.0 harvest 1080
+[15:31:29] upd 1480 20.46M sps 2409 (roll 2.7s train 3.1s) kl1 0.104 ent 0.381 cf 0.053 vl 0.294 EV 0.96 boards>=3 0.37 b1-start clears 1.02 b3-start clear 0.0 items 57.0 harvest 1080
+[15:32:48] EVAL upd 1480 (20.46M): b1 clear 0.90  multiboard clears 1.34 reach3 0.42 reach4 0.00 b3 items 73.9047619047619  snap3 clear 0.00 items 71.8 deaths 1.14  (79s)
+[15:33:15] upd 1485 20.53M sps 2519 (roll 2.4s train 3.1s) kl1 0.111 ent 0.395 cf 0.088 vl 0.344 EV 0.95 boards>=3 0.37 b1-start clears 1.05 b3-start clear 0.0 items 54.5 harvest 1080
+[15:33:43] upd 1490 20.60M sps 2283 (roll 3.1s train 3.0s) kl1 0.099 ent 0.362 cf 0.057 vl 0.354 EV 0.94 boards>=3 0.41 b1-start clears 1.1 b3-start clear 0.0 items 54.4 harvest 1080
+[15:34:13] upd 1495 20.67M sps 2235 (roll 3.0s train 3.2s) kl1 0.095 ent 0.394 cf 0.066 vl 0.249 EV 0.97 boards>=3 0.39 b1-start clears 1.2 b3-start clear 0.0 items 52.8 harvest 1080
+[15:34:42] upd 1500 20.74M sps 2297 (roll 3.1s train 3.0s) kl1 0.107 ent 0.392 cf 0.044 vl 0.384 EV 0.96 boards>=3 0.35 b1-start clears 1.24 b3-start clear 0.0 items 52.4 harvest 1080
+[15:35:11] upd 1505 20.81M sps 2310 (roll 2.9s train 3.1s) kl1 0.114 ent 0.392 cf 0.051 vl 0.366 EV 0.95 boards>=3 0.26 b1-start clears 1.21 b3-start clear 0.0 items 54.8 harvest 1080
+[15:35:40] upd 1510 20.87M sps 2489 (roll 2.5s train 3.0s) kl1 0.119 ent 0.379 cf 0.047 vl 0.346 EV 0.95 boards>=3 0.40 b1-start clears 1.15 b3-start clear 0.0 items 55.4 harvest 1080
+[15:36:10] upd 1515 20.94M sps 2243 (roll 2.8s train 3.3s) kl1 0.099 ent 0.352 cf 0.045 vl 0.275 EV 0.97 boards>=3 0.43 b1-start clears 1.11 b3-start clear 0.0 items 56.1 harvest 1080
+[15:36:40] upd 1520 21.01M sps 2281 (roll 2.8s train 3.2s) kl1 0.098 ent 0.369 cf 0.075 vl 0.248 EV 0.97 boards>=3 0.37 b1-start clears 1.06 b3-start clear 0.0 items 57.9 harvest 1080
+[15:37:56] EVAL upd 1520 (21.01M): b1 clear 0.94  multiboard clears 1.46 reach3 0.48 reach4 0.00 b3 items 78.20833333333333  snap3 clear 0.00 items 77.1 deaths 1.14  (76s)
+[15:38:24] upd 1525 21.08M sps 2353 (roll 2.6s train 3.3s) kl1 0.114 ent 0.367 cf 0.073 vl 0.278 EV 0.96 boards>=3 0.35 b1-start clears 1.03 b3-start clear 0.0 items 62.9 harvest 1080
+[15:38:53] upd 1530 21.15M sps 2358 (roll 2.6s train 3.3s) kl1 0.111 ent 0.363 cf 0.088 vl 0.327 EV 0.96 boards>=3 0.36 b1-start clears 1.1 b3-start clear 0.0 items 61.3 harvest 1080
+[15:39:23] upd 1535 21.22M sps 2319 (roll 3.0s train 3.0s) kl1 0.091 ent 0.338 cf 0.062 vl 0.322 EV 0.96 boards>=3 0.37 b1-start clears 1.08 b3-start clear 0.0 items 65.6 harvest 1080
+[15:39:53] upd 1540 21.29M sps 2224 (roll 2.8s train 3.4s) kl1 0.102 ent 0.337 cf 0.044 vl 0.248 EV 0.96 boards>=3 0.33 b1-start clears 1.0 b3-start clear 0.0 items 65.4 harvest 1080
+[15:40:23] upd 1545 21.36M sps 2319 (roll 2.6s train 3.4s) kl1 0.103 ent 0.370 cf 0.066 vl 0.304 EV 0.95 boards>=3 0.35 b1-start clears 1.0 b3-start clear 0.0 items 66.0 harvest 1080
+[15:40:55] upd 1550 21.43M sps 2131 (roll 2.8s train 3.7s) kl1 0.112 ent 0.398 cf 0.065 vl 0.301 EV 0.96 boards>=3 0.39 b1-start clears 1.0 b3-start clear 0.0 items 62.7 harvest 1080
+[15:41:26] upd 1555 21.50M sps 2174 (roll 3.0s train 3.4s) kl1 0.103 ent 0.367 cf 0.076 vl 0.285 EV 0.96 boards>=3 0.35 b1-start clears 1.07 b3-start clear 0.0 items 63.7 harvest 1080
+[15:41:58] upd 1560 21.57M sps 2254 (roll 2.7s train 3.5s) kl1 0.091 ent 0.356 cf 0.058 vl 0.316 EV 0.96 boards>=3 0.37 b1-start clears 1.05 b3-start clear 0.0 items 63.8 harvest 1080
+[15:43:15] EVAL upd 1560 (21.57M): b1 clear 0.96  multiboard clears 1.40 reach3 0.44 reach4 0.00 b3 items 83.13636363636364  snap3 clear 0.00 items 81.0 deaths 1.14  (78s)
+[15:43:45] upd 1565 21.63M sps 2079 (roll 3.4s train 3.2s) kl1 0.111 ent 0.411 cf 0.085 vl 0.272 EV 0.97 boards>=3 0.34 b1-start clears 1.14 b3-start clear 0.0 items 62.3 harvest 1080
+[15:44:16] upd 1570 21.70M sps 2002 (roll 3.1s train 3.8s) kl1 0.101 ent 0.375 cf 0.068 vl 0.248 EV 0.97 boards>=3 0.31 b1-start clears 1.22 b3-start clear 0.0 items 60.7 harvest 1080
+[15:44:49] upd 1575 21.77M sps 2006 (roll 3.1s train 3.8s) kl1 0.112 ent 0.374 cf 0.062 vl 0.294 EV 0.96 boards>=3 0.30 b1-start clears 1.19 b3-start clear 0.0 items 58.6 harvest 1080
+[15:45:20] upd 1580 21.84M sps 2088 (roll 3.0s train 3.6s) kl1 0.099 ent 0.380 cf 0.066 vl 0.298 EV 0.96 boards>=3 0.35 b1-start clears 1.12 b3-start clear 0.0 items 57.4 harvest 1080
+[15:45:51] upd 1585 21.91M sps 2232 (roll 2.7s train 3.5s) kl1 0.118 ent 0.345 cf 0.074 vl 0.318 EV 0.96 boards>=3 0.42 b1-start clears 1.14 b3-start clear 0.0 items 56.6 harvest 1080
+[15:46:22] upd 1590 21.98M sps 2284 (roll 2.8s train 3.3s) kl1 0.103 ent 0.309 cf 0.057 vl 0.198 EV 0.97 boards>=3 0.42 b1-start clears 1.17 b3-start clear 0.0 items 54.9 harvest 1080
+[15:46:52] upd 1595 22.05M sps 2107 (roll 3.0s train 3.5s) kl1 0.096 ent 0.346 cf 0.073 vl 0.282 EV 0.96 boards>=3 0.37 b1-start clears 1.18 b3-start clear 0.0 items 54.9 harvest 1080
+[15:47:23] upd 1600 22.12M sps 2414 (roll 2.5s train 3.2s) kl1 0.114 ent 0.380 cf 0.056 vl 0.370 EV 0.96 boards>=3 0.41 b1-start clears 1.21 b3-start clear 0.0 items 57.4 harvest 1080
+[15:48:34] EVAL upd 1600 (22.12M): b1 clear 0.93  multiboard clears 1.50 reach3 0.56 reach4 0.00 b3 items 77.28571428571429  snap3 clear 0.00 items 74.6 deaths 1.14  (71s)
+[15:49:02] upd 1605 22.19M sps 2483 (roll 2.5s train 3.1s) kl1 0.101 ent 0.350 cf 0.057 vl 0.259 EV 0.97 boards>=3 0.39 b1-start clears 1.18 b3-start clear 0.0 items 55.4 harvest 1080
+[15:49:31] upd 1610 22.26M sps 2324 (roll 2.7s train 3.2s) kl1 0.114 ent 0.356 cf 0.084 vl 0.374 EV 0.95 boards>=3 0.37 b1-start clears 1.2 b3-start clear 0.0 items 58.0 harvest 1080
+[15:50:00] upd 1615 22.33M sps 2355 (roll 2.5s train 3.4s) kl1 0.110 ent 0.395 cf 0.062 vl 0.315 EV 0.96 boards>=3 0.39 b1-start clears 1.2 b3-start clear 0.0 items 60.0 harvest 1080
+[15:50:30] upd 1620 22.39M sps 2255 (roll 2.5s train 3.6s) kl1 0.100 ent 0.343 cf 0.051 vl 0.239 EV 0.96 boards>=3 0.42 b1-start clears 1.13 b3-start clear 0.0 items 56.9 harvest 1080
+[15:51:00] upd 1625 22.46M sps 2307 (roll 2.7s train 3.3s) kl1 0.098 ent 0.350 cf 0.075 vl 0.310 EV 0.95 boards>=3 0.30 b1-start clears 1.08 b3-start clear 0.0 items 58.7 harvest 1080
+[15:51:29] upd 1630 22.53M sps 2356 (roll 2.4s train 3.5s) kl1 0.107 ent 0.354 cf 0.063 vl 0.324 EV 0.97 boards>=3 0.36 b1-start clears 1.09 b3-start clear 0.0 items 58.6 harvest 1080
+[15:51:59] upd 1635 22.60M sps 2320 (roll 2.2s train 3.7s) kl1 0.109 ent 0.371 cf 0.109 vl 0.291 EV 0.96 boards>=3 0.36 b1-start clears 1.05 b3-start clear 0.0 items 56.1 harvest 1080
+[15:52:30] upd 1640 22.67M sps 2344 (roll 2.6s train 3.3s) kl1 0.106 ent 0.324 cf 0.067 vl 0.266 EV 0.96 boards>=3 0.39 b1-start clears 1.0 b3-start clear 0.0 items 52.7 harvest 1080
+[15:53:38] EVAL upd 1640 (22.67M): b1 clear 0.97  multiboard clears 1.28 reach3 0.42 reach4 0.00 b3 items 82.47619047619048  snap3 clear 0.00 items 76.2 deaths 1.14  (69s)
+[15:54:06] upd 1645 22.74M sps 2313 (roll 2.5s train 3.5s) kl1 0.109 ent 0.334 cf 0.047 vl 0.296 EV 0.95 boards>=3 0.48 b1-start clears 1.1 b3-start clear 0.0 items 54.6 harvest 1080
+[15:54:35] upd 1650 22.81M sps 2126 (roll 2.8s train 3.7s) kl1 0.127 ent 0.351 cf 0.056 vl 0.289 EV 0.96 boards>=3 0.50 b1-start clears 1.09 b3-start clear 0.0 items 53.0 harvest 1080
+[15:55:06] upd 1655 22.88M sps 2057 (roll 3.3s train 3.4s) kl1 0.130 ent 0.356 cf 0.063 vl 0.339 EV 0.96 boards>=3 0.43 b1-start clears 1.11 b3-start clear 0.0 items 54.2 harvest 1080
+[15:55:37] upd 1660 22.95M sps 2256 (roll 2.8s train 3.4s) kl1 0.110 ent 0.362 cf 0.072 vl 0.321 EV 0.95 boards>=3 0.40 b1-start clears 1.18 b3-start clear 0.0 items 53.5 harvest 1080
+[15:56:10] upd 1665 23.02M sps 2019 (roll 3.2s train 3.7s) kl1 0.102 ent 0.326 cf 0.051 vl 0.311 EV 0.96 boards>=3 0.37 b1-start clears 1.25 b3-start clear 0.0 items 55.3 harvest 1080
+[15:56:41] upd 1670 23.09M sps 2440 (roll 2.3s train 3.3s) kl1 0.110 ent 0.383 cf 0.053 vl 0.300 EV 0.97 boards>=3 0.42 b1-start clears 1.2 b3-start clear 0.0 items 55.5 harvest 1080
+[15:57:11] upd 1675 23.16M sps 2313 (roll 2.4s train 3.5s) kl1 0.119 ent 0.342 cf 0.068 vl 0.257 EV 0.97 boards>=3 0.40 b1-start clears 1.23 b3-start clear 0.0 items 57.1 harvest 1080
+[15:57:41] upd 1680 23.22M sps 2202 (roll 2.8s train 3.5s) kl1 0.122 ent 0.380 cf 0.077 vl 0.346 EV 0.95 boards>=3 0.42 b1-start clears 1.2 b3-start clear 0.0 items 59.3 harvest 1080
+[15:58:54] EVAL upd 1680 (23.22M): b1 clear 0.93  multiboard clears 1.32 reach3 0.40 reach4 0.00 b3 items 83.1  snap3 clear 0.00 items 82.7 deaths 1.14  (74s)
+[15:59:22] upd 1685 23.29M sps 2496 (roll 2.6s train 2.9s) kl1 0.104 ent 0.361 cf 0.066 vl 0.181 EV 0.98 boards>=3 0.44 b1-start clears 1.18 b3-start clear 0.0 items 62.5 harvest 1080
+[15:59:51] upd 1690 23.36M sps 2268 (roll 2.9s train 3.2s) kl1 0.095 ent 0.360 cf 0.059 vl 0.280 EV 0.96 boards>=3 0.47 b1-start clears 1.09 b3-start clear 0.0 items 66.4 harvest 1080
+[16:00:19] upd 1695 23.43M sps 2452 (roll 2.4s train 3.2s) kl1 0.105 ent 0.363 cf 0.069 vl 0.333 EV 0.95 boards>=3 0.38 b1-start clears 1.13 b3-start clear 0.0 items 65.6 harvest 1080
+[16:00:49] upd 1700 23.50M sps 2485 (roll 2.3s train 3.3s) kl1 0.095 ent 0.396 cf 0.089 vl 0.264 EV 0.96 boards>=3 0.42 b1-start clears 1.12 b3-start clear 0.0 items 64.5 harvest 1080
+[16:01:19] upd 1705 23.57M sps 2239 (roll 2.7s train 3.5s) kl1 0.102 ent 0.368 cf 0.063 vl 0.212 EV 0.97 boards>=3 0.42 b1-start clears 1.08 b3-start clear 0.0 items 63.2 harvest 1080
+[16:01:48] upd 1710 23.64M sps 2379 (roll 2.3s train 3.5s) kl1 0.116 ent 0.359 cf 0.067 vl 0.210 EV 0.97 boards>=3 0.43 b1-start clears 1.02 b3-start clear 0.0 items 60.6 harvest 1080
+[16:02:19] upd 1715 23.71M sps 2074 (roll 3.2s train 3.5s) kl1 0.106 ent 0.353 cf 0.076 vl 0.326 EV 0.95 boards>=3 0.46 b1-start clears 1.1 b3-start clear 0.0 items 58.8 harvest 1080
+[16:02:52] upd 1720 23.78M sps 2163 (roll 2.5s train 3.9s) kl1 0.080 ent 0.325 cf 0.056 vl 0.292 EV 0.95 boards>=3 0.43 b1-start clears 1.02 b3-start clear 0.0 items 57.0 harvest 1080
+[16:03:58] EVAL upd 1720 (23.78M): b1 clear 0.90  multiboard clears 1.34 reach3 0.44 reach4 0.00 b3 items 77.5  snap3 clear 0.00 items 62.4 deaths 1.14  (66s)
+[16:04:25] upd 1725 23.85M sps 2469 (roll 2.5s train 3.1s) kl1 0.118 ent 0.341 cf 0.066 vl 0.423 EV 0.94 boards>=3 0.41 b1-start clears 1.02 b3-start clear 0.0 items 58.4 harvest 1080
+[16:04:54] upd 1730 23.92M sps 2414 (roll 2.5s train 3.3s) kl1 0.119 ent 0.346 cf 0.049 vl 0.295 EV 0.96 boards>=3 0.50 b1-start clears 1.04 b3-start clear 0.0 items 58.1 harvest 1080
+[16:05:24] upd 1735 23.98M sps 2627 (roll 2.3s train 3.0s) kl1 0.122 ent 0.342 cf 0.090 vl 0.243 EV 0.96 boards>=3 0.44 b1-start clears 1.04 b3-start clear 0.0 items 58.8 harvest 1080
+[16:05:53] upd 1740 24.05M sps 2486 (roll 2.4s train 3.2s) kl1 0.112 ent 0.338 cf 0.073 vl 0.259 EV 0.96 boards>=3 0.46 b1-start clears 1.1 b3-start clear 0.0 items 58.8 harvest 1080
+[16:06:24] upd 1745 24.12M sps 2262 (roll 3.1s train 3.0s) kl1 0.100 ent 0.348 cf 0.109 vl 0.244 EV 0.97 boards>=3 0.40 b1-start clears 1.17 b3-start clear 0.0 items 59.6 harvest 1080
+[16:06:53] upd 1750 24.19M sps 2369 (roll 2.6s train 3.2s) kl1 0.122 ent 0.384 cf 0.071 vl 0.450 EV 0.95 boards>=3 0.34 b1-start clears 1.24 b3-start clear 0.0 items 58.5 harvest 1080
+[16:07:22] upd 1755 24.26M sps 2309 (roll 2.7s train 3.3s) kl1 0.104 ent 0.342 cf 0.082 vl 0.336 EV 0.95 boards>=3 0.44 b1-start clears 1.16 b3-start clear 0.0 items 58.7 harvest 1080
+[16:07:52] upd 1760 24.33M sps 2190 (roll 3.0s train 3.3s) kl1 0.100 ent 0.371 cf 0.079 vl 0.302 EV 0.96 boards>=3 0.37 b1-start clears 1.22 b3-start clear 0.0 items 60.6 harvest 1080
+[16:09:02] EVAL upd 1760 (24.33M): b1 clear 0.92  multiboard clears 1.34 reach3 0.42 reach4 0.00 b3 items 80.80952380952381  snap3 clear 0.00 items 79.1 deaths 1.14  (71s)
+[16:09:31] upd 1765 24.40M sps 2232 (roll 2.5s train 3.7s) kl1 0.117 ent 0.340 cf 0.055 vl 0.453 EV 0.95 boards>=3 0.37 b1-start clears 1.24 b3-start clear 0.0 items 62.2 harvest 1080
+[16:10:01] upd 1770 24.47M sps 2312 (roll 2.5s train 3.5s) kl1 0.116 ent 0.350 cf 0.065 vl 0.448 EV 0.95 boards>=3 0.40 b1-start clears 1.23 b3-start clear 0.0 items 63.9 harvest 1080
+[16:10:33] upd 1775 24.54M sps 2103 (roll 3.0s train 3.6s) kl1 0.107 ent 0.346 cf 0.075 vl 0.428 EV 0.94 boards>=3 0.41 b1-start clears 1.11 b3-start clear 0.0 items 64.9 harvest 1080
+[16:11:03] upd 1780 24.61M sps 2373 (roll 2.4s train 3.4s) kl1 0.103 ent 0.334 cf 0.067 vl 0.429 EV 0.94 boards>=3 0.46 b1-start clears 1.21 b3-start clear 0.0 items 64.7 harvest 1080
+[16:11:33] upd 1785 24.68M sps 2375 (roll 2.4s train 3.4s) kl1 0.090 ent 0.323 cf 0.056 vl 0.386 EV 0.95 boards>=3 0.44 b1-start clears 1.16 b3-start clear 0.0 items 64.1 harvest 1080
+[16:12:04] upd 1790 24.74M sps 2156 (roll 2.6s train 3.8s) kl1 0.114 ent 0.344 cf 0.069 vl 0.340 EV 0.96 boards>=3 0.40 b1-start clears 1.12 b3-start clear 0.0 items 60.3 harvest 1080
+[16:12:35] upd 1795 24.81M sps 2259 (roll 2.8s train 3.3s) kl1 0.102 ent 0.327 cf 0.078 vl 0.333 EV 0.95 boards>=3 0.48 b1-start clears 1.05 b3-start clear 0.0 items 59.7 harvest 1080
+[16:13:05] upd 1800 24.88M sps 2188 (roll 3.1s train 3.2s) kl1 0.101 ent 0.333 cf 0.061 vl 0.326 EV 0.96 boards>=3 0.43 b1-start clears 1.04 b3-start clear 0.0 items 59.7 harvest 1080
+[16:14:20] EVAL upd 1800 (24.88M): b1 clear 0.92  multiboard clears 1.46 reach3 0.54 reach4 0.00 b3 items 82.77777777777777  snap3 clear 0.00 items 82.9 deaths 1.14  (75s)
+[16:14:47] upd 1805 24.95M sps 2579 (roll 2.2s train 3.2s) kl1 0.096 ent 0.344 cf 0.066 vl 0.219 EV 0.97 boards>=3 0.42 b1-start clears 1.04 b3-start clear 0.0 items 60.1 harvest 1080
+[16:15:16] upd 1810 25.02M sps 2498 (roll 2.4s train 3.1s) kl1 0.098 ent 0.328 cf 0.064 vl 0.320 EV 0.95 boards>=3 0.44 b1-start clears 1.09 b3-start clear 0.0 items 58.5 harvest 1080
+[16:15:45] upd 1815 25.09M sps 2105 (roll 2.8s train 3.8s) kl1 0.121 ent 0.369 cf 0.078 vl 0.305 EV 0.96 boards>=3 0.42 b1-start clears 1.11 b3-start clear 0.0 items 58.7 harvest 1080
+[16:16:18] upd 1820 25.16M sps 2063 (roll 3.0s train 3.7s) kl1 0.089 ent 0.323 cf 0.073 vl 0.312 EV 0.95 boards>=3 0.42 b1-start clears 1.19 b3-start clear 0.0 items 59.5 harvest 1080
+[16:16:51] upd 1825 25.23M sps 2098 (roll 3.0s train 3.6s) kl1 0.107 ent 0.326 cf 0.053 vl 0.316 EV 0.96 boards>=3 0.41 b1-start clears 1.2 b3-start clear 0.0 items 58.7 harvest 1080
+[16:17:23] upd 1830 25.30M sps 2229 (roll 2.5s train 3.7s) kl1 0.104 ent 0.353 cf 0.096 vl 0.202 EV 0.96 boards>=3 0.36 b1-start clears 1.2 b3-start clear 0.0 items 61.1 harvest 1080
+[16:17:54] upd 1835 25.37M sps 2117 (roll 3.2s train 3.4s) kl1 0.116 ent 0.334 cf 0.078 vl 0.349 EV 0.96 boards>=3 0.41 b1-start clears 1.11 b3-start clear 0.0 items 62.7 harvest 1080
+[16:18:24] upd 1840 25.44M sps 2409 (roll 2.4s train 3.3s) kl1 0.105 ent 0.382 cf 0.064 vl 0.240 EV 0.96 boards>=3 0.43 b1-start clears 1.12 b3-start clear 0.0 items 61.5 harvest 1080
+[16:19:51] EVAL upd 1840 (25.44M): b1 clear 0.95  multiboard clears 1.42 reach3 0.48 reach4 0.00 b3 items 88.91666666666667  snap3 clear 0.00 items 86.8 deaths 1.14  (87s)
+[16:20:20] upd 1845 25.51M sps 2507 (roll 2.7s train 2.8s) kl1 0.097 ent 0.387 cf 0.084 vl 0.174 EV 0.97 boards>=3 0.39 b1-start clears 1.1 b3-start clear 0.0 items 63.1 harvest 1080
+[16:20:50] upd 1850 25.57M sps 2322 (roll 2.6s train 3.3s) kl1 0.121 ent 0.362 cf 0.057 vl 0.394 EV 0.95 boards>=3 0.40 b1-start clears 1.02 b3-start clear 0.0 items 63.3 harvest 1080
+[16:21:20] upd 1855 25.64M sps 2464 (roll 2.7s train 2.9s) kl1 0.099 ent 0.348 cf 0.061 vl 0.283 EV 0.96 boards>=3 0.41 b1-start clears 1.05 b3-start clear 0.0 items 64.4 harvest 1080
+[16:21:49] upd 1860 25.71M sps 2455 (roll 2.5s train 3.1s) kl1 0.113 ent 0.367 cf 0.044 vl 0.359 EV 0.96 boards>=3 0.43 b1-start clears 1.04 b3-start clear 0.0 items 61.7 harvest 1080
+[16:22:19] upd 1865 25.78M sps 2258 (roll 2.7s train 3.4s) kl1 0.101 ent 0.355 cf 0.067 vl 0.240 EV 0.96 boards>=3 0.44 b1-start clears 1.13 b3-start clear 0.0 items 62.2 harvest 1080
+[16:22:48] upd 1870 25.85M sps 2402 (roll 2.3s train 3.4s) kl1 0.118 ent 0.359 cf 0.052 vl 0.373 EV 0.95 boards>=3 0.48 b1-start clears 1.19 b3-start clear 0.0 items 61.7 harvest 1080
+[16:23:18] upd 1875 25.92M sps 2411 (roll 2.4s train 3.4s) kl1 0.106 ent 0.375 cf 0.090 vl 0.324 EV 0.95 boards>=3 0.47 b1-start clears 1.18 b3-start clear 0.0 items 59.9 harvest 1080
+[16:23:47] upd 1880 25.99M sps 2568 (roll 2.4s train 3.0s) kl1 0.124 ent 0.384 cf 0.070 vl 0.262 EV 0.96 boards>=3 0.42 b1-start clears 1.22 b3-start clear 0.0 items 61.2 harvest 1080
+[16:25:04] EVAL upd 1880 (25.99M): b1 clear 0.93  multiboard clears 1.46 reach3 0.56 reach4 0.00 b3 items 88.75  snap3 clear 0.00 items 84.4 deaths 1.14  (77s)
+[16:25:34] upd 1885 26.06M sps 2350 (roll 2.9s train 3.0s) kl1 0.103 ent 0.350 cf 0.080 vl 0.223 EV 0.96 boards>=3 0.56 b1-start clears 1.2 b3-start clear 0.0 items 59.1 harvest 1080
+[16:26:05] upd 1890 26.13M sps 2203 (roll 3.0s train 3.3s) kl1 0.101 ent 0.341 cf 0.078 vl 0.190 EV 0.97 boards>=3 0.57 b1-start clears 1.22 b3-start clear 0.0 items 57.5 harvest 1080
+[16:26:36] upd 1895 26.20M sps 2150 (roll 3.0s train 3.4s) kl1 0.107 ent 0.373 cf 0.089 vl 0.250 EV 0.97 boards>=3 0.55 b1-start clears 1.22 b3-start clear 0.0 items 57.5 harvest 1080
+[16:27:08] upd 1900 26.27M sps 2181 (roll 2.8s train 3.5s) kl1 0.100 ent 0.341 cf 0.080 vl 0.225 EV 0.97 boards>=3 0.53 b1-start clears 1.18 b3-start clear 0.0 items 57.2 harvest 1080
+[16:27:39] upd 1905 26.33M sps 2304 (roll 2.5s train 3.5s) kl1 0.101 ent 0.352 cf 0.056 vl 0.244 EV 0.97 boards>=3 0.51 b1-start clears 1.21 b3-start clear 0.0 items 56.7 harvest 1080
+[16:28:12] upd 1910 26.40M sps 2219 (roll 2.7s train 3.5s) kl1 0.097 ent 0.319 cf 0.075 vl 0.214 EV 0.97 boards>=3 0.53 b1-start clears 1.18 b3-start clear 0.0 items 54.2 harvest 1080
+[16:28:42] upd 1915 26.47M sps 2279 (roll 2.3s train 3.8s) kl1 0.113 ent 0.371 cf 0.051 vl 0.247 EV 0.97 boards>=3 0.54 b1-start clears 1.25 b3-start clear 0.0 items 54.9 harvest 1080
+[16:29:15] upd 1920 26.54M sps 2249 (roll 2.4s train 3.8s) kl1 0.091 ent 0.352 cf 0.071 vl 0.226 EV 0.97 boards>=3 0.50 b1-start clears 1.22 b3-start clear 0.0 items 56.8 harvest 1080
+[16:30:37] EVAL upd 1920 (26.54M): b1 clear 0.96  multiboard clears 1.44 reach3 0.44 reach4 0.00 b3 items 88.18181818181819  snap3 clear 0.00 items 86.8 deaths 1.14  (83s)
+[16:31:08] upd 1925 26.61M sps 2176 (roll 2.9s train 3.5s) kl1 0.103 ent 0.354 cf 0.072 vl 0.221 EV 0.96 boards>=3 0.51 b1-start clears 1.21 b3-start clear 0.0 items 57.9 harvest 1080
+[16:31:39] upd 1930 26.68M sps 2257 (roll 2.6s train 3.5s) kl1 0.102 ent 0.348 cf 0.063 vl 0.338 EV 0.96 boards>=3 0.51 b1-start clears 1.25 b3-start clear 0.0 items 57.9 harvest 1080
+[16:32:09] upd 1935 26.75M sps 2325 (roll 2.6s train 3.4s) kl1 0.106 ent 0.364 cf 0.078 vl 0.335 EV 0.95 boards>=3 0.53 b1-start clears 1.21 b3-start clear 0.0 items 60.7 harvest 1080
+[16:32:39] upd 1940 26.82M sps 2264 (roll 2.6s train 3.5s) kl1 0.092 ent 0.354 cf 0.078 vl 0.207 EV 0.96 boards>=3 0.50 b1-start clears 1.2 b3-start clear 0.0 items 60.9 harvest 1080
+[16:33:12] upd 1945 26.89M sps 2193 (roll 2.5s train 3.8s) kl1 0.123 ent 0.361 cf 0.067 vl 0.276 EV 0.97 boards>=3 0.49 b1-start clears 1.21 b3-start clear 0.0 items 60.8 harvest 1080
+[16:33:45] upd 1950 26.96M sps 1903 (roll 3.8s train 3.4s) kl1 0.102 ent 0.351 cf 0.051 vl 0.380 EV 0.95 boards>=3 0.47 b1-start clears 1.2 b3-start clear 0.0 items 61.4 harvest 1080
+[16:34:20] upd 1955 27.03M sps 2149 (roll 2.6s train 3.8s) kl1 0.115 ent 0.395 cf 0.075 vl 0.306 EV 0.96 boards>=3 0.47 b1-start clears 1.22 b3-start clear 0.0 items 60.9 harvest 1080
+[16:34:55] upd 1960 27.10M sps 2116 (roll 2.9s train 3.6s) kl1 0.088 ent 0.339 cf 0.098 vl 0.187 EV 0.98 boards>=3 0.47 b1-start clears 1.26 b3-start clear 0.0 items 61.9 harvest 1080
+[16:36:04] EVAL upd 1960 (27.10M): b1 clear 0.98  multiboard clears 1.30 reach3 0.36 reach4 0.00 b3 items 87.77777777777777  snap3 clear 0.00 items 85.8 deaths 1.14  (69s)
+[16:36:34] upd 1965 27.16M sps 2314 (roll 2.6s train 3.4s) kl1 0.117 ent 0.356 cf 0.062 vl 0.410 EV 0.95 boards>=3 0.43 b1-start clears 1.3 b3-start clear 0.0 items 60.6 harvest 1080
+[16:37:03] upd 1970 27.23M sps 2323 (roll 2.5s train 3.5s) kl1 0.100 ent 0.348 cf 0.036 vl 0.259 EV 0.96 boards>=3 0.47 b1-start clears 1.25 b3-start clear 0.0 items 61.9 harvest 1080
+[16:37:34] upd 1975 27.30M sps 2092 (roll 2.8s train 3.8s) kl1 0.096 ent 0.354 cf 0.057 vl 0.345 EV 0.96 boards>=3 0.46 b1-start clears 1.19 b3-start clear 0.0 items 64.0 harvest 1080
+[16:38:05] upd 1980 27.37M sps 2183 (roll 2.8s train 3.6s) kl1 0.096 ent 0.354 cf 0.069 vl 0.165 EV 0.97 boards>=3 0.38 b1-start clears 1.24 b3-start clear 0.0 items 64.8 harvest 1080
+[16:38:36] upd 1985 27.44M sps 2246 (roll 2.6s train 3.6s) kl1 0.087 ent 0.357 cf 0.080 vl 0.254 EV 0.96 boards>=3 0.44 b1-start clears 1.19 b3-start clear 0.0 items 64.4 harvest 1080
+[16:39:07] upd 1990 27.51M sps 2270 (roll 2.8s train 3.3s) kl1 0.125 ent 0.362 cf 0.084 vl 0.291 EV 0.96 boards>=3 0.43 b1-start clears 1.16 b3-start clear 0.0 items 63.2 harvest 1080
+[16:39:38] upd 1995 27.58M sps 2349 (roll 2.3s train 3.6s) kl1 0.091 ent 0.339 cf 0.068 vl 0.167 EV 0.97 boards>=3 0.40 b1-start clears 1.16 b3-start clear 0.0 items 62.1 harvest 1080
+[16:40:09] upd 2000 27.65M sps 2242 (roll 2.5s train 3.7s) kl1 0.138 ent 0.336 cf 0.113 vl 0.572 EV 0.93 boards>=3 0.39 b1-start clears 1.14 b3-start clear 0.0 items 62.0 harvest 1080
+[16:41:27] EVAL upd 2000 (27.65M): b1 clear 0.93  multiboard clears 1.34 reach3 0.42 reach4 0.00 b3 items 87.66666666666667  snap3 clear 0.00 items 86.5 deaths 1.14  (79s)
+[16:41:56] upd 2005 27.72M sps 2490 (roll 2.3s train 3.3s) kl1 0.103 ent 0.346 cf 0.084 vl 0.374 EV 0.95 boards>=3 0.42 b1-start clears 1.06 b3-start clear 0.0 items 63.4 harvest 1080
+[16:42:26] upd 2010 27.79M sps 2475 (roll 2.3s train 3.3s) kl1 0.088 ent 0.348 cf 0.066 vl 0.285 EV 0.96 boards>=3 0.34 b1-start clears 1.09 b3-start clear 0.0 items 63.3 harvest 1080
+[16:42:57] upd 2015 27.86M sps 1994 (roll 3.0s train 3.9s) kl1 0.121 ent 0.350 cf 0.059 vl 0.352 EV 0.96 boards>=3 0.40 b1-start clears 1.11 b3-start clear 0.0 items 63.6 harvest 1080
+[16:43:27] upd 2020 27.92M sps 2244 (roll 2.4s train 3.8s) kl1 0.105 ent 0.385 cf 0.096 vl 0.322 EV 0.96 boards>=3 0.44 b1-start clears 1.11 b3-start clear 0.0 items 66.1 harvest 1080
+[16:44:01] upd 2025 27.99M sps 1944 (roll 3.2s train 3.9s) kl1 0.100 ent 0.357 cf 0.063 vl 0.280 EV 0.96 boards>=3 0.39 b1-start clears 1.14 b3-start clear 0.0 items 66.4 harvest 1080
+[16:44:36] upd 2030 28.06M sps 1944 (roll 2.8s train 4.3s) kl1 0.122 ent 0.339 cf 0.056 vl 0.325 EV 0.96 boards>=3 0.38 b1-start clears 1.16 b3-start clear 0.0 items 67.0 harvest 1080
+[16:45:09] upd 2035 28.13M sps 2076 (roll 2.7s train 3.9s) kl1 0.110 ent 0.336 cf 0.049 vl 0.252 EV 0.96 boards>=3 0.48 b1-start clears 1.21 b3-start clear 0.0 items 64.9 harvest 1080
+[16:45:40] upd 2040 28.20M sps 2349 (roll 2.5s train 3.4s) kl1 0.093 ent 0.345 cf 0.051 vl 0.217 EV 0.96 boards>=3 0.43 b1-start clears 1.18 b3-start clear 0.0 items 63.1 harvest 1080
+[16:46:56] EVAL upd 2040 (28.20M): b1 clear 0.88  multiboard clears 1.48 reach3 0.52 reach4 0.00 b3 items 88.3076923076923  snap3 clear 0.00 items 85.1 deaths 1.14  (76s)
+[16:47:24] upd 2045 28.27M sps 2416 (roll 2.5s train 3.2s) kl1 0.112 ent 0.363 cf 0.067 vl 0.302 EV 0.96 boards>=3 0.42 b1-start clears 1.15 b3-start clear 0.0 items 62.4 harvest 1080
+[16:47:52] upd 2050 28.34M sps 2518 (roll 2.2s train 3.3s) kl1 0.103 ent 0.361 cf 0.060 vl 0.522 EV 0.93 boards>=3 0.43 b1-start clears 1.18 b3-start clear 0.0 items 61.3 harvest 1080
+[16:48:22] upd 2055 28.41M sps 2303 (roll 2.5s train 3.5s) kl1 0.098 ent 0.346 cf 0.066 vl 0.176 EV 0.97 boards>=3 0.42 b1-start clears 1.07 b3-start clear 0.0 items 59.7 harvest 1080
+[16:48:53] upd 2060 28.48M sps 2173 (roll 2.8s train 3.5s) kl1 0.106 ent 0.330 cf 0.089 vl 0.494 EV 0.94 boards>=3 0.49 b1-start clears 1.07 b3-start clear 0.0 items 58.8 harvest 1080
+[16:49:22] upd 2065 28.55M sps 2333 (roll 2.7s train 3.2s) kl1 0.098 ent 0.365 cf 0.076 vl 0.267 EV 0.95 boards>=3 0.49 b1-start clears 1.09 b3-start clear 0.0 items 59.1 harvest 1080
+[16:49:52] upd 2070 28.62M sps 2295 (roll 2.7s train 3.3s) kl1 0.095 ent 0.327 cf 0.073 vl 0.396 EV 0.94 boards>=3 0.42 b1-start clears 1.12 b3-start clear 0.0 items 58.2 harvest 1080
+[16:50:21] upd 2075 28.68M sps 2378 (roll 2.6s train 3.2s) kl1 0.098 ent 0.325 cf 0.059 vl 0.413 EV 0.96 boards>=3 0.45 b1-start clears 1.17 b3-start clear 0.0 items 59.5 harvest 1080
+[16:50:50] upd 2080 28.75M sps 2682 (roll 2.3s train 2.8s) kl1 0.119 ent 0.341 cf 0.062 vl 0.302 EV 0.97 boards>=3 0.42 b1-start clears 1.11 b3-start clear 0.0 items 60.1 harvest 1080
+[16:52:02] EVAL upd 2080 (28.75M): b1 clear 0.91  multiboard clears 1.30 reach3 0.42 reach4 0.00 b3 items 90.0  snap3 clear 0.00 items 85.4 deaths 1.14  (72s)
+[16:52:30] upd 2085 28.82M sps 2614 (roll 2.3s train 3.0s) kl1 0.106 ent 0.319 cf 0.063 vl 0.219 EV 0.97 boards>=3 0.44 b1-start clears 1.15 b3-start clear 0.0 items 59.0 harvest 1080
+[16:52:58] upd 2090 28.89M sps 2433 (roll 2.6s train 3.1s) kl1 0.110 ent 0.330 cf 0.043 vl 0.270 EV 0.95 boards>=3 0.47 b1-start clears 1.22 b3-start clear 0.0 items 59.2 harvest 1080
+[16:53:27] upd 2095 28.96M sps 2570 (roll 2.2s train 3.2s) kl1 0.103 ent 0.337 cf 0.058 vl 0.219 EV 0.96 boards>=3 0.48 b1-start clears 1.18 b3-start clear 0.0 items 58.8 harvest 1080
+[16:53:57] upd 2100 29.03M sps 2337 (roll 2.8s train 3.1s) kl1 0.096 ent 0.340 cf 0.065 vl 0.340 EV 0.95 boards>=3 0.48 b1-start clears 1.19 b3-start clear 0.0 items 62.4 harvest 1080
+[16:54:26] upd 2105 29.10M sps 2325 (roll 2.7s train 3.3s) kl1 0.091 ent 0.319 cf 0.059 vl 0.210 EV 0.97 boards>=3 0.45 b1-start clears 1.13 b3-start clear 0.0 items 58.8 harvest 1080
+[16:54:55] upd 2110 29.17M sps 2408 (roll 2.2s train 3.5s) kl1 0.113 ent 0.337 cf 0.061 vl 0.310 EV 0.96 boards>=3 0.41 b1-start clears 1.19 b3-start clear 0.0 items 61.8 harvest 1080
+[16:55:25] upd 2115 29.24M sps 2336 (roll 2.4s train 3.5s) kl1 0.111 ent 0.290 cf 0.048 vl 0.313 EV 0.95 boards>=3 0.49 b1-start clears 1.27 b3-start clear 0.0 items 64.2 harvest 1080
+[16:55:55] upd 2120 29.31M sps 2176 (roll 3.0s train 3.3s) kl1 0.102 ent 0.311 cf 0.050 vl 0.268 EV 0.96 boards>=3 0.51 b1-start clears 1.19 b3-start clear 0.0 items 64.9 harvest 1080
+[16:57:02] EVAL upd 2120 (29.31M): b1 clear 0.92  multiboard clears 1.36 reach3 0.40 reach4 0.00 b3 items 88.2  snap3 clear 0.00 items 89.0 deaths 1.14  (67s)
+[16:57:13] STOP file: saved ckpt_last.pt at update 2122, exiting 3
+=== clean STOP; not retrying
+=== 2026-10-12 16:57:16 finished [m11run] exit 0
+=== 2026-10-12 19:02:15 start [m11run]
+=== M11 deadline 2026-10-12 22:26:51
+[19:02:18] resumed runs/m11/ckpt_last.pt at update 2122 (29,334,528 steps)
+[19:02:18] config {"INIT": "runs/m10/best.pt", "NW": 18, "PER": 6, "T": 128, "EPOCHS": 2, "NMB": 9, "GAMMA": 0.995, "LAM": 0.95, "CLIP": 0.1, "LR_PI": 5e-05, "LR_V": 0.0003, "VF": 0.5, "ENT": 0.001, "BETA": 0.05, "TAU": 0.25, "VWARM": 15, "MAX_GRAD": 0.5, "RW": [0.1, 0.0005, 10.0, 5.0, 2.0], "STALL": [10.0, 150.0, 0.005, 0.01], "P_B1": 0.2, "P_B2": 0.3, "P_HARVEST": 0.5, "POOL_CAP": 60, "MAX_STEPS": 8000, "EVAL_EVERY": 40, "EVAL_MB_N": 50, "EVAL_SNAP_REP": 4, "EVAL_WORKERS": 8, "MIN_B1": 0.75, "N_TEST": 7, "CKPT_S": 300.0, "DEADLINE": 1791824211.0, "MAX_UPDATES": 1000000, "ARCH": {"n_actions": 4, "d": 512, "n_heads": 8, "n_layers": 2, "window": 8, "lam": 0.05}, "N": 108, "b3_train": 39, "b3_test": 7, "test_seeds": [50005, 50008, 50024, 50030, 50044, 50057, 50073], "b2": 87}
+[19:02:32] upd 2125 29.38M sps 4480 (roll 1.4s train 1.7s) kl1 0.042 ent 0.272 cf 0.091 vl 0.057 EV 0.98 boards>=3 0.50 b1-start clears None b3-start clear 0.0 items 68.0 harvest 1080
+[19:02:49] upd 2130 29.45M sps 4293 (roll 1.5s train 1.7s) kl1 0.118 ent 0.331 cf 0.048 vl 0.411 EV 0.96 boards>=3 0.35 b1-start clears None b3-start clear 0.0 items 84.3 harvest 1080
+[19:03:06] upd 2135 29.51M sps 4190 (roll 1.5s train 1.8s) kl1 0.108 ent 0.342 cf 0.067 vl 0.210 EV 0.97 boards>=3 0.32 b1-start clears 0.29 b3-start clear 0.0 items 79.1 harvest 1080
+[19:03:24] upd 2140 29.58M sps 3971 (roll 1.6s train 1.9s) kl1 0.106 ent 0.357 cf 0.051 vl 0.295 EV 0.95 boards>=3 0.40 b1-start clears 0.71 b3-start clear 0.0 items 77.3 harvest 1080
+[19:03:43] upd 2145 29.65M sps 3674 (roll 1.8s train 2.0s) kl1 0.105 ent 0.329 cf 0.041 vl 0.243 EV 0.96 boards>=3 0.44 b1-start clears 0.9 b3-start clear 0.0 items 75.3 harvest 1080
+[19:04:04] upd 2150 29.72M sps 3336 (roll 2.1s train 2.1s) kl1 0.097 ent 0.316 cf 0.057 vl 0.203 EV 0.97 boards>=3 0.41 b1-start clears 0.96 b3-start clear 0.0 items 69.1 harvest 1080
+[19:04:25] upd 2155 29.79M sps 3093 (roll 2.4s train 2.1s) kl1 0.118 ent 0.359 cf 0.069 vl 0.396 EV 0.95 boards>=3 0.42 b1-start clears 0.98 b3-start clear 0.0 items 68.8 harvest 1080
+[19:04:45] upd 2160 29.86M sps 3395 (roll 2.0s train 2.1s) kl1 0.100 ent 0.343 cf 0.077 vl 0.323 EV 0.95 boards>=3 0.45 b1-start clears 0.94 b3-start clear 0.0 items 63.4 harvest 1080
+
+
+
+
+
+
+
+[19:05:52] EVAL upd 2160 (29.86M): b1 clear 0.89  multiboard clears 1.34 reach3 0.42 reach4 0.00 b3 items 86.95238095238095  snap3 clear 0.00 items 85.9 deaths 1.14  (67s)
+[19:06:12] upd 2165 29.93M sps 3395 (roll 2.0s train 2.0s) kl1 0.113 ent 0.331 cf 0.050 vl 0.230 EV 0.96 boards>=3 0.51 b1-start clears 1.04 b3-start clear 0.0 items 61.5 harvest 1080
+[19:06:33] upd 2170 30.00M sps 3143 (roll 2.3s train 2.1s) kl1 0.100 ent 0.322 cf 0.079 vl 0.276 EV 0.96 boards>=3 0.51 b1-start clears 1.13 b3-start clear 0.0 items 60.7 harvest 1080
+[19:06:54] upd 2175 30.07M sps 2901 (roll 2.6s train 2.2s) kl1 0.104 ent 0.324 cf 0.077 vl 0.316 EV 0.96 boards>=3 0.45 b1-start clears 1.11 b3-start clear 0.0 items 59.7 harvest 1080
+[19:07:16] upd 2180 30.14M sps 3023 (roll 2.4s train 2.2s) kl1 0.109 ent 0.301 cf 0.046 vl 0.239 EV 0.96 boards>=3 0.46 b1-start clears 1.08 b3-start clear 0.0 items 64.1 harvest 1080
+[19:07:38] upd 2185 30.21M sps 3293 (roll 1.9s train 2.3s) kl1 0.105 ent 0.327 cf 0.059 vl 0.222 EV 0.97 boards>=3 0.48 b1-start clears 1.03 b3-start clear 0.0 items 62.6 harvest 1080
+[19:08:00] upd 2190 30.27M sps 3196 (roll 2.0s train 2.3s) kl1 0.117 ent 0.323 cf 0.072 vl 0.237 EV 0.96 boards>=3 0.53 b1-start clears 1.13 b3-start clear 0.0 items 64.8 harvest 1080
+[19:08:22] upd 2195 30.34M sps 2972 (roll 2.4s train 2.3s) kl1 0.093 ent 0.312 cf 0.086 vl 0.395 EV 0.94 boards>=3 0.53 b1-start clears 1.08 b3-start clear 0.0 items 62.9 harvest 1080
+[19:08:45] upd 2200 30.41M sps 3131 (roll 2.1s train 2.3s) kl1 0.092 ent 0.311 cf 0.072 vl 0.249 EV 0.97 boards>=3 0.45 b1-start clears 1.1 b3-start clear 0.0 items 61.1 harvest 1080
+[19:09:48] EVAL upd 2200 (30.41M): b1 clear 0.92  multiboard clears 1.34 reach3 0.42 reach4 0.00 b3 items 89.0952380952381  snap3 clear 0.00 items 87.1 deaths 1.14  (63s)
+[19:10:09] upd 2205 30.48M sps 3226 (roll 2.1s train 2.2s) kl1 0.105 ent 0.325 cf 0.076 vl 0.315 EV 0.97 boards>=3 0.44 b1-start clears 1.1 b3-start clear 0.0 items 60.3 harvest 1080
+[19:10:31] upd 2210 30.55M sps 3174 (roll 2.0s train 2.3s) kl1 0.102 ent 0.350 cf 0.087 vl 0.247 EV 0.96 boards>=3 0.49 b1-start clears 1.11 b3-start clear 0.0 items 56.4 harvest 1080
+[19:10:52] upd 2215 30.62M sps 3148 (roll 2.1s train 2.3s) kl1 0.115 ent 0.344 cf 0.066 vl 0.246 EV 0.96 boards>=3 0.56 b1-start clears 1.09 b3-start clear 0.0 items 57.4 harvest 1080
+[19:11:14] upd 2220 30.69M sps 3179 (roll 2.1s train 2.3s) kl1 0.106 ent 0.328 cf 0.062 vl 0.249 EV 0.96 boards>=3 0.57 b1-start clears 1.08 b3-start clear 0.0 items 53.8 harvest 1080
+[19:11:36] upd 2225 30.76M sps 3121 (roll 2.1s train 2.3s) kl1 0.095 ent 0.318 cf 0.084 vl 0.144 EV 0.98 boards>=3 0.56 b1-start clears 1.16 b3-start clear 0.0 items 54.7 harvest 1080
+[19:11:58] upd 2230 30.83M sps 3125 (roll 2.1s train 2.3s) kl1 0.113 ent 0.319 cf 0.058 vl 0.295 EV 0.96 boards>=3 0.49 b1-start clears 1.2 b3-start clear 0.0 items 56.4 harvest 1080
+[19:12:21] upd 2235 30.90M sps 3085 (roll 2.2s train 2.3s) kl1 0.114 ent 0.316 cf 0.061 vl 0.320 EV 0.94 boards>=3 0.54 b1-start clears 1.19 b3-start clear 0.0 items 58.1 harvest 1080
+[19:12:44] upd 2240 30.97M sps 3073 (roll 2.2s train 2.3s) kl1 0.093 ent 0.358 cf 0.056 vl 0.276 EV 0.97 boards>=3 0.49 b1-start clears 1.23 b3-start clear 0.0 items 59.7 harvest 1080
+[19:13:57] EVAL upd 2240 (30.97M): b1 clear 0.94  multiboard clears 1.48 reach3 0.50 reach4 0.00 b3 items 89.28  snap3 clear 0.00 items 89.5 deaths 1.14  (73s)
+[19:14:18] upd 2245 31.03M sps 3365 (roll 1.8s train 2.3s) kl1 0.097 ent 0.339 cf 0.052 vl 0.320 EV 0.96 boards>=3 0.46 b1-start clears 1.33 b3-start clear 0.0 items 61.9 harvest 1080
+[19:14:40] upd 2250 31.10M sps 2896 (roll 2.5s train 2.2s) kl1 0.106 ent 0.342 cf 0.063 vl 0.256 EV 0.96 boards>=3 0.48 b1-start clears 1.3 b3-start clear 0.0 items 62.9 harvest 1080
+[19:15:02] upd 2255 31.17M sps 3161 (roll 2.1s train 2.3s) kl1 0.106 ent 0.344 cf 0.050 vl 0.247 EV 0.96 boards>=3 0.49 b1-start clears 1.3 b3-start clear 0.0 items 64.1 harvest 1080
+[19:15:24] upd 2260 31.24M sps 3244 (roll 2.0s train 2.2s) kl1 0.111 ent 0.331 cf 0.083 vl 0.385 EV 0.95 boards>=3 0.50 b1-start clears 1.25 b3-start clear 0.0 items 62.8 harvest 1080
+[19:15:47] upd 2265 31.31M sps 3134 (roll 2.1s train 2.3s) kl1 0.113 ent 0.339 cf 0.076 vl 0.290 EV 0.96 boards>=3 0.54 b1-start clears 1.3 b3-start clear 0.0 items 60.9 harvest 1080
+[19:16:09] upd 2270 31.38M sps 3056 (roll 2.2s train 2.3s) kl1 0.091 ent 0.340 cf 0.091 vl 0.208 EV 0.97 boards>=3 0.54 b1-start clears 1.28 b3-start clear 0.0 items 60.5 harvest 1080
+[19:16:33] upd 2275 31.45M sps 2987 (roll 2.3s train 2.3s) kl1 0.096 ent 0.356 cf 0.087 vl 0.269 EV 0.97 boards>=3 0.46 b1-start clears 1.2 b3-start clear 0.0 items 60.0 harvest 1080
+[19:16:54] upd 2280 31.52M sps 3166 (roll 2.1s train 2.3s) kl1 0.129 ent 0.337 cf 0.062 vl 0.529 EV 0.95 boards>=3 0.49 b1-start clears 1.22 b3-start clear 0.0 items 62.1 harvest 1080
+[19:18:37] EVAL upd 2280 (31.52M): b1 clear 0.90  multiboard clears 1.24 reach3 0.42 reach4 0.00 b3 items 86.04761904761905  snap3 clear 0.00 items 87.5 deaths 1.14  (103s)
+[19:19:04] upd 2285 31.59M sps 2585 (roll 2.9s train 2.4s) kl1 0.110 ent 0.321 cf 0.060 vl 0.271 EV 0.96 boards>=3 0.53 b1-start clears 1.24 b3-start clear 0.0 items 61.8 harvest 1080
+[19:19:32] upd 2290 31.66M sps 2527 (roll 3.0s train 2.4s) kl1 0.099 ent 0.345 cf 0.093 vl 0.196 EV 0.97 boards>=3 0.51 b1-start clears 1.24 b3-start clear 0.0 items 61.3 harvest 1080
+[19:20:01] upd 2295 31.73M sps 2488 (roll 3.1s train 2.4s) kl1 0.100 ent 0.339 cf 0.059 vl 0.344 EV 0.95 boards>=3 0.51 b1-start clears 1.14 b3-start clear 0.0 items 62.6 harvest 1080
+[19:20:29] upd 2300 31.80M sps 2376 (roll 3.4s train 2.5s) kl1 0.116 ent 0.330 cf 0.066 vl 0.344 EV 0.95 boards>=3 0.47 b1-start clears 1.08 b3-start clear 0.0 items 63.9 harvest 1080
+[19:20:57] upd 2305 31.86M sps 2302 (roll 3.0s train 3.0s) kl1 0.095 ent 0.351 cf 0.057 vl 0.297 EV 0.95 boards>=3 0.45 b1-start clears 1.06 b3-start clear 0.0 items 64.8 harvest 1080
+[19:21:28] upd 2310 31.93M sps 2395 (roll 2.8s train 3.0s) kl1 0.113 ent 0.312 cf 0.053 vl 0.331 EV 0.94 boards>=3 0.50 b1-start clears 1.02 b3-start clear 0.0 items 62.8 harvest 1080
+[19:21:59] upd 2315 32.00M sps 2241 (roll 3.2s train 3.0s) kl1 0.103 ent 0.335 cf 0.074 vl 0.198 EV 0.97 boards>=3 0.47 b1-start clears 1.05 b3-start clear 0.0 items 63.2 harvest 1080
+[19:22:30] upd 2320 32.07M sps 2319 (roll 3.0s train 3.0s) kl1 0.107 ent 0.356 cf 0.067 vl 0.358 EV 0.96 boards>=3 0.47 b1-start clears 1.04 b3-start clear 0.0 items 60.5 harvest 1080
+[19:24:17] EVAL upd 2320 (32.07M): b1 clear 0.91  multiboard clears 1.34 reach3 0.44 reach4 0.00 b3 items 86.9090909090909  snap3 clear 0.00 items 88.8 deaths 1.14  (107s)
+[19:24:48] upd 2325 32.14M sps 2330 (roll 3.0s train 2.9s) kl1 0.089 ent 0.345 cf 0.055 vl 0.223 EV 0.97 boards>=3 0.47 b1-start clears 1.07 b3-start clear 0.0 items 59.9 harvest 1080
+[19:25:19] upd 2330 32.21M sps 2343 (roll 2.9s train 3.0s) kl1 0.110 ent 0.362 cf 0.058 vl 0.366 EV 0.94 boards>=3 0.40 b1-start clears 1.09 b3-start clear 0.0 items 57.9 harvest 1080
+[19:25:50] upd 2335 32.28M sps 2270 (roll 3.1s train 3.0s) kl1 0.103 ent 0.343 cf 0.050 vl 0.346 EV 0.95 boards>=3 0.43 b1-start clears 1.11 b3-start clear 0.0 items 54.4 harvest 1080
+[19:26:20] upd 2340 32.35M sps 2401 (roll 2.8s train 3.0s) kl1 0.104 ent 0.328 cf 0.054 vl 0.242 EV 0.97 boards>=3 0.43 b1-start clears 1.11 b3-start clear 0.0 items 54.9 harvest 1080
+[19:26:51] upd 2345 32.42M sps 2201 (roll 3.3s train 3.0s) kl1 0.092 ent 0.307 cf 0.072 vl 0.313 EV 0.94 boards>=3 0.53 b1-start clears 1.13 b3-start clear 0.0 items 56.5 harvest 1080
+[19:27:22] upd 2350 32.49M sps 2169 (roll 3.4s train 3.0s) kl1 0.093 ent 0.339 cf 0.059 vl 0.216 EV 0.96 boards>=3 0.50 b1-start clears 1.16 b3-start clear 0.0 items 58.2 harvest 1080
+[19:27:53] upd 2355 32.56M sps 2277 (roll 3.1s train 3.0s) kl1 0.100 ent 0.315 cf 0.050 vl 0.172 EV 0.98 boards>=3 0.47 b1-start clears 1.11 b3-start clear 0.0 items 59.3 harvest 1080
+[19:28:24] upd 2360 32.62M sps 2272 (roll 3.1s train 3.0s) kl1 0.104 ent 0.339 cf 0.087 vl 0.360 EV 0.95 boards>=3 0.48 b1-start clears 1.09 b3-start clear 0.0 items 61.5 harvest 1080
+[19:30:01] EVAL upd 2360 (32.62M): b1 clear 0.90  multiboard clears 1.28 reach3 0.40 reach4 0.00 b3 items 90.6  snap3 clear 0.00 items 89.0 deaths 1.14  (97s)
+[19:30:32] upd 2365 32.69M sps 2333 (roll 3.0s train 3.0s) kl1 0.096 ent 0.348 cf 0.061 vl 0.165 EV 0.97 boards>=3 0.51 b1-start clears 1.11 b3-start clear 0.0 items 60.7 harvest 1080
+[19:31:02] upd 2370 32.76M sps 2277 (roll 3.1s train 3.0s) kl1 0.099 ent 0.354 cf 0.073 vl 0.284 EV 0.97 boards>=3 0.48 b1-start clears 1.15 b3-start clear 0.0 items 59.3 harvest 1080
+[19:31:33] upd 2375 32.83M sps 2325 (roll 2.9s train 3.0s) kl1 0.110 ent 0.339 cf 0.085 vl 0.291 EV 0.96 boards>=3 0.48 b1-start clears 1.11 b3-start clear 0.0 items 57.0 harvest 1080
+[19:32:03] upd 2380 32.90M sps 2314 (roll 3.0s train 3.0s) kl1 0.089 ent 0.343 cf 0.048 vl 0.217 EV 0.96 boards>=3 0.46 b1-start clears 1.15 b3-start clear 0.0 items 56.2 harvest 1080
+[19:32:34] upd 2385 32.97M sps 2126 (roll 3.5s train 3.0s) kl1 0.100 ent 0.358 cf 0.097 vl 0.327 EV 0.95 boards>=3 0.50 b1-start clears 1.16 b3-start clear 0.0 items 55.7 harvest 1080
+[19:33:05] upd 2390 33.04M sps 2261 (roll 2.6s train 3.5s) kl1 0.100 ent 0.341 cf 0.069 vl 0.362 EV 0.96 boards>=3 0.47 b1-start clears 1.16 b3-start clear 0.0 items 56.8 harvest 1080
+[19:33:33] upd 2395 33.11M sps 2516 (roll 2.5s train 3.0s) kl1 0.109 ent 0.352 cf 0.085 vl 0.272 EV 0.97 boards>=3 0.48 b1-start clears 1.14 b3-start clear 0.0 items 59.2 harvest 1080
+[19:33:59] upd 2400 33.18M sps 2569 (roll 2.5s train 2.9s) kl1 0.109 ent 0.306 cf 0.069 vl 0.446 EV 0.95 boards>=3 0.46 b1-start clears 1.19 b3-start clear 0.0 items 61.5 harvest 1080
+[19:35:19] EVAL upd 2400 (33.18M): b1 clear 0.94  multiboard clears 1.38 reach3 0.52 reach4 0.00 b3 items 89.61538461538461  snap3 clear 0.00 items 88.3 deaths 1.14  (81s)
+[19:35:42] upd 2405 33.25M sps 3056 (roll 2.2s train 2.3s) kl1 0.118 ent 0.325 cf 0.061 vl 0.345 EV 0.95 boards>=3 0.49 b1-start clears 1.18 b3-start clear 0.0 items 63.0 harvest 1080
+[19:36:06] upd 2410 33.32M sps 2903 (roll 2.1s train 2.6s) kl1 0.098 ent 0.347 cf 0.073 vl 0.346 EV 0.96 boards>=3 0.45 b1-start clears 1.22 b3-start clear 0.0 items 62.5 harvest 1080
+[19:36:31] upd 2415 33.38M sps 2741 (roll 2.4s train 2.6s) kl1 0.124 ent 0.366 cf 0.048 vl 0.397 EV 0.96 boards>=3 0.48 b1-start clears 1.27 b3-start clear 0.0 items 62.9 harvest 1080
+[19:36:56] upd 2420 33.45M sps 2657 (roll 2.6s train 2.6s) kl1 0.104 ent 0.354 cf 0.065 vl 0.200 EV 0.97 boards>=3 0.53 b1-start clears 1.23 b3-start clear 0.0 items 62.0 harvest 1080
+[19:37:22] upd 2425 33.52M sps 2697 (roll 2.4s train 2.7s) kl1 0.105 ent 0.299 cf 0.054 vl 0.221 EV 0.97 boards>=3 0.50 b1-start clears 1.31 b3-start clear 0.0 items 61.3 harvest 1080
+[19:37:47] upd 2430 33.59M sps 2900 (roll 2.1s train 2.7s) kl1 0.117 ent 0.333 cf 0.070 vl 0.274 EV 0.97 boards>=3 0.52 b1-start clears 1.32 b3-start clear 0.0 items 60.0 harvest 1080
+[19:38:12] upd 2435 33.66M sps 2863 (roll 2.0s train 2.8s) kl1 0.090 ent 0.323 cf 0.051 vl 0.208 EV 0.96 boards>=3 0.50 b1-start clears 1.3 b3-start clear 0.0 items 59.6 harvest 1080
+[19:38:37] upd 2440 33.73M sps 2813 (roll 2.0s train 2.9s) kl1 0.122 ent 0.355 cf 0.070 vl 0.257 EV 0.96 boards>=3 0.49 b1-start clears 1.24 b3-start clear 0.0 items 60.8 harvest 1080
+[19:39:52] EVAL upd 2440 (33.73M): b1 clear 0.93  multiboard clears 1.46 reach3 0.50 reach4 0.00 b3 items 93.16  snap3 clear 0.00 items 89.6 deaths 1.14  (76s)
+[19:40:15] upd 2445 33.80M sps 3048 (roll 2.2s train 2.3s) kl1 0.096 ent 0.311 cf 0.069 vl 0.191 EV 0.97 boards>=3 0.54 b1-start clears 1.18 b3-start clear 0.0 items 60.9 harvest 1080
+[19:40:38] upd 2450 33.87M sps 2968 (roll 2.3s train 2.4s) kl1 0.102 ent 0.318 cf 0.073 vl 0.209 EV 0.97 boards>=3 0.52 b1-start clears 1.22 b3-start clear 0.0 items 60.6 harvest 1080
+[19:41:02] upd 2455 33.94M sps 2814 (roll 2.5s train 2.4s) kl1 0.090 ent 0.328 cf 0.069 vl 0.240 EV 0.97 boards>=3 0.49 b1-start clears 1.26 b3-start clear 0.0 items 60.4 harvest 1080
+[19:41:27] upd 2460 34.01M sps 2776 (roll 2.5s train 2.5s) kl1 0.111 ent 0.351 cf 0.065 vl 0.385 EV 0.94 boards>=3 0.53 b1-start clears 1.17 b3-start clear 0.0 items 62.0 harvest 1080
+[19:41:51] upd 2465 34.08M sps 2902 (roll 2.2s train 2.6s) kl1 0.103 ent 0.378 cf 0.111 vl 0.289 EV 0.95 boards>=3 0.53 b1-start clears 1.1 b3-start clear 0.0 items 63.2 harvest 1080
+[19:42:15] upd 2470 34.15M sps 2866 (roll 2.2s train 2.6s) kl1 0.088 ent 0.330 cf 0.054 vl 0.250 EV 0.96 boards>=3 0.50 b1-start clears 1.11 b3-start clear 0.0 items 63.7 harvest 1080
+[19:42:40] upd 2475 34.21M sps 2737 (roll 2.5s train 2.5s) kl1 0.107 ent 0.329 cf 0.064 vl 0.346 EV 0.95 boards>=3 0.49 b1-start clears 1.13 b3-start clear 0.0 items 61.4 harvest 1080
+[19:43:05] upd 2480 34.28M sps 2781 (roll 2.5s train 2.5s) kl1 0.117 ent 0.352 cf 0.114 vl 0.253 EV 0.96 boards>=3 0.54 b1-start clears 1.18 b3-start clear 0.0 items 60.9 harvest 1080
+[19:44:29] EVAL upd 2480 (34.28M): b1 clear 0.94  multiboard clears 1.44 reach3 0.52 reach4 0.00 b3 items 92.53846153846153  snap3 clear 0.00 items 90.6 deaths 1.14  (85s)
+[19:44:52] upd 2485 34.35M sps 3179 (roll 2.0s train 2.3s) kl1 0.113 ent 0.349 cf 0.055 vl 0.232 EV 0.96 boards>=3 0.50 b1-start clears 1.1 b3-start clear 0.0 items 61.6 harvest 1080
+[19:45:14] upd 2490 34.42M sps 3145 (roll 2.1s train 2.3s) kl1 0.101 ent 0.345 cf 0.101 vl 0.229 EV 0.96 boards>=3 0.52 b1-start clears 1.12 b3-start clear 0.0 items 62.5 harvest 1080
+[19:45:38] upd 2495 34.49M sps 2966 (roll 2.0s train 2.7s) kl1 0.114 ent 0.336 cf 0.066 vl 0.266 EV 0.97 boards>=3 0.52 b1-start clears 1.14 b3-start clear 0.0 items 62.2 harvest 1080
+[19:46:09] upd 2500 34.56M sps 2204 (roll 3.3s train 3.0s) kl1 0.127 ent 0.342 cf 0.046 vl 0.374 EV 0.94 boards>=3 0.49 b1-start clears 1.14 b3-start clear 0.0 items 63.6 harvest 1080
+[19:46:40] upd 2505 34.63M sps 2166 (roll 3.4s train 3.0s) kl1 0.104 ent 0.369 cf 0.078 vl 0.302 EV 0.95 boards>=3 0.48 b1-start clears 1.12 b3-start clear 0.0 items 64.6 harvest 1080
+[19:47:11] upd 2510 34.70M sps 2166 (roll 3.4s train 3.0s) kl1 0.116 ent 0.374 cf 0.079 vl 0.323 EV 0.96 boards>=3 0.57 b1-start clears 1.05 b3-start clear 0.0 items 65.8 harvest 1080
+[19:47:42] upd 2515 34.77M sps 2402 (roll 2.7s train 3.0s) kl1 0.103 ent 0.350 cf 0.069 vl 0.197 EV 0.97 boards>=3 0.49 b1-start clears 1.05 b3-start clear 0.0 items 66.6 harvest 1080
+[19:48:13] upd 2520 34.84M sps 2285 (roll 3.0s train 3.0s) kl1 0.099 ent 0.331 cf 0.076 vl 0.426 EV 0.93 boards>=3 0.48 b1-start clears 1.04 b3-start clear 0.0 items 62.4 harvest 1080
+[19:50:06] EVAL upd 2520 (34.84M): b1 clear 0.91  multiboard clears 1.40 reach3 0.52 reach4 0.00 b3 items 92.92307692307692  snap3 clear 0.00 items 90.1 deaths 1.14  (114s)
+[19:50:37] upd 2525 34.91M sps 2053 (roll 3.8s train 3.0s) kl1 0.100 ent 0.319 cf 0.071 vl 0.257 EV 0.96 boards>=3 0.57 b1-start clears 1.0 b3-start clear 0.0 items 60.7 harvest 1080
+[19:51:09] upd 2530 34.97M sps 2224 (roll 3.2s train 3.0s) kl1 0.092 ent 0.341 cf 0.074 vl 0.235 EV 0.96 boards>=3 0.51 b1-start clears 1.04 b3-start clear 0.0 items 60.0 harvest 1080
+[19:51:40] upd 2535 35.04M sps 2244 (roll 3.1s train 3.0s) kl1 0.115 ent 0.332 cf 0.089 vl 0.336 EV 0.95 boards>=3 0.43 b1-start clears 1.1 b3-start clear 0.0 items 59.1 harvest 1080
+[19:52:11] upd 2540 35.11M sps 2239 (roll 3.2s train 3.0s) kl1 0.106 ent 0.363 cf 0.065 vl 0.270 EV 0.95 boards>=3 0.47 b1-start clears 0.95 b3-start clear 0.0 items 57.8 harvest 1080
+[19:52:43] upd 2545 35.18M sps 2153 (roll 3.4s train 3.0s) kl1 0.112 ent 0.357 cf 0.064 vl 0.326 EV 0.96 boards>=3 0.44 b1-start clears 0.96 b3-start clear 0.0 items 57.0 harvest 1080
+[19:53:14] upd 2550 35.25M sps 2286 (roll 3.0s train 3.0s) kl1 0.109 ent 0.347 cf 0.061 vl 0.344 EV 0.96 boards>=3 0.44 b1-start clears 1.02 b3-start clear 0.0 items 61.4 harvest 1080
+[19:53:45] upd 2555 35.32M sps 2284 (roll 3.0s train 3.0s) kl1 0.099 ent 0.349 cf 0.056 vl 0.286 EV 0.96 boards>=3 0.48 b1-start clears 1.0 b3-start clear 0.0 items 62.5 harvest 1080
+[19:54:16] upd 2560 35.39M sps 2111 (roll 3.5s train 3.0s) kl1 0.110 ent 0.349 cf 0.065 vl 0.241 EV 0.96 boards>=3 0.52 b1-start clears 1.02 b3-start clear 0.0 items 63.3 harvest 1080
+[19:56:03] EVAL upd 2560 (35.39M): b1 clear 0.93  multiboard clears 1.36 reach3 0.44 reach4 0.00 b3 items 93.0  snap3 clear 0.00 items 89.9 deaths 1.14  (107s)
+[19:56:34] upd 2565 35.46M sps 2370 (roll 2.8s train 3.0s) kl1 0.106 ent 0.365 cf 0.096 vl 0.235 EV 0.96 boards>=3 0.55 b1-start clears 0.98 b3-start clear 0.0 items 64.8 harvest 1080
+[19:57:05] upd 2570 35.53M sps 2154 (roll 3.4s train 3.0s) kl1 0.101 ent 0.353 cf 0.053 vl 0.302 EV 0.95 boards>=3 0.48 b1-start clears 1.06 b3-start clear 0.0 items 64.6 harvest 1080
+[19:57:36] upd 2575 35.60M sps 2290 (roll 3.0s train 3.0s) kl1 0.101 ent 0.311 cf 0.055 vl 0.221 EV 0.97 boards>=3 0.52 b1-start clears 1.1 b3-start clear 0.0 items 67.5 harvest 1080
+[19:58:08] upd 2580 35.67M sps 2126 (roll 3.5s train 3.0s) kl1 0.107 ent 0.334 cf 0.063 vl 0.217 EV 0.98 boards>=3 0.47 b1-start clears 1.11 b3-start clear 0.0 items 65.1 harvest 1080
+[19:58:38] upd 2585 35.74M sps 2139 (roll 3.4s train 3.0s) kl1 0.109 ent 0.324 cf 0.066 vl 0.322 EV 0.96 boards>=3 0.56 b1-start clears 1.16 b3-start clear 0.0 items 64.4 harvest 1080
+[19:59:09] upd 2590 35.80M sps 2210 (roll 3.2s train 3.1s) kl1 0.107 ent 0.348 cf 0.086 vl 0.241 EV 0.95 boards>=3 0.56 b1-start clears 1.14 b3-start clear 0.0 items 62.9 harvest 1080
+[19:59:40] upd 2595 35.87M sps 2291 (roll 3.0s train 3.0s) kl1 0.095 ent 0.336 cf 0.101 vl 0.340 EV 0.94 boards>=3 0.58 b1-start clears 1.11 b3-start clear 0.0 items 64.9 harvest 1080
+[20:00:11] upd 2600 35.94M sps 2279 (roll 3.0s train 3.0s) kl1 0.115 ent 0.362 cf 0.104 vl 0.332 EV 0.96 boards>=3 0.46 b1-start clears 1.17 b3-start clear 0.0 items 65.1 harvest 1080
+[20:01:42] EVAL upd 2600 (35.94M): b1 clear 0.95  multiboard clears 1.48 reach3 0.54 reach4 0.00 b3 items 88.88888888888889  snap3 clear 0.00 items 89.9 deaths 1.14  (92s)
+[20:02:08] upd 2605 36.01M sps 2530 (roll 2.7s train 2.8s) kl1 0.108 ent 0.334 cf 0.072 vl 0.334 EV 0.96 boards>=3 0.47 b1-start clears 1.23 b3-start clear 0.0 items 63.6 harvest 1080
+[20:02:34] upd 2610 36.08M sps 2510 (roll 2.5s train 3.0s) kl1 0.121 ent 0.376 cf 0.062 vl 0.232 EV 0.97 boards>=3 0.52 b1-start clears 1.27 b3-start clear 0.0 items 63.4 harvest 1080
+[20:03:00] upd 2615 36.15M sps 2757 (roll 2.2s train 2.8s) kl1 0.121 ent 0.311 cf 0.076 vl 0.240 EV 0.96 boards>=3 0.54 b1-start clears 1.26 b3-start clear 0.0 items 62.1 harvest 1080
+[20:03:28] upd 2620 36.22M sps 2351 (roll 2.8s train 3.1s) kl1 0.103 ent 0.360 cf 0.046 vl 0.373 EV 0.95 boards>=3 0.48 b1-start clears 1.28 b3-start clear 0.0 items 66.0 harvest 1080
+[20:03:55] upd 2625 36.29M sps 2484 (roll 2.6s train 3.0s) kl1 0.096 ent 0.343 cf 0.075 vl 0.197 EV 0.97 boards>=3 0.42 b1-start clears 1.29 b3-start clear 0.0 items 67.7 harvest 1080
+[20:04:21] upd 2630 36.36M sps 2627 (roll 2.2s train 3.0s) kl1 0.106 ent 0.329 cf 0.067 vl 0.274 EV 0.95 boards>=3 0.53 b1-start clears 1.25 b3-start clear 0.0 items 69.3 harvest 1080
+[20:04:49] upd 2635 36.43M sps 2227 (roll 3.4s train 2.8s) kl1 0.078 ent 0.304 cf 0.061 vl 0.352 EV 0.95 boards>=3 0.47 b1-start clears 1.13 b3-start clear 0.0 items 66.4 harvest 1080
+[20:05:15] upd 2640 36.50M sps 2695 (roll 2.2s train 2.9s) kl1 0.103 ent 0.311 cf 0.051 vl 0.185 EV 0.97 boards>=3 0.43 b1-start clears 1.04 b3-start clear 0.0 items 66.4 harvest 1080
+[20:06:34] EVAL upd 2640 (36.50M): b1 clear 0.85  multiboard clears 1.42 reach3 0.48 reach4 0.00 b3 items 91.625  snap3 clear 0.00 items 88.8 deaths 1.14  (79s)
+[20:06:58] upd 2645 36.56M sps 2900 (roll 2.2s train 2.5s) kl1 0.109 ent 0.340 cf 0.084 vl 0.264 EV 0.97 boards>=3 0.46 b1-start clears 1.02 b3-start clear 0.0 items 64.4 harvest 1080
+[20:07:22] upd 2650 36.63M sps 2803 (roll 2.4s train 2.5s) kl1 0.108 ent 0.368 cf 0.064 vl 0.277 EV 0.96 boards>=3 0.44 b1-start clears 0.96 b3-start clear 0.0 items 64.4 harvest 1080
+[20:07:46] upd 2655 36.70M sps 2931 (roll 2.0s train 2.7s) kl1 0.115 ent 0.364 cf 0.076 vl 0.299 EV 0.95 boards>=3 0.37 b1-start clears 0.88 b3-start clear 0.0 items 64.3 harvest 1080
+[20:08:10] upd 2660 36.77M sps 2663 (roll 2.4s train 2.8s) kl1 0.104 ent 0.338 cf 0.081 vl 0.300 EV 0.94 boards>=3 0.53 b1-start clears 0.77 b3-start clear 0.0 items 63.4 harvest 1080
+[20:08:36] upd 2665 36.84M sps 2626 (roll 2.5s train 2.8s) kl1 0.107 ent 0.319 cf 0.098 vl 0.271 EV 0.96 boards>=3 0.51 b1-start clears 0.9 b3-start clear 0.0 items 65.1 harvest 1080
+[20:09:02] upd 2670 36.91M sps 2576 (roll 2.6s train 2.7s) kl1 0.115 ent 0.318 cf 0.064 vl 0.200 EV 0.97 boards>=3 0.47 b1-start clears 1.02 b3-start clear 0.0 items 64.3 harvest 1080
+[20:09:27] upd 2675 36.98M sps 3013 (roll 2.1s train 2.5s) kl1 0.131 ent 0.318 cf 0.058 vl 0.258 EV 0.97 boards>=3 0.48 b1-start clears 1.08 b3-start clear 0.0 items 64.2 harvest 1080
+[20:09:52] upd 2680 37.05M sps 2826 (roll 2.3s train 2.6s) kl1 0.112 ent 0.334 cf 0.056 vl 0.239 EV 0.97 boards>=3 0.45 b1-start clears 1.11 b3-start clear 0.0 items 64.7 harvest 1080
+[20:10:57] EVAL upd 2680 (37.05M): b1 clear 0.85  multiboard clears 1.28 reach3 0.40 reach4 0.00 b3 items 94.9  snap3 clear 0.00 items 90.2 deaths 1.14  (65s)
+[20:11:20] upd 2685 37.12M sps 3059 (roll 2.2s train 2.3s) kl1 0.116 ent 0.345 cf 0.067 vl 0.316 EV 0.96 boards>=3 0.48 b1-start clears 1.17 b3-start clear 0.0 items 65.1 harvest 1080
+[20:11:43] upd 2690 37.19M sps 3021 (roll 2.1s train 2.5s) kl1 0.110 ent 0.355 cf 0.059 vl 0.220 EV 0.97 boards>=3 0.46 b1-start clears 1.36 b3-start clear 0.0 items 65.9 harvest 1080
+[20:12:07] upd 2695 37.26M sps 3049 (roll 2.0s train 2.5s) kl1 0.113 ent 0.373 cf 0.062 vl 0.494 EV 0.95 boards>=3 0.47 b1-start clears 1.28 b3-start clear 0.0 items 64.6 harvest 1080
+[20:12:31] upd 2700 37.32M sps 2839 (roll 2.2s train 2.7s) kl1 0.098 ent 0.367 cf 0.054 vl 0.268 EV 0.97 boards>=3 0.52 b1-start clears 1.22 b3-start clear 0.0 items 64.1 harvest 1080
+[20:12:56] upd 2705 37.39M sps 2630 (roll 2.8s train 2.5s) kl1 0.119 ent 0.322 cf 0.055 vl 0.216 EV 0.97 boards>=3 0.45 b1-start clears 1.19 b3-start clear 0.0 items 65.4 harvest 1080
+[20:13:20] upd 2710 37.46M sps 3058 (roll 2.1s train 2.5s) kl1 0.115 ent 0.318 cf 0.060 vl 0.307 EV 0.95 boards>=3 0.44 b1-start clears 1.24 b3-start clear 0.0 items 63.9 harvest 1080
+[20:13:44] upd 2715 37.53M sps 2805 (roll 2.3s train 2.7s) kl1 0.110 ent 0.313 cf 0.060 vl 0.290 EV 0.96 boards>=3 0.45 b1-start clears 1.2 b3-start clear 0.0 items 62.5 harvest 1080
+[20:14:09] upd 2720 37.60M sps 2795 (roll 2.3s train 2.6s) kl1 0.095 ent 0.352 cf 0.058 vl 0.229 EV 0.96 boards>=3 0.48 b1-start clears 1.11 b3-start clear 0.0 items 58.8 harvest 1080
+[20:15:30] EVAL upd 2720 (37.60M): b1 clear 0.87  multiboard clears 1.44 reach3 0.48 reach4 0.00 b3 items 90.83333333333333  snap3 clear 0.00 items 85.9 deaths 1.14  (81s)
+[20:15:51] upd 2725 37.67M sps 3206 (roll 2.0s train 2.3s) kl1 0.108 ent 0.366 cf 0.073 vl 0.184 EV 0.98 boards>=3 0.58 b1-start clears 1.09 b3-start clear 0.0 items 61.0 harvest 1080
+[20:16:14] upd 2730 37.74M sps 3059 (roll 2.2s train 2.4s) kl1 0.091 ent 0.287 cf 0.068 vl 0.157 EV 0.97 boards>=3 0.52 b1-start clears 1.13 b3-start clear 0.0 items 63.1 harvest 1080
+[20:16:37] upd 2735 37.81M sps 3052 (roll 2.1s train 2.4s) kl1 0.097 ent 0.301 cf 0.035 vl 0.303 EV 0.95 boards>=3 0.50 b1-start clears 1.15 b3-start clear 0.0 items 63.8 harvest 1080
+[20:17:01] upd 2740 37.88M sps 3009 (roll 2.2s train 2.4s) kl1 0.096 ent 0.333 cf 0.043 vl 0.376 EV 0.96 boards>=3 0.51 b1-start clears 1.05 b3-start clear 0.0 items 64.0 harvest 1080
+[20:17:25] upd 2745 37.95M sps 3011 (roll 2.1s train 2.5s) kl1 0.092 ent 0.311 cf 0.073 vl 0.174 EV 0.97 boards>=3 0.53 b1-start clears 1.03 b3-start clear 0.0 items 66.7 harvest 1080
+[20:17:49] upd 2750 38.02M sps 2801 (roll 2.3s train 2.6s) kl1 0.114 ent 0.299 cf 0.056 vl 0.310 EV 0.95 boards>=3 0.53 b1-start clears 1.07 b3-start clear 0.0 items 69.3 harvest 1080
+[20:18:13] upd 2755 38.09M sps 2900 (roll 2.3s train 2.5s) kl1 0.098 ent 0.317 cf 0.083 vl 0.328 EV 0.94 boards>=3 0.55 b1-start clears 1.04 b3-start clear 0.0 items 71.0 harvest 1080
+[20:18:37] upd 2760 38.15M sps 2702 (roll 2.5s train 2.6s) kl1 0.108 ent 0.301 cf 0.101 vl 0.160 EV 0.97 boards>=3 0.58 b1-start clears 1.11 b3-start clear 0.0 items 68.0 harvest 1080
+[20:19:56] EVAL upd 2760 (38.15M): b1 clear 0.91  multiboard clears 1.48 reach3 0.54 reach4 0.00 b3 items 91.96296296296296  snap3 clear 0.00 items 89.9 deaths 1.14  (79s)
+[20:20:18] upd 2765 38.22M sps 3218 (roll 2.0s train 2.3s) kl1 0.110 ent 0.303 cf 0.055 vl 0.197 EV 0.97 boards>=3 0.59 b1-start clears 1.04 b3-start clear 0.0 items 67.9 harvest 1080
+[20:20:40] upd 2770 38.29M sps 3261 (roll 1.9s train 2.3s) kl1 0.115 ent 0.349 cf 0.069 vl 0.307 EV 0.95 boards>=3 0.52 b1-start clears 1.02 b3-start clear 0.0 items 67.2 harvest 1080
+[20:21:03] upd 2775 38.36M sps 3048 (roll 2.2s train 2.3s) kl1 0.094 ent 0.312 cf 0.057 vl 0.162 EV 0.98 boards>=3 0.53 b1-start clears 1.09 b3-start clear 0.0 items 67.9 harvest 1080
+[20:21:27] upd 2780 38.43M sps 2840 (roll 2.4s train 2.4s) kl1 0.102 ent 0.299 cf 0.080 vl 0.228 EV 0.96 boards>=3 0.56 b1-start clears 1.1 b3-start clear 0.0 items 68.2 harvest 1080
+[20:21:50] upd 2785 38.50M sps 2889 (roll 2.4s train 2.4s) kl1 0.106 ent 0.338 cf 0.076 vl 0.291 EV 0.96 boards>=3 0.51 b1-start clears 1.04 b3-start clear 0.0 items 67.5 harvest 1080
+[20:22:14] upd 2790 38.57M sps 2930 (roll 2.2s train 2.5s) kl1 0.114 ent 0.318 cf 0.065 vl 0.361 EV 0.94 boards>=3 0.52 b1-start clears 1.11 b3-start clear 0.0 items 67.6 harvest 1080
+[20:22:37] upd 2795 38.64M sps 2910 (roll 2.2s train 2.5s) kl1 0.116 ent 0.292 cf 0.062 vl 0.237 EV 0.96 boards>=3 0.57 b1-start clears 1.07 b3-start clear 0.0 items 67.5 harvest 1080
+[20:23:00] upd 2800 38.71M sps 3067 (roll 2.1s train 2.4s) kl1 0.114 ent 0.288 cf 0.045 vl 0.310 EV 0.96 boards>=3 0.62 b1-start clears 1.08 b3-start clear 0.0 items 65.0 harvest 1080
+[20:24:18] EVAL upd 2800 (38.71M): b1 clear 0.87  multiboard clears 1.26 reach3 0.40 reach4 0.00 b3 items 89.45  snap3 clear 0.00 items 90.0 deaths 1.14  (77s)
+[20:24:40] upd 2805 38.78M sps 3268 (roll 1.9s train 2.3s) kl1 0.095 ent 0.298 cf 0.066 vl 0.324 EV 0.95 boards>=3 0.55 b1-start clears 1.13 b3-start clear 0.0 items 64.1 harvest 1080
+[20:25:03] upd 2810 38.85M sps 3103 (roll 2.2s train 2.3s) kl1 0.105 ent 0.317 cf 0.070 vl 0.321 EV 0.96 boards>=3 0.47 b1-start clears 1.12 b3-start clear 0.0 items 64.7 harvest 1080
+[20:25:26] upd 2815 38.91M sps 3206 (roll 2.0s train 2.3s) kl1 0.102 ent 0.303 cf 0.060 vl 0.367 EV 0.95 boards>=3 0.53 b1-start clears 1.05 b3-start clear 0.0 items 63.3 harvest 1080
+[20:25:49] upd 2820 38.98M sps 3005 (roll 2.2s train 2.4s) kl1 0.094 ent 0.298 cf 0.051 vl 0.202 EV 0.97 boards>=3 0.50 b1-start clears 1.09 b3-start clear 0.0 items 65.0 harvest 1080
+[20:26:12] upd 2825 39.05M sps 3030 (roll 2.2s train 2.4s) kl1 0.097 ent 0.284 cf 0.082 vl 0.284 EV 0.96 boards>=3 0.50 b1-start clears 1.05 b3-start clear 0.0 items 67.0 harvest 1080
+[20:26:36] upd 2830 39.12M sps 2932 (roll 2.3s train 2.4s) kl1 0.098 ent 0.271 cf 0.071 vl 0.315 EV 0.96 boards>=3 0.56 b1-start clears 1.02 b3-start clear 0.0 items 66.8 harvest 1080
+[20:26:59] upd 2835 39.19M sps 2873 (roll 2.4s train 2.4s) kl1 0.094 ent 0.294 cf 0.079 vl 0.152 EV 0.97 boards>=3 0.50 b1-start clears 1.0 b3-start clear 0.0 items 68.7 harvest 1080
+[20:27:23] upd 2840 39.26M sps 2873 (roll 2.3s train 2.5s) kl1 0.109 ent 0.277 cf 0.058 vl 0.234 EV 0.96 boards>=3 0.48 b1-start clears 1.01 b3-start clear 0.0 items 67.2 harvest 1080
+[20:28:52] EVAL upd 2840 (39.26M): b1 clear 0.94  multiboard clears 1.58 reach3 0.62 reach4 0.00 b3 items 91.80645161290323  snap3 clear 0.00 items 89.4 deaths 1.14  (89s)  *best*
+[20:29:14] upd 2845 39.33M sps 3128 (roll 2.2s train 2.2s) kl1 0.088 ent 0.300 cf 0.076 vl 0.253 EV 0.96 boards>=3 0.51 b1-start clears 1.07 b3-start clear 0.0 items 66.7 harvest 1080
+[20:29:37] upd 2850 39.40M sps 2846 (roll 2.6s train 2.3s) kl1 0.105 ent 0.326 cf 0.061 vl 0.218 EV 0.96 boards>=3 0.45 b1-start clears 1.1 b3-start clear 0.0 items 66.3 harvest 1080
+[20:29:59] upd 2855 39.47M sps 3226 (roll 2.0s train 2.3s) kl1 0.108 ent 0.334 cf 0.051 vl 0.229 EV 0.96 boards>=3 0.44 b1-start clears 1.1 b3-start clear 0.0 items 63.0 harvest 1080
+[20:30:22] upd 2860 39.54M sps 3133 (roll 2.1s train 2.3s) kl1 0.102 ent 0.313 cf 0.086 vl 0.142 EV 0.97 boards>=3 0.54 b1-start clears 1.1 b3-start clear 0.0 items 60.7 harvest 1080
+[20:30:44] upd 2865 39.61M sps 2974 (roll 2.2s train 2.4s) kl1 0.110 ent 0.330 cf 0.063 vl 0.309 EV 0.94 boards>=3 0.57 b1-start clears 1.11 b3-start clear 0.0 items 60.9 harvest 1080
+[20:31:08] upd 2870 39.67M sps 3009 (roll 2.3s train 2.3s) kl1 0.096 ent 0.330 cf 0.049 vl 0.217 EV 0.96 boards>=3 0.52 b1-start clears 1.05 b3-start clear 0.0 items 63.0 harvest 1080
+[20:31:32] upd 2875 39.74M sps 3126 (roll 2.0s train 2.4s) kl1 0.123 ent 0.326 cf 0.071 vl 0.304 EV 0.94 boards>=3 0.55 b1-start clears 1.06 b3-start clear 0.0 items 64.2 harvest 1080
+[20:31:55] upd 2880 39.81M sps 3013 (roll 2.3s train 2.3s) kl1 0.115 ent 0.320 cf 0.075 vl 0.264 EV 0.95 boards>=3 0.51 b1-start clears 1.05 b3-start clear 0.0 items 63.5 harvest 1080
+[20:33:04] EVAL upd 2880 (39.81M): b1 clear 0.97  multiboard clears 1.38 reach3 0.42 reach4 0.00 b3 items 89.95238095238095  snap3 clear 0.00 items 90.2 deaths 1.14  (69s)
+[20:33:26] upd 2885 39.88M sps 3105 (roll 2.2s train 2.3s) kl1 0.106 ent 0.310 cf 0.068 vl 0.216 EV 0.96 boards>=3 0.50 b1-start clears 1.05 b3-start clear 0.0 items 66.1 harvest 1080
+[20:33:48] upd 2890 39.95M sps 3236 (roll 2.0s train 2.3s) kl1 0.117 ent 0.320 cf 0.066 vl 0.274 EV 0.96 boards>=3 0.51 b1-start clears 1.08 b3-start clear 0.0 items 66.1 harvest 1080
+[20:34:10] upd 2895 40.02M sps 3199 (roll 2.0s train 2.3s) kl1 0.105 ent 0.316 cf 0.111 vl 0.297 EV 0.95 boards>=3 0.55 b1-start clears 1.12 b3-start clear 0.0 items 65.5 harvest 1080
+[20:34:32] upd 2900 40.09M sps 3036 (roll 2.0s train 2.5s) kl1 0.111 ent 0.290 cf 0.054 vl 0.222 EV 0.96 boards>=3 0.57 b1-start clears 1.16 b3-start clear 0.0 items 66.6 harvest 1080
+[20:34:55] upd 2905 40.16M sps 2969 (roll 2.3s train 2.4s) kl1 0.106 ent 0.333 cf 0.088 vl 0.258 EV 0.96 boards>=3 0.54 b1-start clears 1.22 b3-start clear 0.0 items 67.1 harvest 1080
+[20:35:18] upd 2910 40.23M sps 3221 (roll 2.0s train 2.3s) kl1 0.106 ent 0.286 cf 0.064 vl 0.264 EV 0.95 boards>=3 0.57 b1-start clears 1.19 b3-start clear 0.0 items 64.8 harvest 1080
+[20:35:41] upd 2915 40.30M sps 2972 (roll 2.3s train 2.4s) kl1 0.112 ent 0.310 cf 0.092 vl 0.240 EV 0.95 boards>=3 0.59 b1-start clears 1.21 b3-start clear 0.0 items 64.7 harvest 1080
+[20:36:04] upd 2920 40.37M sps 3174 (roll 2.0s train 2.3s) kl1 0.107 ent 0.329 cf 0.048 vl 0.152 EV 0.97 boards>=3 0.58 b1-start clears 1.24 b3-start clear 0.0 items 63.9 harvest 1080
+[20:37:18] EVAL upd 2920 (40.37M): b1 clear 0.91  multiboard clears 1.40 reach3 0.46 reach4 0.00 b3 items 92.26086956521739  snap3 clear 0.00 items 89.9 deaths 1.14  (73s)
+[20:37:39] upd 2925 40.44M sps 3052 (roll 2.2s train 2.3s) kl1 0.093 ent 0.288 cf 0.082 vl 0.199 EV 0.96 boards>=3 0.60 b1-start clears 1.19 b3-start clear 0.0 items 65.4 harvest 1080
+[20:38:02] upd 2930 40.50M sps 3152 (roll 2.1s train 2.3s) kl1 0.100 ent 0.308 cf 0.094 vl 0.205 EV 0.97 boards>=3 0.57 b1-start clears 1.14 b3-start clear 0.0 items 65.3 harvest 1080
+[20:38:25] upd 2935 40.57M sps 2761 (roll 2.6s train 2.4s) kl1 0.098 ent 0.317 cf 0.070 vl 0.286 EV 0.96 boards>=3 0.57 b1-start clears 1.07 b3-start clear 0.0 items 65.2 harvest 1080
+[20:38:47] upd 2940 40.64M sps 3247 (roll 2.0s train 2.3s) kl1 0.130 ent 0.336 cf 0.071 vl 0.291 EV 0.96 boards>=3 0.56 b1-start clears 1.04 b3-start clear 0.0 items 64.5 harvest 1080
+[20:39:09] upd 2945 40.71M sps 2991 (roll 2.3s train 2.3s) kl1 0.098 ent 0.292 cf 0.050 vl 0.264 EV 0.95 boards>=3 0.52 b1-start clears 1.02 b3-start clear 0.0 items 65.1 harvest 1080
+[20:39:32] upd 2950 40.78M sps 3122 (roll 2.1s train 2.3s) kl1 0.116 ent 0.316 cf 0.032 vl 0.236 EV 0.97 boards>=3 0.53 b1-start clears 1.0 b3-start clear 0.0 items 62.4 harvest 1080
+[20:39:55] upd 2955 40.85M sps 3101 (roll 2.0s train 2.5s) kl1 0.128 ent 0.285 cf 0.053 vl 0.156 EV 0.98 boards>=3 0.61 b1-start clears 1.02 b3-start clear 0.0 items 62.5 harvest 1080
+[20:40:18] upd 2960 40.92M sps 2923 (roll 2.3s train 2.5s) kl1 0.089 ent 0.323 cf 0.069 vl 0.163 EV 0.98 boards>=3 0.59 b1-start clears 1.05 b3-start clear 0.0 items 62.0 harvest 1080
+[20:41:34] EVAL upd 2960 (40.92M): b1 clear 0.91  multiboard clears 1.26 reach3 0.36 reach4 0.00 b3 items 95.44444444444444  snap3 clear 0.00 items 90.3 deaths 1.11  (76s)
+[20:41:55] upd 2965 40.99M sps 3079 (roll 2.2s train 2.3s) kl1 0.096 ent 0.313 cf 0.045 vl 0.179 EV 0.98 boards>=3 0.55 b1-start clears 1.18 b3-start clear 0.0 items 61.9 harvest 1080
+[20:42:17] upd 2970 41.06M sps 3309 (roll 1.9s train 2.3s) kl1 0.094 ent 0.329 cf 0.058 vl 0.260 EV 0.95 boards>=3 0.53 b1-start clears 1.25 b3-start clear 0.0 items 60.9 harvest 1080
+[20:42:40] upd 2975 41.13M sps 3074 (roll 2.2s train 2.3s) kl1 0.118 ent 0.306 cf 0.048 vl 0.210 EV 0.96 boards>=3 0.51 b1-start clears 1.27 b3-start clear 0.0 items 58.7 harvest 1080
+[20:43:02] upd 2980 41.20M sps 2961 (roll 2.2s train 2.4s) kl1 0.113 ent 0.315 cf 0.046 vl 0.263 EV 0.95 boards>=3 0.57 b1-start clears 1.22 b3-start clear 0.0 items 60.0 harvest 1080
+[20:43:25] upd 2985 41.26M sps 3092 (roll 2.2s train 2.3s) kl1 0.112 ent 0.308 cf 0.071 vl 0.217 EV 0.96 boards>=3 0.55 b1-start clears 1.22 b3-start clear 0.0 items 63.3 harvest 1080
+[20:43:48] upd 2990 41.33M sps 2822 (roll 2.6s train 2.3s) kl1 0.114 ent 0.324 cf 0.041 vl 0.316 EV 0.95 boards>=3 0.55 b1-start clears 1.16 b3-start clear 0.0 items 62.9 harvest 1080
+[20:44:11] upd 2995 41.40M sps 3048 (roll 2.2s train 2.3s) kl1 0.122 ent 0.318 cf 0.060 vl 0.342 EV 0.93 boards>=3 0.49 b1-start clears 1.1 b3-start clear 0.0 items 63.3 harvest 1080
+[20:44:34] upd 3000 41.47M sps 2952 (roll 2.2s train 2.4s) kl1 0.105 ent 0.300 cf 0.048 vl 0.447 EV 0.94 boards>=3 0.56 b1-start clears 1.02 b3-start clear 0.0 items 65.8 harvest 1080
+[20:45:58] EVAL upd 3000 (41.47M): b1 clear 0.85  multiboard clears 1.46 reach3 0.54 reach4 0.00 b3 items 93.66666666666667  snap3 clear 0.00 items 88.9 deaths 1.14  (84s)
+[20:46:19] upd 3005 41.54M sps 3414 (roll 1.8s train 2.2s) kl1 0.112 ent 0.325 cf 0.075 vl 0.222 EV 0.95 boards>=3 0.55 b1-start clears 0.95 b3-start clear 0.0 items 63.7 harvest 1080
+[20:46:41] upd 3010 41.61M sps 3148 (roll 2.1s train 2.3s) kl1 0.106 ent 0.330 cf 0.065 vl 0.219 EV 0.97 boards>=3 0.65 b1-start clears 0.94 b3-start clear 0.0 items 66.0 harvest 1080
+[20:47:03] upd 3015 41.68M sps 3051 (roll 2.2s train 2.3s) kl1 0.103 ent 0.332 cf 0.061 vl 0.241 EV 0.97 boards>=3 0.54 b1-start clears 1.02 b3-start clear 0.0 items 64.8 harvest 1080
+[20:47:26] upd 3020 41.75M sps 2999 (roll 2.2s train 2.5s) kl1 0.121 ent 0.331 cf 0.051 vl 0.245 EV 0.96 boards>=3 0.48 b1-start clears 1.05 b3-start clear 0.0 items 64.5 harvest 1080
+[20:47:48] upd 3025 41.82M sps 3045 (roll 2.2s train 2.3s) kl1 0.107 ent 0.308 cf 0.051 vl 0.241 EV 0.97 boards>=3 0.60 b1-start clears 1.06 b3-start clear 0.0 items 64.0 harvest 1080
+[20:48:10] upd 3030 41.89M sps 3271 (roll 1.9s train 2.3s) kl1 0.106 ent 0.346 cf 0.067 vl 0.169 EV 0.96 boards>=3 0.54 b1-start clears 1.14 b3-start clear 0.0 items 63.8 harvest 1080
+[20:48:33] upd 3035 41.96M sps 3098 (roll 2.2s train 2.3s) kl1 0.105 ent 0.299 cf 0.068 vl 0.229 EV 0.96 boards>=3 0.57 b1-start clears 1.16 b3-start clear 0.0 items 63.5 harvest 1080
+[20:48:55] upd 3040 42.02M sps 3023 (roll 2.2s train 2.4s) kl1 0.123 ent 0.305 cf 0.052 vl 0.286 EV 0.95 boards>=3 0.60 b1-start clears 1.2 b3-start clear 0.0 items 63.2 harvest 1080
+[20:50:09] EVAL upd 3040 (42.02M): b1 clear 0.94  multiboard clears 1.40 reach3 0.52 reach4 0.00 b3 items 91.88461538461539  snap3 clear 0.00 items 90.0 deaths 1.14  (74s)
+[20:50:30] upd 3045 42.09M sps 3290 (roll 1.9s train 2.3s) kl1 0.100 ent 0.295 cf 0.061 vl 0.169 EV 0.97 boards>=3 0.65 b1-start clears 1.2 b3-start clear 0.0 items 64.0 harvest 1080
+[20:50:52] upd 3050 42.16M sps 2967 (roll 2.4s train 2.3s) kl1 0.107 ent 0.271 cf 0.051 vl 0.271 EV 0.96 boards>=3 0.64 b1-start clears 1.18 b3-start clear 0.0 items 65.9 harvest 1080
+[20:51:14] upd 3055 42.23M sps 3233 (roll 2.0s train 2.3s) kl1 0.132 ent 0.317 cf 0.057 vl 0.194 EV 0.97 boards>=3 0.65 b1-start clears 1.25 b3-start clear 0.0 items 66.6 harvest 1080
+[20:51:37] upd 3060 42.30M sps 3057 (roll 2.2s train 2.3s) kl1 0.091 ent 0.289 cf 0.086 vl 0.283 EV 0.96 boards>=3 0.64 b1-start clears 1.28 b3-start clear 0.0 items 66.2 harvest 1080
+[20:51:59] upd 3065 42.37M sps 3128 (roll 2.1s train 2.3s) kl1 0.100 ent 0.343 cf 0.051 vl 0.309 EV 0.96 boards>=3 0.50 b1-start clears 1.25 b3-start clear 0.0 items 64.7 harvest 1080
+[20:52:22] upd 3070 42.44M sps 2876 (roll 2.5s train 2.3s) kl1 0.105 ent 0.299 cf 0.062 vl 0.302 EV 0.96 boards>=3 0.56 b1-start clears 1.26 b3-start clear 0.0 items 62.6 harvest 1080
+[20:52:45] upd 3075 42.51M sps 2910 (roll 2.5s train 2.3s) kl1 0.106 ent 0.295 cf 0.066 vl 0.244 EV 0.96 boards>=3 0.54 b1-start clears 1.16 b3-start clear 0.0 items 61.5 harvest 1080
+[20:53:08] upd 3080 42.58M sps 3052 (roll 2.2s train 2.4s) kl1 0.104 ent 0.303 cf 0.061 vl 0.167 EV 0.97 boards>=3 0.53 b1-start clears 1.17 b3-start clear 0.0 items 60.6 harvest 1080
+[20:54:33] EVAL upd 3080 (42.58M): b1 clear 0.93  multiboard clears 1.44 reach3 0.54 reach4 0.00 b3 items 89.74074074074075  snap3 clear 0.00 items 89.4 deaths 1.14  (86s)
+[20:54:55] upd 3085 42.65M sps 3158 (roll 2.2s train 2.2s) kl1 0.101 ent 0.259 cf 0.046 vl 0.351 EV 0.95 boards>=3 0.53 b1-start clears 1.12 b3-start clear 0.0 items 59.4 harvest 1080
+[20:55:17] upd 3090 42.72M sps 3139 (roll 2.2s train 2.3s) kl1 0.132 ent 0.298 cf 0.063 vl 0.322 EV 0.95 boards>=3 0.54 b1-start clears 1.08 b3-start clear 0.0 items 59.4 harvest 1080
+[20:55:40] upd 3095 42.79M sps 3047 (roll 2.2s train 2.3s) kl1 0.115 ent 0.280 cf 0.057 vl 0.158 EV 0.98 boards>=3 0.60 b1-start clears 1.03 b3-start clear 0.0 items 60.6 harvest 1080
+[20:56:02] upd 3100 42.85M sps 3288 (roll 1.9s train 2.3s) kl1 0.104 ent 0.272 cf 0.035 vl 0.289 EV 0.96 boards>=3 0.58 b1-start clears 1.06 b3-start clear 0.0 items 61.1 harvest 1080
+[20:56:24] upd 3105 42.92M sps 2958 (roll 2.4s train 2.3s) kl1 0.112 ent 0.270 cf 0.054 vl 0.187 EV 0.97 boards>=3 0.62 b1-start clears 1.04 b3-start clear 0.0 items 62.2 harvest 1080
+[20:56:46] upd 3110 42.99M sps 3055 (roll 2.1s train 2.4s) kl1 0.113 ent 0.267 cf 0.078 vl 0.250 EV 0.96 boards>=3 0.62 b1-start clears 1.07 b3-start clear 0.0 items 61.4 harvest 1080
+[20:57:09] upd 3115 43.06M sps 2856 (roll 2.5s train 2.3s) kl1 0.102 ent 0.260 cf 0.072 vl 0.209 EV 0.97 boards>=3 0.59 b1-start clears 1.12 b3-start clear 0.0 items 60.2 harvest 1080
+[20:57:31] upd 3120 43.13M sps 3271 (roll 1.9s train 2.3s) kl1 0.092 ent 0.298 cf 0.066 vl 0.157 EV 0.97 boards>=3 0.53 b1-start clears 1.1 b3-start clear 0.0 items 62.4 harvest 1080
+[20:58:49] EVAL upd 3120 (43.13M): b1 clear 0.93  multiboard clears 1.48 reach3 0.54 reach4 0.00 b3 items 90.74074074074075  snap3 clear 0.00 items 89.6 deaths 1.14  (78s)
+[20:59:10] upd 3125 43.20M sps 3094 (roll 2.2s train 2.3s) kl1 0.110 ent 0.278 cf 0.036 vl 0.352 EV 0.95 boards>=3 0.52 b1-start clears 1.19 b3-start clear 0.0 items 61.7 harvest 1080
+[20:59:32] upd 3130 43.27M sps 3182 (roll 2.0s train 2.3s) kl1 0.102 ent 0.279 cf 0.064 vl 0.269 EV 0.95 boards>=3 0.54 b1-start clears 1.31 b3-start clear 0.0 items 62.2 harvest 1080
+[20:59:55] upd 3135 43.34M sps 3143 (roll 2.1s train 2.3s) kl1 0.110 ent 0.271 cf 0.047 vl 0.208 EV 0.96 boards>=3 0.50 b1-start clears 1.26 b3-start clear 0.0 items 63.5 harvest 1080
+[21:00:18] upd 3140 43.41M sps 3081 (roll 2.2s train 2.3s) kl1 0.114 ent 0.293 cf 0.043 vl 0.175 EV 0.97 boards>=3 0.55 b1-start clears 1.24 b3-start clear 0.0 items 62.9 harvest 1080
+[21:00:40] upd 3145 43.48M sps 2734 (roll 2.5s train 2.6s) kl1 0.117 ent 0.282 cf 0.045 vl 0.249 EV 0.97 boards>=3 0.57 b1-start clears 1.27 b3-start clear 0.0 items 62.4 harvest 1080
+[21:01:03] upd 3150 43.55M sps 3152 (roll 2.1s train 2.3s) kl1 0.099 ent 0.306 cf 0.064 vl 0.288 EV 0.93 boards>=3 0.51 b1-start clears 1.21 b3-start clear 0.0 items 64.0 harvest 1080
+[21:01:25] upd 3155 43.61M sps 3134 (roll 2.1s train 2.3s) kl1 0.105 ent 0.307 cf 0.056 vl 0.297 EV 0.95 boards>=3 0.48 b1-start clears 1.2 b3-start clear 0.0 items 64.5 harvest 1080
+[21:01:49] upd 3160 43.68M sps 3001 (roll 2.3s train 2.3s) kl1 0.097 ent 0.319 cf 0.056 vl 0.394 EV 0.94 boards>=3 0.49 b1-start clears 1.09 b3-start clear 0.0 items 62.3 harvest 1080
+[21:03:21] EVAL upd 3160 (43.68M): b1 clear 0.89  multiboard clears 1.36 reach3 0.44 reach4 0.00 b3 items 91.0909090909091  snap3 clear 0.00 items 88.0 deaths 1.14  (93s)
+[21:03:43] upd 3165 43.75M sps 3123 (roll 2.1s train 2.3s) kl1 0.109 ent 0.284 cf 0.067 vl 0.258 EV 0.95 boards>=3 0.55 b1-start clears 1.07 b3-start clear 0.0 items 59.2 harvest 1080
+[21:04:05] upd 3170 43.82M sps 2885 (roll 2.5s train 2.3s) kl1 0.101 ent 0.301 cf 0.068 vl 0.226 EV 0.95 boards>=3 0.57 b1-start clears 1.03 b3-start clear 0.0 items 60.6 harvest 1080
+[21:04:28] upd 3175 43.89M sps 3085 (roll 2.2s train 2.3s) kl1 0.083 ent 0.254 cf 0.058 vl 0.151 EV 0.97 boards>=3 0.63 b1-start clears 0.99 b3-start clear 0.0 items 59.3 harvest 1080
+[21:04:51] upd 3180 43.96M sps 3018 (roll 2.3s train 2.3s) kl1 0.108 ent 0.266 cf 0.056 vl 0.192 EV 0.97 boards>=3 0.57 b1-start clears 1.1 b3-start clear 0.0 items 60.5 harvest 1080
+[21:05:15] upd 3185 44.03M sps 2833 (roll 2.6s train 2.3s) kl1 0.096 ent 0.334 cf 0.049 vl 0.227 EV 0.96 boards>=3 0.47 b1-start clears 1.11 b3-start clear 0.0 items 60.6 harvest 1080
+[21:05:38] upd 3190 44.10M sps 3027 (roll 2.2s train 2.4s) kl1 0.106 ent 0.315 cf 0.052 vl 0.274 EV 0.96 boards>=3 0.48 b1-start clears 1.11 b3-start clear 0.0 items 60.0 harvest 1080
+[21:06:01] upd 3195 44.17M sps 2946 (roll 2.4s train 2.3s) kl1 0.095 ent 0.283 cf 0.041 vl 0.260 EV 0.95 boards>=3 0.52 b1-start clears 1.11 b3-start clear 0.0 items 61.6 harvest 1080
+[21:06:23] upd 3200 44.24M sps 2887 (roll 2.2s train 2.5s) kl1 0.114 ent 0.316 cf 0.071 vl 0.243 EV 0.96 boards>=3 0.50 b1-start clears 1.06 b3-start clear 0.0 items 62.5 harvest 1080
+[21:07:37] EVAL upd 3200 (44.24M): b1 clear 0.96  multiboard clears 1.34 reach3 0.40 reach4 0.00 b3 items 88.75  snap3 clear 0.00 items 87.0 deaths 1.14  (73s)
+[21:07:58] upd 3205 44.31M sps 3211 (roll 2.0s train 2.3s) kl1 0.114 ent 0.297 cf 0.047 vl 0.265 EV 0.94 boards>=3 0.59 b1-start clears 1.06 b3-start clear 0.0 items 62.3 harvest 1080
+[21:08:21] upd 3210 44.38M sps 2863 (roll 2.5s train 2.3s) kl1 0.096 ent 0.302 cf 0.053 vl 0.228 EV 0.96 boards>=3 0.61 b1-start clears 1.19 b3-start clear 0.0 items 61.8 harvest 1080
+[21:08:44] upd 3215 44.44M sps 3153 (roll 2.1s train 2.3s) kl1 0.119 ent 0.299 cf 0.059 vl 0.382 EV 0.93 boards>=3 0.56 b1-start clears 1.13 b3-start clear 0.0 items 60.2 harvest 1080
+[21:09:07] upd 3220 44.51M sps 2984 (roll 2.3s train 2.3s) kl1 0.120 ent 0.254 cf 0.044 vl 0.237 EV 0.96 boards>=3 0.64 b1-start clears 1.1 b3-start clear 0.0 items 58.4 harvest 1080
+[21:09:30] upd 3225 44.58M sps 3065 (roll 2.2s train 2.3s) kl1 0.085 ent 0.266 cf 0.083 vl 0.242 EV 0.95 boards>=3 0.64 b1-start clears 1.09 b3-start clear 0.0 items 57.5 harvest 1080
+[21:09:54] upd 3230 44.65M sps 2971 (roll 2.4s train 2.3s) kl1 0.073 ent 0.275 cf 0.049 vl 0.221 EV 0.96 boards>=3 0.63 b1-start clears 1.05 b3-start clear 0.0 items 56.4 harvest 1080
+[21:10:17] upd 3235 44.72M sps 2636 (roll 2.9s train 2.3s) kl1 0.106 ent 0.315 cf 0.058 vl 0.223 EV 0.95 boards>=3 0.58 b1-start clears 1.09 b3-start clear 0.0 items 56.4 harvest 1080
+[21:10:39] upd 3240 44.79M sps 2936 (roll 2.4s train 2.4s) kl1 0.090 ent 0.298 cf 0.073 vl 0.276 EV 0.96 boards>=3 0.51 b1-start clears 1.19 b3-start clear 0.0 items 57.4 harvest 1080
+[21:11:44] EVAL upd 3240 (44.79M): b1 clear 0.87  multiboard clears 1.38 reach3 0.42 reach4 0.00 b3 items 88.61904761904762  snap3 clear 0.00 items 83.9 deaths 1.14  (64s)
+[21:12:05] upd 3245 44.86M sps 2970 (roll 2.4s train 2.3s) kl1 0.114 ent 0.279 cf 0.055 vl 0.166 EV 0.97 boards>=3 0.55 b1-start clears 1.2 b3-start clear 0.0 items 58.1 harvest 1080
+[21:12:28] upd 3250 44.93M sps 2992 (roll 2.3s train 2.3s) kl1 0.097 ent 0.292 cf 0.078 vl 0.172 EV 0.97 boards>=3 0.59 b1-start clears 1.19 b3-start clear 0.0 items 59.8 harvest 1080
+[21:12:50] upd 3255 45.00M sps 2996 (roll 2.3s train 2.3s) kl1 0.116 ent 0.312 cf 0.059 vl 0.232 EV 0.97 boards>=3 0.52 b1-start clears 1.17 b3-start clear 0.0 items 59.5 harvest 1080
+[21:13:14] upd 3260 45.07M sps 3061 (roll 2.2s train 2.3s) kl1 0.100 ent 0.303 cf 0.041 vl 0.257 EV 0.96 boards>=3 0.53 b1-start clears 1.21 b3-start clear 0.0 items 60.6 harvest 1080
+[21:13:37] upd 3265 45.14M sps 3084 (roll 2.1s train 2.4s) kl1 0.117 ent 0.315 cf 0.042 vl 0.314 EV 0.94 boards>=3 0.53 b1-start clears 1.2 b3-start clear 0.0 items 64.7 harvest 1080
+[21:14:00] upd 3270 45.20M sps 3063 (roll 2.2s train 2.3s) kl1 0.077 ent 0.282 cf 0.044 vl 0.263 EV 0.96 boards>=3 0.55 b1-start clears 1.12 b3-start clear 0.0 items 66.5 harvest 1080
+[21:14:22] upd 3275 45.27M sps 2897 (roll 2.5s train 2.3s) kl1 0.082 ent 0.323 cf 0.054 vl 0.217 EV 0.96 boards>=3 0.52 b1-start clears 1.11 b3-start clear 0.0 items 64.9 harvest 1080
+[21:14:45] upd 3280 45.34M sps 3016 (roll 2.2s train 2.4s) kl1 0.115 ent 0.291 cf 0.048 vl 0.322 EV 0.96 boards>=3 0.55 b1-start clears 1.11 b3-start clear 0.0 items 67.2 harvest 1080
+[21:15:51] EVAL upd 3280 (45.34M): b1 clear 0.95  multiboard clears 1.40 reach3 0.46 reach4 0.00 b3 items 85.1304347826087  snap3 clear 0.00 items 83.6 deaths 1.14  (66s)
+[21:16:13] upd 3285 45.41M sps 3060 (roll 2.3s train 2.2s) kl1 0.104 ent 0.305 cf 0.071 vl 0.163 EV 0.97 boards>=3 0.60 b1-start clears 1.1 b3-start clear 0.0 items 65.8 harvest 1080
+[21:16:34] upd 3290 45.48M sps 3142 (roll 2.1s train 2.3s) kl1 0.085 ent 0.314 cf 0.063 vl 0.188 EV 0.97 boards>=3 0.59 b1-start clears 1.06 b3-start clear 0.0 items 66.6 harvest 1080
+[21:16:57] upd 3295 45.55M sps 3056 (roll 2.2s train 2.3s) kl1 0.129 ent 0.317 cf 0.049 vl 0.215 EV 0.97 boards>=3 0.54 b1-start clears 1.03 b3-start clear 0.0 items 66.3 harvest 1080
+[21:17:19] upd 3300 45.62M sps 3140 (roll 2.1s train 2.3s) kl1 0.102 ent 0.288 cf 0.053 vl 0.219 EV 0.97 boards>=3 0.58 b1-start clears 1.15 b3-start clear 0.0 items 64.8 harvest 1080
+[21:17:42] upd 3305 45.69M sps 3093 (roll 2.2s train 2.3s) kl1 0.104 ent 0.328 cf 0.074 vl 0.172 EV 0.97 boards>=3 0.56 b1-start clears 1.24 b3-start clear 0.0 items 64.1 harvest 1080
+[21:18:05] upd 3310 45.76M sps 3089 (roll 2.1s train 2.4s) kl1 0.086 ent 0.319 cf 0.076 vl 0.168 EV 0.97 boards>=3 0.47 b1-start clears 1.23 b3-start clear 0.0 items 66.2 harvest 1080
+[21:18:29] upd 3315 45.83M sps 3005 (roll 2.1s train 2.5s) kl1 0.128 ent 0.318 cf 0.047 vl 0.354 EV 0.94 boards>=3 0.49 b1-start clears 1.19 b3-start clear 0.0 items 67.4 harvest 1080
+[21:18:50] upd 3320 45.90M sps 3027 (roll 2.2s train 2.3s) kl1 0.110 ent 0.296 cf 0.054 vl 0.201 EV 0.96 boards>=3 0.62 b1-start clears 1.19 b3-start clear 0.0 items 67.8 harvest 1080
+[21:20:03] EVAL upd 3320 (45.90M): b1 clear 0.85  multiboard clears 1.40 reach3 0.50 reach4 0.00 b3 items 90.0  snap3 clear 0.00 items 83.8 deaths 1.14  (73s)
+[21:20:24] upd 3325 45.96M sps 3307 (roll 1.9s train 2.3s) kl1 0.129 ent 0.294 cf 0.077 vl 0.199 EV 0.97 boards>=3 0.68 b1-start clears 1.16 b3-start clear 0.0 items 67.7 harvest 1080
+[21:20:47] upd 3330 46.03M sps 3210 (roll 2.0s train 2.3s) kl1 0.083 ent 0.316 cf 0.081 vl 0.128 EV 0.97 boards>=3 0.63 b1-start clears 1.15 b3-start clear 0.0 items 69.2 harvest 1080
+[21:21:09] upd 3335 46.10M sps 3263 (roll 1.9s train 2.3s) kl1 0.097 ent 0.318 cf 0.053 vl 0.221 EV 0.97 boards>=3 0.55 b1-start clears 1.17 b3-start clear 0.0 items 69.2 harvest 1080
+[21:21:32] upd 3340 46.17M sps 3124 (roll 2.1s train 2.3s) kl1 0.091 ent 0.315 cf 0.061 vl 0.172 EV 0.97 boards>=3 0.50 b1-start clears 1.14 b3-start clear 0.0 items 66.7 harvest 1080
+[21:21:54] upd 3345 46.24M sps 2896 (roll 2.5s train 2.3s) kl1 0.103 ent 0.305 cf 0.068 vl 0.222 EV 0.96 boards>=3 0.58 b1-start clears 1.11 b3-start clear 0.0 items 66.2 harvest 1080
+[21:22:17] upd 3350 46.31M sps 2837 (roll 2.6s train 2.3s) kl1 0.102 ent 0.322 cf 0.073 vl 0.142 EV 0.98 boards>=3 0.58 b1-start clears 1.2 b3-start clear 0.0 items 64.5 harvest 1080
+[21:22:40] upd 3355 46.38M sps 3129 (roll 2.1s train 2.3s) kl1 0.091 ent 0.326 cf 0.063 vl 0.181 EV 0.97 boards>=3 0.52 b1-start clears 1.26 b3-start clear 0.0 items 62.9 harvest 1080
+[21:23:03] upd 3360 46.45M sps 2776 (roll 2.6s train 2.3s) kl1 0.123 ent 0.327 cf 0.034 vl 0.332 EV 0.95 boards>=3 0.50 b1-start clears 1.33 b3-start clear 0.0 items 63.1 harvest 1080
+[21:24:26] EVAL upd 3360 (46.45M): b1 clear 0.91  multiboard clears 1.30 reach3 0.40 reach4 0.00 b3 items 91.6  snap3 clear 0.00 items 91.3 deaths 1.14  (84s)
+[21:24:47] upd 3365 46.52M sps 3137 (roll 2.2s train 2.2s) kl1 0.111 ent 0.360 cf 0.092 vl 0.274 EV 0.95 boards>=3 0.51 b1-start clears 1.34 b3-start clear 0.0 items 64.4 harvest 1080
+[21:25:10] upd 3370 46.59M sps 3208 (roll 2.0s train 2.3s) kl1 0.102 ent 0.330 cf 0.075 vl 0.132 EV 0.97 boards>=3 0.56 b1-start clears 1.29 b3-start clear 0.0 items 63.5 harvest 1080
+[21:25:32] upd 3375 46.66M sps 3043 (roll 2.2s train 2.3s) kl1 0.093 ent 0.327 cf 0.078 vl 0.171 EV 0.97 boards>=3 0.57 b1-start clears 1.27 b3-start clear 0.0 items 64.2 harvest 1080
+[21:25:55] upd 3380 46.73M sps 2898 (roll 2.5s train 2.3s) kl1 0.100 ent 0.311 cf 0.058 vl 0.259 EV 0.95 boards>=3 0.52 b1-start clears 1.26 b3-start clear 0.0 items 68.0 harvest 1080
+[21:26:17] upd 3385 46.79M sps 3264 (roll 1.9s train 2.3s) kl1 0.120 ent 0.359 cf 0.047 vl 0.297 EV 0.96 boards>=3 0.58 b1-start clears 1.29 b3-start clear 0.0 items 67.1 harvest 1080
+[21:26:39] upd 3390 46.86M sps 3001 (roll 2.3s train 2.4s) kl1 0.080 ent 0.338 cf 0.087 vl 0.131 EV 0.97 boards>=3 0.64 b1-start clears 1.19 b3-start clear 0.0 items 66.2 harvest 1080
+[21:27:02] upd 3395 46.93M sps 3073 (roll 2.1s train 2.4s) kl1 0.098 ent 0.338 cf 0.073 vl 0.154 EV 0.97 boards>=3 0.59 b1-start clears 1.17 b3-start clear 0.0 items 65.5 harvest 1080
+[21:27:24] upd 3400 47.00M sps 2986 (roll 2.2s train 2.4s) kl1 0.109 ent 0.365 cf 0.075 vl 0.205 EV 0.97 boards>=3 0.54 b1-start clears 1.15 b3-start clear 0.0 items 65.5 harvest 1080
+[21:28:43] EVAL upd 3400 (47.00M): b1 clear 0.89  multiboard clears 1.44 reach3 0.50 reach4 0.00 b3 items 93.96  snap3 clear 0.00 items 86.1 deaths 1.14  (79s)
+[21:29:04] upd 3405 47.07M sps 3357 (roll 1.9s train 2.2s) kl1 0.105 ent 0.352 cf 0.060 vl 0.210 EV 0.96 boards>=3 0.57 b1-start clears 1.15 b3-start clear 0.0 items 65.3 harvest 1080
+[21:29:26] upd 3410 47.14M sps 3213 (roll 2.0s train 2.3s) kl1 0.083 ent 0.335 cf 0.073 vl 0.179 EV 0.96 boards>=3 0.54 b1-start clears 1.11 b3-start clear 0.0 items 64.9 harvest 1080
+[21:29:48] upd 3415 47.21M sps 3225 (roll 2.0s train 2.3s) kl1 0.127 ent 0.333 cf 0.078 vl 0.305 EV 0.96 boards>=3 0.60 b1-start clears 1.12 b3-start clear 0.0 items 62.3 harvest 1080
+[21:30:10] upd 3420 47.28M sps 3132 (roll 2.1s train 2.3s) kl1 0.083 ent 0.316 cf 0.102 vl 0.208 EV 0.96 boards>=3 0.61 b1-start clears 1.11 b3-start clear 0.0 items 61.5 harvest 1080
+[21:30:33] upd 3425 47.35M sps 3045 (roll 2.2s train 2.3s) kl1 0.111 ent 0.333 cf 0.094 vl 0.237 EV 0.96 boards>=3 0.57 b1-start clears 1.19 b3-start clear 0.0 items 62.8 harvest 1080
+[21:30:55] upd 3430 47.42M sps 3102 (roll 2.1s train 2.4s) kl1 0.115 ent 0.358 cf 0.053 vl 0.355 EV 0.95 boards>=3 0.60 b1-start clears 1.11 b3-start clear 0.0 items 64.4 harvest 1080
+[21:31:18] upd 3435 47.49M sps 3122 (roll 2.1s train 2.3s) kl1 0.114 ent 0.348 cf 0.071 vl 0.231 EV 0.97 boards>=3 0.53 b1-start clears 1.11 b3-start clear 0.0 items 66.5 harvest 1080
+[21:31:40] upd 3440 47.55M sps 3191 (roll 2.0s train 2.3s) kl1 0.107 ent 0.353 cf 0.066 vl 0.215 EV 0.97 boards>=3 0.51 b1-start clears 1.14 b3-start clear 0.0 items 65.8 harvest 1080
+[21:32:58] EVAL upd 3440 (47.55M): b1 clear 0.92  multiboard clears 1.50 reach3 0.54 reach4 0.00 b3 items 91.48148148148148  snap3 clear 0.00 items 84.5 deaths 1.14  (78s)
+[21:33:20] upd 3445 47.62M sps 3221 (roll 2.0s train 2.3s) kl1 0.098 ent 0.336 cf 0.053 vl 0.188 EV 0.97 boards>=3 0.56 b1-start clears 1.31 b3-start clear 0.0 items 66.8 harvest 1080
+[21:33:41] upd 3450 47.69M sps 3186 (roll 2.0s train 2.3s) kl1 0.099 ent 0.341 cf 0.067 vl 0.145 EV 0.97 boards>=3 0.56 b1-start clears 1.21 b3-start clear 0.0 items 68.3 harvest 1080
+[21:34:04] upd 3455 47.76M sps 3179 (roll 2.1s train 2.3s) kl1 0.094 ent 0.345 cf 0.057 vl 0.209 EV 0.96 boards>=3 0.55 b1-start clears 1.18 b3-start clear 0.0 items 66.9 harvest 1080
+[21:34:26] upd 3460 47.83M sps 3223 (roll 2.0s train 2.3s) kl1 0.140 ent 0.353 cf 0.059 vl 0.270 EV 0.96 boards>=3 0.52 b1-start clears 1.22 b3-start clear 0.0 items 67.3 harvest 1080
+[21:34:49] upd 3465 47.90M sps 3047 (roll 2.2s train 2.3s) kl1 0.097 ent 0.338 cf 0.096 vl 0.222 EV 0.96 boards>=3 0.60 b1-start clears 1.26 b3-start clear 0.0 items 65.6 harvest 1080
+[21:35:12] upd 3470 47.97M sps 2900 (roll 2.5s train 2.3s) kl1 0.083 ent 0.323 cf 0.075 vl 0.151 EV 0.98 boards>=3 0.57 b1-start clears 1.24 b3-start clear 0.0 items 63.1 harvest 1080
+[21:35:34] upd 3475 48.04M sps 3267 (roll 1.9s train 2.3s) kl1 0.105 ent 0.343 cf 0.060 vl 0.173 EV 0.97 boards>=3 0.59 b1-start clears 1.26 b3-start clear 0.0 items 63.0 harvest 1080
+[21:35:56] upd 3480 48.11M sps 3192 (roll 2.0s train 2.3s) kl1 0.092 ent 0.310 cf 0.060 vl 0.181 EV 0.96 boards>=3 0.59 b1-start clears 1.23 b3-start clear 0.0 items 62.7 harvest 1080
+[21:37:15] EVAL upd 3480 (48.11M): b1 clear 0.95  multiboard clears 1.36 reach3 0.44 reach4 0.00 b3 items 88.13636363636364  snap3 clear 0.00 items 83.5 deaths 1.14  (79s)
+[21:37:36] upd 3485 48.18M sps 3227 (roll 2.0s train 2.3s) kl1 0.088 ent 0.302 cf 0.063 vl 0.124 EV 0.97 boards>=3 0.62 b1-start clears 1.2 b3-start clear 0.0 items 63.6 harvest 1080
+[21:37:57] upd 3490 48.25M sps 3203 (roll 2.0s train 2.3s) kl1 0.095 ent 0.329 cf 0.054 vl 0.235 EV 0.97 boards>=3 0.68 b1-start clears 1.21 b3-start clear 0.0 items 63.7 harvest 1080
+[21:38:20] upd 3495 48.31M sps 3156 (roll 2.1s train 2.3s) kl1 0.104 ent 0.334 cf 0.061 vl 0.152 EV 0.97 boards>=3 0.63 b1-start clears 1.2 b3-start clear 0.0 items 63.1 harvest 1080
+[21:38:42] upd 3500 48.38M sps 3075 (roll 2.2s train 2.3s) kl1 0.103 ent 0.339 cf 0.078 vl 0.177 EV 0.97 boards>=3 0.59 b1-start clears 1.22 b3-start clear 0.0 items 62.8 harvest 1080
+[21:39:04] upd 3505 48.45M sps 3293 (roll 1.9s train 2.3s) kl1 0.109 ent 0.341 cf 0.058 vl 0.125 EV 0.97 boards>=3 0.59 b1-start clears 1.22 b3-start clear 0.0 items 64.8 harvest 1080
+[21:39:27] upd 3510 48.52M sps 2839 (roll 2.6s train 2.3s) kl1 0.093 ent 0.329 cf 0.069 vl 0.315 EV 0.95 boards>=3 0.60 b1-start clears 1.2 b3-start clear 0.0 items 65.3 harvest 1080
+[21:39:49] upd 3515 48.59M sps 3182 (roll 2.1s train 2.3s) kl1 0.111 ent 0.326 cf 0.069 vl 0.188 EV 0.96 boards>=3 0.57 b1-start clears 1.22 b3-start clear 0.0 items 65.9 harvest 1080
+[21:40:11] upd 3520 48.66M sps 3242 (roll 2.0s train 2.3s) kl1 0.113 ent 0.327 cf 0.061 vl 0.119 EV 0.98 boards>=3 0.64 b1-start clears 1.2 b3-start clear 0.0 items 67.1 harvest 1080
+[21:41:32] EVAL upd 3520 (48.66M): b1 clear 0.97  multiboard clears 1.40 reach3 0.44 reach4 0.00 b3 items 94.4090909090909  snap3 clear 0.00 items 90.6 deaths 1.14  (81s)
+[21:41:53] upd 3525 48.73M sps 3014 (roll 2.3s train 2.3s) kl1 0.127 ent 0.352 cf 0.060 vl 0.259 EV 0.97 boards>=3 0.62 b1-start clears 1.25 b3-start clear 0.0 items 66.4 harvest 1080
+[21:42:15] upd 3530 48.80M sps 3154 (roll 2.1s train 2.3s) kl1 0.112 ent 0.330 cf 0.059 vl 0.289 EV 0.94 boards>=3 0.58 b1-start clears 1.14 b3-start clear 0.0 items 66.8 harvest 1080
+[21:42:38] upd 3535 48.87M sps 3202 (roll 2.0s train 2.3s) kl1 0.115 ent 0.309 cf 0.068 vl 0.177 EV 0.96 boards>=3 0.59 b1-start clears 1.2 b3-start clear 0.0 items 68.0 harvest 1080
+[21:43:00] upd 3540 48.94M sps 3097 (roll 2.2s train 2.3s) kl1 0.097 ent 0.350 cf 0.061 vl 0.141 EV 0.97 boards>=3 0.53 b1-start clears 1.17 b3-start clear 0.0 items 69.1 harvest 1080
+[21:43:22] upd 3545 49.01M sps 3081 (roll 2.2s train 2.3s) kl1 0.097 ent 0.336 cf 0.064 vl 0.224 EV 0.96 boards>=3 0.55 b1-start clears 1.14 b3-start clear 0.0 items 67.7 harvest 1080
+[21:43:44] upd 3550 49.08M sps 3256 (roll 1.9s train 2.3s) kl1 0.113 ent 0.345 cf 0.047 vl 0.223 EV 0.94 boards>=3 0.54 b1-start clears 1.14 b3-start clear 0.0 items 67.5 harvest 1080
+[21:44:07] upd 3555 49.14M sps 2911 (roll 2.5s train 2.3s) kl1 0.100 ent 0.332 cf 0.078 vl 0.339 EV 0.94 boards>=3 0.54 b1-start clears 1.09 b3-start clear 0.0 items 65.0 harvest 1080
+[21:44:29] upd 3560 49.21M sps 3184 (roll 2.1s train 2.3s) kl1 0.099 ent 0.336 cf 0.090 vl 0.160 EV 0.97 boards>=3 0.56 b1-start clears 1.12 b3-start clear 0.0 items 64.7 harvest 1080
+[21:46:07] EVAL upd 3560 (49.21M): b1 clear 0.93  multiboard clears 1.42 reach3 0.48 reach4 0.00 b3 items 92.33333333333333  snap3 clear 0.00 items 90.4 deaths 1.11  (98s)
+[21:46:27] upd 3565 49.28M sps 3324 (roll 1.9s train 2.3s) kl1 0.093 ent 0.307 cf 0.046 vl 0.274 EV 0.96 boards>=3 0.61 b1-start clears 1.17 b3-start clear 0.0 items 63.6 harvest 1080
+[21:46:49] upd 3570 49.35M sps 3148 (roll 2.1s train 2.3s) kl1 0.104 ent 0.325 cf 0.054 vl 0.232 EV 0.95 boards>=3 0.60 b1-start clears 1.26 b3-start clear 0.0 items 61.5 harvest 1080
+[21:47:12] upd 3575 49.42M sps 2988 (roll 2.3s train 2.3s) kl1 0.122 ent 0.330 cf 0.093 vl 0.330 EV 0.96 boards>=3 0.52 b1-start clears 1.24 b3-start clear 0.0 items 62.4 harvest 1080
+[21:47:34] upd 3580 49.49M sps 3019 (roll 2.3s train 2.3s) kl1 0.110 ent 0.332 cf 0.042 vl 0.280 EV 0.95 boards>=3 0.51 b1-start clears 1.17 b3-start clear 0.0 items 63.4 harvest 1080
+[21:47:56] upd 3585 49.56M sps 3258 (roll 1.9s train 2.3s) kl1 0.107 ent 0.329 cf 0.070 vl 0.202 EV 0.95 boards>=3 0.55 b1-start clears 1.17 b3-start clear 0.0 items 66.0 harvest 1080
+[21:48:17] upd 3590 49.63M sps 3150 (roll 2.1s train 2.3s) kl1 0.101 ent 0.320 cf 0.066 vl 0.189 EV 0.97 boards>=3 0.58 b1-start clears 1.14 b3-start clear 0.0 items 67.2 harvest 1080
+[21:48:39] upd 3595 49.70M sps 3178 (roll 2.1s train 2.3s) kl1 0.102 ent 0.339 cf 0.056 vl 0.224 EV 0.96 boards>=3 0.66 b1-start clears 1.18 b3-start clear 0.0 items 67.1 harvest 1080
+[21:49:02] upd 3600 49.77M sps 2927 (roll 2.4s train 2.3s) kl1 0.104 ent 0.329 cf 0.054 vl 0.250 EV 0.96 boards>=3 0.65 b1-start clears 1.1 b3-start clear 0.0 items 70.0 harvest 1080
+[21:50:11] EVAL upd 3600 (49.77M): b1 clear 0.91  multiboard clears 1.16 reach3 0.34 reach4 0.00 b3 items 90.17647058823529  snap3 clear 0.00 items 90.7 deaths 1.14  (70s)
+[21:50:33] upd 3605 49.84M sps 3195 (roll 2.1s train 2.2s) kl1 0.085 ent 0.334 cf 0.064 vl 0.136 EV 0.97 boards>=3 0.62 b1-start clears 1.05 b3-start clear 0.0 items 69.9 harvest 1080
+[21:50:54] upd 3610 49.90M sps 3178 (roll 2.1s train 2.3s) kl1 0.107 ent 0.309 cf 0.052 vl 0.151 EV 0.97 boards>=3 0.64 b1-start clears 1.03 b3-start clear 0.0 items 69.0 harvest 1080
+[21:51:16] upd 3615 49.97M sps 2859 (roll 2.5s train 2.3s) kl1 0.094 ent 0.302 cf 0.080 vl 0.227 EV 0.96 boards>=3 0.64 b1-start clears 0.97 b3-start clear 0.0 items 68.0 harvest 1080
+[21:51:38] upd 3620 50.04M sps 3160 (roll 2.1s train 2.3s) kl1 0.115 ent 0.304 cf 0.072 vl 0.141 EV 0.96 boards>=3 0.70 b1-start clears 1.05 b3-start clear 0.0 items 64.3 harvest 1080
+[21:52:00] upd 3625 50.11M sps 3110 (roll 2.2s train 2.3s) kl1 0.105 ent 0.304 cf 0.099 vl 0.224 EV 0.96 boards>=3 0.62 b1-start clears 1.09 b3-start clear 0.0 items 62.3 harvest 1080
+[21:52:22] upd 3630 50.18M sps 3098 (roll 2.2s train 2.3s) kl1 0.110 ent 0.300 cf 0.074 vl 0.234 EV 0.95 boards>=3 0.60 b1-start clears 1.06 b3-start clear 0.0 items 61.7 harvest 1080
+[21:52:45] upd 3635 50.25M sps 3041 (roll 2.2s train 2.3s) kl1 0.138 ent 0.291 cf 0.058 vl 0.320 EV 0.96 boards>=3 0.64 b1-start clears 1.1 b3-start clear 0.0 items 61.9 harvest 1080
+[21:53:07] upd 3640 50.32M sps 3111 (roll 2.1s train 2.3s) kl1 0.094 ent 0.307 cf 0.089 vl 0.211 EV 0.97 boards>=3 0.61 b1-start clears 1.11 b3-start clear 0.0 items 60.6 harvest 1080
+[21:54:20] EVAL upd 3640 (50.32M): b1 clear 0.94  multiboard clears 1.46 reach3 0.52 reach4 0.00 b3 items 94.11538461538461  snap3 clear 0.00 items 90.7 deaths 1.14  (73s)
+[21:54:41] upd 3645 50.39M sps 3060 (roll 2.3s train 2.2s) kl1 0.117 ent 0.329 cf 0.062 vl 0.218 EV 0.96 boards>=3 0.51 b1-start clears 1.11 b3-start clear 0.0 items 62.4 harvest 1080
+[21:55:04] upd 3650 50.46M sps 3148 (roll 2.1s train 2.3s) kl1 0.102 ent 0.323 cf 0.045 vl 0.310 EV 0.96 boards>=3 0.52 b1-start clears 1.11 b3-start clear 0.0 items 61.8 harvest 1080
+[21:55:26] upd 3655 50.53M sps 3017 (roll 2.3s train 2.3s) kl1 0.112 ent 0.339 cf 0.053 vl 0.358 EV 0.94 boards>=3 0.54 b1-start clears 1.14 b3-start clear 0.0 items 59.2 harvest 1080
+[21:55:48] upd 3660 50.60M sps 3150 (roll 2.1s train 2.3s) kl1 0.123 ent 0.361 cf 0.066 vl 0.218 EV 0.96 boards>=3 0.55 b1-start clears 1.12 b3-start clear 0.0 items 60.0 harvest 1080
+[21:56:11] upd 3665 50.66M sps 3132 (roll 2.1s train 2.3s) kl1 0.096 ent 0.305 cf 0.062 vl 0.157 EV 0.97 boards>=3 0.57 b1-start clears 1.08 b3-start clear 0.0 items 61.3 harvest 1080
+[21:56:33] upd 3670 50.73M sps 3247 (roll 2.0s train 2.3s) kl1 0.103 ent 0.335 cf 0.086 vl 0.166 EV 0.97 boards>=3 0.60 b1-start clears 1.13 b3-start clear 0.0 items 63.0 harvest 1080
+[21:56:55] upd 3675 50.80M sps 3159 (roll 2.1s train 2.3s) kl1 0.101 ent 0.310 cf 0.052 vl 0.243 EV 0.96 boards>=3 0.57 b1-start clears 1.11 b3-start clear 0.0 items 63.5 harvest 1080
+[21:57:17] upd 3680 50.87M sps 3073 (roll 2.2s train 2.3s) kl1 0.095 ent 0.315 cf 0.053 vl 0.192 EV 0.95 boards>=3 0.60 b1-start clears 1.07 b3-start clear 0.0 items 64.0 harvest 1080
+[21:58:45] EVAL upd 3680 (50.87M): b1 clear 0.86  multiboard clears 1.40 reach3 0.52 reach4 0.00 b3 items 90.96153846153847  snap3 clear 0.00 items 88.8 deaths 1.14  (88s)
+[21:59:06] upd 3685 50.94M sps 3220 (roll 2.1s train 2.2s) kl1 0.115 ent 0.329 cf 0.056 vl 0.197 EV 0.96 boards>=3 0.63 b1-start clears 1.01 b3-start clear 0.0 items 61.7 harvest 1080
+[21:59:27] upd 3690 51.01M sps 3282 (roll 1.9s train 2.3s) kl1 0.104 ent 0.304 cf 0.056 vl 0.149 EV 0.97 boards>=3 0.64 b1-start clears 1.01 b3-start clear 0.0 items 63.1 harvest 1080
+[21:59:49] upd 3695 51.08M sps 3060 (roll 2.2s train 2.3s) kl1 0.084 ent 0.306 cf 0.053 vl 0.100 EV 0.98 boards>=3 0.63 b1-start clears 1.03 b3-start clear 0.0 items 65.9 harvest 1080
+[22:00:11] upd 3700 51.15M sps 3287 (roll 1.9s train 2.3s) kl1 0.110 ent 0.317 cf 0.056 vl 0.230 EV 0.96 boards>=3 0.61 b1-start clears 1.05 b3-start clear 0.0 items 66.9 harvest 1080
+[22:00:35] upd 3705 51.22M sps 2714 (roll 2.8s train 2.3s) kl1 0.098 ent 0.297 cf 0.056 vl 0.193 EV 0.97 boards>=3 0.62 b1-start clears 1.09 b3-start clear 0.0 items 65.8 harvest 1080
+[22:00:57] upd 3710 51.29M sps 2906 (roll 2.5s train 2.3s) kl1 0.130 ent 0.311 cf 0.058 vl 0.275 EV 0.97 boards>=3 0.59 b1-start clears 1.07 b3-start clear 0.0 items 65.5 harvest 1080
+[22:01:20] upd 3715 51.36M sps 3160 (roll 2.1s train 2.3s) kl1 0.107 ent 0.301 cf 0.085 vl 0.275 EV 0.96 boards>=3 0.58 b1-start clears 1.1 b3-start clear 0.0 items 64.6 harvest 1080
+[22:01:42] upd 3720 51.43M sps 2814 (roll 2.6s train 2.3s) kl1 0.105 ent 0.334 cf 0.061 vl 0.252 EV 0.96 boards>=3 0.58 b1-start clears 1.15 b3-start clear 0.0 items 64.1 harvest 1080
+[22:03:05] EVAL upd 3720 (51.43M): b1 clear 0.85  multiboard clears 1.24 reach3 0.40 reach4 0.00 b3 items 95.45  snap3 clear 0.00 items 90.6 deaths 1.14  (83s)
+[22:03:25] upd 3725 51.49M sps 3288 (roll 1.9s train 2.3s) kl1 0.096 ent 0.326 cf 0.074 vl 0.242 EV 0.95 boards>=3 0.56 b1-start clears 1.27 b3-start clear 0.0 items 63.8 harvest 1080
+[22:03:47] upd 3730 51.56M sps 3355 (roll 1.9s train 2.2s) kl1 0.100 ent 0.320 cf 0.084 vl 0.143 EV 0.97 boards>=3 0.58 b1-start clears 1.22 b3-start clear 0.0 items 63.5 harvest 1080
+[22:04:09] upd 3735 51.63M sps 3269 (roll 1.9s train 2.3s) kl1 0.107 ent 0.318 cf 0.046 vl 0.136 EV 0.98 boards>=3 0.63 b1-start clears 1.22 b3-start clear 0.0 items 65.1 harvest 1080
+[22:04:31] upd 3740 51.70M sps 3197 (roll 2.0s train 2.3s) kl1 0.100 ent 0.294 cf 0.045 vl 0.191 EV 0.97 boards>=3 0.57 b1-start clears 1.19 b3-start clear 0.0 items 65.7 harvest 1080
+[22:04:52] upd 3745 51.77M sps 3191 (roll 2.0s train 2.3s) kl1 0.111 ent 0.295 cf 0.059 vl 0.171 EV 0.96 boards>=3 0.65 b1-start clears 1.12 b3-start clear 0.0 items 64.9 harvest 1080
+[22:05:15] upd 3750 51.84M sps 3201 (roll 2.0s train 2.3s) kl1 0.110 ent 0.324 cf 0.050 vl 0.190 EV 0.96 boards>=3 0.72 b1-start clears 1.14 b3-start clear 0.0 items 66.0 harvest 1080
+[22:05:37] upd 3755 51.91M sps 3139 (roll 2.1s train 2.3s) kl1 0.107 ent 0.323 cf 0.072 vl 0.166 EV 0.97 boards>=3 0.62 b1-start clears 1.17 b3-start clear 0.0 items 65.8 harvest 1080
+[22:05:59] upd 3760 51.98M sps 3238 (roll 2.0s train 2.3s) kl1 0.111 ent 0.331 cf 0.056 vl 0.208 EV 0.96 boards>=3 0.55 b1-start clears 1.17 b3-start clear 0.0 items 65.6 harvest 1080
+[22:07:31] EVAL upd 3760 (51.98M): b1 clear 0.92  multiboard clears 1.40 reach3 0.50 reach4 0.00 b3 items 95.72  snap3 clear 0.00 items 91.0 deaths 1.11  (92s)
+[22:07:52] upd 3765 52.05M sps 3091 (roll 2.2s train 2.2s) kl1 0.116 ent 0.306 cf 0.062 vl 0.223 EV 0.96 boards>=3 0.63 b1-start clears 1.18 b3-start clear 0.0 items 65.8 harvest 1080
+[22:08:14] upd 3770 52.12M sps 3165 (roll 2.1s train 2.3s) kl1 0.107 ent 0.316 cf 0.078 vl 0.201 EV 0.96 boards>=3 0.59 b1-start clears 1.22 b3-start clear 0.0 items 65.8 harvest 1080
+[22:08:36] upd 3775 52.19M sps 3220 (roll 2.0s train 2.3s) kl1 0.088 ent 0.300 cf 0.072 vl 0.197 EV 0.97 boards>=3 0.58 b1-start clears 1.28 b3-start clear 0.0 items 63.1 harvest 1080
+[22:08:57] upd 3780 52.25M sps 3085 (roll 2.2s train 2.3s) kl1 0.097 ent 0.298 cf 0.066 vl 0.137 EV 0.98 boards>=3 0.55 b1-start clears 1.25 b3-start clear 0.0 items 60.9 harvest 1080
+[22:09:19] upd 3785 52.32M sps 3133 (roll 2.1s train 2.3s) kl1 0.098 ent 0.276 cf 0.053 vl 0.239 EV 0.95 boards>=3 0.66 b1-start clears 1.27 b3-start clear 0.0 items 61.6 harvest 1080
+[22:09:41] upd 3790 52.39M sps 3171 (roll 2.1s train 2.3s) kl1 0.073 ent 0.285 cf 0.052 vl 0.165 EV 0.96 boards>=3 0.70 b1-start clears 1.24 b3-start clear 0.0 items 61.1 harvest 1080
+[22:10:03] upd 3795 52.46M sps 3155 (roll 2.1s train 2.3s) kl1 0.100 ent 0.286 cf 0.056 vl 0.163 EV 0.97 boards>=3 0.62 b1-start clears 1.25 b3-start clear 0.0 items 61.8 harvest 1080
+[22:10:25] upd 3800 52.53M sps 3205 (roll 2.0s train 2.3s) kl1 0.105 ent 0.267 cf 0.044 vl 0.237 EV 0.96 boards>=3 0.65 b1-start clears 1.29 b3-start clear 0.0 items 63.5 harvest 1080
+[22:11:46] EVAL upd 3800 (52.53M): b1 clear 0.90  multiboard clears 1.54 reach3 0.64 reach4 0.00 b3 items 93.34375  snap3 clear 0.00 items 90.2 deaths 1.14  (81s)
+[22:12:06] upd 3805 52.60M sps 3274 (roll 1.9s train 2.3s) kl1 0.091 ent 0.311 cf 0.036 vl 0.174 EV 0.97 boards>=3 0.66 b1-start clears 1.23 b3-start clear 0.0 items 63.9 harvest 1080
+[22:12:28] upd 3810 52.67M sps 3018 (roll 2.3s train 2.3s) kl1 0.103 ent 0.284 cf 0.059 vl 0.124 EV 0.98 boards>=3 0.64 b1-start clears 1.25 b3-start clear 0.0 items 64.1 harvest 1080
+[22:12:50] upd 3815 52.74M sps 3296 (roll 1.9s train 2.3s) kl1 0.129 ent 0.313 cf 0.046 vl 0.190 EV 0.97 boards>=3 0.64 b1-start clears 1.26 b3-start clear 0.0 items 66.0 harvest 1080
+[22:13:12] upd 3820 52.81M sps 3147 (roll 2.1s train 2.3s) kl1 0.084 ent 0.273 cf 0.046 vl 0.141 EV 0.97 boards>=3 0.57 b1-start clears 1.24 b3-start clear 0.0 items 68.6 harvest 1080
+[22:13:33] upd 3825 52.88M sps 3285 (roll 1.9s train 2.3s) kl1 0.113 ent 0.307 cf 0.060 vl 0.309 EV 0.95 boards>=3 0.54 b1-start clears 1.29 b3-start clear 0.0 items 70.2 harvest 1080
+[22:13:56] upd 3830 52.95M sps 3141 (roll 2.1s train 2.3s) kl1 0.111 ent 0.274 cf 0.039 vl 0.243 EV 0.95 boards>=3 0.64 b1-start clears 1.27 b3-start clear 0.0 items 68.8 harvest 1080
+[22:14:18] upd 3835 53.02M sps 3073 (roll 2.2s train 2.3s) kl1 0.092 ent 0.276 cf 0.045 vl 0.128 EV 0.97 boards>=3 0.63 b1-start clears 1.23 b3-start clear 0.0 items 70.5 harvest 1080
+[22:14:41] upd 3840 53.08M sps 3026 (roll 2.3s train 2.3s) kl1 0.109 ent 0.325 cf 0.062 vl 0.337 EV 0.95 boards>=3 0.58 b1-start clears 1.2 b3-start clear 0.0 items 70.9 harvest 1080
+[22:16:01] EVAL upd 3840 (53.08M): b1 clear 0.91  multiboard clears 1.48 reach3 0.56 reach4 0.00 b3 items 92.64285714285714  snap3 clear 0.00 items 89.9 deaths 1.14  (80s)
+[22:16:22] upd 3845 53.15M sps 3351 (roll 1.9s train 2.3s) kl1 0.105 ent 0.351 cf 0.082 vl 0.180 EV 0.96 boards>=3 0.56 b1-start clears 1.15 b3-start clear 0.0 items 69.7 harvest 1080
+[22:16:43] upd 3850 53.22M sps 3101 (roll 2.2s train 2.3s) kl1 0.108 ent 0.319 cf 0.055 vl 0.197 EV 0.96 boards>=3 0.62 b1-start clears 1.0 b3-start clear 0.0 items 69.5 harvest 1080
+[22:17:05] upd 3855 53.29M sps 3135 (roll 2.1s train 2.3s) kl1 0.144 ent 0.333 cf 0.051 vl 0.275 EV 0.94 boards>=3 0.58 b1-start clears 1.02 b3-start clear 0.0 items 66.8 harvest 1080
+[22:17:27] upd 3860 53.36M sps 2970 (roll 2.4s train 2.3s) kl1 0.104 ent 0.342 cf 0.063 vl 0.196 EV 0.96 boards>=3 0.63 b1-start clears 1.02 b3-start clear 0.0 items 66.5 harvest 1080
+[22:17:50] upd 3865 53.43M sps 3093 (roll 2.2s train 2.3s) kl1 0.111 ent 0.300 cf 0.053 vl 0.247 EV 0.96 boards>=3 0.59 b1-start clears 0.98 b3-start clear 0.0 items 66.4 harvest 1080
+[22:18:12] upd 3870 53.50M sps 3042 (roll 2.2s train 2.3s) kl1 0.116 ent 0.303 cf 0.051 vl 0.249 EV 0.96 boards>=3 0.59 b1-start clears 1.04 b3-start clear 0.0 items 67.0 harvest 1080
+[22:18:35] upd 3875 53.57M sps 2895 (roll 2.5s train 2.3s) kl1 0.115 ent 0.293 cf 0.055 vl 0.279 EV 0.96 boards>=3 0.61 b1-start clears 1.02 b3-start clear 0.0 items 65.9 harvest 1080
+[22:18:57] upd 3880 53.64M sps 3152 (roll 2.1s train 2.3s) kl1 0.080 ent 0.297 cf 0.081 vl 0.109 EV 0.97 boards>=3 0.63 b1-start clears 1.03 b3-start clear 0.0 items 65.0 harvest 1080
+[22:20:10] EVAL upd 3880 (53.64M): b1 clear 0.95  multiboard clears 1.54 reach3 0.60 reach4 0.00 b3 items 96.36666666666666  snap3 clear 0.00 items 90.5 deaths 1.14  (73s)
+[22:20:31] upd 3885 53.71M sps 3353 (roll 1.8s train 2.3s) kl1 0.112 ent 0.306 cf 0.052 vl 0.243 EV 0.96 boards>=3 0.59 b1-start clears 1.12 b3-start clear 0.0 items 63.6 harvest 1080
+[22:20:53] upd 3890 53.78M sps 3173 (roll 2.1s train 2.3s) kl1 0.111 ent 0.335 cf 0.120 vl 0.264 EV 0.96 boards>=3 0.51 b1-start clears 1.18 b3-start clear 0.0 items 64.2 harvest 1080
+[22:21:15] upd 3895 53.84M sps 3288 (roll 1.9s train 2.3s) kl1 0.111 ent 0.321 cf 0.049 vl 0.308 EV 0.96 boards>=3 0.54 b1-start clears 1.23 b3-start clear 0.0 items 64.3 harvest 1080
+[22:21:37] upd 3900 53.91M sps 3133 (roll 2.1s train 2.3s) kl1 0.101 ent 0.300 cf 0.052 vl 0.183 EV 0.97 boards>=3 0.53 b1-start clears 1.25 b3-start clear 0.0 items 63.8 harvest 1080
+[22:21:59] upd 3905 53.98M sps 2922 (roll 2.4s train 2.3s) kl1 0.092 ent 0.300 cf 0.055 vl 0.241 EV 0.97 boards>=3 0.60 b1-start clears 1.19 b3-start clear 0.0 items 62.7 harvest 1080
+[22:22:22] upd 3910 54.05M sps 3126 (roll 2.1s train 2.3s) kl1 0.108 ent 0.300 cf 0.051 vl 0.299 EV 0.95 boards>=3 0.50 b1-start clears 1.17 b3-start clear 0.0 items 60.0 harvest 1080
+[22:22:43] upd 3915 54.12M sps 3202 (roll 2.0s train 2.3s) kl1 0.116 ent 0.298 cf 0.057 vl 0.302 EV 0.95 boards>=3 0.58 b1-start clears 1.19 b3-start clear 0.0 items 60.7 harvest 1080
+[22:23:06] upd 3920 54.19M sps 3104 (roll 1.9s train 2.5s) kl1 0.094 ent 0.293 cf 0.046 vl 0.216 EV 0.95 boards>=3 0.58 b1-start clears 1.2 b3-start clear 0.0 items 63.1 harvest 1080
+[22:24:47] EVAL upd 3920 (54.19M): b1 clear 0.94  multiboard clears 1.44 reach3 0.52 reach4 0.00 b3 items 97.34615384615384  snap3 clear 0.00 items 90.6 deaths 1.11  (101s)
+[22:25:08] upd 3925 54.26M sps 3254 (roll 2.0s train 2.2s) kl1 0.120 ent 0.305 cf 0.066 vl 0.221 EV 0.96 boards>=3 0.60 b1-start clears 1.19 b3-start clear 0.0 items 61.5 harvest 1080
+[22:25:30] upd 3930 54.33M sps 3151 (roll 2.1s train 2.3s) kl1 0.110 ent 0.304 cf 0.091 vl 0.172 EV 0.97 boards>=3 0.59 b1-start clears 1.12 b3-start clear 0.0 items 61.3 harvest 1080
+[22:25:52] upd 3935 54.40M sps 3059 (roll 2.2s train 2.3s) kl1 0.099 ent 0.298 cf 0.044 vl 0.257 EV 0.97 boards>=3 0.59 b1-start clears 1.08 b3-start clear 0.0 items 61.5 harvest 1080
+[22:26:14] upd 3940 54.47M sps 3273 (roll 1.9s train 2.3s) kl1 0.113 ent 0.317 cf 0.074 vl 0.182 EV 0.97 boards>=3 0.59 b1-start clears 1.07 b3-start clear 0.0 items 61.1 harvest 1080
+[22:26:36] upd 3945 54.54M sps 3080 (roll 2.2s train 2.3s) kl1 0.093 ent 0.281 cf 0.039 vl 0.134 EV 0.98 boards>=3 0.60 b1-start clears 1.15 b3-start clear 0.0 items 62.8 harvest 1080
+[22:26:53] deadline reached
+[22:26:53] done
+multiboard eval runs/m11/best.pt: seeds 50000..50099, cap 20000, fp32 greedy, sticky 0.25
+  games 33/100 step 2049 max-board {1: 9, 2: 24} elapsed 30s
+  games 100/100 step 10471 max-board {1: 10, 2: 40, 3: 50} elapsed 55s
+{
+ "ckpt": "runs/m11/best.pt",
+ "seed0": 50000,
+ "n": 100,
+ "cap": 20000,
+ "sticky": 0.25,
+ "fp32": true,
+ "greedy": true,
+ "reach_frac": {
+  "1": 1.0,
+  "2": 0.9,
+  "3": 0.5
+ },
+ "clears_dist": {
+  "0": 10,
+  "1": 40,
+  "2": 50
+ },
+ "mean_clears": 1.4,
+ "mean_score": 5731.6,
+ "mean_total_items": 331.14,
+ "deaths_by_board": {
+  "1": 127,
+  "2": 103,
+  "3": 70
+ },
+ "death_frac_by_board": {
+  "1": 0.42333333333333334,
+  "2": 0.3433333333333333,
+  "3": 0.23333333333333334
+ },
+ "mean_items_by_board_reached": {
+  "1": 153.62,
+  "2": 146.43333333333334,
+  "3": 91.46
+ },
+ "n_reached_by_board": {
+  "1": 100,
+  "2": 90,
+  "3": 50
+ },
+ "cap_hits": 0,
+ "mean_steps": 2733.12,
+ "states": 140,
+ "best_game": {
+  "seed": 50032,
+  "max_board": 3,
+  "score": 9560.0,
+  "steps": 6753
+ }
+}
+wall 55.3s
+wrote runs/videos/multiboard_m11_seed50032.mp4: board 3 score 9560 steps 6753 (64s)
+=== M11 finished
+=== 2026-10-12 22:28:56 finished [m11run] exit 0

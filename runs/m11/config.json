@@ -41,7 +41,7 @@
  "MIN_B1": 0.75,
  "N_TEST": 7,
  "CKPT_S": 300.0,
- "DEADLINE": 1791816704.0,
+ "DEADLINE": 1791824211.0,
  "MAX_UPDATES": 1000000,
  "ARCH": {
   "n_actions": 4,

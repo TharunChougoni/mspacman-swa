@@ -1,0 +1,3593 @@
+{
+ "ckpt": "runs/m11/best.pt",
+ "seed0": 50000,
+ "n": 100,
+ "cap": 20000,
+ "sticky": 0.25,
+ "fp32": true,
+ "greedy": true,
+ "reach_frac": {
+  "1": 1.0,
+  "2": 0.9,
+  "3": 0.5
+ },
+ "clears_dist": {
+  "0": 10,
+  "1": 40,
+  "2": 50
+ },
+ "mean_clears": 1.4,
+ "mean_score": 5731.6,
+ "mean_total_items": 331.14,
+ "deaths_by_board": {
+  "1": 127,
+  "2": 103,
+  "3": 70
+ },
+ "death_frac_by_board": {
+  "1": 0.42333333333333334,
+  "2": 0.3433333333333333,
+  "3": 0.23333333333333334
+ },
+ "mean_items_by_board_reached": {
+  "1": 153.62,
+  "2": 146.43333333333334,
+  "3": 91.46
+ },
+ "n_reached_by_board": {
+  "1": 100,
+  "2": 90,
+  "3": 50
+ },
+ "cap_hits": 0,
+ "mean_steps": 2733.12,
+ "states": 140,
+ "best_game": {
+  "seed": 50032,
+  "max_board": 3,
+  "score": 9560.0,
+  "steps": 6753
+ },
+ "games": [
+  {
+   "seed": 50000,
+   "cleared": true,
+   "steps": 1805,
+   "score": 6120.0,
+   "eaten": 154,
+   "deaths": 3,
+   "boards": {
+    "1": {
+     "items": 154,
+     "deaths": 2,
+     "start_step": 0,
+     "start_score": 0.0
+    },
+    "2": {
+     "items": 116,
+     "deaths": 1,
+     "start_step": 1267,
+     "start_score": 4000.0
+    }
+   },
+   "max_board": 2,
+   "clears": 1,
+   "cap_hit": false,
+   "total_items": 270,
+   "level_byte": 42,
+   "hist": [
+    536,
+    291,
+    527,
+    451
+   ]
+  },
+  {
+   "seed": 50001,
+   "cleared": true,
+   "steps": 1425,
+   "score": 2720.0,
+   "eaten": 154,
+   "deaths": 3,
+   "boards": {
+    "1": {
+     "items": 154,
+     "deaths": 2,
+     "start_step": 0,
+     "start_score": 0.0
+    },
+    "2": {
+     "items": 58,
+     "deaths": 1,
+     "start_step": 1145,
+     "start_score": 2100.0
+    }
+   },
+   "max_board": 2,
+   "clears": 1,
+   "cap_hit": false,
+   "total_items": 212,
+   "level_byte": 42,
+   "hist": [
+    405,
+    227,
+    379,
+    414
+   ]
+  },
+  {
+   "seed": 50002,
+   "cleared": true,
+   "steps": 2487,
+   "score": 5830.0,
+   "eaten": 154,
+   "deaths": 3,
+   "boards": {
+    "1": {
+     "items": 154,
+     "deaths": 0,
+     "start_step": 0,
+     "start_score": 0.0
+    },
+    "2": {
+     "items": 154,
+     "deaths": 2,
+     "start_step": 907,
+     "start_score": 2200.0
+    },
+    "3": {
+     "items": 87,
+     "deaths": 1,
+     "start_step": 1917,
+     "start_score": 4100.0
+    }
+   },
+   "max_board": 3,
+   "clears": 2,
+   "cap_hit": false,
+   "total_items": 395,
+   "level_byte": 64,
+   "hist": [
+    664,
+    504,
+    511,
+    808
+   ]
+  },
+  {
+   "seed": 50003,
+   "cleared": true,
+   "steps": 1637,
+   "score": 7060.0,
+   "eaten": 154,
+   "deaths": 3,
+   "boards": {
+    "1": {
+     "items": 154,
+     "deaths": 2,
+     "start_step": 0,
+     "start_score": 0.0
+    },
+    "2": {
+     "items": 130,
+     "deaths": 1,
+     "start_step": 963,
+     "start_score": 4600.0
+    }
+   },
+   "max_board": 2,
+   "clears": 1,
+   "cap_hit": false,
+   "total_items": 284,
+   "level_byte": 42,
+   "hist": [
+    440,
+    318,
+    415,
+    464
+   ]
+  },
+  {
+   "seed": 50004,
+   "cleared": true,
+   "steps": 2253,
+   "score": 5590.0,
+   "eaten": 154,
+   "deaths": 3,
+   "boards": {
+    "1": {
+     "items": 154,
+     "deaths": 1,
+     "start_step": 0,
+     "start_score": 0.0
+    },
+    "2": {
+     "items": 143,
+     "deaths": 2,
+     "start_step": 947,
+     "start_score": 2000.0
+    }
+   },
+   "max_board": 2,
+   "clears": 1,
+   "cap_hit": false,
+   "total_items": 297,
+   "level_byte": 42,
+   "hist": [
+    691,
+    406,
+    580,
+    576
+   ]
+  },
+  {
+   "seed": 50005,
+   "cleared": true,
+   "steps": 1515,
+   "score": 4810.0,
+   "eaten": 154,
+   "deaths": 3,
+   "boards": {
+    "1": {
+     "items": 154,
+     "deaths": 2,
+     "start_step": 0,
+     "start_score": 0.0
+    },
+    "2": {
+     "items": 125,
+     "deaths": 1,
+     "start_step": 957,
+     "start_score": 2000.0
+    }
+   },
+   "max_board": 2,
+   "clears": 1,
+   "cap_hit": false,
+   "total_items": 279,
+   "level_byte": 42,
+   "hist": [
+    440,
+    304,
+    371,
+    400
+   ]
+  },
+  {
+   "seed": 50006,
+   "cleared": true,
+   "steps": 2669,
+   "score": 6370.0,
+   "eaten": 154,
+   "deaths": 3,
+   "boards": {
+    "1": {
+     "items": 154,
+     "deaths": 1,
+     "start_step": 0,
+     "start_score": 0.0
+    },
+    "2": {
+     "items": 154,
+     "deaths": 0,
+     "start_step": 889,
+     "start_score": 2900.0
+    },
+    "3": {
+     "items": 101,
+     "deaths": 2,
+     "start_step": 1931,
+     "start_score": 5000.0
+    }
+   },
+   "max_board": 3,
+   "clears": 2,
+   "cap_hit": false,
+   "total_items": 409,
+   "level_byte": 64,
+   "hist": [
+    611,
+    463,
+    779,
+    816
+   ]
+  },
+  {
+   "seed": 50007,
+   "cleared": true,
+   "steps": 2067,
+   "score": 6160.0,
+   "eaten": 154,
+   "deaths": 3,
+   "boards": {
+    "1": {
+     "items": 154,
+     "deaths": 1,
+     "start_step": 0,
+     "start_score": 0.0
+    },
+    "2": {
+     "items": 150,
+     "deaths": 2,
+     "start_step": 929,
+     "start_score": 3100.0
+    }
+   },
+   "max_board": 2,
+   "clears": 1,
+   "cap_hit": false,
+   "total_items": 304,
+   "level_byte": 42,
+   "hist": [
+    652,
+    323,
+    605,
+    487
+   ]
+  },
+  {
+   "seed": 50008,
+   "cleared": true,
+   "steps": 3953,
+   "score": 7830.0,
+   "eaten": 154,
+   "deaths": 3,
+   "boards": {
+    "1": {
+     "items": 154,
+     "deaths": 1,
+     "start_step": 0,
+     "start_score": 0.0
+    },
+    "2": {
+     "items": 154,
+     "deaths": 1,
+     "start_step": 965,
+     "start_score": 1900.0
+    },
+    "3": {
+     "items": 87,
+     "deaths": 1,
+     "start_step": 1999,
+     "start_score": 5600.0
+    }
+   },
+   "max_board": 3,
+   "clears": 2,
+   "cap_hit": false,
+   "total_items": 395,
+   "level_byte": 64,
+   "hist": [
+    677,
+    1012,
+    610,
+    1654
+   ]
+  },
+  {
+   "seed": 50009,
+   "cleared": true,
+   "steps": 2737,
+   "score": 6530.0,
+   "eaten": 154,
+   "deaths": 3,
+   "boards": {
+    "1": {
+     "items": 154,
+     "deaths": 1,
+     "start_step": 0,
+     "start_score": 0.0
+    },
+    "2": {
+     "items": 154,
+     "deaths": 1,
+     "start_step": 1279,
+     "start_score": 2600.0
+    },
+    "3": {
+     "items": 87,
+     "deaths": 1,
+     "start_step": 2265,
+     "start_score": 5300.0
+    }
+   },
+   "max_board": 3,
+   "clears": 2,
+   "cap_hit": false,
+   "total_items": 395,
+   "level_byte": 64,
+   "hist": [
+    776,
+    513,
+    617,
+    831
+   ]
+  },
+  {
+   "seed": 50010,
+   "cleared": true,
+   "steps": 1723,
+   "score": 5170.0,
+   "eaten": 154,
+   "deaths": 3,
+   "boards": {
+    "1": {
+     "items": 154,
+     "deaths": 1,
+     "start_step": 0,
+     "start_score": 0.0
+    },
+    "2": {
+     "items": 151,
+     "deaths": 2,
+     "start_step": 825,
+     "start_score": 3300.0
+    }
+   },
+   "max_board": 2,
+   "clears": 1,
+   "cap_hit": false,
+   "total_items": 305,
+   "level_byte": 42,
+   "hist": [
+    514,
+    325,
+    422,
+    462
+   ]
+  },
+  {
+   "seed": 50011,
+   "cleared": true,
+   "steps": 2069,
+   "score": 5590.0,
+   "eaten": 154,
+   "deaths": 3,
+   "boards": {
+    "1": {
+     "items": 154,
+     "deaths": 1,
+     "start_step": 0,
+     "start_score": 0.0
+    },
+    "2": {
+     "items": 153,
+     "deaths": 2,
+     "start_step": 929,
+     "start_score": 2900.0
+    }
+   },
+   "max_board": 2,
+   "clears": 1,
+   "cap_hit": false,
+   "total_items": 307,
+   "level_byte": 42,
+   "hist": [
+    635,
+    352,
+    550,
+    532
+   ]
+  },
+  {
+   "seed": 50012,
+   "cleared": true,
+   "steps": 2383,
+   "score": 6170.0,
+   "eaten": 154,
+   "deaths": 3,
+   "boards": {
+    "1": {
+     "items": 154,
+     "deaths": 1,
+     "start_step": 0,
+     "start_score": 0.0
+    },
+    "2": {
+     "items": 154,
+     "deaths": 1,
+     "start_step": 913,
+     "start_score": 2200.0
+    },
+    "3": {
+     "items": 85,
+     "deaths": 1,
+     "start_step": 1879,
+     "start_score": 4500.0
+    }
+   },
+   "max_board": 3,
+   "clears": 2,
+   "cap_hit": false,
+   "total_items": 393,
+   "level_byte": 64,
+   "hist": [
+    599,
+    458,
+    616,
+    710
+   ]
+  },
+  {
+   "seed": 50013,
+   "cleared": true,
+   "steps": 1613,
+   "score": 4180.0,
+   "eaten": 154,
+   "deaths": 3,
+   "boards": {
+    "1": {
+     "items": 154,
+     "deaths": 2,
+     "start_step": 0,
+     "start_score": 0.0
+    },
+    "2": {
+     "items": 122,
+     "deaths": 1,
+     "start_step": 1071,
+     "start_score": 2200.0
+    }
+   },
+   "max_board": 2,
+   "clears": 1,
+   "cap_hit": false,
+   "total_items": 276,
+   "level_byte": 42,
+   "hist": [
+    480,
+    337,
+    382,
+    414
+   ]
+  },
+  {
+   "seed": 50014,
+   "cleared": true,
+   "steps": 2651,
+   "score": 6750.0,
+   "eaten": 154,
+   "deaths": 3,
+   "boards": {
+    "1": {
+     "items": 154,
+     "deaths": 0,
+     "start_step": 0,
+     "start_score": 0.0
+    },
+    "2": {
+     "items": 154,
+     "deaths": 1,
+     "start_step": 895,
+     "start_score": 2000.0
+    },
+    "3": {
+     "items": 99,
+     "deaths": 2,
+     "start_step": 1961,
+     "start_score": 4700.0
+    }
+   },
+   "max_board": 3,
+   "clears": 2,
+   "cap_hit": false,
+   "total_items": 407,
+   "level_byte": 64,
+   "hist": [
+    648,
+    468,
+    786,
+    749
+   ]
+  },
+  {
+   "seed": 50015,
+   "cleared": true,
+   "steps": 4785,
+   "score": 6750.0,
+   "eaten": 154,
+   "deaths": 3,
+   "boards": {
+    "1": {
+     "items": 154,
+     "deaths": 1,
+     "start_step": 0,
+     "start_score": 0.0
+    },
+    "2": {
+     "items": 154,
+     "deaths": 0,
+     "start_step": 947,
+     "start_score": 1900.0
+    },
+    "3": {
+     "items": 99,
+     "deaths": 2,
+     "start_step": 2085,
+     "start_score": 5600.0
+    }
+   },
+   "max_board": 3,
+   "clears": 2,
+   "cap_hit": false,
+   "total_items": 407,
+   "level_byte": 64,
+   "hist": [
+    765,
+    1447,
+    793,
+    1780
+   ]
+  },
+  {
+   "seed": 50016,
+   "cleared": true,
+   "steps": 2877,
+   "score": 5830.0,
+   "eaten": 154,
+   "deaths": 3,
+   "boards": {
+    "1": {
+     "items": 154,
+     "deaths": 2,
+     "start_step": 0,
+     "start_score": 0.0
+    },
+    "2": {
+     "items": 154,
+     "deaths": 0,
+     "start_step": 993,
+     "start_score": 1900.0
+    },
+    "3": {
+     "items": 87,
+     "deaths": 1,
+     "start_step": 2393,
+     "start_score": 4600.0
+    }
+   },
+   "max_board": 3,
+   "clears": 2,
+   "cap_hit": false,
+   "total_items": 395,
+   "level_byte": 64,
+   "hist": [
+    764,
+    543,
+    648,
+    922
+   ]
+  },
+  {
+   "seed": 50017,
+   "cleared": true,
+   "steps": 2445,
+   "score": 6430.0,
+   "eaten": 154,
+   "deaths": 3,
+   "boards": {
+    "1": {
+     "items": 154,
+     "deaths": 1,
+     "start_step": 0,
+     "start_score": 0.0
+    },
+    "2": {
+     "items": 154,
+     "deaths": 1,
+     "start_step": 823,
+     "start_score": 2300.0
+    },
+    "3": {
+     "items": 87,
+     "deaths": 1,
+     "start_step": 1899,
+     "start_score": 5200.0
+    }
+   },
+   "max_board": 3,
+   "clears": 2,
+   "cap_hit": false,
+   "total_items": 395,
+   "level_byte": 64,
+   "hist": [
+    600,
+    485,
+    576,
+    784
+   ]
+  },
+  {
+   "seed": 50018,
+   "cleared": true,
+   "steps": 2497,
+   "score": 6630.0,
+   "eaten": 154,
+   "deaths": 3,
+   "boards": {
+    "1": {
+     "items": 154,
+     "deaths": 1,
+     "start_step": 0,
+     "start_score": 0.0
+    },
+    "2": {
+     "items": 154,
+     "deaths": 1,
+     "start_step": 1117,
+     "start_score": 2700.0
+    },
+    "3": {
+     "items": 87,
+     "deaths": 1,
+     "start_step": 1985,
+     "start_score": 5400.0
+    }
+   },
+   "max_board": 3,
+   "clears": 2,
+   "cap_hit": false,
+   "total_items": 395,
+   "level_byte": 64,
+   "hist": [
+    628,
+    447,
+    673,
+    749
+   ]
+  },
+  {
+   "seed": 50019,
+   "cleared": true,
+   "steps": 2527,
+   "score": 7830.0,
+   "eaten": 154,
+   "deaths": 3,
+   "boards": {
+    "1": {
+     "items": 154,
+     "deaths": 1,
+     "start_step": 0,
+     "start_score": 0.0
+    },
+    "2": {
+     "items": 154,
+     "deaths": 1,
+     "start_step": 959,
+     "start_score": 3900.0
+    },
+    "3": {
+     "items": 87,
+     "deaths": 1,
+     "start_step": 2013,
+     "start_score": 6400.0
+    }
+   },
+   "max_board": 3,
+   "clears": 2,
+   "cap_hit": false,
+   "total_items": 395,
+   "level_byte": 64,
+   "hist": [
+    673,
+    464,
+    579,
+    811
+   ]
+  },
+  {
+   "seed": 50020,
+   "cleared": true,
+   "steps": 2911,
+   "score": 6330.0,
+   "eaten": 154,
+   "deaths": 3,
+   "boards": {
+    "1": {
+     "items": 154,
+     "deaths": 1,
+     "start_step": 0,
+     "start_score": 0.0
+    },
+    "2": {
+     "items": 154,
+     "deaths": 1,
+     "start_step": 1095,
+     "start_score": 2400.0
+    },
+    "3": {
+     "items": 87,
+     "deaths": 1,
+     "start_step": 2397,
+     "start_score": 4900.0
+    }
+   },
+   "max_board": 3,
+   "clears": 2,
+   "cap_hit": false,
+   "total_items": 395,
+   "level_byte": 64,
+   "hist": [
+    779,
+    463,
+    749,
+    920
+   ]
+  },
+  {
+   "seed": 50021,
+   "cleared": true,
+   "steps": 2729,
+   "score": 5550.0,
+   "eaten": 154,
+   "deaths": 3,
+   "boards": {
+    "1": {
+     "items": 154,
+     "deaths": 0,
+     "start_step": 0,
+     "start_score": 0.0
+    },
+    "2": {
+     "items": 154,
+     "deaths": 1,
+     "start_step": 983,
+     "start_score": 2100.0
+    },
+    "3": {
+     "items": 99,
+     "deaths": 2,
+     "start_step": 1903,
+     "start_score": 4200.0
+    }
+   },
+   "max_board": 3,
+   "clears": 2,
+   "cap_hit": false,
+   "total_items": 407,
+   "level_byte": 64,
+   "hist": [
+    688,
+    562,
+    665,
+    814
+   ]
+  },
+  {
+   "seed": 50022,
+   "cleared": true,
+   "steps": 3039,
+   "score": 7330.0,
+   "eaten": 154,
+   "deaths": 3,
+   "boards": {
+    "1": {
+     "items": 154,
+     "deaths": 1,
+     "start_step": 0,
+     "start_score": 0.0
+    },
+    "2": {
+     "items": 154,
+     "deaths": 1,
+     "start_step": 867,
+     "start_score": 2200.0
+    },
+    "3": {
+     "items": 87,
+     "deaths": 1,
+     "start_step": 1945,
+     "start_score": 5900.0
+    }
+   },
+   "max_board": 3,
+   "clears": 2,
+   "cap_hit": false,
+   "total_items": 395,
+   "level_byte": 64,
+   "hist": [
+    703,
+    576,
+    695,
+    1065
+   ]
+  },
+  {
+   "seed": 50023,
+   "cleared": true,
+   "steps": 2885,
+   "score": 6930.0,
+   "eaten": 154,
+   "deaths": 3,
+   "boards": {
+    "1": {
+     "items": 154,
+     "deaths": 1,
+     "start_step": 0,
+     "start_score": 0.0
+    },
+    "2": {
+     "items": 154,
+     "deaths": 1,
+     "start_step": 1107,
+     "start_score": 2800.0
+    },
+    "3": {
+     "items": 87,
+     "deaths": 1,
+     "start_step": 2077,
+     "start_score": 5500.0
+    }
+   },
+   "max_board": 3,
+   "clears": 2,
+   "cap_hit": false,
+   "total_items": 395,
+   "level_byte": 64,
+   "hist": [
+    691,
+    527,
+    703,
+    964
+   ]
+  },
+  {
+   "seed": 50024,
+   "cleared": true,
+   "steps": 2589,
+   "score": 5860.0,
+   "eaten": 154,
+   "deaths": 3,
+   "boards": {
+    "1": {
+     "items": 154,
+     "deaths": 2,
+     "start_step": 0,
+     "start_score": 0.0
+    },
+    "2": {
+     "items": 150,
+     "deaths": 1,
+     "start_step": 1151,
+     "start_score": 3200.0
+    }
+   },
+   "max_board": 2,
+   "clears": 1,
+   "cap_hit": false,
+   "total_items": 304,
+   "level_byte": 42,
+   "hist": [
+    756,
+    486,
+    667,
+    680
+   ]
+  },
+  {
+   "seed": 50025,
+   "cleared": true,
+   "steps": 2615,
+   "score": 6030.0,
+   "eaten": 154,
+   "deaths": 3,
+   "boards": {
+    "1": {
+     "items": 154,
+     "deaths": 1,
+     "start_step": 0,
+     "start_score": 0.0
+    },
+    "2": {
+     "items": 154,
+     "deaths": 1,
+     "start_step": 971,
+     "start_score": 2300.0
+    },
+    "3": {
+     "items": 87,
+     "deaths": 1,
+     "start_step": 2097,
+     "start_score": 4800.0
+    }
+   },
+   "max_board": 3,
+   "clears": 2,
+   "cap_hit": false,
+   "total_items": 395,
+   "level_byte": 64,
+   "hist": [
+    680,
+    470,
+    677,
+    788
+   ]
+  },
+  {
+   "seed": 50026,
+   "cleared": true,
+   "steps": 2991,
+   "score": 6330.0,
+   "eaten": 154,
+   "deaths": 3,
+   "boards": {
+    "1": {
+     "items": 154,
+     "deaths": 1,
+     "start_step": 0,
+     "start_score": 0.0
+    },
+    "2": {
+     "items": 154,
+     "deaths": 1,
+     "start_step": 871,
+     "start_score": 2800.0
+    },
+    "3": {
+     "items": 87,
+     "deaths": 1,
+     "start_step": 2373,
+     "start_score": 5300.0
+    }
+   },
+   "max_board": 3,
+   "clears": 2,
+   "cap_hit": false,
+   "total_items": 395,
+   "level_byte": 64,
+   "hist": [
+    841,
+    555,
+    667,
+    928
+   ]
+  },
+  {
+   "seed": 50027,
+   "cleared": true,
+   "steps": 2807,
+   "score": 8070.0,
+   "eaten": 154,
+   "deaths": 3,
+   "boards": {
+    "1": {
+     "items": 154,
+     "deaths": 1,
+     "start_step": 0,
+     "start_score": 0.0
+    },
+    "2": {
+     "items": 154,
+     "deaths": 0,
+     "start_step": 1015,
+     "start_score": 4400.0
+    },
+    "3": {
+     "items": 101,
+     "deaths": 2,
+     "start_step": 2031,
+     "start_score": 6700.0
+    }
+   },
+   "max_board": 3,
+   "clears": 2,
+   "cap_hit": false,
+   "total_items": 409,
+   "level_byte": 64,
+   "hist": [
+    682,
+    534,
+    765,
+    826
+   ]
+  },
+  {
+   "seed": 50028,
+   "cleared": true,
+   "steps": 2723,
+   "score": 6860.0,
+   "eaten": 154,
+   "deaths": 3,
+   "boards": {
+    "1": {
+     "items": 154,
+     "deaths": 1,
+     "start_step": 0,
+     "start_score": 0.0
+    },
+    "2": {
+     "items": 154,
+     "deaths": 0,
+     "start_step": 953,
+     "start_score": 3400.0
+    },
+    "3": {
+     "items": 100,
+     "deaths": 2,
+     "start_step": 2073,
+     "start_score": 5500.0
+    }
+   },
+   "max_board": 3,
+   "clears": 2,
+   "cap_hit": false,
+   "total_items": 408,
+   "level_byte": 64,
+   "hist": [
+    665,
+    478,
+    776,
+    804
+   ]
+  },
+  {
+   "seed": 50029,
+   "cleared": false,
+   "steps": 1093,
+   "score": 2290.0,
+   "eaten": 153,
+   "deaths": 3,
+   "boards": {
+    "1": {
+     "items": 153,
+     "deaths": 3,
+     "start_step": 0,
+     "start_score": 0.0
+    }
+   },
+   "max_board": 1,
+   "clears": 0,
+   "cap_hit": false,
+   "total_items": 153,
+   "level_byte": 20,
+   "hist": [
+    356,
+    242,
+    222,
+    273
+   ]
+  },
+  {
+   "seed": 50030,
+   "cleared": true,
+   "steps": 4517,
+   "score": 5730.0,
+   "eaten": 154,
+   "deaths": 3,
+   "boards": {
+    "1": {
+     "items": 154,
+     "deaths": 0,
+     "start_step": 0,
+     "start_score": 0.0
+    },
+    "2": {
+     "items": 154,
+     "deaths": 0,
+     "start_step": 993,
+     "start_score": 2200.0
+    },
+    "3": {
+     "items": 107,
+     "deaths": 3,
+     "start_step": 2053,
+     "start_score": 4500.0
+    }
+   },
+   "max_board": 3,
+   "clears": 2,
+   "cap_hit": false,
+   "total_items": 415,
+   "level_byte": 64,
+   "hist": [
+    688,
+    1047,
+    1069,
+    1713
+   ]
+  },
+  {
+   "seed": 50031,
+   "cleared": true,
+   "steps": 2711,
+   "score": 9530.0,
+   "eaten": 154,
+   "deaths": 3,
+   "boards": {
+    "1": {
+     "items": 154,
+     "deaths": 1,
+     "start_step": 0,
+     "start_score": 0.0
+    },
+    "2": {
+     "items": 154,
+     "deaths": 1,
+     "start_step": 955,
+     "start_score": 3200.0
+    },
+    "3": {
+     "items": 87,
+     "deaths": 1,
+     "start_step": 2233,
+     "start_score": 8100.0
+    }
+   },
+   "max_board": 3,
+   "clears": 2,
+   "cap_hit": false,
+   "total_items": 395,
+   "level_byte": 64,
+   "hist": [
+    734,
+    541,
+    645,
+    791
+   ]
+  },
+  {
+   "seed": 50032,
+   "cleared": true,
+   "steps": 6753,
+   "score": 9560.0,
+   "eaten": 154,
+   "deaths": 3,
+   "boards": {
+    "1": {
+     "items": 154,
+     "deaths": 0,
+     "start_step": 0,
+     "start_score": 0.0
+    },
+    "2": {
+     "items": 154,
+     "deaths": 0,
+     "start_step": 859,
+     "start_score": 3600.0
+    },
+    "3": {
+     "items": 100,
+     "deaths": 3,
+     "start_step": 1999,
+     "start_score": 7100.0
+    }
+   },
+   "max_board": 3,
+   "clears": 2,
+   "cap_hit": false,
+   "total_items": 408,
+   "level_byte": 64,
+   "hist": [
+    738,
+    2464,
+    1058,
+    2493
+   ]
+  },
+  {
+   "seed": 50033,
+   "cleared": true,
+   "steps": 2423,
+   "score": 6830.0,
+   "eaten": 154,
+   "deaths": 3,
+   "boards": {
+    "1": {
+     "items": 154,
+     "deaths": 1,
+     "start_step": 0,
+     "start_score": 0.0
+    },
+    "2": {
+     "items": 154,
+     "deaths": 1,
+     "start_step": 919,
+     "start_score": 3700.0
+    },
+    "3": {
+     "items": 87,
+     "deaths": 1,
+     "start_step": 1957,
+     "start_score": 5800.0
+    }
+   },
+   "max_board": 3,
+   "clears": 2,
+   "cap_hit": false,
+   "total_items": 395,
+   "level_byte": 64,
+   "hist": [
+    627,
+    451,
+    619,
+    726
+   ]
+  },
+  {
+   "seed": 50034,
+   "cleared": false,
+   "steps": 941,
+   "score": 2660.0,
+   "eaten": 150,
+   "deaths": 3,
+   "boards": {
+    "1": {
+     "items": 150,
+     "deaths": 3,
+     "start_step": 0,
+     "start_score": 0.0
+    }
+   },
+   "max_board": 1,
+   "clears": 0,
+   "cap_hit": false,
+   "total_items": 150,
+   "level_byte": 20,
+   "hist": [
+    300,
+    169,
+    237,
+    235
+   ]
+  },
+  {
+   "seed": 50035,
+   "cleared": true,
+   "steps": 3059,
+   "score": 7230.0,
+   "eaten": 154,
+   "deaths": 3,
+   "boards": {
+    "1": {
+     "items": 154,
+     "deaths": 1,
+     "start_step": 0,
+     "start_score": 0.0
+    },
+    "2": {
+     "items": 154,
+     "deaths": 1,
+     "start_step": 1005,
+     "start_score": 2300.0
+    },
+    "3": {
+     "items": 87,
+     "deaths": 1,
+     "start_step": 2127,
+     "start_score": 5400.0
+    }
+   },
+   "max_board": 3,
+   "clears": 2,
+   "cap_hit": false,
+   "total_items": 395,
+   "level_byte": 64,
+   "hist": [
+    761,
+    584,
+    697,
+    1017
+   ]
+  },
+  {
+   "seed": 50036,
+   "cleared": true,
+   "steps": 2239,
+   "score": 4470.0,
+   "eaten": 154,
+   "deaths": 3,
+   "boards": {
+    "1": {
+     "items": 154,
+     "deaths": 1,
+     "start_step": 0,
+     "start_score": 0.0
+    },
+    "2": {
+     "items": 151,
+     "deaths": 2,
+     "start_step": 1157,
+     "start_score": 2000.0
+    }
+   },
+   "max_board": 2,
+   "clears": 1,
+   "cap_hit": false,
+   "total_items": 305,
+   "level_byte": 42,
+   "hist": [
+    678,
+    395,
+    540,
+    626
+   ]
+  },
+  {
+   "seed": 50037,
+   "cleared": true,
+   "steps": 4901,
+   "score": 6650.0,
+   "eaten": 154,
+   "deaths": 3,
+   "boards": {
+    "1": {
+     "items": 154,
+     "deaths": 0,
+     "start_step": 0,
+     "start_score": 0.0
+    },
+    "2": {
+     "items": 154,
+     "deaths": 0,
+     "start_step": 853,
+     "start_score": 2400.0
+    },
+    "3": {
+     "items": 99,
+     "deaths": 3,
+     "start_step": 1823,
+     "start_score": 4700.0
+    }
+   },
+   "max_board": 3,
+   "clears": 2,
+   "cap_hit": false,
+   "total_items": 407,
+   "level_byte": 64,
+   "hist": [
+    599,
+    1200,
+    789,
+    2313
+   ]
+  },
+  {
+   "seed": 50038,
+   "cleared": true,
+   "steps": 2673,
+   "score": 5630.0,
+   "eaten": 154,
+   "deaths": 3,
+   "boards": {
+    "1": {
+     "items": 154,
+     "deaths": 1,
+     "start_step": 0,
+     "start_score": 0.0
+    },
+    "2": {
+     "items": 154,
+     "deaths": 1,
+     "start_step": 937,
+     "start_score": 2300.0
+    },
+    "3": {
+     "items": 87,
+     "deaths": 1,
+     "start_step": 1993,
+     "start_score": 4400.0
+    }
+   },
+   "max_board": 3,
+   "clears": 2,
+   "cap_hit": false,
+   "total_items": 395,
+   "level_byte": 64,
+   "hist": [
+    647,
+    531,
+    647,
+    848
+   ]
+  },
+  {
+   "seed": 50039,
+   "cleared": true,
+   "steps": 3171,
+   "score": 6630.0,
+   "eaten": 154,
+   "deaths": 3,
+   "boards": {
+    "1": {
+     "items": 154,
+     "deaths": 1,
+     "start_step": 0,
+     "start_score": 0.0
+    },
+    "2": {
+     "items": 154,
+     "deaths": 1,
+     "start_step": 993,
+     "start_score": 2400.0
+    },
+    "3": {
+     "items": 87,
+     "deaths": 1,
+     "start_step": 2091,
+     "start_score": 4900.0
+    }
+   },
+   "max_board": 3,
+   "clears": 2,
+   "cap_hit": false,
+   "total_items": 395,
+   "level_byte": 64,
+   "hist": [
+    722,
+    582,
+    724,
+    1143
+   ]
+  },
+  {
+   "seed": 50040,
+   "cleared": false,
+   "steps": 1063,
+   "score": 2180.0,
+   "eaten": 152,
+   "deaths": 3,
+   "boards": {
+    "1": {
+     "items": 152,
+     "deaths": 3,
+     "start_step": 0,
+     "start_score": 0.0
+    }
+   },
+   "max_board": 1,
+   "clears": 0,
+   "cap_hit": false,
+   "total_items": 152,
+   "level_byte": 20,
+   "hist": [
+    306,
+    199,
+    303,
+    255
+   ]
+  },
+  {
+   "seed": 50041,
+   "cleared": false,
+   "steps": 909,
+   "score": 3150.0,
+   "eaten": 149,
+   "deaths": 3,
+   "boards": {
+    "1": {
+     "items": 149,
+     "deaths": 3,
+     "start_step": 0,
+     "start_score": 0.0
+    }
+   },
+   "max_board": 1,
+   "clears": 0,
+   "cap_hit": false,
+   "total_items": 149,
+   "level_byte": 20,
+   "hist": [
+    266,
+    189,
+    223,
+    231
+   ]
+  },
+  {
+   "seed": 50042,
+   "cleared": false,
+   "steps": 2875,
+   "score": 2750.0,
+   "eaten": 149,
+   "deaths": 3,
+   "boards": {
+    "1": {
+     "items": 149,
+     "deaths": 3,
+     "start_step": 0,
+     "start_score": 0.0
+    }
+   },
+   "max_board": 1,
+   "clears": 0,
+   "cap_hit": false,
+   "total_items": 149,
+   "level_byte": 20,
+   "hist": [
+    997,
+    452,
+    742,
+    684
+   ]
+  },
+  {
+   "seed": 50043,
+   "cleared": true,
+   "steps": 2545,
+   "score": 4290.0,
+   "eaten": 154,
+   "deaths": 3,
+   "boards": {
+    "1": {
+     "items": 154,
+     "deaths": 1,
+     "start_step": 0,
+     "start_score": 0.0
+    },
+    "2": {
+     "items": 153,
+     "deaths": 2,
+     "start_step": 1045,
+     "start_score": 2400.0
+    }
+   },
+   "max_board": 2,
+   "clears": 1,
+   "cap_hit": false,
+   "total_items": 307,
+   "level_byte": 42,
+   "hist": [
+    780,
+    496,
+    653,
+    616
+   ]
+  },
+  {
+   "seed": 50044,
+   "cleared": true,
+   "steps": 2689,
+   "score": 5980.0,
+   "eaten": 154,
+   "deaths": 3,
+   "boards": {
+    "1": {
+     "items": 154,
+     "deaths": 1,
+     "start_step": 0,
+     "start_score": 0.0
+    },
+    "2": {
+     "items": 152,
+     "deaths": 2,
+     "start_step": 979,
+     "start_score": 2300.0
+    }
+   },
+   "max_board": 2,
+   "clears": 1,
+   "cap_hit": false,
+   "total_items": 306,
+   "level_byte": 42,
+   "hist": [
+    832,
+    498,
+    657,
+    702
+   ]
+  },
+  {
+   "seed": 50045,
+   "cleared": true,
+   "steps": 1999,
+   "score": 5050.0,
+   "eaten": 154,
+   "deaths": 3,
+   "boards": {
+    "1": {
+     "items": 154,
+     "deaths": 0,
+     "start_step": 0,
+     "start_score": 0.0
+    },
+    "2": {
+     "items": 149,
+     "deaths": 3,
+     "start_step": 933,
+     "start_score": 2400.0
+    }
+   },
+   "max_board": 2,
+   "clears": 1,
+   "cap_hit": false,
+   "total_items": 303,
+   "level_byte": 42,
+   "hist": [
+    620,
+    358,
+    494,
+    527
+   ]
+  },
+  {
+   "seed": 50046,
+   "cleared": true,
+   "steps": 2657,
+   "score": 5430.0,
+   "eaten": 154,
+   "deaths": 3,
+   "boards": {
+    "1": {
+     "items": 154,
+     "deaths": 1,
+     "start_step": 0,
+     "start_score": 0.0
+    },
+    "2": {
+     "items": 154,
+     "deaths": 1,
+     "start_step": 911,
+     "start_score": 2100.0
+    },
+    "3": {
+     "items": 87,
+     "deaths": 1,
+     "start_step": 1957,
+     "start_score": 4400.0
+    }
+   },
+   "max_board": 3,
+   "clears": 2,
+   "cap_hit": false,
+   "total_items": 395,
+   "level_byte": 64,
+   "hist": [
+    663,
+    488,
+    599,
+    907
+   ]
+  },
+  {
+   "seed": 50047,
+   "cleared": true,
+   "steps": 1709,
+   "score": 4780.0,
+   "eaten": 154,
+   "deaths": 3,
+   "boards": {
+    "1": {
+     "items": 154,
+     "deaths": 2,
+     "start_step": 0,
+     "start_score": 0.0
+    },
+    "2": {
+     "items": 132,
+     "deaths": 1,
+     "start_step": 1107,
+     "start_score": 2500.0
+    }
+   },
+   "max_board": 2,
+   "clears": 1,
+   "cap_hit": false,
+   "total_items": 286,
+   "level_byte": 42,
+   "hist": [
+    528,
+    299,
+    483,
+    399
+   ]
+  },
+  {
+   "seed": 50048,
+   "cleared": false,
+   "steps": 1003,
+   "score": 2150.0,
+   "eaten": 149,
+   "deaths": 3,
+   "boards": {
+    "1": {
+     "items": 149,
+     "deaths": 3,
+     "start_step": 0,
+     "start_score": 0.0
+    }
+   },
+   "max_board": 1,
+   "clears": 0,
+   "cap_hit": false,
+   "total_items": 149,
+   "level_byte": 20,
+   "hist": [
+    289,
+    141,
+    293,
+    280
+   ]
+  },
+  {
+   "seed": 50049,
+   "cleared": true,
+   "steps": 2707,
+   "score": 6230.0,
+   "eaten": 154,
+   "deaths": 3,
+   "boards": {
+    "1": {
+     "items": 154,
+     "deaths": 2,
+     "start_step": 0,
+     "start_score": 0.0
+    },
+    "2": {
+     "items": 147,
+     "deaths": 1,
+     "start_step": 1143,
+     "start_score": 3600.0
+    }
+   },
+   "max_board": 2,
+   "clears": 1,
+   "cap_hit": false,
+   "total_items": 301,
+   "level_byte": 42,
+   "hist": [
+    765,
+    486,
+    759,
+    697
+   ]
+  },
+  {
+   "seed": 50050,
+   "cleared": true,
+   "steps": 1785,
+   "score": 4560.0,
+   "eaten": 154,
+   "deaths": 3,
+   "boards": {
+    "1": {
+     "items": 154,
+     "deaths": 1,
+     "start_step": 0,
+     "start_score": 0.0
+    },
+    "2": {
+     "items": 140,
+     "deaths": 2,
+     "start_step": 997,
+     "start_score": 2600.0
+    }
+   },
+   "max_board": 2,
+   "clears": 1,
+   "cap_hit": false,
+   "total_items": 294,
+   "level_byte": 42,
+   "hist": [
+    520,
+    311,
+    519,
+    435
+   ]
+  },
+  {
+   "seed": 50051,
+   "cleared": true,
+   "steps": 1785,
+   "score": 5730.0,
+   "eaten": 154,
+   "deaths": 3,
+   "boards": {
+    "1": {
+     "items": 154,
+     "deaths": 1,
+     "start_step": 0,
+     "start_score": 0.0
+    },
+    "2": {
+     "items": 137,
+     "deaths": 2,
+     "start_step": 1027,
+     "start_score": 2200.0
+    }
+   },
+   "max_board": 2,
+   "clears": 1,
+   "cap_hit": false,
+   "total_items": 291,
+   "level_byte": 42,
+   "hist": [
+    514,
+    364,
+    465,
+    442
+   ]
+  },
+  {
+   "seed": 50052,
+   "cleared": true,
+   "steps": 2623,
+   "score": 4830.0,
+   "eaten": 154,
+   "deaths": 3,
+   "boards": {
+    "1": {
+     "items": 154,
+     "deaths": 1,
+     "start_step": 0,
+     "start_score": 0.0
+    },
+    "2": {
+     "items": 154,
+     "deaths": 1,
+     "start_step": 837,
+     "start_score": 1900.0
+    },
+    "3": {
+     "items": 87,
+     "deaths": 1,
+     "start_step": 1925,
+     "start_score": 3800.0
+    }
+   },
+   "max_board": 3,
+   "clears": 2,
+   "cap_hit": false,
+   "total_items": 395,
+   "level_byte": 64,
+   "hist": [
+    625,
+    493,
+    610,
+    895
+   ]
+  },
+  {
+   "seed": 50053,
+   "cleared": true,
+   "steps": 2005,
+   "score": 6850.0,
+   "eaten": 154,
+   "deaths": 3,
+   "boards": {
+    "1": {
+     "items": 154,
+     "deaths": 2,
+     "start_step": 0,
+     "start_score": 0.0
+    },
+    "2": {
+     "items": 139,
+     "deaths": 1,
+     "start_step": 1083,
+     "start_score": 3500.0
+    }
+   },
+   "max_board": 2,
+   "clears": 1,
+   "cap_hit": false,
+   "total_items": 293,
+   "level_byte": 42,
+   "hist": [
+    583,
+    347,
+    590,
+    485
+   ]
+  },
+  {
+   "seed": 50054,
+   "cleared": true,
+   "steps": 2279,
+   "score": 5780.0,
+   "eaten": 154,
+   "deaths": 3,
+   "boards": {
+    "1": {
+     "items": 154,
+     "deaths": 2,
+     "start_step": 0,
+     "start_score": 0.0
+    },
+    "2": {
+     "items": 152,
+     "deaths": 1,
+     "start_step": 1385,
+     "start_score": 2100.0
+    }
+   },
+   "max_board": 2,
+   "clears": 1,
+   "cap_hit": false,
+   "total_items": 306,
+   "level_byte": 42,
+   "hist": [
+    647,
+    363,
+    663,
+    606
+   ]
+  },
+  {
+   "seed": 50055,
+   "cleared": true,
+   "steps": 2049,
+   "score": 5250.0,
+   "eaten": 154,
+   "deaths": 3,
+   "boards": {
+    "1": {
+     "items": 154,
+     "deaths": 2,
+     "start_step": 0,
+     "start_score": 0.0
+    },
+    "2": {
+     "items": 149,
+     "deaths": 1,
+     "start_step": 1061,
+     "start_score": 2400.0
+    }
+   },
+   "max_board": 2,
+   "clears": 1,
+   "cap_hit": false,
+   "total_items": 303,
+   "level_byte": 42,
+   "hist": [
+    632,
+    364,
+    492,
+    561
+   ]
+  },
+  {
+   "seed": 50056,
+   "cleared": true,
+   "steps": 3069,
+   "score": 4860.0,
+   "eaten": 154,
+   "deaths": 3,
+   "boards": {
+    "1": {
+     "items": 154,
+     "deaths": 2,
+     "start_step": 0,
+     "start_score": 0.0
+    },
+    "2": {
+     "items": 150,
+     "deaths": 1,
+     "start_step": 1127,
+     "start_score": 2200.0
+    }
+   },
+   "max_board": 2,
+   "clears": 1,
+   "cap_hit": false,
+   "total_items": 304,
+   "level_byte": 42,
+   "hist": [
+    936,
+    590,
+    753,
+    790
+   ]
+  },
+  {
+   "seed": 50057,
+   "cleared": true,
+   "steps": 3401,
+   "score": 6460.0,
+   "eaten": 154,
+   "deaths": 3,
+   "boards": {
+    "1": {
+     "items": 154,
+     "deaths": 0,
+     "start_step": 0,
+     "start_score": 0.0
+    },
+    "2": {
+     "items": 154,
+     "deaths": 1,
+     "start_step": 1117,
+     "start_score": 2600.0
+    },
+    "3": {
+     "items": 100,
+     "deaths": 2,
+     "start_step": 2165,
+     "start_score": 5300.0
+    }
+   },
+   "max_board": 3,
+   "clears": 2,
+   "cap_hit": false,
+   "total_items": 408,
+   "level_byte": 64,
+   "hist": [
+    780,
+    642,
+    905,
+    1074
+   ]
+  },
+  {
+   "seed": 50058,
+   "cleared": true,
+   "steps": 2591,
+   "score": 7980.0,
+   "eaten": 154,
+   "deaths": 3,
+   "boards": {
+    "1": {
+     "items": 154,
+     "deaths": 1,
+     "start_step": 0,
+     "start_score": 0.0
+    },
+    "2": {
+     "items": 154,
+     "deaths": 1,
+     "start_step": 1019,
+     "start_score": 3400.0
+    },
+    "3": {
+     "items": 60,
+     "deaths": 1,
+     "start_step": 2239,
+     "start_score": 7100.0
+    }
+   },
+   "max_board": 3,
+   "clears": 2,
+   "cap_hit": false,
+   "total_items": 368,
+   "level_byte": 64,
+   "hist": [
+    723,
+    484,
+    621,
+    763
+   ]
+  },
+  {
+   "seed": 50059,
+   "cleared": true,
+   "steps": 2855,
+   "score": 6430.0,
+   "eaten": 154,
+   "deaths": 3,
+   "boards": {
+    "1": {
+     "items": 154,
+     "deaths": 1,
+     "start_step": 0,
+     "start_score": 0.0
+    },
+    "2": {
+     "items": 154,
+     "deaths": 0,
+     "start_step": 921,
+     "start_score": 2200.0
+    },
+    "3": {
+     "items": 107,
+     "deaths": 2,
+     "start_step": 2019,
+     "start_score": 4500.0
+    }
+   },
+   "max_board": 3,
+   "clears": 2,
+   "cap_hit": false,
+   "total_items": 415,
+   "level_byte": 64,
+   "hist": [
+    697,
+    545,
+    734,
+    879
+   ]
+  },
+  {
+   "seed": 50060,
+   "cleared": true,
+   "steps": 3103,
+   "score": 6130.0,
+   "eaten": 154,
+   "deaths": 3,
+   "boards": {
+    "1": {
+     "items": 154,
+     "deaths": 1,
+     "start_step": 0,
+     "start_score": 0.0
+    },
+    "2": {
+     "items": 154,
+     "deaths": 1,
+     "start_step": 1167,
+     "start_score": 2300.0
+    },
+    "3": {
+     "items": 87,
+     "deaths": 1,
+     "start_step": 2225,
+     "start_score": 4400.0
+    }
+   },
+   "max_board": 3,
+   "clears": 2,
+   "cap_hit": false,
+   "total_items": 395,
+   "level_byte": 64,
+   "hist": [
+    748,
+    654,
+    716,
+    985
+   ]
+  },
+  {
+   "seed": 50061,
+   "cleared": true,
+   "steps": 1239,
+   "score": 3770.0,
+   "eaten": 154,
+   "deaths": 3,
+   "boards": {
+    "1": {
+     "items": 154,
+     "deaths": 2,
+     "start_step": 0,
+     "start_score": 0.0
+    },
+    "2": {
+     "items": 53,
+     "deaths": 1,
+     "start_step": 973,
+     "start_score": 2600.0
+    }
+   },
+   "max_board": 2,
+   "clears": 1,
+   "cap_hit": false,
+   "total_items": 207,
+   "level_byte": 42,
+   "hist": [
+    342,
+    223,
+    373,
+    301
+   ]
+  },
+  {
+   "seed": 50062,
+   "cleared": true,
+   "steps": 2631,
+   "score": 6050.0,
+   "eaten": 154,
+   "deaths": 3,
+   "boards": {
+    "1": {
+     "items": 154,
+     "deaths": 0,
+     "start_step": 0,
+     "start_score": 0.0
+    },
+    "2": {
+     "items": 154,
+     "deaths": 1,
+     "start_step": 845,
+     "start_score": 2400.0
+    },
+    "3": {
+     "items": 99,
+     "deaths": 2,
+     "start_step": 1849,
+     "start_score": 4700.0
+    }
+   },
+   "max_board": 3,
+   "clears": 2,
+   "cap_hit": false,
+   "total_items": 407,
+   "level_byte": 64,
+   "hist": [
+    606,
+    522,
+    701,
+    802
+   ]
+  },
+  {
+   "seed": 50063,
+   "cleared": true,
+   "steps": 1303,
+   "score": 4070.0,
+   "eaten": 154,
+   "deaths": 3,
+   "boards": {
+    "1": {
+     "items": 154,
+     "deaths": 2,
+     "start_step": 0,
+     "start_score": 0.0
+    },
+    "2": {
+     "items": 53,
+     "deaths": 1,
+     "start_step": 1037,
+     "start_score": 2900.0
+    }
+   },
+   "max_board": 2,
+   "clears": 1,
+   "cap_hit": false,
+   "total_items": 207,
+   "level_byte": 42,
+   "hist": [
+    424,
+    228,
+    373,
+    278
+   ]
+  },
+  {
+   "seed": 50064,
+   "cleared": true,
+   "steps": 2001,
+   "score": 6010.0,
+   "eaten": 154,
+   "deaths": 3,
+   "boards": {
+    "1": {
+     "items": 154,
+     "deaths": 2,
+     "start_step": 0,
+     "start_score": 0.0
+    },
+    "2": {
+     "items": 135,
+     "deaths": 1,
+     "start_step": 1365,
+     "start_score": 2700.0
+    }
+   },
+   "max_board": 2,
+   "clears": 1,
+   "cap_hit": false,
+   "total_items": 289,
+   "level_byte": 42,
+   "hist": [
+    639,
+    374,
+    482,
+    506
+   ]
+  },
+  {
+   "seed": 50065,
+   "cleared": true,
+   "steps": 2939,
+   "score": 6830.0,
+   "eaten": 154,
+   "deaths": 3,
+   "boards": {
+    "1": {
+     "items": 154,
+     "deaths": 0,
+     "start_step": 0,
+     "start_score": 0.0
+    },
+    "2": {
+     "items": 154,
+     "deaths": 2,
+     "start_step": 937,
+     "start_score": 2800.0
+    },
+    "3": {
+     "items": 87,
+     "deaths": 1,
+     "start_step": 2077,
+     "start_score": 4900.0
+    }
+   },
+   "max_board": 3,
+   "clears": 2,
+   "cap_hit": false,
+   "total_items": 395,
+   "level_byte": 64,
+   "hist": [
+    786,
+    524,
+    664,
+    965
+   ]
+  },
+  {
+   "seed": 50066,
+   "cleared": true,
+   "steps": 3731,
+   "score": 7330.0,
+   "eaten": 154,
+   "deaths": 3,
+   "boards": {
+    "1": {
+     "items": 154,
+     "deaths": 2,
+     "start_step": 0,
+     "start_score": 0.0
+    },
+    "2": {
+     "items": 154,
+     "deaths": 0,
+     "start_step": 967,
+     "start_score": 3600.0
+    },
+    "3": {
+     "items": 87,
+     "deaths": 1,
+     "start_step": 1991,
+     "start_score": 6100.0
+    }
+   },
+   "max_board": 3,
+   "clears": 2,
+   "cap_hit": false,
+   "total_items": 395,
+   "level_byte": 64,
+   "hist": [
+    686,
+    820,
+    717,
+    1508
+   ]
+  },
+  {
+   "seed": 50067,
+   "cleared": true,
+   "steps": 2495,
+   "score": 5430.0,
+   "eaten": 154,
+   "deaths": 3,
+   "boards": {
+    "1": {
+     "items": 154,
+     "deaths": 1,
+     "start_step": 0,
+     "start_score": 0.0
+    },
+    "2": {
+     "items": 154,
+     "deaths": 1,
+     "start_step": 915,
+     "start_score": 2500.0
+    },
+    "3": {
+     "items": 87,
+     "deaths": 1,
+     "start_step": 1797,
+     "start_score": 4400.0
+    }
+   },
+   "max_board": 3,
+   "clears": 2,
+   "cap_hit": false,
+   "total_items": 395,
+   "level_byte": 64,
+   "hist": [
+    584,
+    498,
+    545,
+    868
+   ]
+  },
+  {
+   "seed": 50068,
+   "cleared": true,
+   "steps": 3769,
+   "score": 6750.0,
+   "eaten": 154,
+   "deaths": 3,
+   "boards": {
+    "1": {
+     "items": 154,
+     "deaths": 1,
+     "start_step": 0,
+     "start_score": 0.0
+    },
+    "2": {
+     "items": 154,
+     "deaths": 0,
+     "start_step": 825,
+     "start_score": 3300.0
+    },
+    "3": {
+     "items": 99,
+     "deaths": 2,
+     "start_step": 1709,
+     "start_score": 5200.0
+    }
+   },
+   "max_board": 3,
+   "clears": 2,
+   "cap_hit": false,
+   "total_items": 407,
+   "level_byte": 64,
+   "hist": [
+    553,
+    1166,
+    641,
+    1409
+   ]
+  },
+  {
+   "seed": 50069,
+   "cleared": true,
+   "steps": 1921,
+   "score": 6380.0,
+   "eaten": 154,
+   "deaths": 3,
+   "boards": {
+    "1": {
+     "items": 154,
+     "deaths": 1,
+     "start_step": 0,
+     "start_score": 0.0
+    },
+    "2": {
+     "items": 142,
+     "deaths": 2,
+     "start_step": 995,
+     "start_score": 2800.0
+    }
+   },
+   "max_board": 2,
+   "clears": 1,
+   "cap_hit": false,
+   "total_items": 296,
+   "level_byte": 42,
+   "hist": [
+    595,
+    345,
+    494,
+    487
+   ]
+  },
+  {
+   "seed": 50070,
+   "cleared": true,
+   "steps": 10471,
+   "score": 8230.0,
+   "eaten": 154,
+   "deaths": 3,
+   "boards": {
+    "1": {
+     "items": 154,
+     "deaths": 0,
+     "start_step": 0,
+     "start_score": 0.0
+    },
+    "2": {
+     "items": 154,
+     "deaths": 2,
+     "start_step": 973,
+     "start_score": 3700.0
+    },
+    "3": {
+     "items": 87,
+     "deaths": 1,
+     "start_step": 2045,
+     "start_score": 6800.0
+    }
+   },
+   "max_board": 3,
+   "clears": 2,
+   "cap_hit": false,
+   "total_items": 395,
+   "level_byte": 64,
+   "hist": [
+    798,
+    4238,
+    839,
+    4596
+   ]
+  },
+  {
+   "seed": 50071,
+   "cleared": true,
+   "steps": 1865,
+   "score": 5220.0,
+   "eaten": 154,
+   "deaths": 3,
+   "boards": {
+    "1": {
+     "items": 154,
+     "deaths": 2,
+     "start_step": 0,
+     "start_score": 0.0
+    },
+    "2": {
+     "items": 146,
+     "deaths": 1,
+     "start_step": 983,
+     "start_score": 2200.0
+    }
+   },
+   "max_board": 2,
+   "clears": 1,
+   "cap_hit": false,
+   "total_items": 300,
+   "level_byte": 42,
+   "hist": [
+    553,
+    351,
+    498,
+    463
+   ]
+  },
+  {
+   "seed": 50072,
+   "cleared": false,
+   "steps": 1081,
+   "score": 2710.0,
+   "eaten": 145,
+   "deaths": 3,
+   "boards": {
+    "1": {
+     "items": 145,
+     "deaths": 3,
+     "start_step": 0,
+     "start_score": 0.0
+    }
+   },
+   "max_board": 1,
+   "clears": 0,
+   "cap_hit": false,
+   "total_items": 145,
+   "level_byte": 20,
+   "hist": [
+    350,
+    155,
+    338,
+    238
+   ]
+  },
+  {
+   "seed": 50073,
+   "cleared": true,
+   "steps": 6221,
+   "score": 6430.0,
+   "eaten": 154,
+   "deaths": 3,
+   "boards": {
+    "1": {
+     "items": 154,
+     "deaths": 0,
+     "start_step": 0,
+     "start_score": 0.0
+    },
+    "2": {
+     "items": 154,
+     "deaths": 2,
+     "start_step": 941,
+     "start_score": 2000.0
+    },
+    "3": {
+     "items": 87,
+     "deaths": 1,
+     "start_step": 2571,
+     "start_score": 4700.0
+    }
+   },
+   "max_board": 3,
+   "clears": 2,
+   "cap_hit": false,
+   "total_items": 395,
+   "level_byte": 64,
+   "hist": [
+    927,
+    1687,
+    851,
+    2756
+   ]
+  },
+  {
+   "seed": 50074,
+   "cleared": true,
+   "steps": 1551,
+   "score": 6260.0,
+   "eaten": 154,
+   "deaths": 3,
+   "boards": {
+    "1": {
+     "items": 154,
+     "deaths": 2,
+     "start_step": 0,
+     "start_score": 0.0
+    },
+    "2": {
+     "items": 120,
+     "deaths": 1,
+     "start_step": 1031,
+     "start_score": 4500.0
+    }
+   },
+   "max_board": 2,
+   "clears": 1,
+   "cap_hit": false,
+   "total_items": 274,
+   "level_byte": 42,
+   "hist": [
+    423,
+    326,
+    408,
+    394
+   ]
+  },
+  {
+   "seed": 50075,
+   "cleared": false,
+   "steps": 941,
+   "score": 2290.0,
+   "eaten": 153,
+   "deaths": 3,
+   "boards": {
+    "1": {
+     "items": 153,
+     "deaths": 3,
+     "start_step": 0,
+     "start_score": 0.0
+    }
+   },
+   "max_board": 1,
+   "clears": 0,
+   "cap_hit": false,
+   "total_items": 153,
+   "level_byte": 20,
+   "hist": [
+    289,
+    225,
+    166,
+    261
+   ]
+  },
+  {
+   "seed": 50076,
+   "cleared": true,
+   "steps": 5759,
+   "score": 6410.0,
+   "eaten": 154,
+   "deaths": 3,
+   "boards": {
+    "1": {
+     "items": 154,
+     "deaths": 1,
+     "start_step": 0,
+     "start_score": 0.0
+    },
+    "2": {
+     "items": 154,
+     "deaths": 1,
+     "start_step": 833,
+     "start_score": 1900.0
+    },
+    "3": {
+     "items": 95,
+     "deaths": 1,
+     "start_step": 2019,
+     "start_score": 4600.0
+    }
+   },
+   "max_board": 3,
+   "clears": 2,
+   "cap_hit": false,
+   "total_items": 403,
+   "level_byte": 64,
+   "hist": [
+    730,
+    2093,
+    631,
+    2305
+   ]
+  },
+  {
+   "seed": 50077,
+   "cleared": true,
+   "steps": 3021,
+   "score": 6250.0,
+   "eaten": 154,
+   "deaths": 3,
+   "boards": {
+    "1": {
+     "items": 154,
+     "deaths": 1,
+     "start_step": 0,
+     "start_score": 0.0
+    },
+    "2": {
+     "items": 149,
+     "deaths": 2,
+     "start_step": 1101,
+     "start_score": 3400.0
+    }
+   },
+   "max_board": 2,
+   "clears": 1,
+   "cap_hit": false,
+   "total_items": 303,
+   "level_byte": 42,
+   "hist": [
+    934,
+    576,
+    692,
+    819
+   ]
+  },
+  {
+   "seed": 50078,
+   "cleared": true,
+   "steps": 5369,
+   "score": 6550.0,
+   "eaten": 154,
+   "deaths": 3,
+   "boards": {
+    "1": {
+     "items": 154,
+     "deaths": 1,
+     "start_step": 0,
+     "start_score": 0.0
+    },
+    "2": {
+     "items": 154,
+     "deaths": 0,
+     "start_step": 1491,
+     "start_score": 2100.0
+    },
+    "3": {
+     "items": 99,
+     "deaths": 2,
+     "start_step": 2543,
+     "start_score": 4800.0
+    }
+   },
+   "max_board": 3,
+   "clears": 2,
+   "cap_hit": false,
+   "total_items": 407,
+   "level_byte": 64,
+   "hist": [
+    864,
+    1557,
+    864,
+    2084
+   ]
+  },
+  {
+   "seed": 50079,
+   "cleared": false,
+   "steps": 867,
+   "score": 2650.0,
+   "eaten": 149,
+   "deaths": 3,
+   "boards": {
+    "1": {
+     "items": 149,
+     "deaths": 3,
+     "start_step": 0,
+     "start_score": 0.0
+    }
+   },
+   "max_board": 1,
+   "clears": 0,
+   "cap_hit": false,
+   "total_items": 149,
+   "level_byte": 20,
+   "hist": [
+    255,
+    139,
+    280,
+    193
+   ]
+  },
+  {
+   "seed": 50080,
+   "cleared": true,
+   "steps": 2307,
+   "score": 6070.0,
+   "eaten": 154,
+   "deaths": 3,
+   "boards": {
+    "1": {
+     "items": 154,
+     "deaths": 1,
+     "start_step": 0,
+     "start_score": 0.0
+    },
+    "2": {
+     "items": 151,
+     "deaths": 2,
+     "start_step": 1357,
+     "start_score": 3000.0
+    }
+   },
+   "max_board": 2,
+   "clears": 1,
+   "cap_hit": false,
+   "total_items": 305,
+   "level_byte": 42,
+   "hist": [
+    716,
+    467,
+    561,
+    563
+   ]
+  },
+  {
+   "seed": 50081,
+   "cleared": true,
+   "steps": 2725,
+   "score": 7820.0,
+   "eaten": 154,
+   "deaths": 3,
+   "boards": {
+    "1": {
+     "items": 154,
+     "deaths": 0,
+     "start_step": 0,
+     "start_score": 0.0
+    },
+    "2": {
+     "items": 154,
+     "deaths": 1,
+     "start_step": 1113,
+     "start_score": 3100.0
+    },
+    "3": {
+     "items": 106,
+     "deaths": 2,
+     "start_step": 2009,
+     "start_score": 6400.0
+    }
+   },
+   "max_board": 3,
+   "clears": 2,
+   "cap_hit": false,
+   "total_items": 414,
+   "level_byte": 64,
+   "hist": [
+    742,
+    536,
+    718,
+    729
+   ]
+  },
+  {
+   "seed": 50082,
+   "cleared": true,
+   "steps": 1995,
+   "score": 5980.0,
+   "eaten": 154,
+   "deaths": 3,
+   "boards": {
+    "1": {
+     "items": 154,
+     "deaths": 1,
+     "start_step": 0,
+     "start_score": 0.0
+    },
+    "2": {
+     "items": 152,
+     "deaths": 2,
+     "start_step": 931,
+     "start_score": 3300.0
+    }
+   },
+   "max_board": 2,
+   "clears": 1,
+   "cap_hit": false,
+   "total_items": 306,
+   "level_byte": 42,
+   "hist": [
+    612,
+    326,
+    549,
+    508
+   ]
+  },
+  {
+   "seed": 50083,
+   "cleared": true,
+   "steps": 2697,
+   "score": 5490.0,
+   "eaten": 154,
+   "deaths": 3,
+   "boards": {
+    "1": {
+     "items": 154,
+     "deaths": 0,
+     "start_step": 0,
+     "start_score": 0.0
+    },
+    "2": {
+     "items": 153,
+     "deaths": 3,
+     "start_step": 835,
+     "start_score": 2400.0
+    }
+   },
+   "max_board": 2,
+   "clears": 1,
+   "cap_hit": false,
+   "total_items": 307,
+   "level_byte": 42,
+   "hist": [
+    851,
+    492,
+    690,
+    664
+   ]
+  },
+  {
+   "seed": 50084,
+   "cleared": true,
+   "steps": 2021,
+   "score": 4890.0,
+   "eaten": 154,
+   "deaths": 3,
+   "boards": {
+    "1": {
+     "items": 154,
+     "deaths": 2,
+     "start_step": 0,
+     "start_score": 0.0
+    },
+    "2": {
+     "items": 153,
+     "deaths": 1,
+     "start_step": 1037,
+     "start_score": 2000.0
+    }
+   },
+   "max_board": 2,
+   "clears": 1,
+   "cap_hit": false,
+   "total_items": 307,
+   "level_byte": 42,
+   "hist": [
+    623,
+    332,
+    529,
+    537
+   ]
+  },
+  {
+   "seed": 50085,
+   "cleared": true,
+   "steps": 6937,
+   "score": 7230.0,
+   "eaten": 154,
+   "deaths": 3,
+   "boards": {
+    "1": {
+     "items": 154,
+     "deaths": 0,
+     "start_step": 0,
+     "start_score": 0.0
+    },
+    "2": {
+     "items": 154,
+     "deaths": 2,
+     "start_step": 1107,
+     "start_score": 3300.0
+    },
+    "3": {
+     "items": 87,
+     "deaths": 1,
+     "start_step": 3335,
+     "start_score": 6000.0
+    }
+   },
+   "max_board": 3,
+   "clears": 2,
+   "cap_hit": false,
+   "total_items": 395,
+   "level_byte": 64,
+   "hist": [
+    1162,
+    2009,
+    1045,
+    2721
+   ]
+  },
+  {
+   "seed": 50086,
+   "cleared": true,
+   "steps": 1659,
+   "score": 4110.0,
+   "eaten": 154,
+   "deaths": 3,
+   "boards": {
+    "1": {
+     "items": 154,
+     "deaths": 2,
+     "start_step": 0,
+     "start_score": 0.0
+    },
+    "2": {
+     "items": 125,
+     "deaths": 1,
+     "start_step": 995,
+     "start_score": 1900.0
+    }
+   },
+   "max_board": 2,
+   "clears": 1,
+   "cap_hit": false,
+   "total_items": 279,
+   "level_byte": 42,
+   "hist": [
+    491,
+    272,
+    471,
+    425
+   ]
+  },
+  {
+   "seed": 50087,
+   "cleared": true,
+   "steps": 1801,
+   "score": 4340.0,
+   "eaten": 154,
+   "deaths": 3,
+   "boards": {
+    "1": {
+     "items": 154,
+     "deaths": 1,
+     "start_step": 0,
+     "start_score": 0.0
+    },
+    "2": {
+     "items": 148,
+     "deaths": 2,
+     "start_step": 865,
+     "start_score": 2100.0
+    }
+   },
+   "max_board": 2,
+   "clears": 1,
+   "cap_hit": false,
+   "total_items": 302,
+   "level_byte": 42,
+   "hist": [
+    516,
+    293,
+    529,
+    463
+   ]
+  },
+  {
+   "seed": 50088,
+   "cleared": true,
+   "steps": 1869,
+   "score": 5270.0,
+   "eaten": 154,
+   "deaths": 3,
+   "boards": {
+    "1": {
+     "items": 154,
+     "deaths": 0,
+     "start_step": 0,
+     "start_score": 0.0
+    },
+    "2": {
+     "items": 151,
+     "deaths": 3,
+     "start_step": 897,
+     "start_score": 2200.0
+    }
+   },
+   "max_board": 2,
+   "clears": 1,
+   "cap_hit": false,
+   "total_items": 305,
+   "level_byte": 42,
+   "hist": [
+    541,
+    312,
+    518,
+    498
+   ]
+  },
+  {
+   "seed": 50089,
+   "cleared": true,
+   "steps": 3039,
+   "score": 5850.0,
+   "eaten": 154,
+   "deaths": 3,
+   "boards": {
+    "1": {
+     "items": 154,
+     "deaths": 2,
+     "start_step": 0,
+     "start_score": 0.0
+    },
+    "2": {
+     "items": 149,
+     "deaths": 1,
+     "start_step": 1317,
+     "start_score": 3400.0
+    }
+   },
+   "max_board": 2,
+   "clears": 1,
+   "cap_hit": false,
+   "total_items": 303,
+   "level_byte": 42,
+   "hist": [
+    922,
+    463,
+    875,
+    779
+   ]
+  },
+  {
+   "seed": 50090,
+   "cleared": true,
+   "steps": 2291,
+   "score": 4890.0,
+   "eaten": 154,
+   "deaths": 3,
+   "boards": {
+    "1": {
+     "items": 154,
+     "deaths": 1,
+     "start_step": 0,
+     "start_score": 0.0
+    },
+    "2": {
+     "items": 153,
+     "deaths": 2,
+     "start_step": 835,
+     "start_score": 2200.0
+    }
+   },
+   "max_board": 2,
+   "clears": 1,
+   "cap_hit": false,
+   "total_items": 307,
+   "level_byte": 42,
+   "hist": [
+    702,
+    406,
+    601,
+    582
+   ]
+  },
+  {
+   "seed": 50091,
+   "cleared": true,
+   "steps": 1981,
+   "score": 4750.0,
+   "eaten": 154,
+   "deaths": 3,
+   "boards": {
+    "1": {
+     "items": 154,
+     "deaths": 2,
+     "start_step": 0,
+     "start_score": 0.0
+    },
+    "2": {
+     "items": 149,
+     "deaths": 1,
+     "start_step": 1065,
+     "start_score": 2300.0
+    }
+   },
+   "max_board": 2,
+   "clears": 1,
+   "cap_hit": false,
+   "total_items": 303,
+   "level_byte": 42,
+   "hist": [
+    571,
+    378,
+    505,
+    527
+   ]
+  },
+  {
+   "seed": 50092,
+   "cleared": true,
+   "steps": 2823,
+   "score": 7350.0,
+   "eaten": 154,
+   "deaths": 3,
+   "boards": {
+    "1": {
+     "items": 154,
+     "deaths": 0,
+     "start_step": 0,
+     "start_score": 0.0
+    },
+    "2": {
+     "items": 154,
+     "deaths": 2,
+     "start_step": 1003,
+     "start_score": 3100.0
+    },
+    "3": {
+     "items": 89,
+     "deaths": 1,
+     "start_step": 2175,
+     "start_score": 5200.0
+    }
+   },
+   "max_board": 3,
+   "clears": 2,
+   "cap_hit": false,
+   "total_items": 397,
+   "level_byte": 64,
+   "hist": [
+    755,
+    474,
+    732,
+    862
+   ]
+  },
+  {
+   "seed": 50093,
+   "cleared": true,
+   "steps": 3019,
+   "score": 5550.0,
+   "eaten": 154,
+   "deaths": 3,
+   "boards": {
+    "1": {
+     "items": 154,
+     "deaths": 1,
+     "start_step": 0,
+     "start_score": 0.0
+    },
+    "2": {
+     "items": 154,
+     "deaths": 0,
+     "start_step": 969,
+     "start_score": 2300.0
+    },
+    "3": {
+     "items": 99,
+     "deaths": 2,
+     "start_step": 2149,
+     "start_score": 4400.0
+    }
+   },
+   "max_board": 3,
+   "clears": 2,
+   "cap_hit": false,
+   "total_items": 407,
+   "level_byte": 64,
+   "hist": [
+    679,
+    565,
+    749,
+    1026
+   ]
+  },
+  {
+   "seed": 50094,
+   "cleared": true,
+   "steps": 6807,
+   "score": 6610.0,
+   "eaten": 154,
+   "deaths": 3,
+   "boards": {
+    "1": {
+     "items": 154,
+     "deaths": 1,
+     "start_step": 0,
+     "start_score": 0.0
+    },
+    "2": {
+     "items": 154,
+     "deaths": 1,
+     "start_step": 1085,
+     "start_score": 2300.0
+    },
+    "3": {
+     "items": 95,
+     "deaths": 1,
+     "start_step": 2179,
+     "start_score": 4800.0
+    }
+   },
+   "max_board": 3,
+   "clears": 2,
+   "cap_hit": false,
+   "total_items": 403,
+   "level_byte": 64,
+   "hist": [
+    848,
+    2181,
+    765,
+    3013
+   ]
+  },
+  {
+   "seed": 50095,
+   "cleared": true,
+   "steps": 4107,
+   "score": 7330.0,
+   "eaten": 154,
+   "deaths": 3,
+   "boards": {
+    "1": {
+     "items": 154,
+     "deaths": 1,
+     "start_step": 0,
+     "start_score": 0.0
+    },
+    "2": {
+     "items": 154,
+     "deaths": 1,
+     "start_step": 875,
+     "start_score": 3400.0
+    },
+    "3": {
+     "items": 87,
+     "deaths": 1,
+     "start_step": 1945,
+     "start_score": 5900.0
+    }
+   },
+   "max_board": 3,
+   "clears": 2,
+   "cap_hit": false,
+   "total_items": 395,
+   "level_byte": 64,
+   "hist": [
+    674,
+    821,
+    629,
+    1983
+   ]
+  },
+  {
+   "seed": 50096,
+   "cleared": true,
+   "steps": 2905,
+   "score": 5650.0,
+   "eaten": 154,
+   "deaths": 3,
+   "boards": {
+    "1": {
+     "items": 154,
+     "deaths": 1,
+     "start_step": 0,
+     "start_score": 0.0
+    },
+    "2": {
+     "items": 154,
+     "deaths": 0,
+     "start_step": 879,
+     "start_score": 2000.0
+    },
+    "3": {
+     "items": 99,
+     "deaths": 2,
+     "start_step": 2209,
+     "start_score": 4300.0
+    }
+   },
+   "max_board": 3,
+   "clears": 2,
+   "cap_hit": false,
+   "total_items": 407,
+   "level_byte": 64,
+   "hist": [
+    738,
+    516,
+    788,
+    863
+   ]
+  },
+  {
+   "seed": 50097,
+   "cleared": true,
+   "steps": 3469,
+   "score": 6630.0,
+   "eaten": 154,
+   "deaths": 3,
+   "boards": {
+    "1": {
+     "items": 154,
+     "deaths": 1,
+     "start_step": 0,
+     "start_score": 0.0
+    },
+    "2": {
+     "items": 154,
+     "deaths": 1,
+     "start_step": 1001,
+     "start_score": 2000.0
+    },
+    "3": {
+     "items": 87,
+     "deaths": 1,
+     "start_step": 1975,
+     "start_score": 4900.0
+    }
+   },
+   "max_board": 3,
+   "clears": 2,
+   "cap_hit": false,
+   "total_items": 395,
+   "level_byte": 64,
+   "hist": [
+    731,
+    815,
+    677,
+    1246
+   ]
+  },
+  {
+   "seed": 50098,
+   "cleared": true,
+   "steps": 2651,
+   "score": 5840.0,
+   "eaten": 154,
+   "deaths": 3,
+   "boards": {
+    "1": {
+     "items": 154,
+     "deaths": 2,
+     "start_step": 0,
+     "start_score": 0.0
+    },
+    "2": {
+     "items": 148,
+     "deaths": 1,
+     "start_step": 1497,
+     "start_score": 2200.0
+    }
+   },
+   "max_board": 2,
+   "clears": 1,
+   "cap_hit": false,
+   "total_items": 302,
+   "level_byte": 42,
+   "hist": [
+    809,
+    529,
+    635,
+    678
+   ]
+  },
+  {
+   "seed": 50099,
+   "cleared": false,
+   "steps": 1445,
+   "score": 2190.0,
+   "eaten": 153,
+   "deaths": 3,
+   "boards": {
+    "1": {
+     "items": 153,
+     "deaths": 3,
+     "start_step": 0,
+     "start_score": 0.0
+    }
+   },
+   "max_board": 1,
+   "clears": 0,
+   "cap_hit": false,
+   "total_items": 153,
+   "level_byte": 20,
+   "hist": [
+    414,
+    230,
+    433,
+    368
+   ]
+  }
+ ]
+}
