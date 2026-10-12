@@ -1,0 +1,5 @@
+=== 2026-10-12 11:17:09 start [m10hra]
+board 2: {"n": 87.0, "clear_rate": 0.345, "clear_se": 0.051, "items_mean": 124.609, "items_eaten_from_snapshot": 124.609, "deaths_mean": 1.414, "game_over": 0.655, "chan0_mean": 150.0, "true_left0_mean": 154.0, "chan_tracks_eat": 0.978}
+board 3: {"n": 27.0, "clear_rate": 0.0, "clear_se": 0.0, "items_mean": 72.037, "items_eaten_from_snapshot": 72.037, "deaths_mean": 1.296, "game_over": 1.0, "chan0_mean": 150.0, "true_left0_mean": 154.0, "chan_tracks_eat": 0.846}
+wall 23s
+=== 2026-10-12 11:17:32 finished [m10hra] exit 0
