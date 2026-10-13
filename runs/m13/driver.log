@@ -217,3 +217,6 @@
 [11:44:06] upd 825 11.40M sps 2447 (roll 2.6s train 3.1s) kl1 0.040 ent 0.202 cf 0.032 vl 0.460 EV 0.94 boards>=3 0.62 b1-start clears 1.52 b3-start clear 0.0 items 71.7 late-start clear 0.0 pools {'early': 1080, 'late': 1080, 'vlate': 1080}
 [11:44:36] upd 830 11.47M sps 2330 (roll 2.6s train 3.3s) kl1 0.052 ent 0.204 cf 0.052 vl 0.438 EV 0.95 boards>=3 0.64 b1-start clears 1.47 b3-start clear 0.0 items 72.4 late-start clear 0.0 pools {'early': 1080, 'late': 1080, 'vlate': 1080}
 [11:45:07] upd 835 11.54M sps 2278 (roll 2.7s train 3.4s) kl1 0.052 ent 0.218 cf 0.045 vl 0.183 EV 0.96 boards>=3 0.68 b1-start clears 1.4 b3-start clear 0.0 items 72.0 late-start clear 0.0 pools {'early': 1080, 'late': 1080, 'vlate': 1080}
+[11:45:34] STOP file: saved ckpt_last.pt at update 839, exiting 3
+=== clean STOP; not retrying
+=== 2026-10-13 11:45:39 finished [m13run] exit 0
