@@ -64,6 +64,7 @@ RENAME.update(RENAME_BASE)
 RENAME["m12"] = {"train": dict(RENAME_BASE["m11"]["train"]),
                  "eval": dict(RENAME_BASE["m11"]["eval"], late3_clear="late3/clear", late3_left0="late3/left0",
                               late3_items_frac="late3/items_frac")}
+RENAME["m13"] = {"train": dict(RENAME["m12"]["train"]), "eval": dict(RENAME["m12"]["eval"], mb_lives_b3="multiboard/lives_b3")}
 
 
 def renamed(run, row):

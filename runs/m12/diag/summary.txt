@@ -1,0 +1,6 @@
+rollouts 366  deaths 289  clears 0  cap 77
+nearest ghost at death: sue 55, inky 53, pinky 54, blinky 127
+decisions since last item at death: median 69, p25 33, p75 159
+items eaten from 60 left: mean 8.4
+distinct 4px cells in last 60 decisions: median 19
+entropy first20 0.617 last20 0.894; value first20 -1.17 last20 -3.85

@@ -1,0 +1,14 @@
+=== 2026-10-13 09:17:30 start [m13smoke]
+[09:17:34] config {"INIT": "runs/m12/best.pt", "INIT_VH": "runs/m12/ckpt_last.pt", "RW_DEATH12": 10.0, "ARRIVE_BONUS": 2.0, "SHAPE_K": 0.005, "SHAPE_LEFT": 60, "NW": 18, "PER": 6, "T": 128, "EPOCHS": 2, "NMB": 9, "GAMMA": 0.995, "LAM": 0.95, "CLIP": 0.1, "LR_PI": 5e-05, "LR_V": 0.0003, "VF": 0.5, "ENT": 0.001, "BETA": 0.05, "TAU": 0.25, "VWARM": 10, "MAX_GRAD": 0.5, "RW": [0.1, 0.0005, 10.0, 5.0, 2.0], "STALL": [10.0, 150.0, 0.005, 0.01], "P_B1": 0.2, "P_B2": 0.25, "P_HARVEST": 0.5, "P_LATE": 0.6, "P_VLATE": 0.5, "EVAL_LATE_REP": 1, "POOL_CAP": 60, "MAX_STEPS": 8000, "EVAL_EVERY": 15, "EVAL_MB_N": 6, "EVAL_SNAP_REP": 1, "EVAL_WORKERS": 8, "MIN_B1": 0.75, "N_TEST": 7, "CKPT_S": 120.0, "DEADLINE": Infinity, "MAX_UPDATES": 15, "ARCH": {"n_actions": 4, "d": 512, "n_heads": 8, "n_layers": 2, "window": 8, "lam": 0.05}, "N": 108, "b3_train": 39, "b3_test": 7, "test_seeds": [50005, 50008, 50024, 50030, 50044, 50057, 50073], "b2": 87, "late_files": 315, "late_test": 36, "init_update": null}
+
+
+
+
+
+[09:19:15] EVAL upd 0 (0.00M): b1 clear 0.93  multiboard clears 1.67 reach3 0.83 reach4 0.00 b3 items 87.0  snap3 clear 0.00 items 85.9 deaths 1.14  late3 clear 0.00 (from 60 left, ate 0.15)  (95s)  *best*
+[09:19:37] upd 5 0.07M sps 2999 (roll 3.5s train 1.1s) kl1 0.000 ent 0.000 cf 0.000 vl 0.593 EV 0.90 boards>=3 0.31 b1-start clears None b3-start clear 0.0 items 84.3 late-start clear 0.0 pools {'early': 59, 'late': 1080, 'vlate': 128}
+[09:19:58] upd 10 0.14M sps 3007 (roll 3.4s train 1.2s) kl1 0.000 ent 0.000 cf 0.000 vl 0.424 EV 0.95 boards>=3 0.39 b1-start clears 0.0 b3-start clear 0.0 items 86.7 late-start clear 0.0 pools {'early': 108, 'late': 1080, 'vlate': 159}
+[09:20:28] upd 15 0.21M sps 2234 (roll 3.2s train 3.0s) kl1 0.014 ent 0.307 cf 0.051 vl 0.595 EV 0.93 boards>=3 0.39 b1-start clears 0.73 b3-start clear 0.0 items 84.7 late-start clear 0.0 pools {'early': 141, 'late': 1080, 'vlate': 184}
+[09:22:17] EVAL upd 15 (0.21M): b1 clear 0.99  multiboard clears 1.67 reach3 0.67 reach4 0.00 b3 items 98.0  snap3 clear 0.00 items 89.6 deaths 1.14  late3 clear 0.00 (from 60 left, ate 0.13)  (109s)
+[09:22:18] done
+=== 2026-10-13 09:22:19 finished [m13smoke] exit 0

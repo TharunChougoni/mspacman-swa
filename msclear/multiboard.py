@@ -25,7 +25,7 @@ class MultiGame(PixelGame):
         self.seed = int(seed)
         self.cur = R.board(self.ram)
         self._final_counted = False
-        self.boards = {self.cur: dict(items=0, deaths=0, start_step=0, start_score=0.0)}
+        self.boards = {self.cur: dict(items=0, deaths=0, start_step=0, start_score=0.0, lives=int(self.ram[R.LIVES]) & 7)}
         return out
 
     def step(self, k):
@@ -34,7 +34,8 @@ class MultiGame(PixelGame):
         b = R.board(r)
         if b != self.cur:
             self.cur = b
-            self.boards[b] = dict(items=0, deaths=0, start_step=self.steps, start_score=float(self.score))
+            self.boards[b] = dict(items=0, deaths=0, start_step=self.steps, start_score=float(self.score),
+                                  lives=int(r[R.LIVES]) & 7)                 # spare lives on arrival
             if self.states_dir and b >= 2:
                 from msclear.endgame_env import _book
                 p = os.path.join(self.states_dir, f"seed{self.seed}_board{b}.pkl")

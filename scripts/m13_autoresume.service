@@ -1,0 +1,10 @@
+[Unit]
+Description=Resume the M13 Ms. Pac-Man PPO run after a reboot (see scripts/m13_autoresume.sh)
+After=default.target
+
+[Service]
+Type=oneshot
+ExecStart=%h/HermesWorkspace/mspacman-clear/scripts/m13_autoresume.sh
+
+[Install]
+WantedBy=default.target

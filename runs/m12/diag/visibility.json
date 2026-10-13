@@ -1,0 +1,20 @@
+{
+ "maze1": {
+  "n_dots": 150,
+  "dot_gray": 146,
+  "wall_gray": 146,
+  "bg_gray": 32,
+  "dot_signal_84_mean": 73.18666666666667,
+  "dot_signal_84_min": 9,
+  "dot_signal_84_p10": 46.0
+ },
+ "maze2": {
+  "n_dots": 57,
+  "dot_gray": 121,
+  "wall_gray": 121,
+  "bg_gray": 32,
+  "dot_signal_84_mean": 54.40350877192982,
+  "dot_signal_84_min": 13,
+  "dot_signal_84_p10": 36.0
+ }
+}
