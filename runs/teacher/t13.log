@@ -1,0 +1,13 @@
+=== 2026-10-13 12:33:20 start [teacher2]
+REPLAN=2 HYST=1 GHOST_R=16 MIXMAX=0.5 H=40 R=6 COMMIT=2 EPS=0.15 jobs=9
+{"src": "seed50008_board3_s_r2_l060.pkl", "rep": 0, "start_board": 3, "end_board": 3, "cleared": false, "boards_cleared": 0, "deaths": 1, "game_over": true, "decisions": 152, "sec": 76.96150326728821, "start_items": 94, "end_items": 96}
+{"src": "seed50008_board3_s_r11_l060.pkl", "rep": 0, "start_board": 3, "end_board": 3, "cleared": false, "boards_cleared": 0, "deaths": 1, "game_over": true, "decisions": 175, "sec": 90.48440790176392, "start_items": 94, "end_items": 120}
+{"src": "seed50008_board3_s_r6_l060.pkl", "rep": 0, "start_board": 3, "end_board": 3, "cleared": false, "boards_cleared": 0, "deaths": 1, "game_over": true, "decisions": 377, "sec": 210.79545187950134, "start_items": 94, "end_items": 124}
+{"src": "seed50008_board3_s_r4_l060.pkl", "rep": 0, "start_board": 3, "end_board": 3, "cleared": false, "boards_cleared": 0, "deaths": 1, "game_over": true, "decisions": 396, "sec": 213.4259672164917, "start_items": 94, "end_items": 130}
+{"src": "seed50008_board3_s_r0_l060.pkl", "rep": 0, "start_board": 3, "end_board": 3, "cleared": false, "boards_cleared": 0, "deaths": 1, "game_over": true, "decisions": 602, "sec": 289.88536763191223, "start_items": 94, "end_items": 146}
+{"src": "seed50008_board3_r6_l060.pkl", "rep": 0, "start_board": 3, "end_board": 3, "cleared": false, "boards_cleared": 0, "deaths": 1, "game_over": true, "decisions": 584, "sec": 308.1253910064697, "start_items": 94, "end_items": 133}
+{"src": "seed50008_board3_r4_l060.pkl", "rep": 0, "start_board": 3, "end_board": 3, "cleared": false, "boards_cleared": 0, "deaths": 1, "game_over": true, "decisions": 681, "sec": 316.5086524486542, "start_items": 94, "end_items": 141}
+{"src": "seed50008_board3_r2_l060.pkl", "rep": 0, "start_board": 3, "end_board": 3, "cleared": false, "boards_cleared": 0, "deaths": 1, "game_over": true, "decisions": 706, "sec": 317.4505441188812, "start_items": 94, "end_items": 145}
+{"src": "seed50008_board3_r0_l060.pkl", "rep": 0, "start_board": 3, "end_board": 3, "cleared": false, "boards_cleared": 0, "deaths": 1, "game_over": true, "decisions": 1042, "sec": 429.46810817718506, "start_items": 94, "end_items": 148}
+SUMMARY {"REPLAN": 2, "HYST": "1", "GHOST_R": "16", "MIXMAX": "0.5", "H": 40, "R": 6, "COMMIT": 2, "EPS": 0.15, "n": 9, "clear_rate": 0.0, "deaths_mean": 1.0, "game_over": 1.0, "decisions": 4715, "wall_s": 437.48024582862854, "dec_per_s": 10.777629492891384, "dec_per_s_worker": 2.092667308547711}
+=== 2026-10-13 12:40:38 finished [teacher2] exit 0

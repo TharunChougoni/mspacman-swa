@@ -1,0 +1,46 @@
+=== 2026-10-13 12:20:30 start [teacher2]
+REPLAN=2 HYST=1 GHOST_R=16 MIXMAX=0.5 H=48 R=6 COMMIT=2 EPS=0.15 jobs=9
+{"src": "seed50008_board3_s_r4_l060.pkl", "rep": 0, "start_board": 3, "end_board": 3, "cleared": false, "boards_cleared": 0, "deaths": 1, "game_over": true, "decisions": 146, "sec": 57.9908492565155, "start_items": 94, "end_items": 99}
+{"src": "seed50008_board3_r0_l060.pkl", "rep": 0, "start_board": 3, "end_board": 3, "cleared": false, "boards_cleared": 0, "deaths": 1, "game_over": true, "decisions": 296, "sec": 107.837899684906, "start_items": 94, "end_items": 111}
+{"src": "seed50008_board3_s_r11_l060.pkl", "rep": 0, "start_board": 3, "end_board": 3, "cleared": false, "boards_cleared": 0, "deaths": 1, "game_over": true, "decisions": 365, "sec": 130.89577269554138, "start_items": 94, "end_items": 109}
+{"src": "seed50008_board3_s_r6_l060.pkl", "rep": 0, "start_board": 3, "end_board": 3, "cleared": false, "boards_cleared": 0, "deaths": 1, "game_over": true, "decisions": 299, "sec": 131.83637285232544, "start_items": 94, "end_items": 100}
+{"src": "seed50008_board3_r2_l060.pkl", "rep": 0, "start_board": 3, "end_board": 3, "cleared": false, "boards_cleared": 0, "deaths": 1, "game_over": true, "decisions": 400, "sec": 140.89946579933167, "start_items": 94, "end_items": 127}
+{"src": "seed50008_board3_r4_l060.pkl", "rep": 0, "start_board": 3, "end_board": 3, "cleared": false, "boards_cleared": 0, "deaths": 1, "game_over": true, "decisions": 449, "sec": 148.38825511932373, "start_items": 94, "end_items": 109}
+{"src": "seed50008_board3_s_r0_l060.pkl", "rep": 0, "start_board": 3, "end_board": 3, "cleared": false, "boards_cleared": 0, "deaths": 1, "game_over": true, "decisions": 596, "sec": 184.87984347343445, "start_items": 94, "end_items": 131}
+{"src": "seed50008_board3_r6_l060.pkl", "rep": 0, "start_board": 3, "end_board": 3, "cleared": false, "boards_cleared": 0, "deaths": 1, "game_over": true, "decisions": 676, "sec": 213.06270813941956, "start_items": 94, "end_items": 138}
+Process SpawnPoolWorker-3:
+Traceback (most recent call last):
+  File "/home/tharun/.local/share/uv/python/cpython-3.11.15-linux-x86_64-gnu/lib/python3.11/multiprocessing/pool.py", line 131, in worker
+    put((job, i, result))
+  File "/home/tharun/.local/share/uv/python/cpython-3.11.15-linux-x86_64-gnu/lib/python3.11/multiprocessing/queues.py", line 377, in put
+    self._writer.send_bytes(obj)
+  File "/home/tharun/.local/share/uv/python/cpython-3.11.15-linux-x86_64-gnu/lib/python3.11/multiprocessing/connection.py", line 200, in send_bytes
+    self._send_bytes(m[offset:offset + size])
+  File "/home/tharun/.local/share/uv/python/cpython-3.11.15-linux-x86_64-gnu/lib/python3.11/multiprocessing/connection.py", line 427, in _send_bytes
+    self._send(header + buf)
+  File "/home/tharun/.local/share/uv/python/cpython-3.11.15-linux-x86_64-gnu/lib/python3.11/multiprocessing/connection.py", line 384, in _send
+    n = write(self._handle, buf)
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+BrokenPipeError: [Errno 32] Broken pipe
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/tharun/.local/share/uv/python/cpython-3.11.15-linux-x86_64-gnu/lib/python3.11/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/home/tharun/.local/share/uv/python/cpython-3.11.15-linux-x86_64-gnu/lib/python3.11/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/tharun/.local/share/uv/python/cpython-3.11.15-linux-x86_64-gnu/lib/python3.11/multiprocessing/pool.py", line 136, in worker
+    put((job, i, (False, wrapped)))
+  File "/home/tharun/.local/share/uv/python/cpython-3.11.15-linux-x86_64-gnu/lib/python3.11/multiprocessing/queues.py", line 377, in put
+    self._writer.send_bytes(obj)
+  File "/home/tharun/.local/share/uv/python/cpython-3.11.15-linux-x86_64-gnu/lib/python3.11/multiprocessing/connection.py", line 200, in send_bytes
+    self._send_bytes(m[offset:offset + size])
+  File "/home/tharun/.local/share/uv/python/cpython-3.11.15-linux-x86_64-gnu/lib/python3.11/multiprocessing/connection.py", line 427, in _send_bytes
+    self._send(header + buf)
+  File "/home/tharun/.local/share/uv/python/cpython-3.11.15-linux-x86_64-gnu/lib/python3.11/multiprocessing/connection.py", line 384, in _send
+    n = write(self._handle, buf)
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+BrokenPipeError: [Errno 32] Broken pipe
+/home/tharun/.local/share/uv/python/cpython-3.11.15-linux-x86_64-gnu/lib/python3.11/multiprocessing/resource_tracker.py:254: UserWarning: resource_tracker: There appear to be 6 leaked semaphore objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '

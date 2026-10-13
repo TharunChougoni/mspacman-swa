@@ -1,0 +1,22 @@
+=== 2026-10-13 11:49:39 start [teacher]
+H=40 R=4 COMMIT=4 EPS=0.15 jobs=36
+{"src": "seed50008_board3_s_r5_l060.pkl", "rep": 0, "start_board": 3, "end_board": 3, "cleared": false, "boards_cleared": 0, "deaths": 1, "game_over": true, "decisions": 131, "sec": 84.8772075176239, "start_left": null}
+{"src": "seed50008_board3_r3_l060.pkl", "rep": 0, "start_board": 3, "end_board": 3, "cleared": false, "boards_cleared": 0, "deaths": 1, "game_over": true, "decisions": 156, "sec": 98.20332551002502, "start_left": null}
+{"src": "seed50008_board3_r1_l060.pkl", "rep": 0, "start_board": 3, "end_board": 3, "cleared": false, "boards_cleared": 0, "deaths": 1, "game_over": true, "decisions": 151, "sec": 98.75510454177856, "start_left": null}
+{"src": "seed50008_board3_r7_l060.pkl", "rep": 0, "start_board": 3, "end_board": 3, "cleared": false, "boards_cleared": 0, "deaths": 1, "game_over": true, "decisions": 160, "sec": 100.75906014442444, "start_left": null}
+{"src": "seed50008_board3_r0_l060.pkl", "rep": 0, "start_board": 3, "end_board": 3, "cleared": false, "boards_cleared": 0, "deaths": 1, "game_over": true, "decisions": 162, "sec": 103.04755997657776, "start_left": null}
+{"src": "seed50008_board3_s_r11_l060.pkl", "rep": 0, "start_board": 3, "end_board": 3, "cleared": false, "boards_cleared": 0, "deaths": 1, "game_over": true, "decisions": 161, "sec": 103.05751848220825, "start_left": null}
+{"src": "seed50008_board3_s_r6_l060.pkl", "rep": 0, "start_board": 3, "end_board": 3, "cleared": false, "boards_cleared": 0, "deaths": 1, "game_over": true, "decisions": 185, "sec": 111.90259170532227, "start_left": null}
+{"src": "seed50008_board3_s_r3_l060.pkl", "rep": 0, "start_board": 3, "end_board": 3, "cleared": false, "boards_cleared": 0, "deaths": 1, "game_over": true, "decisions": 264, "sec": 169.5088357925415, "start_left": null}
+{"src": "seed50008_board3_s_r8_l060.pkl", "rep": 0, "start_board": 3, "end_board": 3, "cleared": false, "boards_cleared": 0, "deaths": 1, "game_over": true, "decisions": 157, "sec": 93.261803150177, "start_left": null}
+{"src": "seed50008_board3_s_r10_l060.pkl", "rep": 0, "start_board": 3, "end_board": 3, "cleared": false, "boards_cleared": 0, "deaths": 1, "game_over": true, "decisions": 290, "sec": 195.15206146240234, "start_left": null}
+{"src": "seed50008_board3_r6_l060.pkl", "rep": 0, "start_board": 3, "end_board": 3, "cleared": false, "boards_cleared": 0, "deaths": 1, "game_over": true, "decisions": 312, "sec": 205.29425406455994, "start_left": null}
+{"src": "seed50008_board3_s_r0_l060.pkl", "rep": 0, "start_board": 3, "end_board": 3, "cleared": false, "boards_cleared": 0, "deaths": 1, "game_over": true, "decisions": 314, "sec": 206.7582676410675, "start_left": null}
+{"src": "seed50008_board3_s_r9_l060.pkl", "rep": 0, "start_board": 3, "end_board": 3, "cleared": false, "boards_cleared": 0, "deaths": 1, "game_over": true, "decisions": 166, "sec": 108.93964290618896, "start_left": null}
+{"src": "seed50024_board3_r3_l060.pkl", "rep": 0, "start_board": 3, "end_board": 3, "cleared": false, "boards_cleared": 0, "deaths": 1, "game_over": true, "decisions": 163, "sec": 104.47947692871094, "start_left": null}
+{"src": "seed50008_board3_s_r4_l060.pkl", "rep": 0, "start_board": 3, "end_board": 3, "cleared": false, "boards_cleared": 0, "deaths": 1, "game_over": true, "decisions": 324, "sec": 210.49981808662415, "start_left": null}
+{"src": "seed50024_board3_r0_l060.pkl", "rep": 0, "start_board": 3, "end_board": 3, "cleared": false, "boards_cleared": 0, "deaths": 1, "game_over": true, "decisions": 185, "sec": 116.01782369613647, "start_left": null}
+{"src": "seed50008_board3_s_r2_l060.pkl", "rep": 0, "start_board": 3, "end_board": 3, "cleared": false, "boards_cleared": 0, "deaths": 1, "game_over": true, "decisions": 366, "sec": 229.0045030117035, "start_left": null}
+{"src": "seed50008_board3_s_r7_l060.pkl", "rep": 0, "start_board": 3, "end_board": 3, "cleared": false, "boards_cleared": 0, "deaths": 1, "game_over": true, "decisions": 374, "sec": 232.78051853179932, "start_left": null}
+{"src": "seed50024_board3_r4_l060.pkl", "rep": 0, "start_board": 3, "end_board": 3, "cleared": false, "boards_cleared": 0, "deaths": 1, "game_over": true, "decisions": 227, "sec": 146.2321057319641, "start_left": null}
+{"src": "seed50024_board3_r2_l060.pkl", "rep": 0, "start_board": 3, "end_board": 3, "cleared": false, "boards_cleared": 0, "deaths": 1, "game_over": true, "decisions": 242, "sec": 159.67859888076782, "start_left": null}

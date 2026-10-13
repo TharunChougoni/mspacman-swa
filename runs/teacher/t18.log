@@ -1,0 +1,36 @@
+=== 2026-10-13 14:03:45 start [teacher2]
+REPLAN=2 HYST=0.5 GHOST_R=16 MIXMAX=1 H=40 R=6 COMMIT=2 EPS=0.15 jobs=9
+multiprocessing.pool.RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "/home/tharun/.local/share/uv/python/cpython-3.11.15-linux-x86_64-gnu/lib/python3.11/multiprocessing/pool.py", line 125, in worker
+    result = (True, func(*args, **kwds))
+                    ^^^^^^^^^^^^^^^^^^^
+  File "/home/tharun/HermesWorkspace/mspacman-clear/scripts/teacher_search.py", line 38, in run
+    if a == tch.plan[j] and j < len(tch.best_pos):
+            ~~~~~~~~^^^
+IndexError: list index out of range
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/tharun/HermesWorkspace/mspacman-clear/scripts/teacher_search.py", line 66, in <module>
+    for r in p.imap_unordered(run, jobs):
+  File "/home/tharun/.local/share/uv/python/cpython-3.11.15-linux-x86_64-gnu/lib/python3.11/multiprocessing/pool.py", line 873, in next
+    raise value
+IndexError: list index out of range
+=== 2026-10-13 14:05:18 finished [teacher2] exit 1
+=== 2026-10-13 14:14:34 start [teacher2]
+REPLAN=2 HYST=0.5 GHOST_R=16 MIXMAX=1 H=40 R=6 COMMIT=2 EPS=0.15 jobs=9
+{"src": "seed50008_board3_s_r6_l060.pkl", "rep": 0, "start_board": 3, "end_board": 3, "cleared": false, "boards_cleared": 0, "deaths": 1, "game_over": true, "decisions": 225, "sec": 76.93770408630371, "start_items": 94, "fid_checked": 191, "fid_mismatch": 0, "end_items": 133}
+{"src": "seed50008_board3_s_r0_l060.pkl", "rep": 0, "start_board": 3, "end_board": 4, "cleared": true, "boards_cleared": 1, "deaths": 0, "game_over": false, "decisions": 588, "sec": 170.02308464050293, "start_items": 94, "fid_checked": 463, "fid_mismatch": 0, "end_items": 150}
+{"src": "seed50008_board3_r4_l060.pkl", "rep": 0, "start_board": 3, "end_board": 3, "cleared": false, "boards_cleared": 0, "deaths": 1, "game_over": true, "decisions": 839, "sec": 218.37173533439636, "start_items": 94, "fid_checked": 650, "fid_mismatch": 0, "end_items": 147}
+{"src": "seed50008_board3_r2_l060.pkl", "rep": 0, "start_board": 3, "end_board": 3, "cleared": false, "boards_cleared": 0, "deaths": 1, "game_over": true, "decisions": 1216, "sec": 304.96937799453735, "start_items": 94, "fid_checked": 961, "fid_mismatch": 0, "end_items": 147}
+{"src": "seed50008_board3_r0_l060.pkl", "rep": 0, "start_board": 3, "end_board": 4, "cleared": true, "boards_cleared": 1, "deaths": 0, "game_over": false, "decisions": 1416, "sec": 319.47186613082886, "start_items": 94, "fid_checked": 1173, "fid_mismatch": 0, "end_items": 150}
+{"src": "seed50008_board3_r6_l060.pkl", "rep": 0, "start_board": 3, "end_board": 3, "cleared": false, "boards_cleared": 0, "deaths": 1, "game_over": true, "decisions": 1398, "sec": 326.5136330127716, "start_items": 94, "fid_checked": 1140, "fid_mismatch": 0, "end_items": 148}
+{"src": "seed50008_board3_s_r4_l060.pkl", "rep": 0, "start_board": 3, "end_board": 4, "cleared": true, "boards_cleared": 1, "deaths": 0, "game_over": false, "decisions": 1340, "sec": 349.1163544654846, "start_items": 94, "fid_checked": 1052, "fid_mismatch": 0, "end_items": 150}
+{"src": "seed50008_board3_s_r2_l060.pkl", "rep": 0, "start_board": 3, "end_board": 3, "cleared": false, "boards_cleared": 0, "deaths": 1, "game_over": true, "decisions": 1662, "sec": 392.8330149650574, "start_items": 94, "fid_checked": 1322, "fid_mismatch": 0, "end_items": 148}
+{"src": "seed50008_board3_s_r11_l060.pkl", "rep": 0, "start_board": 3, "end_board": 3, "cleared": false, "boards_cleared": 0, "deaths": 1, "game_over": true, "decisions": 2711, "sec": 526.4776725769043, "start_items": 94, "fid_checked": 2157, "fid_mismatch": 0, "end_items": 147}
+SUMMARY {"REPLAN": 2, "HYST": "0.5", "GHOST_R": "16", "MIXMAX": "1", "H": 40, "R": 6, "COMMIT": 2, "EPS": 0.15, "n": 9, "clear_rate": 0.3333333333333333, "deaths_mean": 0.6666666666666666, "game_over": 0.6666666666666666, "decisions": 11395, "wall_s": 529.2715182304382, "dec_per_s": 21.5295922933808, "dec_per_s_worker": 4.244399261468239}
+=== 2026-10-13 14:23:23 finished [teacher2] exit 0
