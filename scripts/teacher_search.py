@@ -69,6 +69,10 @@ if __name__ == "__main__":
         else:
             srcs += sorted(glob.glob(gl))
     jobs = [(s, r) for s in srcs for r in range(REP)]
+    if DEMO and E("SKIP_DONE", "1") == "1":                     # resume: skip jobs whose demo npz already exists
+        n0 = len(jobs)
+        jobs = [(s, r) for s, r in jobs if not os.path.exists(f"{DEMO}/{s.replace('/', '_').replace('runs_', '')}_r{r}.npz")]
+        print(f"resume: skipping {n0 - len(jobs)} done jobs", flush=True)
     print(f"REPLAN={REPLAN} HYST={E('HYST','3')} GHOST_R={E('GHOST_R','16')} MIXMAX={E('MIXMAX','0.5')} H={H} R={RR} COMMIT={COMMIT} EPS={EPS} jobs={len(jobs)}", flush=True)
     t0 = time.time(); res = []
     with mp.get_context("spawn").Pool(int(E("WORKERS", "16"))) as p:
