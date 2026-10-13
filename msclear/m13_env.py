@@ -3,10 +3,11 @@
 M13 changes (cfg keys, all default off = M12 behaviour):
   rw_death12   death penalty on boards 1-2 (M12: rw[3] everywhere); boards >= 3 keep rw[3].
   arrive_bonus reward per SPARE life (ram[123] & 7) on the decision Ms. Pac-Man first enters board 3 (once per game).
-  shape_k, shape_left, shape_min_board: potential-based dot shaping, Phi = -shape_k * d, d = screen Manhattan
-               distance (px) from Ms. Pac-Man to the nearest remaining dot (small connected components of the
-               wall colour on the RGB screen, maze-agnostic); active on boards >= shape_min_board with <= shape_left
-               items left; reward += Phi(s') - Phi(s); Phi resets on a board change / life loss / episode start.
+  shape_k, shape_left, shape_min_board, shape_gamma: potential-based dot shaping, Phi = -shape_k * d, d = MAZE PATH
+               distance (px, 4-connected BFS on the screen walk mask incl. side-tunnel wraparound, ghost-house
+               interior excluded; msclear.mazedist) from Ms. Pac-Man to the nearest remaining dot; active on boards
+               >= shape_min_board with <= shape_left items left; reward += shape_gamma * Phi(s') - Phi(s) (= PPO gamma,
+               policy-invariant); Phi resets on a board change / life loss / episode start.
 Results gain lives_b3 (spare lives on arrival at board 3, None if never) and arrived_b3.
 
 M12 docstring follows.
@@ -46,6 +47,9 @@ from msclear.pixenv import PixelGame as _PG  # original class (snap_worker patch
 
 SEED_BASE = 4_000_000
 H_THRESH = (120, 90, 60, 45, 30, 20, 15, 8)
+
+
+from msclear.mazedist import DotDistance  # noqa: E402  (maze path distance, BFS on the screen walk mask)
 
 
 def spare_lives(ram):
@@ -194,13 +198,13 @@ def _worker(remote, n, wid, cfg):
                     if sk and b >= cfg.get("shape_min_board", 3) and 154 - e <= cfg.get("shape_left", 60):
                         if clear or info["lost_life"]:
                             m["phi"] = None
-                        key = (b, e, spare_lives(r))                         # dots only change when an item is eaten
-                        if m.get("dkey") != key:
-                            m["dkey"] = key; m["dcent"] = dot_centres(g.ale)
-                        d = dist_to(m["dcent"], *R.player_xy(r))
+                        if "dd" not in m:
+                            m["dd"] = DotDistance()
+                        # BFS field recomputed only when the dot set changes (item eaten / board / restore)
+                        d = m["dd"](g.ale, r, (b, e, id(m)))
                         phi = None if d is None else -sk * d
                         if phi is not None and m["phi"] is not None and not (clear or info["lost_life"]):
-                            extra += phi - m["phi"]
+                            extra += cfg.get("shape_gamma", 0.995) * phi - m["phi"]       # F = gamma Phi(s') - Phi(s)
                         m["phi"] = phi
                     else:
                         m["phi"] = None

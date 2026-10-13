@@ -126,7 +126,7 @@ def main():
                late_files=len(late_files), late_test=len(late_test), init_update=st["init_update"])
     (RUN / "config.json").write_text(json.dumps(cfg, indent=1)); log(f"config {json.dumps(cfg)}")
     envs = m13_env.VecGames13(NW, PER, groups=2, rw=RW, rw_death12=RW_DEATH12, arrive_bonus=ARRIVE_BONUS,
-                              shape_k=SHAPE_K, shape_left=SHAPE_LEFT, shape_min_board=3, stall=STALL, p_b1=P_B1, p_b2=P_B2, p_harvest=P_HARVEST,
+                              shape_k=SHAPE_K, shape_left=SHAPE_LEFT, shape_min_board=3, shape_gamma=GAMMA, stall=STALL, p_b1=P_B1, p_b2=P_B2, p_harvest=P_HARVEST,
                               p_late=P_LATE, p_vlate=P_VLATE, late_files=late_files,
                               b2_files=b2, b3_files=b3_train, pool_cap=POOL_CAP, max_steps=MAX_STEPS,
                               harvest_dir=str((RUN / "harvest").resolve()), seed_off=st["update"] % 997)
