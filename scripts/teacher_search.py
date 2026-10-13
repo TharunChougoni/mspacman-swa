@@ -8,7 +8,7 @@ import numpy as np
 
 E = os.environ.get
 H, RR, COMMIT, EPS = int(E("H", "40")), int(E("R", "4")), int(E("COMMIT", "4")), float(E("EPS", "0.15"))
-REPLAN = int(E("REPLAN", "4"))
+REPLAN = int(E("REPLAN", "4")); TOPUP = int(E("TOPUP", "0"))
 CAP, REP, DEMO = int(E("CAP", "3000")), int(E("REP", "1")), E("DEMO_DIR")
 
 
@@ -28,12 +28,17 @@ def run(job):
     tch = Teacher(H=H, R_=RR, commit=COMMIT, eps=EPS, seed=hash((src, rep)) % 2**31)
     it0 = int(g.ram[R.DOTS_EATEN]); itmax = it0
     lv0 = int(g.ram[R.LEVEL]); b0 = R.board(g.ram); left0 = None
-    obs, acts, deaths, n, items, prev = [], [], 0, 0, 0, None; chk = mis = 0
+    obs, acts, deaths, n, items, prev = [], [], 0, 0, 0, None; chk = mis = 0; pdeath = []
     while n < CAP:
         if n % REPLAN == 0:
             a, _ = tch.act(g, prev, REPLAN); prev = a
-        if DEMO: obs.append(g.stack.copy()); acts.append(a)
+        if DEMO: obs.append(g.stack[-1].copy()); acts.append(a); stack0 = stack0 if obs[1:] else g.stack.copy()
         _, _, done, info = g.step(a); n += 1; tch.last = a
+        if TOPUP and not g.ale.game_over():
+            lv = int(g.ale.getRAM()[R.LIVES])
+            if (lv & 7) < TOPUP:                  # demo-generation only: RAM poke keeps spare lives (ram[123] low 3 bits)
+                g.ale.setRAM(R.LIVES, (lv & ~7) | TOPUP); g.ram = g.ale.getRAM().copy(); g.prev_lives = int(g.ram[R.LIVES])
+        if DEMO: pdeath.append(deaths)
         j = (n - 1) % REPLAN
         if j < len(tch.plan) and j < len(tch.best_pos) and a == tch.plan[j]:
             chk += 1; mis += int(tch.best_pos[j] != (int(g.ram[10]), int(g.ram[16])))
@@ -48,7 +53,8 @@ def run(job):
                start_items=it0, fid_checked=chk, fid_mismatch=mis, end_items=itmax)
     if DEMO and obs:
         os.makedirs(DEMO, exist_ok=True)
-        np.savez_compressed(f"{DEMO}/{res['src']}_r{rep}.npz", obs=np.stack(obs).astype(np.uint8), act=np.array(acts, np.int8))
+        np.savez_compressed(f"{DEMO}/{src.replace('/', '_').replace('runs_', '')}_r{rep}.npz", stack0=stack0, frames=np.stack(obs).astype(np.uint8), act=np.array(acts, np.int8), deaths_before=np.array(pdeath, np.int16), cleared=res["cleared"])
+        # obs at decision i = 4-stack ending at frames[i] (frames[i-3..i], padded from stack0 for i<3)
     return res
 
 
@@ -57,6 +63,9 @@ if __name__ == "__main__":
     for gl in sys.argv[2:]:
         if gl.startswith("fresh:"):
             _, s0, k = gl.split(":"); srcs += [f"fresh:{int(s0)+i}" for i in range(int(k))]
+        elif gl.startswith("@"):                       # @list.txt[:N] -> shuffled (seed 0) file list
+            path, _, k = gl[1:].partition(":"); L = open(path).read().split()
+            np.random.default_rng(0).shuffle(L); srcs += L[:int(k)] if k else L
         else:
             srcs += sorted(glob.glob(gl))
     jobs = [(s, r) for s in srcs for r in range(REP)]
