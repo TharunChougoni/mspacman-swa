@@ -7,6 +7,7 @@
 cd "$(dirname "$0")/.."
 mkdir -p runs/m13
 [ -f runs/m13/deadline ] || { if [ -n "$DEADLINE_AT" ]; then date -d "$DEADLINE_AT" +%s; else echo $(( $(date +%s) + ${HOURS:-8} * 3600 )); fi; } > runs/m13/deadline
+# NOTE: env vars given before scripts/tmux_job.sh do not reach the job (tmux server env); write runs/m13/deadline yourself, e.g.: date -d "2026-10-13 18:00" +%s > runs/m13/deadline
 export DEADLINE=$(cat runs/m13/deadline) PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True
 echo "=== M13 deadline $(date -d @$DEADLINE '+%F %T')"
 PY=.venv/bin/python
