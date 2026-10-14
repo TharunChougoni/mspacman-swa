@@ -70,6 +70,9 @@ RENAME["m14"] = {"train": {"ce": "distill/ce", "kl_m1": "kl", "acc": "distill/ac
                  "eval": dict(RENAME["m12"]["eval"], val_acc="distill/val_acc", val_nll="distill/val_nll",
                               val_acc_alive="distill/val_acc_alive")}
 
+RENAME["m15"] = {"train": dict(RENAME["m13"]["train"], aux_ce="distill/aux_ce", aux_w="distill/aux_w", ent_run="train/ent_run"),
+                 "eval": dict(RENAME["m13"]["eval"])}
+
 
 def renamed(run, row):
     rn = RENAME.get(run, {}).get(row.get("type"), {})

@@ -154,8 +154,13 @@ def _worker(remote, n, wid, cfg):
                 restore(g, pools["early"][int(rng.integers(len(pools["early"])))]); start = "b3h"
             elif b3:
                 restore(g, b3[int(rng.integers(len(b3)))]); start = "b3"
+        xl = 0
+        if start.startswith("b3") and cfg.get("p_extra_lives", 0.0) and rng.random() < cfg["p_extra_lives"]:
+            lv = int(g.ale.getRAM()[R.LIVES]); xl = int(rng.integers(1, 3))      # M15 training only: 1-2 spare lives
+            if (lv & 7) < xl:
+                g.ale.setRAM(R.LIVES, (lv & ~7) | xl); g.ram = g.ale.getRAM().copy(); g.prev_lives = int(g.ram[R.LIVES])
         b = R.board(g.ram)
-        meta[i] = dict(start=start, b0=b, cur=b, steps0=g.steps, score0=g.score, since=0,
+        meta[i] = dict(start=start, xl=xl, b0=b, cur=b, steps0=g.steps, score0=g.score, since=0,
                        thr=set(), e=int(g.ram[R.DOTS_EATEN]), items=0, deaths=0,
                        ring=collections.deque(maxlen=13), left0=154 - int(g.ram[R.DOTS_EATEN]),
                        lives_b3=spare_lives(g.ram) if b >= 3 else None, arrived_b3=False, phi=None)

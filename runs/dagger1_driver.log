@@ -1,0 +1,241 @@
+=== 2026-10-14 09:50:56 start [dagger]
+CKPT=runs/m14/dagger_init.pt P_LABEL=0.3 STUDENT_TAU=0.25 H=40 R=6 jobs=1024 (skipped 0 done)
+existing: {'dec': 0, 'lab': 0, 'g': 0, 'c': 0}
+{"src": "w17_053.pkl", "rep": 0, "cleared": true, "deaths": 11, "decisions": 1845, "labels": 531, "agree": 0.24670433145009416, "start_items": 124, "sec": 448.36473417282104}
+{"src": "w15_034.pkl", "rep": 0, "cleared": true, "deaths": 11, "decisions": 2233, "labels": 650, "agree": 0.2969230769230769, "start_items": 95, "sec": 578.6952431201935}
+{"src": "w13_038.pkl", "rep": 0, "cleared": false, "deaths": 22, "decisions": 3000, "labels": 841, "agree": 0.26634958382877527, "start_items": 110, "sec": 672.7747519016266}
+{"src": "seed50011_board3_s_r2_l060.pkl", "rep": 0, "cleared": false, "deaths": 18, "decisions": 3000, "labels": 854, "agree": 0.2529274004683841, "start_items": 94, "sec": 700.9952402114868}
+{"src": "w07_017.pkl", "rep": 0, "cleared": false, "deaths": 23, "decisions": 3000, "labels": 867, "agree": 0.2895040369088812, "start_items": 64, "sec": 718.03737616539}
+{"src": "w07_000.pkl", "rep": 0, "cleared": false, "deaths": 17, "decisions": 3000, "labels": 867, "agree": 0.27566320645905423, "start_items": 95, "sec": 734.3743281364441}
+{"src": "seed50088_board3_r0_l060.pkl", "rep": 0, "cleared": false, "deaths": 22, "decisions": 3000, "labels": 896, "agree": 0.24330357142857142, "start_items": 94, "sec": 735.1242516040802}
+{"src": "w02_055.pkl", "rep": 0, "cleared": false, "deaths": 20, "decisions": 3000, "labels": 920, "agree": 0.24456521739130435, "start_items": 128, "sec": 736.7746512889862}
+{"src": "w01_051.pkl", "rep": 0, "cleared": false, "deaths": 19, "decisions": 3000, "labels": 875, "agree": 0.2537142857142857, "start_items": 109, "sec": 739.9690690040588}
+{"src": "w10_023.pkl", "rep": 0, "cleared": false, "deaths": 16, "decisions": 3000, "labels": 881, "agree": 0.282633371169126, "start_items": 64, "sec": 743.9571444988251}
+PROGRESS games 10 cleared 2 decisions 28078 labels 8182 (10.9 labels/s, 37.6 dec/s)
+{"src": "w03_049.pkl", "rep": 0, "cleared": false, "deaths": 17, "decisions": 3000, "labels": 873, "agree": 0.23596792668957617, "start_items": 95, "sec": 744.3511395454407}
+{"src": "w08_014.pkl", "rep": 0, "cleared": false, "deaths": 22, "decisions": 3000, "labels": 906, "agree": 0.27483443708609273, "start_items": 95, "sec": 744.6440057754517}
+{"src": "w17_057.pkl", "rep": 0, "cleared": false, "deaths": 21, "decisions": 3000, "labels": 928, "agree": 0.28879310344827586, "start_items": 124, "sec": 747.269900560379}
+{"src": "w07_049.pkl", "rep": 0, "cleared": true, "deaths": 16, "decisions": 2825, "labels": 880, "agree": 0.24772727272727274, "start_items": 94, "sec": 754.249810218811}
+{"src": "w11_044.pkl", "rep": 0, "cleared": false, "deaths": 20, "decisions": 3000, "labels": 908, "agree": 0.2511013215859031, "start_items": 94, "sec": 755.0787432193756}
+{"src": "w13_053.pkl", "rep": 0, "cleared": false, "deaths": 21, "decisions": 3000, "labels": 923, "agree": 0.2611050920910076, "start_items": 64, "sec": 756.7054433822632}
+{"src": "w11_053.pkl", "rep": 0, "cleared": false, "deaths": 18, "decisions": 3000, "labels": 941, "agree": 0.2412327311370882, "start_items": 94, "sec": 777.4132676124573}
+{"src": "seed50069_board3_s_r2_l060.pkl", "rep": 0, "cleared": false, "deaths": 20, "decisions": 3000, "labels": 938, "agree": 0.2462686567164179, "start_items": 94, "sec": 778.5435831546783}
+{"src": "w06_038.pkl", "rep": 0, "cleared": false, "deaths": 18, "decisions": 3000, "labels": 887, "agree": 0.23337091319052988, "start_items": 126, "sec": 694.6715984344482}
+{"src": "seed50007_board3_r1_l060.pkl", "rep": 0, "cleared": true, "deaths": 13, "decisions": 1814, "labels": 531, "agree": 0.2730696798493409, "start_items": 94, "sec": 389.16450023651123}
+PROGRESS games 20 cleared 4 decisions 56717 labels 16897 (14.4 labels/s, 48.4 dec/s)
+{"src": "w07_058.pkl", "rep": 0, "cleared": false, "deaths": 26, "decisions": 3000, "labels": 889, "agree": 0.2744656917885264, "start_items": 94, "sec": 677.6303234100342}
+{"src": "w08_011.pkl", "rep": 0, "cleared": false, "deaths": 19, "decisions": 3000, "labels": 881, "agree": 0.24517593643586832, "start_items": 0, "sec": 686.3372759819031}
+{"src": "w03_027.pkl", "rep": 0, "cleared": false, "deaths": 20, "decisions": 3000, "labels": 874, "agree": 0.2608695652173913, "start_items": 124, "sec": 666.2179310321808}
+{"src": "w06_030.pkl", "rep": 0, "cleared": false, "deaths": 15, "decisions": 3000, "labels": 910, "agree": 0.26483516483516484, "start_items": 34, "sec": 744.13467669487}
+{"src": "w11_014.pkl", "rep": 0, "cleared": false, "deaths": 24, "decisions": 3000, "labels": 895, "agree": 0.264804469273743, "start_items": 110, "sec": 664.9685890674591}
+{"src": "w01_012.pkl", "rep": 0, "cleared": false, "deaths": 18, "decisions": 3000, "labels": 881, "agree": 0.28036322360953464, "start_items": 95, "sec": 688.7862679958344}
+{"src": "w08_028.pkl", "rep": 0, "cleared": true, "deaths": 5, "decisions": 1154, "labels": 327, "agree": 0.2691131498470948, "start_items": 124, "sec": 260.7010974884033}
+{"src": "w05_021.pkl", "rep": 0, "cleared": false, "deaths": 18, "decisions": 3000, "labels": 887, "agree": 0.21307779030439683, "start_items": 124, "sec": 706.1210572719574}
+{"src": "w01_027.pkl", "rep": 0, "cleared": false, "deaths": 17, "decisions": 3000, "labels": 918, "agree": 0.2625272331154684, "start_items": 64, "sec": 748.0293292999268}
+{"src": "w09_008.pkl", "rep": 0, "cleared": false, "deaths": 18, "decisions": 3000, "labels": 921, "agree": 0.2747014115092291, "start_items": 64, "sec": 706.3480353355408}
+PROGRESS games 30 cleared 5 decisions 84871 labels 25280 (17.2 labels/s, 57.9 dec/s)
+{"src": "w01_053.pkl", "rep": 0, "cleared": false, "deaths": 19, "decisions": 3000, "labels": 916, "agree": 0.28056768558951967, "start_items": 94, "sec": 712.5667917728424}
+{"src": "w08_058.pkl", "rep": 0, "cleared": false, "deaths": 18, "decisions": 3000, "labels": 898, "agree": 0.289532293986637, "start_items": 95, "sec": 728.2156600952148}
+{"src": "w05_035.pkl", "rep": 0, "cleared": false, "deaths": 20, "decisions": 3000, "labels": 941, "agree": 0.27948990435706694, "start_items": 97, "sec": 733.9217855930328}
+{"src": "w00_017.pkl", "rep": 0, "cleared": false, "deaths": 19, "decisions": 3000, "labels": 905, "agree": 0.2662983425414365, "start_items": 109, "sec": 706.7894253730774}
+{"src": "w08_011.pkl", "rep": 0, "cleared": false, "deaths": 16, "decisions": 3000, "labels": 908, "agree": 0.2599118942731278, "start_items": 34, "sec": 739.1484596729279}
+{"src": "seed50082_board3.pkl", "rep": 0, "cleared": false, "deaths": 18, "decisions": 3000, "labels": 906, "agree": 0.23730684326710816, "start_items": 0, "sec": 749.9247760772705}
+{"src": "w06_032.pkl", "rep": 0, "cleared": false, "deaths": 18, "decisions": 3000, "labels": 904, "agree": 0.27101769911504425, "start_items": 0, "sec": 748.4724526405334}
+{"src": "w04_056.pkl", "rep": 0, "cleared": false, "deaths": 21, "decisions": 3000, "labels": 877, "agree": 0.28506271379703535, "start_items": 65, "sec": 699.3017935752869}
+{"src": "w11_002.pkl", "rep": 0, "cleared": false, "deaths": 18, "decisions": 3000, "labels": 897, "agree": 0.25975473801560756, "start_items": 94, "sec": 741.8354866504669}
+{"src": "w01_036.pkl", "rep": 0, "cleared": false, "deaths": 16, "decisions": 3000, "labels": 858, "agree": 0.22843822843822845, "start_items": 95, "sec": 675.0778996944427}
+PROGRESS games 40 cleared 5 decisions 114871 labels 34290 (16.5 labels/s, 55.1 dec/s)
+{"src": "w00_028.pkl", "rep": 0, "cleared": false, "deaths": 23, "decisions": 3000, "labels": 878, "agree": 0.2517084282460137, "start_items": 124, "sec": 672.2521498203278}
+{"src": "w11_034.pkl", "rep": 0, "cleared": false, "deaths": 24, "decisions": 3000, "labels": 909, "agree": 0.25412541254125415, "start_items": 95, "sec": 680.8562595844269}
+{"src": "w17_016.pkl", "rep": 0, "cleared": false, "deaths": 19, "decisions": 3000, "labels": 863, "agree": 0.26767091541135574, "start_items": 94, "sec": 665.9812345504761}
+{"src": "w06_037.pkl", "rep": 0, "cleared": false, "deaths": 24, "decisions": 3000, "labels": 919, "agree": 0.27094668117519044, "start_items": 94, "sec": 699.5453670024872}
+{"src": "w01_002.pkl", "rep": 0, "cleared": false, "deaths": 18, "decisions": 3000, "labels": 856, "agree": 0.2523364485981308, "start_items": 64, "sec": 706.3682565689087}
+{"src": "w17_052.pkl", "rep": 0, "cleared": false, "deaths": 21, "decisions": 3000, "labels": 878, "agree": 0.26651480637813213, "start_items": 94, "sec": 677.3355038166046}
+{"src": "w04_054.pkl", "rep": 0, "cleared": false, "deaths": 20, "decisions": 3000, "labels": 879, "agree": 0.2434584755403868, "start_items": 94, "sec": 652.4316601753235}
+{"src": "w03_046.pkl", "rep": 0, "cleared": false, "deaths": 21, "decisions": 3000, "labels": 899, "agree": 0.25139043381535037, "start_items": 34, "sec": 676.3561894893646}
+{"src": "w15_015.pkl", "rep": 0, "cleared": false, "deaths": 18, "decisions": 3000, "labels": 893, "agree": 0.2553191489361702, "start_items": 94, "sec": 699.5310852527618}
+{"src": "w14_019.pkl", "rep": 0, "cleared": false, "deaths": 22, "decisions": 3000, "labels": 916, "agree": 0.2576419213973799, "start_items": 124, "sec": 702.4850249290466}
+PROGRESS games 50 cleared 5 decisions 144871 labels 43180 (19.9 labels/s, 66.6 dec/s)
+{"src": "w15_020.pkl", "rep": 0, "cleared": false, "deaths": 20, "decisions": 3000, "labels": 880, "agree": 0.24204545454545454, "start_items": 95, "sec": 703.3042848110199}
+{"src": "w09_031.pkl", "rep": 0, "cleared": false, "deaths": 20, "decisions": 3000, "labels": 920, "agree": 0.26956521739130435, "start_items": 94, "sec": 700.2998631000519}
+{"src": "w15_012.pkl", "rep": 0, "cleared": false, "deaths": 21, "decisions": 3000, "labels": 969, "agree": 0.27657378740970073, "start_items": 109, "sec": 760.3528618812561}
+{"src": "w00_030.pkl", "rep": 0, "cleared": false, "deaths": 19, "decisions": 3000, "labels": 917, "agree": 0.247546346782988, "start_items": 124, "sec": 708.038613319397}
+{"src": "seed50046_board3.pkl", "rep": 0, "cleared": false, "deaths": 15, "decisions": 3000, "labels": 924, "agree": 0.25432900432900435, "start_items": 0, "sec": 771.3919744491577}
+{"src": "w04_045.pkl", "rep": 0, "cleared": false, "deaths": 21, "decisions": 3000, "labels": 875, "agree": 0.25942857142857145, "start_items": 94, "sec": 656.500794172287}
+{"src": "w13_052.pkl", "rep": 0, "cleared": true, "deaths": 10, "decisions": 1990, "labels": 581, "agree": 0.26506024096385544, "start_items": 64, "sec": 466.4875431060791}
+{"src": "w02_038.pkl", "rep": 0, "cleared": true, "deaths": 16, "decisions": 2270, "labels": 723, "agree": 0.2600276625172891, "start_items": 132, "sec": 538.0909843444824}
+{"src": "w08_038.pkl", "rep": 0, "cleared": false, "deaths": 14, "decisions": 3000, "labels": 878, "agree": 0.2733485193621868, "start_items": 64, "sec": 718.6461207866669}
+{"src": "w14_022.pkl", "rep": 0, "cleared": true, "deaths": 17, "decisions": 2623, "labels": 811, "agree": 0.279901356350185, "start_items": 124, "sec": 602.9059495925903}
+PROGRESS games 60 cleared 8 decisions 172754 labels 51658 (18.6 labels/s, 62.2 dec/s)
+{"src": "w03_025.pkl", "rep": 0, "cleared": false, "deaths": 18, "decisions": 3000, "labels": 900, "agree": 0.2544444444444444, "start_items": 124, "sec": 694.8024108409882}
+{"src": "w02_053.pkl", "rep": 0, "cleared": false, "deaths": 17, "decisions": 3000, "labels": 895, "agree": 0.25027932960893856, "start_items": 95, "sec": 704.9036116600037}
+{"src": "w16_016.pkl", "rep": 0, "cleared": false, "deaths": 20, "decisions": 3000, "labels": 910, "agree": 0.27362637362637365, "start_items": 124, "sec": 699.0232646465302}
+{"src": "w08_028.pkl", "rep": 0, "cleared": false, "deaths": 20, "decisions": 3000, "labels": 892, "agree": 0.26905829596412556, "start_items": 94, "sec": 690.3347382545471}
+{"src": "w06_048.pkl", "rep": 0, "cleared": false, "deaths": 17, "decisions": 3000, "labels": 920, "agree": 0.266304347826087, "start_items": 64, "sec": 716.2746214866638}
+{"src": "w05_033.pkl", "rep": 0, "cleared": false, "deaths": 22, "decisions": 3000, "labels": 942, "agree": 0.2515923566878981, "start_items": 109, "sec": 727.7187826633453}
+{"src": "w04_034.pkl", "rep": 0, "cleared": false, "deaths": 19, "decisions": 3000, "labels": 907, "agree": 0.23373759647188533, "start_items": 64, "sec": 717.1846885681152}
+{"src": "w16_041.pkl", "rep": 0, "cleared": false, "deaths": 21, "decisions": 3000, "labels": 909, "agree": 0.23982398239823982, "start_items": 124, "sec": 695.2322163581848}
+{"src": "w05_043.pkl", "rep": 0, "cleared": false, "deaths": 17, "decisions": 3000, "labels": 917, "agree": 0.257360959651036, "start_items": 124, "sec": 709.9925806522369}
+{"src": "seed50007_board3.pkl", "rep": 0, "cleared": false, "deaths": 19, "decisions": 3000, "labels": 908, "agree": 0.2621145374449339, "start_items": 0, "sec": 720.1086852550507}
+PROGRESS games 70 cleared 8 decisions 202754 labels 60758 (20.9 labels/s, 69.7 dec/s)
+{"src": "w12_018.pkl", "rep": 0, "cleared": false, "deaths": 17, "decisions": 3000, "labels": 891, "agree": 0.25925925925925924, "start_items": 124, "sec": 713.7505736351013}
+{"src": "w02_013.pkl", "rep": 0, "cleared": false, "deaths": 18, "decisions": 3000, "labels": 911, "agree": 0.24039517014270034, "start_items": 95, "sec": 732.7766456604004}
+{"src": "w10_046.pkl", "rep": 0, "cleared": false, "deaths": 19, "decisions": 3000, "labels": 903, "agree": 0.2646733111849391, "start_items": 124, "sec": 695.1462228298187}
+{"src": "w15_040.pkl", "rep": 0, "cleared": false, "deaths": 21, "decisions": 3000, "labels": 851, "agree": 0.22326674500587543, "start_items": 124, "sec": 643.1552362442017}
+{"src": "w09_038.pkl", "rep": 0, "cleared": true, "deaths": 12, "decisions": 1828, "labels": 555, "agree": 0.26306306306306304, "start_items": 125, "sec": 407.01265692710876}
+{"src": "w12_004.pkl", "rep": 0, "cleared": true, "deaths": 14, "decisions": 2022, "labels": 615, "agree": 0.28780487804878047, "start_items": 124, "sec": 457.84108304977417}
+{"src": "w15_011.pkl", "rep": 0, "cleared": false, "deaths": 25, "decisions": 3000, "labels": 879, "agree": 0.2844141069397042, "start_items": 0, "sec": 667.7103245258331}
+{"src": "w00_040.pkl", "rep": 0, "cleared": false, "deaths": 21, "decisions": 3000, "labels": 894, "agree": 0.21923937360178972, "start_items": 95, "sec": 674.3677413463593}
+{"src": "w03_042.pkl", "rep": 0, "cleared": true, "deaths": 14, "decisions": 2133, "labels": 655, "agree": 0.2961832061068702, "start_items": 111, "sec": 481.58200454711914}
+{"src": "seed50061_board3_s_r1_l060.pkl", "rep": 0, "cleared": false, "deaths": 22, "decisions": 3000, "labels": 883, "agree": 0.2570781426953567, "start_items": 94, "sec": 662.1001274585724}
+PROGRESS games 80 cleared 11 decisions 229737 labels 68795 (20.3 labels/s, 67.9 dec/s)
+{"src": "w13_034.pkl", "rep": 0, "cleared": true, "deaths": 16, "decisions": 2274, "labels": 696, "agree": 0.257183908045977, "start_items": 124, "sec": 510.6890163421631}
+{"src": "w01_057.pkl", "rep": 0, "cleared": false, "deaths": 24, "decisions": 3000, "labels": 874, "agree": 0.2826086956521739, "start_items": 124, "sec": 632.1527111530304}
+{"src": "w10_015.pkl", "rep": 0, "cleared": false, "deaths": 21, "decisions": 3000, "labels": 891, "agree": 0.24579124579124578, "start_items": 124, "sec": 670.2995722293854}
+{"src": "w11_002.pkl", "rep": 0, "cleared": false, "deaths": 20, "decisions": 3000, "labels": 899, "agree": 0.27363737486095663, "start_items": 124, "sec": 644.1493029594421}
+{"src": "w02_050.pkl", "rep": 0, "cleared": false, "deaths": 17, "decisions": 3000, "labels": 877, "agree": 0.24971493728620298, "start_items": 34, "sec": 715.3230776786804}
+{"src": "w05_039.pkl", "rep": 0, "cleared": false, "deaths": 18, "decisions": 3000, "labels": 940, "agree": 0.25957446808510637, "start_items": 64, "sec": 711.0740826129913}
+{"src": "w13_026.pkl", "rep": 0, "cleared": false, "deaths": 12, "decisions": 3000, "labels": 876, "agree": 0.2602739726027397, "start_items": 34, "sec": 702.1105303764343}
+{"src": "w11_024.pkl", "rep": 0, "cleared": false, "deaths": 20, "decisions": 3000, "labels": 862, "agree": 0.24477958236658934, "start_items": 124, "sec": 651.5783278942108}
+{"src": "w15_035.pkl", "rep": 0, "cleared": false, "deaths": 14, "decisions": 3000, "labels": 900, "agree": 0.2577777777777778, "start_items": 34, "sec": 694.8793754577637}
+{"src": "w07_025.pkl", "rep": 0, "cleared": false, "deaths": 16, "decisions": 3000, "labels": 903, "agree": 0.26135105204872644, "start_items": 94, "sec": 667.7635109424591}
+PROGRESS games 90 cleared 12 decisions 259011 labels 77513 (21.4 labels/s, 71.3 dec/s)
+{"src": "seed50043_board3.pkl", "rep": 0, "cleared": false, "deaths": 18, "decisions": 3000, "labels": 946, "agree": 0.27061310782241016, "start_items": 0, "sec": 730.5930907726288}
+{"src": "w07_027.pkl", "rep": 0, "cleared": false, "deaths": 20, "decisions": 3000, "labels": 861, "agree": 0.27526132404181186, "start_items": 111, "sec": 638.6034202575684}
+{"src": "w16_053.pkl", "rep": 0, "cleared": false, "deaths": 17, "decisions": 3000, "labels": 877, "agree": 0.2896237172177879, "start_items": 34, "sec": 648.5295648574829}
+{"src": "w10_048.pkl", "rep": 0, "cleared": true, "deaths": 13, "decisions": 1854, "labels": 583, "agree": 0.2881646655231561, "start_items": 95, "sec": 396.78133511543274}
+{"src": "w16_019.pkl", "rep": 0, "cleared": false, "deaths": 20, "decisions": 3000, "labels": 853, "agree": 0.27432590855803046, "start_items": 109, "sec": 611.5809757709503}
+{"src": "w03_004.pkl", "rep": 0, "cleared": true, "deaths": 18, "decisions": 2997, "labels": 906, "agree": 0.2924944812362031, "start_items": 124, "sec": 649.4475259780884}
+{"src": "w02_037.pkl", "rep": 0, "cleared": false, "deaths": 13, "decisions": 3000, "labels": 949, "agree": 0.2623814541622761, "start_items": 65, "sec": 744.5094428062439}
+{"src": "w03_053.pkl", "rep": 0, "cleared": false, "deaths": 20, "decisions": 3000, "labels": 926, "agree": 0.2580993520518359, "start_items": 95, "sec": 683.6737370491028}
+{"src": "w13_001.pkl", "rep": 0, "cleared": true, "deaths": 9, "decisions": 1235, "labels": 361, "agree": 0.23822714681440443, "start_items": 124, "sec": 241.1147449016571}
+{"src": "w08_028.pkl", "rep": 0, "cleared": false, "deaths": 18, "decisions": 3000, "labels": 854, "agree": 0.25526932084309134, "start_items": 64, "sec": 639.7354412078857}
+PROGRESS games 100 cleared 15 decisions 286097 labels 85629 (21.1 labels/s, 70.6 dec/s)
+{"src": "w13_005.pkl", "rep": 0, "cleared": false, "deaths": 21, "decisions": 3000, "labels": 857, "agree": 0.2660443407234539, "start_items": 64, "sec": 618.5656087398529}
+{"src": "w03_000.pkl", "rep": 0, "cleared": false, "deaths": 19, "decisions": 3000, "labels": 913, "agree": 0.27491785323110624, "start_items": 64, "sec": 689.3760213851929}
+{"src": "w03_026.pkl", "rep": 0, "cleared": false, "deaths": 20, "decisions": 3000, "labels": 925, "agree": 0.2789189189189189, "start_items": 110, "sec": 648.0666847229004}
+{"src": "w10_019.pkl", "rep": 0, "cleared": false, "deaths": 20, "decisions": 3000, "labels": 895, "agree": 0.2446927374301676, "start_items": 94, "sec": 646.6516773700714}
+{"src": "w01_006.pkl", "rep": 0, "cleared": false, "deaths": 23, "decisions": 3000, "labels": 923, "agree": 0.2600216684723727, "start_items": 110, "sec": 633.0931770801544}
+{"src": "w03_004.pkl", "rep": 0, "cleared": false, "deaths": 15, "decisions": 3000, "labels": 868, "agree": 0.2695852534562212, "start_items": 34, "sec": 663.177809715271}
+{"src": "w04_059.pkl", "rep": 0, "cleared": false, "deaths": 14, "decisions": 3000, "labels": 906, "agree": 0.24834437086092714, "start_items": 94, "sec": 671.0461163520813}
+{"src": "w01_050.pkl", "rep": 0, "cleared": false, "deaths": 22, "decisions": 3000, "labels": 887, "agree": 0.2818489289740699, "start_items": 109, "sec": 606.4843027591705}
+{"src": "w01_031.pkl", "rep": 0, "cleared": false, "deaths": 20, "decisions": 3000, "labels": 877, "agree": 0.27366020524515394, "start_items": 124, "sec": 638.4739148616791}
+{"src": "w08_044.pkl", "rep": 0, "cleared": false, "deaths": 21, "decisions": 3000, "labels": 947, "agree": 0.26293558606124606, "start_items": 111, "sec": 676.6027932167053}
+PROGRESS games 110 cleared 15 decisions 316097 labels 94627 (22.1 labels/s, 73.7 dec/s)
+{"src": "w10_053.pkl", "rep": 0, "cleared": false, "deaths": 22, "decisions": 3000, "labels": 886, "agree": 0.26749435665914223, "start_items": 124, "sec": 620.1756737232208}
+{"src": "w04_030.pkl", "rep": 0, "cleared": false, "deaths": 18, "decisions": 3000, "labels": 882, "agree": 0.25056689342403626, "start_items": 64, "sec": 667.4744460582733}
+{"src": "w13_025.pkl", "rep": 0, "cleared": false, "deaths": 17, "decisions": 3000, "labels": 878, "agree": 0.2722095671981777, "start_items": 64, "sec": 640.9584181308746}
+{"src": "w17_000.pkl", "rep": 0, "cleared": false, "deaths": 19, "decisions": 3000, "labels": 911, "agree": 0.25905598243688255, "start_items": 94, "sec": 697.3068027496338}
+{"src": "w00_033.pkl", "rep": 0, "cleared": false, "deaths": 22, "decisions": 3000, "labels": 913, "agree": 0.24863088718510407, "start_items": 64, "sec": 653.8097584247589}
+{"src": "w00_050.pkl", "rep": 0, "cleared": true, "deaths": 18, "decisions": 2907, "labels": 843, "agree": 0.2538552787663108, "start_items": 109, "sec": 639.1041643619537}
+{"src": "w01_059.pkl", "rep": 0, "cleared": false, "deaths": 23, "decisions": 3000, "labels": 905, "agree": 0.2696132596685083, "start_items": 109, "sec": 681.3252446651459}
+{"src": "w16_004.pkl", "rep": 0, "cleared": false, "deaths": 15, "decisions": 3000, "labels": 897, "agree": 0.25863991081382387, "start_items": 64, "sec": 709.6825649738312}
+{"src": "w14_025.pkl", "rep": 0, "cleared": false, "deaths": 27, "decisions": 3000, "labels": 889, "agree": 0.27334083239595053, "start_items": 95, "sec": 651.3891479969025}
+{"src": "w06_012.pkl", "rep": 0, "cleared": false, "deaths": 21, "decisions": 3000, "labels": 923, "agree": 0.2502708559046587, "start_items": 109, "sec": 678.1156027317047}
+PROGRESS games 120 cleared 16 decisions 346004 labels 103554 (21.8 labels/s, 72.8 dec/s)
+target labels reached
+[11:10:34] packed 664 games, 1,369,477 decisions, 1,371,469 frames (9.7 GB)
+
+
+
+
+
+[11:10:51] maze-1 buffer: 60,000 steps in 15s
+[11:10:51] config {"INIT": "runs/m14/dagger_init.pt", "DEMO": "runs/teacher/demos,runs/dagger1/labels", "WD": 0.05, "P_DAG": 0.5, "B_T": 128, "B_M1": 32, "LR": 0.0001, "TAU": 0.25, "BETA": 1.0, "W_PD": 0.1, "MAX_STEPS": 8000, "EVAL_EVERY": 1000, "CKPT_S": 300.0, "M1_STEPS": 60000, "EVAL_WORKERS": 8, "MIN_B1": 0.75, "VAL_FRAC": 0.05, "ARCH": {"n_actions": 4, "d": 512, "n_heads": 8, "n_layers": 2, "window": 8, "lam": 0.05}, "ctx": 15, "demo_decisions": 1369477, "train_dec": 1070155, "val_dec": 56872, "val_games": 31, "dagger_train_labels": 97916, "postdeath_frac": 0.6695344281064961, "m1_steps": 60000}
+
+
+
+
+
+[11:11:29] EVAL step 0: b1 clear 0.93  snap3 clear 0.00 items 40.5 deaths 1.14  late3 clear 0.00 ate 0.27  val acc 0.440 (alive 0.464) nll 1.272  (38s)  *best*
+[11:11:41] step 100 ce 1.136 acc 0.429 kl_m1 0.0061 8.27 it/s (queue 2)
+[11:11:48] step 200 ce 1.127 acc 0.431 kl_m1 0.0072 15.66 it/s (queue 6)
+[11:11:54] step 300 ce 1.136 acc 0.436 kl_m1 0.0071 15.87 it/s (queue 6)
+[11:12:00] step 400 ce 1.116 acc 0.435 kl_m1 0.0091 16.27 it/s (queue 6)
+[11:12:07] step 500 ce 1.104 acc 0.437 kl_m1 0.0101 14.91 it/s (queue 6)
+[11:12:14] step 600 ce 1.122 acc 0.425 kl_m1 0.0098 13.74 it/s (queue 6)
+[11:12:22] step 700 ce 1.117 acc 0.432 kl_m1 0.0110 12.34 it/s (queue 6)
+[11:12:31] step 800 ce 1.115 acc 0.439 kl_m1 0.0096 11.80 it/s (queue 6)
+[11:12:40] step 900 ce 1.114 acc 0.435 kl_m1 0.0102 11.22 it/s (queue 6)
+[11:12:50] step 1000 ce 1.114 acc 0.438 kl_m1 0.0096 9.50 it/s (queue 6)
+[11:13:28] EVAL step 1000: b1 clear 0.91  snap3 clear 0.00 items 35.1 deaths 1.14  late3 clear 0.00 ate 0.24  val acc 0.440 (alive 0.464) nll 1.246  (38s)
+[11:13:37] step 1100 ce 1.101 acc 0.440 kl_m1 0.0099 2.13 it/s (queue 2)
+[11:13:46] step 1200 ce 1.110 acc 0.434 kl_m1 0.0114 11.66 it/s (queue 6)
+[11:13:56] step 1300 ce 1.109 acc 0.435 kl_m1 0.0122 9.50 it/s (queue 5)
+[11:14:08] step 1400 ce 1.082 acc 0.445 kl_m1 0.0109 8.92 it/s (queue 6)
+[11:14:19] step 1500 ce 1.074 acc 0.447 kl_m1 0.0108 8.71 it/s (queue 6)
+[11:14:30] step 1600 ce 1.097 acc 0.441 kl_m1 0.0090 9.00 it/s (queue 6)
+[11:14:41] step 1700 ce 1.092 acc 0.445 kl_m1 0.0112 9.00 it/s (queue 6)
+[11:14:54] step 1800 ce 1.097 acc 0.440 kl_m1 0.0105 8.06 it/s (queue 6)
+[11:15:06] step 1900 ce 1.086 acc 0.453 kl_m1 0.0113 8.01 it/s (queue 6)
+[11:15:19] step 2000 ce 1.089 acc 0.446 kl_m1 0.0105 7.95 it/s (queue 6)
+[11:16:04] EVAL step 2000: b1 clear 0.95  snap3 clear 0.00 items 53.6 deaths 1.14  late3 clear 0.00 ate 0.24  val acc 0.434 (alive 0.452) nll 1.253  (45s)
+[11:16:14] step 2100 ce 1.077 acc 0.447 kl_m1 0.0112 1.82 it/s (queue 6)
+[11:16:25] step 2200 ce 1.081 acc 0.446 kl_m1 0.0102 9.22 it/s (queue 6)
+[11:16:36] step 2300 ce 1.088 acc 0.439 kl_m1 0.0116 9.10 it/s (queue 6)
+[11:16:47] step 2400 ce 1.081 acc 0.447 kl_m1 0.0107 8.69 it/s (queue 6)
+[11:17:00] step 2500 ce 1.069 acc 0.449 kl_m1 0.0111 7.90 it/s (queue 6)
+[11:17:13] step 2600 ce 1.067 acc 0.443 kl_m1 0.0124 7.53 it/s (queue 6)
+[11:17:26] step 2700 ce 1.075 acc 0.446 kl_m1 0.0116 7.65 it/s (queue 6)
+[11:17:40] step 2800 ce 1.075 acc 0.449 kl_m1 0.0106 7.41 it/s (queue 6)
+[11:17:53] step 2900 ce 1.065 acc 0.453 kl_m1 0.0096 7.44 it/s (queue 6)
+[11:18:06] step 3000 ce 1.084 acc 0.447 kl_m1 0.0131 7.63 it/s (queue 6)
+[11:18:50] EVAL step 3000: b1 clear 0.94  snap3 clear 0.00 items 32.0 deaths 1.14  late3 clear 0.00 ate 0.27  val acc 0.439 (alive 0.457) nll 1.256  (44s)
+[11:18:59] step 3100 ce 1.074 acc 0.446 kl_m1 0.0118 1.88 it/s (queue 1)
+[11:19:11] step 3200 ce 1.067 acc 0.445 kl_m1 0.0099 8.63 it/s (queue 6)
+[11:19:24] step 3300 ce 1.075 acc 0.447 kl_m1 0.0103 7.95 it/s (queue 6)
+[11:19:36] step 3400 ce 1.061 acc 0.453 kl_m1 0.0116 8.14 it/s (queue 6)
+[11:19:48] step 3500 ce 1.068 acc 0.450 kl_m1 0.0121 7.95 it/s (queue 6)
+[11:20:02] step 3600 ce 1.064 acc 0.451 kl_m1 0.0127 7.17 it/s (queue 6)
+[11:20:17] step 3700 ce 1.068 acc 0.442 kl_m1 0.0117 6.96 it/s (queue 1)
+[11:20:33] step 3800 ce 1.056 acc 0.455 kl_m1 0.0117 6.19 it/s (queue 6)
+[11:20:48] step 3900 ce 1.042 acc 0.449 kl_m1 0.0106 6.39 it/s (queue 6)
+[11:21:03] step 4000 ce 1.054 acc 0.450 kl_m1 0.0105 6.97 it/s (queue 6)
+[11:21:46] EVAL step 4000: b1 clear 0.93  snap3 clear 0.00 items 33.0 deaths 1.14  late3 clear 0.00 ate 0.26  val acc 0.441 (alive 0.466) nll 1.264  (43s)
+[11:21:55] step 4100 ce 1.077 acc 0.454 kl_m1 0.0118 1.90 it/s (queue 6)
+[11:22:06] step 4200 ce 1.041 acc 0.458 kl_m1 0.0104 9.40 it/s (queue 6)
+[11:22:19] step 4300 ce 1.040 acc 0.458 kl_m1 0.0113 7.88 it/s (queue 6)
+[11:22:32] step 4400 ce 1.030 acc 0.465 kl_m1 0.0111 7.71 it/s (queue 6)
+[11:22:45] step 4500 ce 1.048 acc 0.453 kl_m1 0.0114 7.69 it/s (queue 6)
+[11:22:58] step 4600 ce 1.048 acc 0.451 kl_m1 0.0100 7.66 it/s (queue 6)
+[11:23:11] step 4700 ce 1.040 acc 0.459 kl_m1 0.0111 7.29 it/s (queue 6)
+[11:23:25] step 4800 ce 1.026 acc 0.454 kl_m1 0.0101 7.17 it/s (queue 6)
+[11:23:40] step 4900 ce 1.042 acc 0.453 kl_m1 0.0106 6.96 it/s (queue 6)
+[11:23:56] step 5000 ce 1.051 acc 0.462 kl_m1 0.0110 6.23 it/s (queue 6)
+[11:24:39] EVAL step 5000: b1 clear 0.84  snap3 clear 0.00 items 36.8 deaths 1.14  late3 clear 0.00 ate 0.24  val acc 0.429 (alive 0.454) nll 1.263  (43s)
+[11:24:48] step 5100 ce 1.051 acc 0.450 kl_m1 0.0100 1.91 it/s (queue 6)
+[11:24:59] step 5200 ce 1.039 acc 0.455 kl_m1 0.0112 9.00 it/s (queue 6)
+[11:25:12] step 5300 ce 1.047 acc 0.457 kl_m1 0.0103 7.88 it/s (queue 6)
+[11:25:25] step 5400 ce 1.033 acc 0.456 kl_m1 0.0103 7.87 it/s (queue 6)
+[11:25:40] step 5500 ce 1.024 acc 0.455 kl_m1 0.0113 6.68 it/s (queue 6)
+[11:25:54] step 5600 ce 1.016 acc 0.465 kl_m1 0.0096 7.11 it/s (queue 6)
+[11:26:07] step 5700 ce 1.027 acc 0.461 kl_m1 0.0103 7.36 it/s (queue 6)
+[11:26:21] step 5800 ce 1.023 acc 0.460 kl_m1 0.0098 7.35 it/s (queue 6)
+[11:26:35] step 5900 ce 1.020 acc 0.463 kl_m1 0.0099 7.34 it/s (queue 6)
+[11:26:49] step 6000 ce 1.014 acc 0.459 kl_m1 0.0102 6.89 it/s (queue 6)
+[11:27:38] EVAL step 6000: b1 clear 0.96  snap3 clear 0.00 items 27.2 deaths 1.14  late3 clear 0.00 ate 0.22  val acc 0.438 (alive 0.449) nll 1.282  (49s)
+[11:27:47] step 6100 ce 1.032 acc 0.465 kl_m1 0.0097 1.73 it/s (queue 3)
+[11:27:58] step 6200 ce 1.027 acc 0.460 kl_m1 0.0099 8.77 it/s (queue 6)
+[11:28:12] step 6300 ce 1.036 acc 0.459 kl_m1 0.0100 7.23 it/s (queue 6)
+[11:28:24] step 6400 ce 1.024 acc 0.460 kl_m1 0.0104 8.07 it/s (queue 6)
+[11:28:39] step 6500 ce 1.010 acc 0.455 kl_m1 0.0101 6.96 it/s (queue 6)
+[11:28:54] step 6600 ce 1.021 acc 0.460 kl_m1 0.0097 6.68 it/s (queue 6)
+[11:29:07] step 6700 ce 1.017 acc 0.455 kl_m1 0.0099 7.32 it/s (queue 5)
+[11:29:23] step 6800 ce 1.017 acc 0.455 kl_m1 0.0093 6.47 it/s (queue 6)
+[11:29:38] step 6900 ce 1.000 acc 0.464 kl_m1 0.0095 6.74 it/s (queue 6)
+[11:29:52] step 7000 ce 0.997 acc 0.464 kl_m1 0.0109 7.15 it/s (queue 5)
+[11:30:44] EVAL step 7000: b1 clear 0.92  snap3 clear 0.00 items 35.8 deaths 1.14  late3 clear 0.00 ate 0.28  val acc 0.441 (alive 0.456) nll 1.274  (52s)  *best*
+[11:30:54] step 7100 ce 1.010 acc 0.470 kl_m1 0.0097 1.61 it/s (queue 2)
+[11:31:05] step 7200 ce 1.014 acc 0.466 kl_m1 0.0101 8.94 it/s (queue 6)
+[11:31:17] step 7300 ce 0.988 acc 0.465 kl_m1 0.0101 7.92 it/s (queue 6)
+[11:31:31] step 7400 ce 1.013 acc 0.465 kl_m1 0.0095 7.44 it/s (queue 6)
+[11:31:45] step 7500 ce 1.010 acc 0.464 kl_m1 0.0102 6.95 it/s (queue 6)
+[11:32:00] step 7600 ce 1.007 acc 0.460 kl_m1 0.0101 6.64 it/s (queue 6)
+[11:32:15] step 7700 ce 1.013 acc 0.465 kl_m1 0.0099 7.02 it/s (queue 6)
+[11:32:31] step 7800 ce 0.973 acc 0.470 kl_m1 0.0102 6.30 it/s (queue 6)
+[11:32:46] step 7900 ce 0.995 acc 0.463 kl_m1 0.0102 6.47 it/s (queue 6)
+[11:33:02] step 8000 ce 0.988 acc 0.469 kl_m1 0.0100 6.07 it/s (queue 6)
+[11:33:54] EVAL step 8000: b1 clear 0.91  snap3 clear 0.00 items 37.1 deaths 1.14  late3 clear 0.00 ate 0.26  val acc 0.440 (alive 0.454) nll 1.297  (52s)
+[11:33:54] done
+dagger round 1 train exit 0
+=== 2026-10-14 11:33:59 finished [dagger] exit 0
