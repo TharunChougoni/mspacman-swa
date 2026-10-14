@@ -25,6 +25,11 @@ def sync():
                 for k, t in EVAL.items():
                     if isinstance(d.get(k), (int, float)):
                         w.add_scalar(t, d[k], x)
+                r2 = d.get("mb_reach2")
+                if not isinstance(r2, (int, float)) and isinstance(d.get("mb_clears"), (int, float)) and isinstance(d.get("mb_reach3"), (int, float)):
+                    r2 = d["mb_clears"] - d["mb_reach3"] - (d.get("mb_reach4") or 0.0)    # clears = reach2 + reach3 + reach4
+                if isinstance(r2, (int, float)) and r2 > 0 and isinstance(d.get("mb_reach3"), (int, float)):
+                    w.add_scalar("b2_clear", d["mb_reach3"] / r2, x)                     # P(clear board 2 | reached board 2)
             elif d.get("type") == "train" and isinstance(d.get("ent"), (int, float)):
                 w.add_scalar("entropy", d["ent"], x)
         w.close()
