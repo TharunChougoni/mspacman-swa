@@ -70,7 +70,7 @@ EVAL_EVERY, EVAL_MB_N, EVAL_SNAP_REP = int(E("EVAL_EVERY", "40")), int(E("EVAL_M
 EVAL_WORKERS, MIN_B1 = int(E("EVAL_WORKERS", "8")), float(E("MIN_B1", "0.75"))
 N_TEST = int(E("N_TEST", "7")); CKPT_S = float(E("CKPT_S", "120"))
 P_EXTRA_LIVES, ENT_FLOOR = float(E("P_EXTRA_LIVES", "0.5")), float(E("ENT_FLOOR", "0.25"))
-AUX0, AUX_UPD, B_AUX, AUX_DATA = float(E("AUX0", "0.0")), int(E("AUX_UPD", "400")), int(E("B_AUX", "32")), E("AUX_DATA", "runs/m14d1/data")
+AUX0, AUX_UPD, B_AUX, AUX_DATA = float(E("AUX0", "0.5")), int(E("AUX_UPD", "1000000000")), int(E("B_AUX", "32")), E("AUX_DATA", "runs/m16/ce_data")  # M16: teacher CE on curriculum states, no anneal
 P_CUR, P_REPLAY, PROMOTE, PROMOTE_N = float(E("P_CUR", "0.75")), float(E("P_REPLAY", "0.25")), float(E("PROMOTE", "0.5")), int(E("PROMOTE_N", "40"))
 EVAL_CUR_N = int(E("EVAL_CUR_N", "12")); CUR_ITEM_MULT, CUR_CLEAR_MULT = float(E("CUR_ITEM_MULT", "5")), float(E("CUR_CLEAR_MULT", "3")); RW_DEATH3, CUR_DEATH, CUR_END_ON_DEATH = float(E("RW_DEATH3", "10")), float(E("CUR_DEATH", "15")), int(E("CUR_END_ON_DEATH", "1"))
 DEADLINE = float(E("DEADLINE", "0")) or float("inf"); MAX_UPDATES = int(E("MAX_UPDATES", "1000000"))
