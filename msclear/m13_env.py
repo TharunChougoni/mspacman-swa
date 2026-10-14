@@ -227,7 +227,9 @@ def _worker(remote, n, wid, cfg):
                     sp = 0.0
                     if stall and left <= stall[0] and m["since"] > stall[1]:
                         sp = min(stall[3], stall[2] + stall[2] * (m["since"] - stall[1]) / stall[1])
-                    rew[i] = rw[0] * (items + bonus) + rw[1] * (g.score - sc0) + rw[2] * clear - dpen * death - sp + extra
+                    oncur = m["start"].startswith("b3cur")                     # M16 curriculum episodes: boosted items/clear
+                    cm = cfg.get("cur_item_mult", 1.0) if oncur else 1.0; cc = cfg.get("cur_clear_mult", 1.0) if oncur else 1.0
+                    rew[i] = rw[0] * cm * (items + bonus) + rw[1] * (g.score - sc0) + rw[2] * cc * clear - dpen * death - sp + extra
                     comp[i] = (items, g.score - sc0, clear, death, bonus, sp)
                     m["items"] += items; m["deaths"] += int(death)
                     if b >= 3 and info["lost_life"] and left <= 60:          # pre-death state, 40-60 decisions back
