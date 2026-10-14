@@ -200,7 +200,18 @@ def main():
     labA = mdA["lab"] & ~mdA["val_games"][mdA["gid"]]; ixA = np.flatnonzero(labA); arng = np.random.default_rng(st["update"] + 5)
     wA = np.where(mdA["pd"], 0.1, 1.0).astype(np.float32)
 
-    def aux_batch():
+    QSOFT = E("Q_DATA", "runs/m16/qdata.npz") if int(E("QSOFT", "0")) else None     # M16: soft targets from teacher values
+    if QSOFT:
+        qd = np.load(QSOFT); qperm = np.random.default_rng(0).permutation(len(qd["dec"])); nqv = max(1, len(qperm) // 20)
+        qval, qtr = qperm[:nqv], qperm[nqv:]                                     # 5% held-out rows for aux_ce_val
+
+    def aux_batch(val=False):
+        if QSOFT:
+            r = arng.choice(qval if val else qtr, B_AUX); ix = qd["dec"][r]
+            dec = np.maximum(ix[:, None] + np.arange(-C + 1, 1)[None], mdA["g0"][ix][:, None])
+            fi = mdA["fbase"][dec][..., None] + np.arange(4); u, inv = np.unique(fi, return_inverse=True)
+            x = np.asarray(FRA[u])[inv.reshape(fi.shape)]
+            return (torch.from_numpy(x).to(dev), torch.from_numpy(qd["p"][r]).to(dev), torch.ones(B_AUX, device=dev))
         ix = arng.choice(ixA, B_AUX); dec = np.maximum(ix[:, None] + np.arange(-C + 1, 1)[None], mdA["g0"][ix][:, None])
         fi = mdA["fbase"][dec][..., None] + np.arange(4); u, inv = np.unique(fi, return_inverse=True)
         x = np.asarray(FRA[u])[inv.reshape(fi.shape)]
@@ -298,7 +309,8 @@ def main():
                     aw = AUX0 * max(0.0, 1.0 - st["update"] / AUX_UPD); ace = torch.zeros((), device=dev)
                     if aw > 0:
                         xa, aa, wa = aux_batch(); za = pi.embed(xa.reshape(-1, 4, 84, 84)).view(B_AUX, C, -1)
-                        ace = (F.cross_entropy(pi.adv(pi.trunk_last(za)) / TAU, aa, reduction="none") * wa).sum() / wa.sum()
+                        lg = pi.adv(pi.trunk_last(za)) / TAU
+                        ace = (-(aa * F.log_softmax(lg, -1)).sum(-1)).mean() if QSOFT else (F.cross_entropy(lg, aa, reduction="none") * wa).sum() / wa.sum()
                     ec = ENT * (4.0 if ent_run < ENT_FLOOR else 1.0)
                     loss = pl + VF * vl - ec * ent + BETA * kl + aw * ace
                     cf = ((ratio - 1).abs() > CLIP).float().mean().item()
@@ -306,6 +318,11 @@ def main():
                 nn.utils.clip_grad_norm_(list(pi.parameters()) + list(vh.parameters()), MAX_GRAD); opt.step()
                 stats.append((pl.item(), vl.item(), kl.item(), ent.item(), cf)); ent_run = 0.9 * ent_run + 0.1 * ent.item() if not vwarm else ent_run
                 aux_ce_last = float(ace) if not vwarm else None
+        if QSOFT and AUX0 > 0:
+            with torch.no_grad():
+                xa, aa, _ = aux_batch(val=True); za = pi.embed(xa.reshape(-1, 4, 84, 84)).view(B_AUX, C, -1)
+                aux_ce_val = float((-(aa * F.log_softmax(pi.adv(pi.trunk_last(za)) / TAU, -1)).sum(-1)).mean())
+                aux_tgt_ent = float((-(aa * torch.log(aa.clamp(min=1e-12))).sum(-1)).mean())
         st["update"] += 1; st["env_steps"] += N * T; st["wall"] += time.time() - t0
         pl, vl, kl, ent, cf = np.mean(stats, 0)
         recent = recent[-300:]
@@ -318,7 +335,7 @@ def main():
             pool_sz = envs.pool_size()
         row = dict(type="train", update=st["update"], env_steps=st["env_steps"], sps=N * T / (time.time() - t0),
                    t_roll=t_roll, t_train=time.time() - t1, pg=pl, vloss=vl, kl_ref_maze1=kl, ent=ent, clipfrac=cf,
-                   aux_ce=locals().get("aux_ce_last"), aux_w=AUX0 * max(0.0, 1.0 - st["update"] / AUX_UPD), ent_run=ent_run,
+                   aux_ce=locals().get("aux_ce_last"), aux_ce_val=locals().get("aux_ce_val"), aux_tgt_ent=locals().get("aux_tgt_ent"), aux_w=AUX0 * max(0.0, 1.0 - st["update"] / AUX_UPD), ent_run=ent_run,
                    expl_var=float(1 - (rv - vv).var() / (rv.var() + 1e-8)), maze1_frac=float(kmask.mean()),
                    board_mean=float(BRD.float().mean()), board3p_frac=float((BRD >= 3).float().mean()),
                    train_recent=dict(b1=grp(lambda r: r["start"] == "b1"), b2=grp(lambda r: r["start"] == "b2"),
