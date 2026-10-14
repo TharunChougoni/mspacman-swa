@@ -59,7 +59,7 @@ VF, ENT, BETA, TAU = float(E("VF", "0.5")), float(E("ENT", "0.003")), float(E("B
 VWARM, MAX_GRAD = int(E("VWARM", "10")), float(E("MAX_GRAD", "0.5"))
 RW = [float(x) for x in E("RW", "0.1,0.0005,10.0,5.0,2.0").split(",")]
 STALL = [float(x) for x in E("STALL", "10,150,0.005,0.01").split(",")]
-P_B1, P_B2, P_HARVEST = float(E("P_B1", "0.25")), float(E("P_B2", "0.15")), float(E("P_HARVEST", "0.6"))
+P_B1, P_B2, P_HARVEST = float(E("P_B1", "0.20")), float(E("P_B2", "0.30")), float(E("P_HARVEST", "0.6"))
 P_LATE, P_VLATE, EVAL_LATE_REP = float(E("P_LATE", "0.4")), float(E("P_VLATE", "0.4")), int(E("EVAL_LATE_REP", "2"))
 POOL_CAP, MAX_STEPS = int(E("POOL_CAP", "60")), int(E("MAX_STEPS", "8000"))
 EVAL_EVERY, EVAL_MB_N, EVAL_SNAP_REP = int(E("EVAL_EVERY", "40")), int(E("EVAL_MB_N", "50")), int(E("EVAL_SNAP_REP", "4"))
@@ -160,6 +160,12 @@ def main():
                  mb_reach3=float(np.mean([g["max_board"] >= 3 for g in rb])), mb_reach4=float(np.mean([g["max_board"] >= 4 for g in rb])),
                  mb_b3_items=float(np.mean(b3)) if b3 else None,
                  mb_lives_b3=float(np.mean([g["boards"]["3"]["lives"] for g in rb if "3" in g["boards"]])) if b3 else None,
+                 mb_reach2=float(np.mean([g["max_board"] >= 2 for g in rb])),
+                 mb_deaths_b1=float(np.mean([g["boards"].get("1", {}).get("deaths", 0) for g in rb])),
+                 mb_deaths_b2=float(np.mean([g["boards"].get("2", {}).get("deaths", 0) for g in rb])),
+                 mb_deaths_b3=float(np.mean([g["boards"].get("3", {}).get("deaths", 0) for g in rb])),
+                 mb_cap_hit=float(np.mean([bool(g.get("cap_hit")) for g in rb])),
+                 mb_end_b2=float(np.mean([g["max_board"] == 2 for g in rb])),
                  snap3_clear=float(np.mean([g["cleared"] for g in rc])), snap3_items=float(np.mean([g["items"] for g in rc])),
                  snap3_deaths=float(np.mean([g["deaths"] for g in rc])),
                  late3_clear=float(np.mean([g["cleared"] for g in rd])), late3_left0=float(np.mean([g["left0"] for g in rd])),
@@ -171,7 +177,7 @@ def main():
         if better:
             st["best"] = s; save(dict(model=pi.state_dict(), arch=ARCH, kind="m10", step=st["update"]), RUN / "best.pt")
         log(f"EVAL upd {st['update']} ({st['env_steps'] / 1e6:.2f}M): b1 clear {s['b1_clear']:.2f}  multiboard clears {s['mb_clears']:.2f} "
-            f"reach3 {s['mb_reach3']:.2f} reach4 {s['mb_reach4']:.2f} b3 items {s['mb_b3_items']}  snap3 clear {s['snap3_clear']:.2f} "
+            f"reach2 {s['mb_reach2']:.2f} deaths b1/b2/b3 {s['mb_deaths_b1']:.2f}/{s['mb_deaths_b2']:.2f}/{s['mb_deaths_b3']:.2f} cap {s['mb_cap_hit']:.2f} reach3 {s['mb_reach3']:.2f} reach4 {s['mb_reach4']:.2f} b3 items {s['mb_b3_items']}  snap3 clear {s['snap3_clear']:.2f} "
             f"items {s['snap3_items']:.1f} deaths {s['snap3_deaths']:.2f}  late3 clear {s['late3_clear']:.2f} (from {s['late3_left0']:.0f} left, ate {s['late3_items_frac']:.2f})  ({s['secs']}s){'  *best*' if better else ''}")
 
     def ckpt():
