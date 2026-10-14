@@ -118,6 +118,7 @@ def _worker(remote, n, wid, cfg):
     b3 = [pickle.load(open(f, "rb")) for f in cfg["b3_files"]]
     pools = {k: collections.deque(maxlen=cfg["pool_cap"]) for k in ("early", "late", "vlate")}
     slot = {k: 0 for k in pools}
+    cur = cfg.get("cur_files") or []
     lf = list(cfg.get("late_files", []))
     for j in rng.permutation(len(lf)):                 # per-worker shuffle: each FIFO keeps a different subset
         f = lf[j]; d = pickle.load(open(f, "rb")); pools[bucket(d["left"])].append(d)
@@ -147,6 +148,13 @@ def _worker(remote, n, wid, cfg):
         if u >= cfg["p_b1"]:
             if u < cfg["p_b1"] + cfg["p_b2"] and b2:
                 restore(g, b2[int(rng.integers(len(b2)))]); start = "b2"
+            elif cur and rng.random() < cfg.get("p_cur", 0.0):          # M16 reverse curriculum (lazy-loaded files)
+                try:
+                    lvl = int(open(cfg["level_file"]).read().strip())
+                except Exception:
+                    lvl = 0
+                k = lvl if (lvl == 0 or rng.random() >= cfg.get("p_replay", 0.25)) else int(rng.integers(0, lvl))
+                restore(g, pickle.load(open(cur[k][int(rng.integers(len(cur[k])))], "rb"))); start = f"b3cur{k}"
             elif (pools["late"] or pools["vlate"]) and rng.random() < cfg["p_late"]:
                 k = "vlate" if pools["vlate"] and (not pools["late"] or rng.random() < cfg["p_vlate"]) else "late"
                 restore(g, pools[k][int(rng.integers(len(pools[k])))]); start = "b3" + k

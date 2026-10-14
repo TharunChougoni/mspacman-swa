@@ -4,9 +4,9 @@ import json, shutil, sys, time
 from pathlib import Path
 from tensorboardX import SummaryWriter
 ROOT = Path(__file__).resolve().parent.parent; OUT = ROOT / "runs/tb_simple"
-RUNS = ["m11", "m13", "m14", "m15"]
+RUNS = ["m11", "m13", "m14", "m15", "m16"]
 EVAL = {"b1_clear": "b1_clear", "snap3_items": "snap3_items", "snap3_clear": "snap3_clear",
-        "late3_items_frac": "late3_ate", "mb_lives_b3": "spare_lives_at_b3"}
+        "late3_items_frac": "late3_ate", "mb_lives_b3": "spare_lives_at_b3", "cur_level": "curriculum_level", "late3_clear": "late3_clear"}
 
 def sync():
     tmp = OUT.with_name("tb_simple_tmp"); shutil.rmtree(tmp, ignore_errors=True)

@@ -1,0 +1,25 @@
+=== 2026-10-14 14:37:57 start [m16states]
+544 demos
+25 demos, saved 606, full-match 0.00, matched dec frac 0.233 (4s)
+50 demos, saved 959, full-match 0.00, matched dec frac 0.209 (6s)
+75 demos, saved 1564, full-match 0.00, matched dec frac 0.199 (9s)
+100 demos, saved 1971, full-match 0.04, matched dec frac 0.218 (12s)
+125 demos, saved 2179, full-match 0.05, matched dec frac 0.223 (15s)
+150 demos, saved 2570, full-match 0.05, matched dec frac 0.220 (18s)
+175 demos, saved 3835, full-match 0.06, matched dec frac 0.232 (21s)
+200 demos, saved 5235, full-match 0.07, matched dec frac 0.230 (25s)
+225 demos, saved 6747, full-match 0.08, matched dec frac 0.231 (28s)
+250 demos, saved 8128, full-match 0.08, matched dec frac 0.233 (31s)
+275 demos, saved 9604, full-match 0.08, matched dec frac 0.234 (35s)
+300 demos, saved 11131, full-match 0.10, matched dec frac 0.241 (38s)
+325 demos, saved 12728, full-match 0.10, matched dec frac 0.248 (42s)
+350 demos, saved 14210, full-match 0.10, matched dec frac 0.244 (46s)
+375 demos, saved 15486, full-match 0.10, matched dec frac 0.244 (49s)
+400 demos, saved 15788, full-match 0.09, matched dec frac 0.243 (52s)
+425 demos, saved 16722, full-match 0.09, matched dec frac 0.242 (56s)
+450 demos, saved 18429, full-match 0.10, matched dec frac 0.245 (59s)
+475 demos, saved 19950, full-match 0.12, matched dec frac 0.249 (63s)
+500 demos, saved 21750, full-match 0.14, matched dec frac 0.255 (67s)
+525 demos, saved 22694, full-match 0.14, matched dec frac 0.255 (70s)
+SUMMARY {"demos": 544, "full_match": 0.13970588235294118, "matched_frac": 0.25585140008578633, "div_hist": [0, 0, 0, 440, 28], "saved": 22897}
+=== 2026-10-14 14:39:09 finished [m16states] exit 0
