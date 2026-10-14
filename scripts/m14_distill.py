@@ -28,7 +28,8 @@ from msclear.m10_fasteval import M10Evaluator  # noqa: E402
 from msclear.m10_net import M10Net  # noqa: E402
 
 RUN = M.RUN; DATA = RUN / "data"
-INIT = E("INIT", "runs/m13/best.pt"); DEMO = E("DEMO_DIR", "runs/teacher/demos")
+INIT = E("INIT", "runs/m13/best.pt"); DEMO = E("DEMO_DIR", "runs/teacher/demos")   # comma-separated dirs allowed
+WD, P_DAG = float(E("WD", "0.0")), float(E("P_DAG", "0.5"))   # P_DAG: batch share of DAgger labels
 B_T, B_M1 = int(E("B_T", "128")), int(E("B_M1", "32")); LR = float(E("LR", "1e-4")); TAU = float(E("TAU", "0.25"))
 BETA, W_PD = float(E("BETA", "1.0")), float(E("W_PD", "0.3")); MAX_STEPS = int(E("MAX_STEPS", "30000"))
 EVAL_EVERY, CKPT_S = int(E("EVAL_EVERY", "1500")), float(E("CKPT_S", "300")); M1_STEPS = int(E("M1_STEPS", "60000"))
@@ -41,21 +42,23 @@ def pack_demos(C):
     if (DATA / "demo_meta.npz").exists():
         return
     DATA.mkdir(parents=True, exist_ok=True)
-    fs = sorted(glob.glob(f"{DEMO}/*.npz")); nf = 0; nd = 0; meta = []
+    fs = sorted(f for d in DEMO.split(",") for f in glob.glob(f"{d}/*.npz") if not f.endswith(".tmp.npz")); nf = 0; nd = 0; meta = []
     for f in fs:
         z = np.load(f); n = len(z["act"]); meta.append((f, n)); nf += n + 3; nd += n
     FR = np.lib.format.open_memmap(DATA / "frames.npy", "w+", np.uint8, (nf, 84, 84))
     act = np.zeros(nd, np.int8); fbase = np.zeros(nd, np.int64); g0 = np.zeros(nd, np.int64); pd = np.zeros(nd, bool)
-    gid = np.zeros(nd, np.int32); fo = 0; do = 0
+    gid = np.zeros(nd, np.int32); lab = np.ones(nd, bool); fo = 0; do = 0
     for k, (f, n) in enumerate(meta):
         z = np.load(f)
         FR[fo:fo + 3] = z["stack0"][:3]; FR[fo + 3:fo + 3 + n] = z["frames"]
         act[do:do + n] = z["act"]; fbase[do:do + n] = fo + np.arange(n); g0[do:do + n] = do
         pd[do:do + n] = z["deaths_before"] > 0; gid[do:do + n] = k
+        if "labeled" in z:
+            lab[do:do + n] = z["labeled"]
         fo += n + 3; do += n
     FR.flush()
     val = np.array([(zlib.crc32(Path(f).name.encode()) % 1000) < VAL_FRAC * 1000 for f, _ in meta])
-    np.savez(DATA / "demo_meta.npz", act=act, fbase=fbase, g0=g0, pd=pd, gid=gid, val_games=val, files=np.array([f for f, _ in meta]))
+    np.savez(DATA / "demo_meta.npz", lab=lab, act=act, fbase=fbase, g0=g0, pd=pd, gid=gid, val_games=val, files=np.array([f for f, _ in meta]))
     log(f"packed {len(meta)} games, {nd:,} decisions, {nf:,} frames ({nf * 7056 / 1e9:.1f} GB)")
 
 
@@ -106,7 +109,7 @@ def main():
     ck0 = torch.load(INIT, map_location="cpu", weights_only=False); ARCH = ck0["arch"]
     pi = M10Net(**ARCH); pi.load_state_dict(ck0["pi"] if "pi" in ck0 else ck0["model"]); pi = pi.to(dev)
     ref = copy.deepcopy(pi).eval().requires_grad_(False); C = pi.ctx
-    opt = torch.optim.Adam(pi.parameters(), lr=LR, eps=1e-5)
+    opt = torch.optim.AdamW(pi.parameters(), lr=LR, eps=1e-5, weight_decay=WD)
     st = dict(step=0, best=None, evals=[], wall=0.0, resumes=0)
     last = RUN / "ckpt_last.pt"
     if last.exists():
@@ -116,11 +119,14 @@ def main():
     pack_demos(C); collect_maze1(ref, dev, C)
     FR = np.load(DATA / "frames.npy", mmap_mode="r"); md = np.load(DATA / "demo_meta.npz")
     act, fbase, g0, pd, gid = md["act"], md["fbase"], md["g0"], md["pd"], md["gid"]
-    isval = md["val_games"][gid]; tr_idx = np.flatnonzero(~isval); va_idx = np.flatnonzero(isval)
+    lab = md["lab"] if "lab" in md else np.ones(len(act), bool)
+    isval = md["val_games"][gid]; tr_idx = np.flatnonzero(~isval & lab); va_idx = np.flatnonzero(isval & lab)
+    dag = np.array(["dagger" in str(f) for f in md["files"]])[gid]
+    tr_dag, tr_dem = tr_idx[dag[tr_idx]], tr_idx[~dag[tr_idx]]
     M1 = np.load(DATA / "m1_stacks.npy", mmap_mode="r"); M1W = np.load(DATA / "m1_win.npy")
     cfg = {k: v for k, v in globals().items() if k.isupper() and isinstance(v, (int, float, str))}
     cfg.update(ARCH=ARCH, ctx=C, demo_decisions=int(len(act)), train_dec=int(len(tr_idx)), val_dec=int(len(va_idx)),
-               val_games=int(md["val_games"].sum()), postdeath_frac=float(pd.mean()), m1_steps=int(len(M1W)))
+               val_games=int(md["val_games"].sum()), dagger_train_labels=int((dag[tr_idx]).sum()) if len(tr_idx) else 0, postdeath_frac=float(pd.mean()), m1_steps=int(len(M1W)))
     (RUN / "config.json").write_text(json.dumps(cfg, indent=1)); log(f"config {json.dumps(cfg)}")
 
     def demo_batch(ix):
@@ -139,7 +145,9 @@ def main():
 
     def loader():
         while True:
-            x, a, w = demo_batch(rng.choice(tr_idx, B_T)); xm = m1_batch(rng.integers(0, len(M1W), B_M1))
+            nd_ = int(rng.binomial(B_T, P_DAG)) if len(tr_dag) else 0
+            ix = np.concatenate([rng.choice(tr_dag, nd_) if nd_ else np.zeros(0, np.int64), rng.choice(tr_dem, B_T - nd_)])
+            x, a, w = demo_batch(ix); xm = m1_batch(rng.integers(0, len(M1W), B_M1))
             q.put((torch.from_numpy(x).pin_memory(), torch.from_numpy(a), torch.from_numpy(w), torch.from_numpy(xm).pin_memory()))
     for _ in range(3):
         threading.Thread(target=loader, daemon=True).start()
