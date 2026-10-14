@@ -22,12 +22,12 @@ board-3 starts: p_late of them from late/vlate (vlate with prob p_vlate when non
 M11 docstring follows.
 M11 multi-board PPO envs. PixelGame workers; games play THROUGH board clears (episode = game over or max_steps
 decisions from the start). Start mix: p_b1 fresh reset, p_b2 board-2 snapshot, rest board-3+ snapshot (base files or
-harvested pool). Maze-agnostic item counting: ram[119] (+1 per dot/pellet, resets to 0 on a new board; 154 per board).
+harvested pool). Maze-agnostic item counting: ram[119] (+1 per dot/pellet, resets to 0 on a new board; 154 per board on maze 1, 150 on maze 2 via R.items_total).
 
 Reward per decision, rw = (item, score, clear, death, k_end):
   rw_item * sum over eaten items (1 + k_end * (1 - rem/30) if rem < 30)  + rw_score * score delta
   + rw_clear * [board index increased] - rw_death * [life lost or game over]  - stall penalty
-Stall (items, n, pen, cap): with <= items left on the CURRENT board (154 - ram[119]) and no item for > n decisions:
+Stall (items, n, pen, cap): with <= items left on the CURRENT board (items_total - ram[119]) and no item for > n decisions:
   - min(cap, pen + pen * (since - n) / n).
 Harvest: on boards >= 3 (any start), a snapshot at the board start and at the first step with <= 120/90/60/30/15 left;
 kept in a per-worker FIFO (cap pool_cap) and mirrored to disk (harvest_dir/w{wid}_{slot}.pkl, slot rotates = FIFO).
@@ -128,7 +128,7 @@ def _worker(remote, n, wid, cfg):
 
     def snap(g):
         return dict(state=g.ale.cloneState(), stack=g.stack.copy(), book=_book(g), board=R.board(g.ram),
-                    left=154 - int(g.ram[R.DOTS_EATEN]), lives=int(g.ram[R.LIVES]))
+                    left=R.items_total(R.board(g.ram)) - int(g.ram[R.DOTS_EATEN]), lives=int(g.ram[R.LIVES]))
 
     def harvest(g, s=None):
         s = s or snap(g); k = bucket(s["left"]); pools[k].append(s)
@@ -170,7 +170,7 @@ def _worker(remote, n, wid, cfg):
         b = R.board(g.ram)
         meta[i] = dict(start=start, xl=xl, b0=b, cur=b, steps0=g.steps, score0=g.score, since=0,
                        thr=set(), e=int(g.ram[R.DOTS_EATEN]), items=0, deaths=0,
-                       ring=collections.deque(maxlen=13), left0=154 - int(g.ram[R.DOTS_EATEN]),
+                       ring=collections.deque(maxlen=13), left0=R.items_total(b) - int(g.ram[R.DOTS_EATEN]),
                        lives_b3=spare_lives(g.ram) if b >= 3 else None, arrived_b3=False, phi=None)
         return g.stack.copy()
 
@@ -193,22 +193,25 @@ def _worker(remote, n, wid, cfg):
                     r = g.ram; b = R.board(r); e = int(r[R.DOTS_EATEN])
                     clear = 0.0
                     if b != m["cur"]:
-                        clear = float(b > m["cur"]); items = 154 - m["e"] if b > m["cur"] else 0
-                        rem0 = 154 - m["e"]; m["cur"] = b; m["thr"] = set()
+                        clear = float(b > m["cur"]); items = R.items_total(m["cur"]) - m["e"] if b > m["cur"] else 0
+                        rem0 = R.items_total(m["cur"]) - m["e"]; m["cur"] = b; m["thr"] = set()
                         if b >= 3:
                             harvest(g)
                     else:
-                        items = max(0, e - m["e"]); rem0 = 154 - m["e"]
+                        items = max(0, e - m["e"]); rem0 = R.items_total(b) - m["e"]
                     m["e"] = e
                     bonus = sum(rw[4] * (1 - (rem0 - j) / 30) for j in range(items) if rem0 - j < 30)
                     over = bool(g.ale.game_over()); trunc = g.steps - m["steps0"] >= cfg["max_steps"]
+                    oncur = m["start"].startswith("b3cur")                     # M16 curriculum start
+                    if oncur and info["lost_life"] and cfg.get("cur_end_on_death"):
+                        over = True                                            # curriculum: episode ends on first death
                     death = float(info["lost_life"] or over)
                     extra = 0.0
                     if b >= 3 and m["lives_b3"] is None:                      # first arrival at board 3
                         m["lives_b3"] = spare_lives(r); m["arrived_b3"] = True
                         extra += cfg.get("arrive_bonus", 0.0) * m["lives_b3"]
                     sk = cfg.get("shape_k", 0.0)
-                    if sk and b >= cfg.get("shape_min_board", 3) and 154 - e <= cfg.get("shape_left", 60):
+                    if sk and b >= cfg.get("shape_min_board", 3) and R.items_total(b) - e <= cfg.get("shape_left", 60):
                         if clear or info["lost_life"]:
                             m["phi"] = None
                         if "dd" not in m:
@@ -221,13 +224,12 @@ def _worker(remote, n, wid, cfg):
                         m["phi"] = phi
                     else:
                         m["phi"] = None
-                    dpen = cfg.get("rw_death12", rw[3]) if b <= 2 else rw[3]
-                    left = 154 - e
+                    dpen = cfg.get("rw_death12", rw[3]) if b <= 2 else (cfg.get("cur_death", rw[3]) if oncur else cfg.get("rw_death3", rw[3]))
+                    left = R.items_total(b) - e
                     m["since"] = 0 if items else m["since"] + 1
                     sp = 0.0
                     if stall and left <= stall[0] and m["since"] > stall[1]:
                         sp = min(stall[3], stall[2] + stall[2] * (m["since"] - stall[1]) / stall[1])
-                    oncur = m["start"].startswith("b3cur")                     # M16 curriculum episodes: boosted items/clear
                     cm = cfg.get("cur_item_mult", 1.0) if oncur else 1.0; cc = cfg.get("cur_clear_mult", 1.0) if oncur else 1.0
                     rew[i] = rw[0] * cm * (items + bonus) + rw[1] * (g.score - sc0) + rw[2] * cc * clear - dpen * death - sp + extra
                     comp[i] = (items, g.score - sc0, clear, death, bonus, sp)
@@ -338,7 +340,7 @@ class SnapGame:
         if b == self.b0:
             self.items = max(self.items, int(g.ram[R.DOTS_EATEN]) - self.e0)
         elif self.cur == self.b0:
-            self.items = 154 - self.e0
+            self.items = R.items_total(self.b0) - self.e0
         self.cur = max(self.cur, b)
         over = g.ale.game_over()
         self.d += int(over and not info["lost_life"])
@@ -346,7 +348,7 @@ class SnapGame:
 
     def result(self, seed):
         return dict(seed=seed, file=self.file, b0=self.b0, board=self.cur, cleared=self.cur > self.b0, items=self.items,
-                    left0=154 - self.e0, steps=self.n, deaths=self.d, score=self.g.score - self.score0, eaten=self.items,
+                    left0=R.items_total(self.b0) - self.e0, steps=self.n, deaths=self.d, score=self.g.score - self.score0, eaten=self.items,
                     cap_hit=bool(self.n >= self.cap and not self.g.ale.game_over()))
 
 

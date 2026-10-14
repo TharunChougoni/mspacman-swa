@@ -97,3 +97,8 @@ def frightened(ram) -> np.ndarray:
 def board(ram) -> int:
     """1-based board index from the level byte."""
     return (int(ram[LEVEL]) - 20) // 22 + 1
+
+
+def items_total(b: int) -> int:
+    """Items (dots+pellets, ram[119] at clear) per board: maze 1 (boards 1-2) 154, maze 2 (boards 3-5) 150."""
+    return 150 if 3 <= b <= 5 else 154

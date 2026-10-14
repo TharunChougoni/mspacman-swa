@@ -72,7 +72,7 @@ N_TEST = int(E("N_TEST", "7")); CKPT_S = float(E("CKPT_S", "120"))
 P_EXTRA_LIVES, ENT_FLOOR = float(E("P_EXTRA_LIVES", "0.5")), float(E("ENT_FLOOR", "0.25"))
 AUX0, AUX_UPD, B_AUX, AUX_DATA = float(E("AUX0", "0.0")), int(E("AUX_UPD", "400")), int(E("B_AUX", "32")), E("AUX_DATA", "runs/m14d1/data")
 P_CUR, P_REPLAY, PROMOTE, PROMOTE_N = float(E("P_CUR", "0.75")), float(E("P_REPLAY", "0.25")), float(E("PROMOTE", "0.5")), int(E("PROMOTE_N", "40"))
-EVAL_CUR_N = int(E("EVAL_CUR_N", "12")); CUR_ITEM_MULT, CUR_CLEAR_MULT = float(E("CUR_ITEM_MULT", "5")), float(E("CUR_CLEAR_MULT", "3"))
+EVAL_CUR_N = int(E("EVAL_CUR_N", "12")); CUR_ITEM_MULT, CUR_CLEAR_MULT = float(E("CUR_ITEM_MULT", "5")), float(E("CUR_CLEAR_MULT", "3")); RW_DEATH3, CUR_DEATH, CUR_END_ON_DEATH = float(E("RW_DEATH3", "10")), float(E("CUR_DEATH", "15")), int(E("CUR_END_ON_DEATH", "1"))
 DEADLINE = float(E("DEADLINE", "0")) or float("inf"); MAX_UPDATES = int(E("MAX_UPDATES", "1000000"))
 
 
@@ -143,7 +143,7 @@ def main():
     envs = m13_env.VecGames13(NW, PER, groups=2, rw=RW, rw_death12=RW_DEATH12, arrive_bonus=ARRIVE_BONUS,
                               shape_k=SHAPE_K, shape_left=SHAPE_LEFT, shape_min_board=3, shape_gamma=GAMMA, stall=STALL, p_b1=P_B1, p_b2=P_B2, p_harvest=P_HARVEST,
                               p_late=P_LATE, p_vlate=P_VLATE, late_files=late_files,
-                              b2_files=b2, b3_files=b3_train, pool_cap=POOL_CAP, max_steps=MAX_STEPS, p_extra_lives=P_EXTRA_LIVES, cur_files=BK["train"], p_cur=P_CUR, p_replay=P_REPLAY, cur_item_mult=CUR_ITEM_MULT, cur_clear_mult=CUR_CLEAR_MULT, level_file=str((RUN / "level").resolve()),
+                              b2_files=b2, b3_files=b3_train, pool_cap=POOL_CAP, max_steps=MAX_STEPS, p_extra_lives=P_EXTRA_LIVES, cur_files=BK["train"], p_cur=P_CUR, p_replay=P_REPLAY, cur_item_mult=CUR_ITEM_MULT, cur_clear_mult=CUR_CLEAR_MULT, rw_death3=RW_DEATH3, cur_death=CUR_DEATH, cur_end_on_death=CUR_END_ON_DEATH, level_file=str((RUN / "level").resolve()),
                               harvest_dir=str((RUN / "harvest").resolve()), seed_off=st["update"] % 997)
     # evaluators: (a) board-1 fasteval, (b) multiboard, (c) held-out board-3 snapshots
     fasteval._MAX_STEPS = 20001
