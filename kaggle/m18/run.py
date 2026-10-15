@@ -18,7 +18,7 @@ if prev and not os.path.exists(f"{RUN}/ckpt_last.pt"):
     if os.path.isdir(f"{d}/tb"): shutil.copytree(f"{d}/tb", f"{RUN}/tb", dirs_exist_ok=True)
 sh("pip install -q gymnasium==1.3.0 ale-py==0.12.0 2>&1 | tail -1")
 env = dict(os.environ, RUN=RUN, PYTHONPATH=W, PYTORCH_CUDA_ALLOC_CONF="expandable_segments:True",
-           DEADLINE=str(T0 + HOURS * 3600), ENV_WORKERS="5", PER_WORKER="14", EVAL_WORKERS="2", CKPT_S="180", EVAL_EVERY="150", VWARM="50")
+           DEADLINE=str(T0 + HOURS * 3600), ENV_WORKERS="5", PER_WORKER="14", EVAL_WORKERS="2", CKPT_S="180", EVAL_EVERY="150", VWARM="50", BETA="0.1", LR_PI="3e-5")
 if MODE != "full":
     env.update(EVAL_EVERY="15", N_B1="6", N_B2="6", CKPT_S="60", VWARM="5")
 lim = int(T0 + HOURS * 3600 + 900 - time.time())   # hard stop 15 min after DEADLINE (eval/ckpt slack)
