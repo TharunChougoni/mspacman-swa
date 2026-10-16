@@ -5,7 +5,7 @@ import json, shutil, sys, time
 from pathlib import Path
 from tensorboardX import SummaryWriter
 ROOT = Path(__file__).resolve().parent.parent; OUT = ROOT / "runs/tb_simple"
-RUNS = ["m11", "m13", "m17", "m18", "m19"]
+RUNS = ["m11", "m13", "m17", "m18", "m19", "m20"]
 
 
 def num(x):
