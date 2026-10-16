@@ -239,7 +239,7 @@ def _worker(remote, n, wid, cfg):
                         # BFS field recomputed only when the dot set changes (item eaten / board / restore)
                         d = m["dd"](g.ale, r, (b, e, id(m)))
                         phi = None if d is None else -sk * d
-                        if phi is not None and m["phi"] is not None and not (clear or info["lost_life"]):
+                        if phi is not None and m["phi"] is not None and not (clear or info["lost_life"]) and not (items and cfg.get("shape_skip_eat")):
                             extra += cfg.get("shape_gamma", 0.995) * phi - m["phi"]       # F = gamma Phi(s') - Phi(s)
                         m["phi"] = phi
                     else:

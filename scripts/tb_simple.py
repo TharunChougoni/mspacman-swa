@@ -5,7 +5,7 @@ import json, shutil, sys, time
 from pathlib import Path
 from tensorboardX import SummaryWriter
 ROOT = Path(__file__).resolve().parent.parent; OUT = ROOT / "runs/tb_simple"
-RUNS = ["m11", "m13", "m17"]
+RUNS = ["m11", "m13", "m17", "m18", "m19"]
 
 
 def num(x):
@@ -33,7 +33,7 @@ def sync():
                         r2 = d["mb_clears"] - d["mb_reach3"] - (d.get("mb_reach4") or 0.0)
                     b2 = d["mb_reach3"] / r2 if num(r2) and r2 > 0 and num(d.get("mb_reach3")) else None
                 for t, v in (("b2_clear", b2), ("b1_clear", d.get("b1_clear")), ("reach3", d.get("mb_reach3")),
-                             ("spare_lives_at_b3", d.get("mb_lives_b3")), ("deaths_b2", d.get("mb_deaths_b2"))):
+                             ("spare_lives_at_b3", d.get("mb_lives_b3")), ("deaths_b2", d.get("mb_deaths_b2") if num(d.get("mb_deaths_b2")) else d.get("b2_deaths")), ("clean_b1", d.get("b1_clean")), ("clean_b2", d.get("b2_clean"))):
                     if num(v):
                         w.add_scalar(t, v, x)
             elif d.get("type") == "train" and num(d.get("ent")):
