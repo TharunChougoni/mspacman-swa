@@ -178,7 +178,7 @@ def main():
     elif INIT_VH and Path(INIT_VH).exists():
         vh.load_state_dict(torch.load(INIT_VH, map_location="cpu", weights_only=False)["vh"])
     opt = torch.optim.Adam([dict(params=pi.parameters(), lr=LR_PI), dict(params=vh.parameters(), lr=LR_V)], eps=1e-5)
-    st = dict(update=0, env_steps=0, best=None, evals=[], wall=0.0, resumes=0, init_update=ck0.get("state", {}).get("update"))
+    st = dict(update=int(E("START_UPDATE", "0")), env_steps=int(E("START_STEPS", "0")), best=None, evals=[], wall=0.0, resumes=0, init_update=ck0.get("state", {}).get("update"))   # M18 s2: continue numbering from INIT
     last = RUN / "ckpt_last.pt"
     if last.exists():
         c = torch.load(last, map_location=dev, weights_only=False)
@@ -280,7 +280,7 @@ def main():
     gidx = [torch.from_numpy(g).to(dev) for g in envs.genv]; caches = [pi.new_cache(len(g), dev) for g in envs.genv]
     recent = []; comp_sum = np.zeros(6); first = True; t_ck = time.time()
     any_new = [True, True]; pool_sz = {}
-    if st["update"] == 0 and not st["evals"] and E("EVAL0", "1") == "1":
+    if not st["evals"] and E("EVAL0", "1") == "1":
         evaluate()
     while st["update"] < MAX_UPDATES:
         if time.time() >= DEADLINE:
