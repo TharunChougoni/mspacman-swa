@@ -203,7 +203,7 @@ def main():
     envs = m13_env.VecGames13(NW, PER, groups=2, rw=RW, rw_death12=RW_DEATH12, arrive_bonus=ARRIVE_BONUS,
                               shape_k=SHAPE_K, shape_left=SHAPE_LEFT, shape_min_board=int(E("SHAPE_MIN_BOARD", "3")), shape_skip_eat=int(E("SHAPE_SKIP_EAT", "0")), shape_gamma=GAMMA, stall=STALL, p_b1=P_B1, p_b2=P_B2, p_harvest=P_HARVEST,
                               p_late=0.0, p_vlate=P_VLATE, late_files=late_files,
-                              b2_files=b2, b3_files=[], clear_life_pen=CLEAR_LIFE_PEN, end_on_death=1, step_cost=STEP_COST, clean_bonus=CLEAN_BONUS, speed_bonus=SPEED_BONUS, speed_T=SPEED_T, end_board=END_BOARD, p_b2h=P_B2H, b2_every=B2_EVERY, b2h_cap=B2H_CAP,
+                              b2_files=b2, b3_files=[], clear_life_pen=CLEAR_LIFE_PEN, end_on_death=int(E("END_ON_DEATH", "1")), step_cost=STEP_COST, clean_bonus=CLEAN_BONUS, speed_bonus=SPEED_BONUS, speed_T=SPEED_T, end_board=END_BOARD, p_b2h=P_B2H, b2_every=B2_EVERY, b2h_cap=B2H_CAP,
                               b2_dir=E("B2_DIR") or None, b2_max=int(E("B2_MAX", "1000000000")), pool_cap=POOL_CAP, max_steps=MAX_STEPS, p_extra_lives=P_EXTRA_LIVES, cur_files=BK["train"], p_cur=P_CUR, p_replay=P_REPLAY, cur_item_mult=CUR_ITEM_MULT, cur_clear_mult=CUR_CLEAR_MULT, rw_death3=RW_DEATH3, cur_death=CUR_DEATH, cur_end_on_death=CUR_END_ON_DEATH, level_file=str((RUN / "level").resolve()),
                               harvest_dir=str((RUN / "harvest").resolve()), seed_off=st["update"] % 997)
     # evaluators: (a) board-1 fasteval, (b) multiboard, (c) held-out board-3 snapshots
