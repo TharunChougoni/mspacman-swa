@@ -177,12 +177,16 @@ def main():
         vh.load_state_dict(ck0["vh"])
     elif INIT_VH and Path(INIT_VH).exists():
         vh.load_state_dict(torch.load(INIT_VH, map_location="cpu", weights_only=False)["vh"])
+    EMA = float(E("EMA", "0"))                                              # M20: evaluate/save an EMA of the policy weights
+    ema = copy.deepcopy(pi).eval().requires_grad_(False) if EMA else None
     opt = torch.optim.Adam([dict(params=pi.parameters(), lr=LR_PI), dict(params=vh.parameters(), lr=LR_V)], eps=1e-5)
     st = dict(update=int(E("START_UPDATE", "0")), env_steps=int(E("START_STEPS", "0")), best=None, evals=[], wall=0.0, resumes=0, init_update=ck0.get("state", {}).get("update"))   # M18 s2: continue numbering from INIT
     last = RUN / "ckpt_last.pt"
     if last.exists():
         c = torch.load(last, map_location=dev, weights_only=False)
         pi.load_state_dict(c["pi"]); vh.load_state_dict(c["vh"]); opt.load_state_dict(c["opt"]); st = c["state"]
+        if EMA and c.get("ema"):
+            ema.load_state_dict(c["ema"])
         st["resumes"] += 1; log(f"resumed {last} at update {st['update']} ({st['env_steps']:,} steps)")
     BK = json.load(open("runs/m16/buckets.json")); NB = len(BK["train"])
     st.setdefault("level", 0); (RUN / "level").write_text(str(st["level"]))
@@ -218,8 +222,9 @@ def main():
 
     def evaluate():
         pi.eval(); t0 = time.time()
-        _, rf = ev_f.evaluate(pi, list(range(len(b1_test))))
-        _, rd = ev_d.evaluate(pi, list(range(len(late_test))))
+        en = ema if EMA else pi
+        _, rf = ev_f.evaluate(en, list(range(len(b1_test))))
+        _, rd = ev_d.evaluate(en, list(range(len(late_test))))
         pi.train()
         cl = lambda rr: float(np.mean([g["cleared"] and g["deaths"] == 0 for g in rr]))  # noqa: E731
         s = dict(update=st["update"], env_steps=st["env_steps"], secs=round(time.time() - t0),
@@ -236,13 +241,13 @@ def main():
             tbw.flush()
         better = st["best"] is None or s["clean_mean"] > st["best"]["clean_mean"]
         if better:
-            st["best"] = s; save(dict(model=pi.state_dict(), arch=ARCH, kind="m10", step=st["update"]), RUN / "best.pt")
+            st["best"] = s; save(dict(model=(ema if EMA else pi).state_dict(), arch=ARCH, kind="m10", step=st["update"]), RUN / "best.pt")
         log(f"EVAL upd {st['update']} ({st['env_steps'] / 1e6:.2f}M): CLEAN b1 {s['b1_clean']:.3f} b2 {s['b2_clean']:.3f} (mean {s['clean_mean']:.3f})  "
             f"clear b1 {s['b1_clear']:.3f} b2 {s['b2_clear']:.3f}  deaths b1 {s['b1_deaths']:.2f} b2 {s['b2_deaths']:.2f}  clean steps b1 {s['b1_steps_clean']:.0f} b2 {s['b2_steps_clean']:.0f}  b2 trunc {s['b2_trunc']:.2f}  ({s['secs']}s){'  *best*' if better else ''}")
         return s
 
     def ckpt():
-        save(dict(pi=pi.state_dict(), vh=vh.state_dict(), opt=opt.state_dict(), arch=ARCH, state=st), last)
+        save(dict(pi=pi.state_dict(), vh=vh.state_dict(), opt=opt.state_dict(), arch=ARCH, state=st, ema=ema.state_dict() if EMA else None), last)
 
     if AUX0 > 0:
       FRA = np.load(f"{AUX_DATA}/frames.npy", mmap_mode="r"); mdA = np.load(f"{AUX_DATA}/demo_meta.npz")
@@ -381,6 +386,10 @@ def main():
                 xa, aa, _ = aux_batch(val=True); za = pi.embed(xa.reshape(-1, 4, 84, 84)).view(B_AUX, C, -1)
                 aux_ce_val = float((-(aa * F.log_softmax(pi.adv(pi.trunk_last(za)) / TAU, -1)).sum(-1)).mean())
                 aux_tgt_ent = float((-(aa * torch.log(aa.clamp(min=1e-12))).sum(-1)).mean())
+        if EMA:
+            with torch.no_grad():
+                for pe, pp in zip(ema.parameters(), pi.parameters()):
+                    pe.mul_(EMA).add_(pp.detach(), alpha=1 - EMA)
         st["update"] += 1; st["env_steps"] += N * T; st["wall"] += time.time() - t0
         pl, vl, kl, ent, cf = np.mean(stats, 0)
         recent = recent[-300:]
