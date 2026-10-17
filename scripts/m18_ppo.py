@@ -180,7 +180,8 @@ def main():
     SEPV = int(E("SEPV", "0"))                                              # M22: separate value network (own CNN+trunk, copy of INIT)
     vnet = copy.deepcopy(pi).train() if SEPV else None
     if SEPV and E("VNET_INIT", "vh") == "vh" and INIT_VH and Path(INIT_VH).exists():   # trunk the INIT_VH value head was trained with
-        vnet.load_state_dict(torch.load(INIT_VH, map_location="cpu", weights_only=False)["pi"]); log(f"SEPV: value net trunk from {INIT_VH}")
+        cv0 = torch.load(INIT_VH, map_location="cpu", weights_only=False)                  # M22 s2: a SEPV ckpt carries its own value net
+        vnet.load_state_dict(cv0["vnet"] if cv0.get("vnet") else cv0["pi"]); log(f"SEPV: value net from {INIT_VH} ({'vnet' if cv0.get('vnet') else 'pi'})")
     EMA = float(E("EMA", "0"))                                              # M20: evaluate/save an EMA of the policy weights
     ema = copy.deepcopy(pi).eval().requires_grad_(False) if EMA else None
     groups = [dict(params=pi.parameters(), lr=LR_PI), dict(params=vh.parameters(), lr=LR_V)]
