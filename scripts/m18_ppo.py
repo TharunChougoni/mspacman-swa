@@ -370,7 +370,7 @@ def main():
             continue
         kmask = (BRD == 1).float()                                              # M17: KL leash on board-1 steps only
         advn = (adv - adv.mean()) / (adv.std() + 1e-8)
-        vwarm = st["update"] < VWARM
+        vwarm = st["update"] - st.setdefault("start_update", int(E("START_UPDATE", "0"))) < VWARM   # fix: warmup counted from the run start (was absolute: no warmup when START_UPDATE>=VWARM)
         stats = []
         for _ in range(EPOCHS):
             for mb in torch.randperm(N, device=dev).chunk(NMB):
