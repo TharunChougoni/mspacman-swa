@@ -166,7 +166,7 @@ def reward_check():
 
 
 def main():
-    RUN.mkdir(parents=True, exist_ok=True); (RUN / "harvest").mkdir(exist_ok=True); dev = torch.device("cuda")
+    RUN.mkdir(parents=True, exist_ok=True); (RUN / "harvest").mkdir(exist_ok=True); dev = torch.device(E("DEVICE", "cuda"))
     torch.backends.cuda.matmul.allow_tf32 = True; torch.backends.cudnn.allow_tf32 = True; torch.backends.cudnn.benchmark = True
     torch.set_num_threads(2)
     ck0 = torch.load(INIT, map_location="cpu", weights_only=False); ARCH = ck0["arch"]
@@ -177,9 +177,16 @@ def main():
         vh.load_state_dict(ck0["vh"])
     elif INIT_VH and Path(INIT_VH).exists():
         vh.load_state_dict(torch.load(INIT_VH, map_location="cpu", weights_only=False)["vh"])
+    SEPV = int(E("SEPV", "0"))                                              # M22: separate value network (own CNN+trunk, copy of INIT)
+    vnet = copy.deepcopy(pi).train() if SEPV else None
+    if SEPV and E("VNET_INIT", "vh") == "vh" and INIT_VH and Path(INIT_VH).exists():   # trunk the INIT_VH value head was trained with
+        vnet.load_state_dict(torch.load(INIT_VH, map_location="cpu", weights_only=False)["pi"]); log(f"SEPV: value net trunk from {INIT_VH}")
     EMA = float(E("EMA", "0"))                                              # M20: evaluate/save an EMA of the policy weights
     ema = copy.deepcopy(pi).eval().requires_grad_(False) if EMA else None
-    opt = torch.optim.Adam([dict(params=pi.parameters(), lr=LR_PI), dict(params=vh.parameters(), lr=LR_V)], eps=1e-5)
+    groups = [dict(params=pi.parameters(), lr=LR_PI), dict(params=vh.parameters(), lr=LR_V)]
+    if SEPV:
+        groups.append(dict(params=vnet.parameters(), lr=float(E("LR_VNET", "1e-4"))))
+    opt = torch.optim.Adam(groups, eps=1e-5)
     st = dict(update=int(E("START_UPDATE", "0")), env_steps=int(E("START_STEPS", "0")), best=None, evals=[], wall=0.0, resumes=0, init_update=ck0.get("state", {}).get("update"))   # M18 s2: continue numbering from INIT
     last = RUN / "ckpt_last.pt"
     if last.exists():
@@ -187,6 +194,8 @@ def main():
         pi.load_state_dict(c["pi"]); vh.load_state_dict(c["vh"]); opt.load_state_dict(c["opt"]); st = c["state"]
         if EMA and c.get("ema"):
             ema.load_state_dict(c["ema"])
+        if SEPV and c.get("vnet"):
+            vnet.load_state_dict(c["vnet"])
         st["resumes"] += 1; log(f"resumed {last} at update {st['update']} ({st['env_steps']:,} steps)")
     BK = json.load(open("runs/m16/buckets.json")); NB = len(BK["train"])
     st.setdefault("level", 0); (RUN / "level").write_text(str(st["level"]))
@@ -212,8 +221,8 @@ def main():
     os.environ["MB_CAP"] = "20000"; os.environ.pop("MB_STATES", None)
     w0 = fasteval._worker; ev_b = None
     os.environ["MB_CAP"] = "8000"; os.environ["SNAP_STOP_CLEAR"] = "1"; fasteval._worker = m13_env.snap_worker
-    os.environ["M11_SNAPS"] = ",".join(late_test); ev_d = M10Evaluator(workers=EVAL_WORKERS) if late_test else None
-    os.environ["M11_SNAPS"] = ",".join(b1_test); ev_f = M10Evaluator(workers=EVAL_WORKERS); fasteval._worker = w0
+    os.environ["M11_SNAPS"] = ",".join(late_test); ev_d = M10Evaluator(workers=EVAL_WORKERS, device=E("DEVICE", "cuda")) if late_test else None
+    os.environ["M11_SNAPS"] = ",".join(b1_test); ev_f = M10Evaluator(workers=EVAL_WORKERS, device=E("DEVICE", "cuda")); fasteval._worker = w0
     try:
         from torch.utils.tensorboard import SummaryWriter
         tbw = SummaryWriter(str(RUN / "tb"))
@@ -247,7 +256,7 @@ def main():
         return s
 
     def ckpt():
-        save(dict(pi=pi.state_dict(), vh=vh.state_dict(), opt=opt.state_dict(), arch=ARCH, state=st, ema=ema.state_dict() if EMA else None), last)
+        save(dict(pi=pi.state_dict(), vh=vh.state_dict(), opt=opt.state_dict(), arch=ARCH, state=st, ema=ema.state_dict() if EMA else None, vnet=vnet.state_dict() if SEPV else None), last)
 
     if AUX0 > 0:
       FRA = np.load(f"{AUX_DATA}/frames.npy", mmap_mode="r"); mdA = np.load(f"{AUX_DATA}/demo_meta.npz")
@@ -283,6 +292,7 @@ def main():
     R = torch.zeros(N, T, device=dev); D = torch.zeros(N, T, device=dev); ES = torch.zeros(N, T, dtype=torch.long, device=dev)
     BRD = torch.zeros(N, T, dtype=torch.long, device=dev)
     gidx = [torch.from_numpy(g).to(dev) for g in envs.genv]; caches = [pi.new_cache(len(g), dev) for g in envs.genv]
+    vcaches = [pi.new_cache(len(g), dev) for g in envs.genv] if SEPV else None
     recent = []; comp_sum = np.zeros(6); first = True; t_ck = time.time()
     any_new = [True, True]; pool_sz = {}
     if not st["evals"] and E("EVAL0", "1") == "1":
@@ -292,7 +302,7 @@ def main():
             log("deadline reached"); break
         if (RUN / "STOP").exists():
             ckpt(); log(f"STOP file: saved ckpt_last.pt at update {st['update']}, exiting 3"); sys.exit(3)
-        t0 = time.time(); pi.eval()
+        t0 = time.time(); pi.eval(); vnet is not None and vnet.eval()
         with torch.no_grad():
             if not first:
                 H[:, :C - 1] = H[:, T:T + C - 1].clone(); estart = (estart - T).clamp(min=0)
@@ -320,13 +330,23 @@ def main():
                     if any_new[g]:
                         pi.prime(caches[g], ng, z)
                     h = pi.step(caches[g], z)
-                    lg = pi.adv(h) / TAU; V[gi, t] = vh(h)
+                    if SEPV:
+                        zv = vnet.embed(x)
+                        if any_new[g]:
+                            vnet.prime(vcaches[g], ng, zv)
+                        V[gi, t] = vh(vnet.step(vcaches[g], zv))
+                    lg = pi.adv(h) / TAU
+                    if not SEPV:
+                        V[gi, t] = vh(h)
                     a = torch.distributions.Categorical(logits=lg).sample()
                     A[gi, t] = a; LP[gi, t] = F.log_softmax(lg, -1).gather(1, a[:, None])[:, 0]
                     envs.step_send(g, a.cpu().numpy())
             for g, gi in enumerate(gidx):                           # bootstrap V(obs_T) on a copy of the caches
                 x = stack[gi]; z = pi.embed(x); cc = [c.clone() for c in caches[g]]; pi.prime(cc, new[gi], z)
-                V[gi, T] = vh(pi.step(cc, z))
+                if SEPV:
+                    zv = vnet.embed(x); cv = [c.clone() for c in vcaches[g]]; vnet.prime(cv, new[gi], zv); V[gi, T] = vh(vnet.step(cv, zv))
+                else:
+                    V[gi, T] = vh(pi.step(cc, z))
             # GAE
             adv = torch.zeros(N, T, device=dev); last_gae = torch.zeros(N, device=dev)
             for t in reversed(range(T)):
@@ -342,7 +362,7 @@ def main():
                 n = len(mb); z = ref.embed(H[mb].reshape(-1, 4, 84, 84)).view(n, C - 1 + T, -1)
                 ctx = z[torch.arange(n, device=dev)[:, None, None], IDX[mb]].reshape(n * T, C, -1)
                 RLP[mb] = F.log_softmax(ref.adv(ref.trunk_last(ctx)) / TAU, -1).view(n, T, 4)
-        t_roll = time.time() - t0; t1 = time.time(); pi.train()
+        t_roll = time.time() - t0; t1 = time.time(); pi.train(); vnet is not None and vnet.train()
         if gen_n:
             k = len(glob.glob(f"{E('B2_DIR')}/*.pkl")); log(f"GEN harvested {k}")
             if k >= gen_n:
@@ -358,7 +378,12 @@ def main():
                 z = pi.embed(H[mb].reshape(-1, 4, 84, 84)).view(n, C - 1 + T, -1)
                 ctx = z[torch.arange(n, device=dev)[:, None, None], IDX[mb]].reshape(n * T, C, -1)
                 h = pi.trunk_last(ctx)
-                v = vh(h.detach() if vwarm else h); vl = F.mse_loss(v, ret[mb].reshape(-1))
+                if SEPV:                                                    # M22: value loss never touches policy features
+                    zv = vnet.embed(H[mb].reshape(-1, 4, 84, 84)).view(n, C - 1 + T, -1)
+                    v = vh(vnet.trunk_last(zv[torch.arange(n, device=dev)[:, None, None], IDX[mb]].reshape(n * T, C, -1)))
+                else:
+                    v = vh(h.detach() if vwarm else h)
+                vl = F.mse_loss(v, ret[mb].reshape(-1))
                 if vwarm:
                     loss = VF * vl; pl = kl = ent = torch.zeros((), device=dev); cf = 0.0
                 else:
@@ -378,7 +403,11 @@ def main():
                     loss = pl + VF * vl - ec * ent + BETA * kl + aw * ace
                     cf = ((ratio - 1).abs() > CLIP).float().mean().item()
                 opt.zero_grad(set_to_none=True); loss.backward()
-                nn.utils.clip_grad_norm_(list(pi.parameters()) + list(vh.parameters()), MAX_GRAD); opt.step()
+                if SEPV:                                                    # separate clips: value grads can't shrink the policy step
+                    nn.utils.clip_grad_norm_(list(pi.parameters()), MAX_GRAD); nn.utils.clip_grad_norm_(list(vh.parameters()) + list(vnet.parameters()), MAX_GRAD)
+                else:
+                    nn.utils.clip_grad_norm_(list(pi.parameters()) + list(vh.parameters()), MAX_GRAD)
+                opt.step()
                 stats.append((pl.item(), vl.item(), kl.item(), ent.item(), cf)); ent_run = 0.9 * ent_run + 0.1 * ent.item() if not vwarm else ent_run
                 aux_ce_last = float(ace) if not vwarm else None
         if QSOFT and AUX0 > 0:
