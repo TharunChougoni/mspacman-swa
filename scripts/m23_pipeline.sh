@@ -20,12 +20,12 @@ stage() {   # stage <name> <done-marker> <command...>
   tmux wait-for "m23_$name"
   if [ -e "$marker" ]; then echo "[$(date '+%F %T')] done $name"; else echo "[$(date '+%F %T')] FAILED $name (see $D/$name.log)"; exit 1; fi
 }
-stage collect     $D/data/m22/DONE        $PY scripts/m23_collect.py $D/data/m22 ${M23_STEPS:-2400000}
+stage collect     $D/data/m22/DONE        $PY scripts/m23_collect.py $D/data/m22 ${M23_STEPS:-2000000}
 stage train_cnn   $D/cnn/DONE             $PY scripts/m23_train.py $D/cnn --student cnn --data $D/data/m22 --steps ${M23_TRAIN:-4000}
 stage train_vit   $D/vit/DONE             $PY scripts/m23_train.py $D/vit --student vit --data $D/data/m22 --steps ${M23_TRAIN:-4000}
-stage dagger_cnn  $D/data/dagger_cnn/DONE $PY scripts/m23_collect.py $D/data/dagger_cnn ${M23_DAGGER:-600000} --actor student --student $D/cnn/best.pt --eps 0.03 --seed_base 7000000
+stage dagger_cnn  $D/data/dagger_cnn/DONE $PY scripts/m23_collect.py $D/data/dagger_cnn ${M23_DAGGER:-400000} --actor student --student $D/cnn/best.pt --eps 0.03 --seed_base 7000000
 stage ft_cnn      $D/cnn_dagger/DONE      $PY scripts/m23_train.py $D/cnn_dagger --student cnn --data $D/data/m22:1 $D/data/dagger_cnn:1 --init $D/cnn/best.pt --steps ${M23_FT:-1500} --lr 1e-4 --warmup 100
-stage dagger_vit  $D/data/dagger_vit/DONE $PY scripts/m23_collect.py $D/data/dagger_vit ${M23_DAGGER:-600000} --actor student --student $D/vit/best.pt --eps 0.03 --seed_base 8000000
+stage dagger_vit  $D/data/dagger_vit/DONE $PY scripts/m23_collect.py $D/data/dagger_vit ${M23_DAGGER:-400000} --actor student --student $D/vit/best.pt --eps 0.03 --seed_base 8000000
 stage ft_vit      $D/vit_dagger/DONE      $PY scripts/m23_train.py $D/vit_dagger --student vit --data $D/data/m22:1 $D/data/dagger_vit:1 --init $D/vit/best.pt --steps ${M23_FT:-1500} --lr 1e-4 --warmup 100
 stage eval        $D/eval/DONE            "$PY scripts/m23_eval.py $D/eval m22=m22 cnn=$D/cnn/best.pt vit=$D/vit/best.pt cnn_dagger=$D/cnn_dagger/best.pt vit_dagger=$D/vit_dagger/best.pt && touch $D/eval/DONE"
 echo "[$(date '+%F %T')] M23 pipeline finished"; cat $D/eval/summary.json
