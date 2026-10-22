@@ -90,6 +90,14 @@ if ck_path.exists():
 elif a.init:
     c = torch.load(a.init, map_location="cpu", weights_only=False); pi.load_state_dict(c["pi"]); vnet.load_state_dict(c["vnet"])
     print(f"INIT from {a.init}", flush=True)
+else:                                                    # input normalisation from ~4k frames of 8 shards
+    fs = dirs[0]["files"]; px = []
+    for f in fs[:: max(1, len(fs) // 8)][:8]:
+        d = pickle.load(open(f, "rb")); px += [decode(b) for b in d["col"][::32][:500]]
+    px = torch.from_numpy(np.stack(px)).float() / 255.0; mu, sd = px.mean(0), px.std(0) + 0.05
+    for net in (pi, vnet):
+        net.mu.copy_(mu.to(dev)); net.sd.copy_(sd.to(dev))
+    print(f"NORM from {len(px)} frames: mean {mu.mean():.3f} sd {sd.mean():.3f}", flush=True)
 print(f"TRAIN {a.student} params pi={sum(x.numel() for x in pi.parameters()):,} vnet={sum(x.numel() for x in vnet.parameters()):,} "
       f"data={[ (str(d['files'][0].parent), len(d['files']), d['w']) for d in dirs]} val={len(val_files)} steps={a.steps}", flush=True)
 arch = dict(pi=pi.arch, vnet=vnet.arch)

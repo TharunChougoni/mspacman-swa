@@ -74,9 +74,12 @@ class TokNet(nn.Module):
         self.blocks = nn.ModuleList(Block(d, h) for _ in range(L))
         self.lnf = nn.LayerNorm(d); self.pool_q = nn.Parameter(torch.randn(d) * 0.02); self.out = nn.Linear(d, n_out)
         self.P = P
+        # fixed input normalisation (dataset per-pixel mean/std, set by scripts/m23_train.py): the static maze dominates
+        # raw pixels and an un-normalised student sits on the action prior for thousands of steps
+        self.register_buffer("mu", torch.zeros(128, 128, 3)); self.register_buffer("sd", torch.ones(128, 128, 3))
 
     def embed(self, fr):                           # (N, 128, 128, 3) uint8 -> (N, P, d)
-        x = fr.permute(0, 3, 1, 2).float() / 255.0
+        x = ((fr.float() / 255.0 - self.mu) / self.sd).permute(0, 3, 1, 2)
         return self.ln_in(self.stem(x).flatten(2).transpose(1, 2))
 
     def head(self, x):                             # (..., P, d) -> (..., n_out)
