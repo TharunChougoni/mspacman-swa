@@ -6,7 +6,8 @@
 cd "$(dirname "$0")/.."; ROOT="$PWD"; PY="$ROOT/.venv/bin/python"; D=runs/m23
 mkdir -p $D
 if [ -z "$M23_INNER" ]; then
-  tmux has-session -t m23 2>/dev/null || tmux new-session -d -s m23 -n pipeline "M23_INNER=1 bash $ROOT/scripts/m23_pipeline.sh; exec bash"
+  if ! tmux has-session -t m23 2>/dev/null; then tmux new-session -d -s m23 -n pipeline "M23_INNER=1 bash $ROOT/scripts/m23_pipeline.sh 2>&1 | tee -a $D/pipeline.log; exec bash"
+  elif ! tmux list-windows -t m23 -F '#W' | grep -qx pipeline; then tmux new-window -d -t m23 -n pipeline "M23_INNER=1 bash $ROOT/scripts/m23_pipeline.sh 2>&1 | tee -a $D/pipeline.log; exec bash"; fi
   tmux list-windows -t m23 -F '#W' | grep -qx tbsync || tmux new-window -d -t m23 -n tbsync "cd $ROOT; $HOME/HermesWorkspace/.tbvenv/bin/python scripts/m23_tbsync.py 2>&1 | tee -a $D/tbsync.log"
   tmux has-session -t tb 2>/dev/null || tmux new-session -d -s tb "cd $ROOT; $HOME/HermesWorkspace/.tbvenv/bin/tensorboard --logdir runs/tb_simple --port 6006 --bind_all --reload_interval 30 2>&1 | tee -a $D/tb.log; exec bash"
   echo "m23 pipeline running: tmux attach -t m23 ; logs in $D/*.log ; TensorBoard http://localhost:6006"; exit 0
