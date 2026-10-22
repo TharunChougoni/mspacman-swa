@@ -1,0 +1,50 @@
+{
+ "multiboard": {
+  "ckpt": "runs/m9run/best.pt",
+  "n": 100,
+  "reach_frac": {
+   "1": 1.0,
+   "2": 0.87,
+   "3": 0.27
+  },
+  "mean_clears": 1.14,
+  "mean_score": 4838.3,
+  "mean_items_by_board_reached": {
+   "1": 153.46,
+   "2": 134.29885057471265,
+   "3": 17.444444444444443
+  }
+ },
+ "multiboard_m10": {
+  "ckpt": "runs/m10/best.pt",
+  "n": 100,
+  "reach_frac": {
+   "1": 1.0,
+   "2": 0.77,
+   "3": 0.19
+  },
+  "mean_clears": 0.96,
+  "mean_score": 4394.2,
+  "mean_items_by_board_reached": {
+   "1": 153.37,
+   "2": 125.33766233766234,
+   "3": 17.05263157894737
+  }
+ },
+ "multiboard_m11": {
+  "ckpt": "runs/m11/best.pt",
+  "n": 100,
+  "reach_frac": {
+   "1": 1.0,
+   "2": 0.9,
+   "3": 0.5
+  },
+  "mean_clears": 1.4,
+  "mean_score": 5731.6,
+  "mean_items_by_board_reached": {
+   "1": 153.62,
+   "2": 146.43333333333334,
+   "3": 91.46
+  }
+ }
+}

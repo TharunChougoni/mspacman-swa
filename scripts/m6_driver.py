@@ -6,7 +6,7 @@ Stages (marker runs/m6/.done/<stage> once finished; finished stages are skipped 
   demos -> pack_demos -> bc -> [dagger_rK -> pack_rK -> train_rK] x ROUNDS -> confirm -> video
   (video_first: as soon as a phase's best 100-game eval clears >= VIDEO_AT, that checkpoint is filmed)
 Inside a stage, work resumes too: collection skips shards on disk, training resumes from
-ckpt_last.pt. After each stage a summary goes to docs/m6/<stage>.json and is committed.
+ckpt_last.pt. After each stage a summary goes to docs/notes/m6/<stage>.json and is committed.
 The wall-clock deadline is fixed at the first start (runs/m6/driver_state.json): training stops
 at DEADLINE - RESERVE_MIN, later DAgger rounds are skipped if they cannot fit, confirm/video always run.
 """
@@ -22,7 +22,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 os.chdir(ROOT)
-M6 = Path("runs/m6"); DONE = M6 / ".done"; DOCS = Path("docs/m6")
+M6 = Path("runs/m6"); DONE = M6 / ".done"; DOCS = Path("docs/notes/m6")
 PY = str(ROOT / ".venv/bin/python")
 E = os.environ.get
 HOURS = float(E("HOURS", "8"))

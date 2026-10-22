@@ -1,0 +1,108 @@
+{
+ "M3 HRA (seeds 0-99)": {
+  "n": 100,
+  "clear_rate": 0.61,
+  "clear_se": 0.04902071300001973,
+  "score": 3979.3,
+  "score_se": 105.86032869738877,
+  "eaten": 148.31,
+  "eaten_se": 1.1337517053098218,
+  "deaths": 1.6
+ },
+ "M4 HRA tuned (seeds 0-99)": {
+  "n": 100,
+  "clear_rate": 0.59,
+  "clear_se": 0.04943110704237103,
+  "score": 4137.2,
+  "score_se": 123.37256378526588,
+  "eaten": 148.18,
+  "eaten_se": 1.1207302813952889,
+  "deaths": 1.57
+ },
+ "M4 HRA, bigger M1 model (300 held-out)": {
+  "n": 300,
+  "clear_rate": 0.7733333333333333,
+  "clear_se": 0.024212609617951835,
+  "score": 4042.0666666666666,
+  "score_se": 62.78505728916251,
+  "eaten": 150.12,
+  "eaten_se": 0.5916709139860425,
+  "deaths": 1.3666666666666667
+ },
+ "M6 pixel BC+DAgger": {
+  "n": 300,
+  "clear_rate": 0.06,
+  "clear_se": 0.013734218672418391,
+  "score": 2808.866666666667,
+  "score_se": 46.71978359448565,
+  "eaten": 134.01333333333332,
+  "eaten_se": 1.1239162830133718,
+  "deaths": 1.9866666666666666,
+  "steps": 991.16,
+  "ckpt": "runs/m6/best.pt",
+  "seed0": 50000,
+  "sticky": 0.25
+ },
+ "M7 PPO": {
+  "n": 300,
+  "clear_rate": 0.09666666666666666,
+  "clear_se": 0.017089399227609183,
+  "score": 2955.5666666666666,
+  "score_se": 38.61192502798075,
+  "eaten": 146.22333333333333,
+  "eaten_se": 0.42842217411292594,
+  "deaths": 1.99,
+  "steps": 1448.2666666666667,
+  "ckpt": "runs/m7/best.pt",
+  "seed0": 50000,
+  "sticky": 0.25
+ },
+ "M8 endgame PPO": {
+  "n": 300,
+  "clear_rate": 0.22333333333333333,
+  "clear_se": 0.024085657867318533,
+  "score": 3017.266666666667,
+  "score_se": 42.554962645762444,
+  "eaten": 150.46,
+  "eaten_se": 0.20073776967455087,
+  "deaths": 1.84,
+  "steps": 3644.786666666667,
+  "ckpt": "runs/m8/best.pt",
+  "seed0": 50000,
+  "sticky": 0.25
+ },
+ "M9 PPO": {
+  "n": 300,
+  "clear_rate": 0.8366666666666667,
+  "clear_se": 0.021378540451223522,
+  "score": 2787.0,
+  "score_se": 45.82910186203184,
+  "eaten": 153.38,
+  "eaten_se": 0.11501926550855335,
+  "deaths": 1.37,
+  "steps": 1382.8733333333332,
+  "ckpt": "runs/m9run/best.pt",
+  "seed0": 50000,
+  "sticky": 0.25
+ },
+ "M10 KV-cache distill": {
+  "n": 300,
+  "clear_rate": 0.8033333333333333,
+  "clear_se": 0.02298675559401019,
+  "score": 2753.8,
+  "score_se": 41.61736677627868,
+  "eaten": 153.34,
+  "eaten_se": 0.10979457863814478,
+  "deaths": 1.39,
+  "steps": 1300.02,
+  "ckpt": "runs/m10/best.pt",
+  "seed0": 50000,
+  "sticky": 0.25
+ },
+ "M5 HRA + endgame/escape (300 held-out)": {
+  "n": 300,
+  "clear_rate": 0.797,
+  "clear_se": 0.023,
+  "source": "runs/m5/ablation.md"
+ }
+}

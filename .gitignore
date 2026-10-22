@@ -6,3 +6,9 @@ seeds/*.pkl
 __pycache__/
 .pytest_cache/
 .uv-cache/
+*.pkl
+*.tgz
+*.zst
+.env
+kaggle.json
+**/tb/
