@@ -1,107 +1,96 @@
-# mspacman-clear
+# mspacman-swa: clearing Ms. Pac-Man boards from pixels
 
-Goal: an agent that clears board 1 of Ms. Pac-Man (all dots eaten, board 2 loads).
-Approach: Hybrid Reward Architecture (van Seijen et al. 2017) on decoded RAM objects. Tabular per-position GVFs
-plus a normalised aggregator. Fallback: RAM Go-Explore → backward PPO. Full plan: `docs/plan.md`.
+[![Report](https://img.shields.io/badge/technical%20report-GitHub%20Pages-2563eb)](https://tharunchougoni.github.io/mspacman-swa/)
+[![License: MIT](https://img.shields.io/badge/license-MIT-16a34a)](LICENSE)
+![Python 3.11](https://img.shields.io/badge/python-3.11-6b7280)
+![PyTorch](https://img.shields.io/badge/PyTorch-2.11-ea580c)
+
+This is a pixel-only reinforcement-learning agent that **clears whole boards** of Ms. Pac-Man (ALE `MsPacman-v5`, sticky actions 0.25). It isn't trying to farm ghosts for score. The policy is a 7.99M-parameter **sliding-window attention (SWA)** network over 84×84 grayscale frames. It was distilled from a RAM-based Hybrid Reward Architecture planner, then fine-tuned with PPO.
+
+**Full technical report (charts, timeline, negative results): https://tharunchougoni.github.io/mspacman-swa/**
+
+<p align="center"><img src="docs/assets/demo.gif" width="260" alt="pixel policy clearing board 1"></p>
+
+## Results
+
+| Model | Input | Eval | Board-1 clear | Board-1 clean* | Board-2 clean* |
+|---|---|---|---|---|---|
+| M5 HRA teacher | RAM | 300 held-out games | 79.7% ± 2.3 | – | – |
+| M6 BC + DAgger student | pixels | 300 held-out games | 6.0% | – | – |
+| M9 PPO | pixels | 300 held-out games | **83.7% ± 2.1** | – | – |
+| M11 multi-board PPO | pixels | 100 games | 90% (1.40 boards/game) | – | – |
+| M18 survival reward (start) | pixels | 3 seed sets × 200 games/board | 92.5% | 46.0% | 32.3% |
+| **M22 separate value net** | pixels | 3 seed sets × 200 games/board | **97.7%** | **53.8%** | **37.8%** |
+
+\*Clean = board cleared without losing a life.
+
+![multi-seed eval](docs/assets/multiseed.png)
+
+## How it works
+
+1. **M0: verify the RAM.** Decode positions, lives, the true 150-dot bitmap, frightened flags and the level byte, then build a clear detector (`msclear/ram.py`, `msclear/clear.py`).
+2. **M1–M5: a RAM teacher that actually clears.** It uses a maze graph from observed transitions, per-target GVF tables, and an HRA aggregator with ghost, endgame and escape heads (`msclear/maze.py`, `msclear/hra.py`).
+3. **M6: distil to pixels.** The SWA student learns by set cross-entropy on 1.6M teacher transitions plus DAgger (`msclear/swa_net.py`, `scripts/m6_*.py`).
+4. **M7–M11: PPO fine-tuning.** A KL leash keeps it near the student, with endgame and multi-board start-state pools and an exact KV-cache ALiBi network for fast acting (`msclear/m10_net.py`, `scripts/m9_ppo.py`, `scripts/m11_ppo.py`).
+5. **M18–M22: clean clears.** Rewards are −50 per death, +50 for a clean clear and a speed bonus. M22 gives the value function **its own network**, which stopped the fine-tune drift seen in M18 s2 and M19–M21 (`scripts/m18_ppo.py`, `SEPV=1`).
+
+```
+frames (4×84×84) ─► CNN ─► token_t ─┐
+          tokens t−7 … t (KV cache) ─┴► causal SWA attention (2 layers, d=512, 8 heads, ALiBi)
+                                       ├► policy head  π(a|·)
+  M22: separate copy of the net ──────► value head    V(·)   (training only)
+```
 
 ## Setup
+
 ```bash
-cd ~/HermesWorkspace/mspacman-clear
-~/.hermes/bin/uv venv --python 3.11 .venv
-~/.hermes/bin/uv pip install --python .venv/bin/python gymnasium==1.3.0 ale-py==0.12.0 numpy pytest
+git clone https://github.com/TharunChougoni/mspacman-swa && cd mspacman-swa
+uv venv --python 3.11 .venv            # or python3.11 -m venv .venv
+uv pip install --python .venv/bin/python -r requirements.txt
 .venv/bin/python -m pytest -q
 ```
 
-## Layout
-| path | what |
+## Train and evaluate
+
+Checkpoints and run outputs live in `runs/`, which git ignores (about 50 GB locally), so start from your own runs or ask for the weights. Each milestone has a launcher in `scripts/`:
+
+```bash
+# RAM teacher
+WORKERS=16 N_DEC=300000 .venv/bin/python scripts/m1_graph.py          # maze graph + GVFs -> runs/m1/
+WORKERS=16 N=100 .venv/bin/python scripts/m3_eval.py                  # HRA eval
+WORKERS=16 .venv/bin/python scripts/m5_ablation.py                    # endgame/escape ablation
+# pixel student and PPO
+scripts/m6_run.sh        # demos -> BC -> DAgger
+scripts/m9_run.sh        # PPO from the distilled student
+scripts/m11_run.sh       # multi-board PPO
+scripts/m22_run.sh       # clean-clear PPO with a separate value network (needs runs/m18_s1/)
+# evaluation (fp32, held-out seeds)
+CKPT=runs/m9run/best.pt SEED0=50000 N=300 OUT=runs/m9/eval.json .venv/bin/python scripts/m9_fasteval.py   # board-1 clear rate
+CKPT=runs/m11/best.pt OUTDIR=runs/multiboard_m11 .venv/bin/python scripts/m10_multiboard_eval.py         # boards cleared per game
+REP=3 .venv/bin/python scripts/multiseed_eval.py out.json runs/m22/best.pt        # clean clears, 3 seed sets
+```
+
+`kaggle/` holds the runner used for the 12-hour Kaggle sessions (resume from the previous session's output). TensorBoard: `.venv/bin/python scripts/tb_simple.py`.
+
+## Repository map
+
+| Path | What |
 |---|---|
-| `msclear/ram.py` | verified RAM map: positions, lives, dot bitmap + 150-dot mask, power pellets, frightened bits, level byte |
-| `msclear/env.py` | `make_env()` (ALE v5, frameskip 4, sticky 0.25 by default) |
-| `msclear/clear.py` | `ClearDetector`: board clear = dots ≤ 3 → refill ≥ 100 and level byte up |
-| `msclear/explore.py` | RAM-cell Go-Explore (deterministic) used to obtain real clears |
-| `msclear/maze.py` | M1: `PinnedGame` (ghosts held in pen), transition collection, empirical model, GVF solver |
-| `msclear/hra.py` | M3: HRA agent (pellet head + ghost heads + blue-ghost heads + count term), episode runner, evaluator |
-| `msclear/data/` | `maze1_dots.json` (bit → screen position for 150 dots), `clear_traj.json` (real clears of boards 1 and 2) |
-| `scripts/` | one script per milestone check |
-| `tests/` | pytest |
-| `seeds/`, `legacy/` | kept from mspacman-rainbow (GE archives, old helpers) |
-| `runs/` | outputs and logs (gitignored) |
+| `msclear/` | library: RAM map, env wrappers, clear detector, maze graph and HRA teacher, SWA networks, fast evaluators, PPO envs per milestone |
+| `scripts/` | one trainer/eval/launcher per milestone (`m0_*` … `m22_run.sh`), DAgger and search-teacher tools, TensorBoard export |
+| `tests/` | pytest: RAM map, clear detector, pixel env, SWA/KV-cache parity, fast eval |
+| `configs/` | tuned HRA config |
+| `results/` | compact eval extracts behind the report charts (evals per run, confirmation evals, multi-seed evals) |
+| `runs/` | small tracked logs and metrics (the rest is gitignored) |
+| `docs/` | GitHub Pages site (`index.html`, `assets/`) and `docs/notes/` (design plan, ablations, diagnoses) |
+| `tools/report/make_charts.py` | rebuilds `docs/assets/*.png` from `results/` |
+| `kaggle/` | Kaggle session runner |
+| `legacy/`, `seeds/` | helpers kept from the earlier pixel-only project and its Go-Explore states |
 
-## Milestones
-| | run | output |
-|---|---|---|
-| M0 pellet map | `.venv/bin/python scripts/m0_pellet_map.py` | `msclear/data/maze1_dots.json`, `runs/m0/pellet_overlay.png` |
-| M0 frightened | `.venv/bin/python scripts/m0_fright.py` | `runs/m0/m0_fright.json` |
-| M0 clear/level | `WORKERS=16 FP_EPISODES=1600 .venv/bin/python scripts/m0_clear.py` | `runs/m0/m0_clear.json` |
-| M1 graph + GVFs | `WORKERS=16 N_DEC=300000 .venv/bin/python scripts/m1_graph.py` | `runs/m1/model.pkl`, `runs/m1/m1.json` |
-| M2 pellets only | `WORKERS=16 .venv/bin/python scripts/m2_pellets.py` (needs M1 model) | `runs/m2/m2.json` |
-| M3 full HRA eval | `WORKERS=16 N=100 .venv/bin/python scripts/m3_eval.py` | `runs/m3/m3_eval.json` |
-| M4 tuning | `WORKERS=16 .venv/bin/python scripts/m4_tune.py`, then `CFG="$(cat runs/m4/best.json)" TAG=m4 .venv/bin/python scripts/m3_eval.py` | `runs/m4/trials.jsonl`, `best.json`, `m4_eval.json` |
+## Background
 
-| M4 refine | `WORKERS=16 .venv/bin/python scripts/m4_refine.py` (extends the w_g grid around `best.json`) | `runs/m4/refine.log` |
-| bigger M1 model + eval | `scripts/m1_big_then_eval.sh` | `runs/m1_big/` (now moved to `runs/m1/`), `runs/m4/m4big_eval.log` |
-| board-clear video | `.venv/bin/python scripts/video_clear.py` (needs pillow, imageio, imageio-ffmpeg) | `runs/videos/board_clear_seed<N>.mp4` |
-| failure analysis | `N=320 .venv/bin/python scripts/failure_analysis.py` | `runs/analysis/summary.json`, `death_heatmap.png` |
-| M5 fixes ablation | `scripts/tmux_job.sh m5 runs/m5/ablation.log 'bash scripts/m5_run_all.sh'` (resumable; skips configs already in `ablation.jsonl`) | `runs/m5/ablation.jsonl`, `ablation.md`, `best.json`, then `runs/analysis_m5/` |
-| M5 video | `CFG="$(cat configs/hra_best.json)" TAG=_m5 .venv/bin/python scripts/video_clear.py` | `runs/videos/board_clear_m5_seed<N>.mp4` |
+The project grew out of two months of pixel-only attempts (Rainbow, behaviour cloning, return-conditioned DAgger, Go-Explore, LLM players). None of them ever cleared a board, because none of their teachers had. The restart put a clearing RAM teacher first. The report's [Origins section](https://tharunchougoni.github.io/mspacman-swa/#origins) tells that story.
 
-Long runs go in tmux session `msclear`, one window per job, output `tee -a` to the log and
-`runs/LATEST.log` pointing at the current job's log:
-```bash
-scripts/tmux_job.sh <window> runs/<milestone>/<job>.log '<command>'
-tmux attach -t msclear        # Ctrl-b n / p to switch windows, Ctrl-b d to detach
-tail -F runs/LATEST.log
-```
+## License
 
-## Key facts (M0)
-- Bitmap `ram[59:101]`: 242 bits set at start, only **150** are dots (8 of them in `ram[100]`, the bottom-row "dashes").
-  Count with `ram.dots_left()`, never the raw bit sum. Power pellets: `ram[117]` bits 2–5. A board ends when all
-  154 items are eaten (`ram[119]` counts them).
-- Level byte `ram[101]`: 20, 42, 64 on boards 1, 2, 3.
-- Frightened: `ram[1..4]` bit 7 per ghost (99.8 % vs sprite colour); `ram[116]` is the global frightened timer
-  (counts down 1 per 8 frames).
-- Default model `runs/m1/model.pkl` = the 16 x 1M-decision model (old 16 x 300k model kept in `runs/m1_300k/`).
-  Best config with it: 300 check seeds 0.773 ± 0.024 (300k model 0.687 ± 0.027, ~2.4 SE better);
-  seeds 0..99 0.620 ± 0.049 (300k model 0.590 ± 0.049, within noise). Items 148.7/154, score 4031 ± 116, deaths 1.51.
-- Video: `scripts/video_clear.py` -> `runs/videos/`; failure analysis: `scripts/failure_analysis.py` -> `runs/analysis/`.
-- M1 tables are the only learned artifact: transition model + GVFs from ~5M decisions of random play with ghosts
-  pinned (6 min on 16 cores). The M3 agent combines them online; no emulator lookahead at play time.
-
-## M5: endgame / corridor-trap / Blinky fixes
-Flags in `HRAConfig` (all off by default). **Default config: `configs/hra_best.json`** (M4 best + endgame + light escape).
-- Endgame (`eg_n`, `eg_m0`, `eg_tau`, `eg_floor`): with ≤ `eg_n` items left, the pellet head targets dots by
-  route safety, i.e. the minimum over cells on the greedy route of ghost arrival time minus Ms. Pac-Man arrival time.
-  `pp_hold`: keep the last power pellet until ≤ `pp_hold` items are left.
-- Escape (`esc_w`, `esc_slack`): softly penalise a move if a non-frightened ghost reaches the next junction first.
-- Blinky (`blinky_w`, `blinky_lead`): larger weight on Blinky, or aim at a point L steps ahead of him.
-
-Check seeds 20000–20299 (full table: `docs/m5_ablation.md`): baseline 0.773 ± 0.024; endgame eg_n=40 + pp_hold=15
-0.780; escape esc_w=0.3, slack 0 0.787 (stronger escape hurts: esc_w=2, slack 2 gave 0.377); Blinky never beat the
-baseline (best: lead 4, 0.763); endgame + escape **0.813 ± 0.023**.
-
-| config | held-out 50000–50299 | seeds 0–99 | items | score | deaths |
-|---|---|---|---|---|---|
-| M4 baseline | 0.693 ± 0.027 | 0.620 ± 0.049 | 149.1 | 4116 | 1.45 |
-| M5 best (endgame + escape) | **0.797 ± 0.023** | **0.800 ± 0.040** | 151.1 | 4080 | 1.30 |
-
-Failure analysis (same 320 seeds, 40000+): clears 244 → 256, deaths 544 → 474, trapped deaths 197 → 134,
-deaths with ≤ 40 items left 374 → 304. Blinky still causes half of all deaths (270 → 237).
-
-## M6: pixel student distilled from HRA (overnight, resumable)
-SWA-v2 net (CNN token per 4x84x84 stack, causal recency-biased attention over W=8 tokens, dueling head; ported
-from the archived mspacman-rainbow) learns HRA's actions from pixels only. Pixel pipeline `msclear/pixenv.py`:
-ALE v5 at frameskip=1 underneath, 4 frames per agent step done once in the env, max of frames 3-4, 84x84 gray,
-4-stack (tested frame-for-frame against gymnasium AtariPreprocessing; one step = exactly 4 ALE frames).
-Label = the set of actions equivalent to HRA's choice (same next state in the M1 model); loss = set
-cross-entropy + DQfD large margin; EMA weights for eval. Stages: HRA demos (1.63M steps) -> BC -> DAgger rounds
-(student acts, HRA labels) -> 300-game confirm -> video. Alignment check: `scripts/m6_check_alignment.py`.
-
-**Start / resume after a power cut or reboot (one command; finished stages are skipped, training resumes from
-its last 5-min checkpoint, auto-stop at `DEADLINE_ISO` in `scripts/m6_run.sh`):**
-```bash
-cd ~/HermesWorkspace/mspacman-clear && scripts/tmux_job.sh m6 runs/m6/driver.log 'bash scripts/m6_run.sh'
-```
-Watch: `tmux attach -t msclear` (window `m6`) or `tail -F runs/m6/driver.log`; metrics in
-`runs/m6/<phase>/metrics.jsonl`; stage summaries are committed to `docs/m6/`. There is deliberately no
-@reboot/cron/systemd hook (nothing outside the repo is changed); after a reboot run the command above.
-`scripts/m6_run.sh` retries a failed driver up to 3 times. Best pixel checkpoint: `runs/m6/best.pt`.
+MIT, see [LICENSE](LICENSE).

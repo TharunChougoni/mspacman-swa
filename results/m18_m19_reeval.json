@@ -1,0 +1,65 @@
+{
+ "runs/m18_s1/best.pt": {
+  "b1": {
+   "clean": [
+    0.425,
+    0.43,
+    0.525
+   ],
+   "clean_mean": 0.46,
+   "clear_mean": 0.925
+  },
+  "b2": {
+   "clean": [
+    0.29,
+    0.33,
+    0.35
+   ],
+   "clean_mean": 0.323,
+   "clear_mean": 0.612
+  },
+  "mean_clean": 0.392
+ },
+ "runs/m18_s1/last_pi.pt": {
+  "b1": {
+   "clean": [
+    0.365,
+    0.405,
+    0.36
+   ],
+   "clean_mean": 0.377,
+   "clear_mean": 0.943
+  },
+  "b2": {
+   "clean": [
+    0.285,
+    0.205,
+    0.3
+   ],
+   "clean_mean": 0.263,
+   "clear_mean": 0.628
+  },
+  "mean_clean": 0.32
+ },
+ "runs/m19/last_pi.pt": {
+  "b1": {
+   "clean": [
+    0.39,
+    0.395,
+    0.305
+   ],
+   "clean_mean": 0.363,
+   "clear_mean": 0.928
+  },
+  "b2": {
+   "clean": [
+    0.25,
+    0.24,
+    0.205
+   ],
+   "clean_mean": 0.232,
+   "clear_mean": 0.562
+  },
+  "mean_clean": 0.297
+ }
+}

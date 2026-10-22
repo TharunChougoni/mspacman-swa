@@ -173,7 +173,7 @@ def _worker(remote, n, wid, cfg):
                 g.ale.setRAM(R.LIVES, (lv & ~7) | xl); g.ram = g.ale.getRAM().copy(); g.prev_lives = int(g.ram[R.LIVES])
         b = R.board(g.ram)
         meta[i] = dict(start=start, xl=xl, b0=b, cur=b, steps0=g.steps, score0=g.score, since=0,
-                       thr=set(), e=int(g.ram[R.DOTS_EATEN]), items=0, deaths=0, bd=0,
+                       thr=set(), e=int(g.ram[R.DOTS_EATEN]), items=0, deaths=0, bd=0, bs=g.steps,
                        ring=collections.deque(maxlen=13), left0=R.items_total(b) - int(g.ram[R.DOTS_EATEN]),
                        lives_b3=spare_lives(g.ram) if b >= 3 else None, arrived_b3=False, phi=None)
         return g.stack.copy()
@@ -206,7 +206,9 @@ def _worker(remote, n, wid, cfg):
                     if b != m["cur"]:
                         if b > m["cur"]:
                             cpen = cfg.get("clear_life_pen", 0.0) * m["bd"]          # M17: lives lost on the cleared board
-                        m["bd"] = 0
+                            if m["bd"] == 0 and cfg.get("clean_bonus"):              # M18: clean clear + speed bonus
+                                cpen -= cfg["clean_bonus"] + cfg.get("speed_bonus", 0.0) * max(0.0, 1.0 - (g.steps - m["bs"]) / cfg.get("speed_T", 3000))
+                        m["bd"] = 0; m["bs"] = g.steps
                         clear = float(b > m["cur"]); items = R.items_total(m["cur"]) - m["e"] if b > m["cur"] else 0
                         rem0 = R.items_total(m["cur"]) - m["e"]; m["cur"] = b; m["thr"] = set()
                         if b >= 3:
@@ -221,6 +223,8 @@ def _worker(remote, n, wid, cfg):
                     oncur = m["start"].startswith("b3cur")                     # M16 curriculum start
                     if oncur and info["lost_life"] and cfg.get("cur_end_on_death"):
                         over = True                                            # curriculum: episode ends on first death
+                    if info["lost_life"] and cfg.get("end_on_death"):
+                        over = True                                            # M18: training episodes end at first death
                     death = float(info["lost_life"] or over); m["bd"] += int(death)
                     extra = 0.0
                     if b >= 3 and m["lives_b3"] is None:                      # first arrival at board 3
@@ -235,7 +239,7 @@ def _worker(remote, n, wid, cfg):
                         # BFS field recomputed only when the dot set changes (item eaten / board / restore)
                         d = m["dd"](g.ale, r, (b, e, id(m)))
                         phi = None if d is None else -sk * d
-                        if phi is not None and m["phi"] is not None and not (clear or info["lost_life"]):
+                        if phi is not None and m["phi"] is not None and not (clear or info["lost_life"]) and not (items and cfg.get("shape_skip_eat")):
                             extra += cfg.get("shape_gamma", 0.995) * phi - m["phi"]       # F = gamma Phi(s') - Phi(s)
                         m["phi"] = phi
                     else:
@@ -247,7 +251,7 @@ def _worker(remote, n, wid, cfg):
                     if stall and left <= stall[0] and m["since"] > stall[1]:
                         sp = min(stall[3], stall[2] + stall[2] * (m["since"] - stall[1]) / stall[1])
                     cm = cfg.get("cur_item_mult", 1.0) if oncur else 1.0; cc = cfg.get("cur_clear_mult", 1.0) if oncur else 1.0
-                    rew[i] = rw[0] * cm * (items + bonus) + rw[1] * (g.score - sc0) + rw[2] * cc * clear - dpen * death - sp + extra - cpen
+                    rew[i] = rw[0] * cm * (items + bonus) + rw[1] * (g.score - sc0) + rw[2] * cc * clear - dpen * death - sp + extra - cpen - cfg.get("step_cost", 0.0)
                     comp[i] = (items, g.score - sc0, clear, death, bonus, sp)
                     m["items"] += items; m["deaths"] += int(death)
                     if b >= 3 and info["lost_life"] and left <= 60:          # pre-death state, 40-60 decisions back

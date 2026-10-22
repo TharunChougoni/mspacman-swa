@@ -1,0 +1,27 @@
+{
+ "/kaggle/working/m22/best.pt": {
+  "b1": {
+   "n": 200,
+   "clean": [
+    0.525,
+    0.51,
+    0.58
+   ],
+   "clean_mean": 0.538,
+   "clear_mean": 0.977,
+   "deaths_mean": 0.568
+  },
+  "b2": {
+   "n": 200,
+   "clean": [
+    0.335,
+    0.365,
+    0.435
+   ],
+   "clean_mean": 0.378,
+   "clear_mean": 0.667,
+   "deaths_mean": 0.792
+  },
+  "mean_clean": 0.458
+ }
+}

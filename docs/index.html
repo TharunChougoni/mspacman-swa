@@ -1,0 +1,94 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Clearing Ms. Pac-Man Boards from Pixels with Sliding-Window Attention — Technical Report</title>
+<meta name="description" content="Pixel-only RL agent that clears Ms. Pac-Man boards: a RAM HRA teacher, a sliding-window-attention policy, PPO fine-tuning, and a separate value network that stopped fine-tune drift.">
+<link rel="stylesheet" href="style.css"></head><body><main>
+<header><p class="kicker">Technical report · October 2026</p>
+<h1>Clearing Ms. Pac-Man boards from pixels</h1>
+<p class="byline">Tharun Chougoni · <a href="https://github.com/TharunChougoni/mspacman-swa">github.com/TharunChougoni/mspacman-swa</a></p></header>
+
+<section class="abstract"><h2>Abstract</h2>
+<p>Most Atari agents for Ms. Pac-Man maximise score, which mostly means farming ghosts. This project targets a harder goal: <b>clearing whole boards</b> (all 150 dots and 4 power pellets) from raw 84×84 grayscale pixels under sticky actions. Two months of pixel-only attempts (Rainbow, behaviour cloning, return-conditioned DAgger, Go-Explore, LLM players) never produced a single board clear, because every teacher they learned from never cleared either. The restart built a RAM-based Hybrid Reward Architecture (HRA) planner that clears board 1 in 79.7% of held-out games. That planner was distilled into a pixel-only <b>sliding-window attention (SWA)</b> policy with 7,992,501 parameters, then fine-tuned with PPO: board-1 clears went from 6% after distillation to <b>83.7%</b> (300 held-out games), and multi-board training reached 1.40 boards per game. For <b>clean</b> clears (no life lost), four fine-tunes in a row drifted below their start. Two changes fixed that: giving the value function its own network, and fixing a bug that skipped the value warm-up on resumed runs. The final model (M22) reaches <b>53.8% / 37.8%</b> clean clears on boards 1 / 2 against 46.0% / 32.3% for its starting checkpoint, both measured on the same 3 seed sets × 200 games.</p></section>
+
+<figure class="video"><video src="assets/clip.mp4" poster="assets/poster.jpg" controls muted loop playsinline></video>
+<figcaption>Pixel-only policy (M9) clearing board 1, held-out seed, played at 2× speed.</figcaption></figure>
+
+<nav class="toc"><b>Contents</b><ol><li><a href="#origins">Origins and approach</a></li><li><a href="#setup">Problem setup</a></li><li><a href="#arch">Architecture</a></li><li><a href="#pipeline">Training pipeline &amp; timeline</a></li><li><a href="#results">Key results</a></li><li><a href="#negative">Negative results &amp; lessons</a></li><li><a href="#limits">Limitations &amp; future work</a></li><li><a href="#repro">Reproducibility</a></li></ol></nav>
+
+<section id="origins"><h2>0. Origins and approach</h2>
+<p>The project began in August 2026 as a score-chasing DQN/DRQN experiment on a laptop RTX 3060 (CleanRL-based, <code>pacman-ddqn</code>) and grew into a second codebase, <code>mspacman-rainbow</code>. Early on the goal changed from <i>score</i> to <i>clearing a board</i>. A high score can be pure ghost farming, so a clear was defined as the maze actually changing in emulator RAM, never as a score threshold.</p>
+<h3>Phase 1: pixel agents that never cleared (Aug – Sep 2026)</h3>
+<table><thead><tr><th>Attempt</th><th>Best logged result</th><th>Board clears</th></tr></thead><tbody>
+<tr><td>Rainbow-lite, 2M steps</td><td>mean score 2006 (best game 4610)</td><td>0 / 48</td></tr>
+<tr><td>SWA-v2 (CNN token per frame, W=16, d=512, ~8.0M params) behaviour cloning</td><td>mean 2248</td><td>0</td></tr>
+<tr><td>Return-conditioned (score-goal) DAgger chain C1→C5</td><td>C3-300k mean 3243, best 3780; c4 best 4340</td><td>0 / 80</td></tr>
+<tr><td>ViT variant with action and pellet tokens (~5.4M params)</td><td>~116 pellet bits left at death</td><td>0</td></tr>
+<tr><td>"Leftover" PPO + KL, 2M steps; DQfD-style TD</td><td>126 and 133 bits left (both worse than the clone)</td><td>0</td></tr>
+<tr><td>Go-Explore, 16 workers × 8 h; human recorder; LLM and vision players from saved states; Laya zero-shot probe</td><td>best 101 bits left</td><td>0</td></tr></tbody></table>
+<p>A diagnosis on 1 Sep summed it up: <i>the network scaled, the skill did not.</i> No dataset ever contained a cleared board, so cloning or DAgger could only copy policies that died with the last ~100 pellets uneaten, and score-driven RL learned to be a better ghost farmer. Two further problems surfaced in the October audit. Every pixel run had used 16 frames per decision (v5 frameskip 4 × MaxAndSkip 4), which overshoots junctions. And the "pellet bits" counter (234 RAM bits) did not map one-to-one to the 150 drawn dots.</p>
+<h3>Phase 2: restart around a teacher that actually clears (Oct 2026)</h3>
+<p>On 8 Oct the old project was archived: 10.8 GB of checkpoints and tapes from non-clearing teachers were deleted, and only the emulator-state archives were kept. A new plan was written around the Hybrid Reward Architecture (van Seijen et al., 2017), which beat Ms. Pac-Man with mostly tabular value functions on object positions. The plan had three rules:</p>
+<ol><li><b>Verify the RAM first</b> (M0): positions, lives, the true 150-dot bitmap, frightened flags, and a clear detector based on the level byte.</li>
+<li><b>Get real clears from a planner on RAM</b> (M1–M5): CPU only, nothing to clone, no deep TD to collapse.</li>
+<li><b>Only then go to pixels</b> (M6+): distil the planner into a pixel policy at 4 frames per decision and fine-tune with RL. Every positive label now comes from a real clear.</li></ol>
+<p>M0 to M5 were built and evaluated in a single day (8 Oct). The pixel student reached 83.7% board-1 clears four days later.</p></section>
+
+<section id="setup"><h2>1. Problem setup</h2>
+<ul><li><b>Environment:</b> ALE <code>MsPacman-v5</code> (ale-py 0.12), sticky actions p = 0.25, 4 frames per agent step, 4 actions (UP/RIGHT/LEFT/DOWN).</li>
+<li><b>Observation:</b> pixels only, an 84×84 grayscale stack of 4 frames. RAM is used only by the teacher, for evaluation bookkeeping, and to build start-state pools. It is never a policy input.</li>
+<li><b>Goal:</b> clear boards. A board has 150 dots plus 4 power pellets (154 items). Boards 1–2 use the pink maze, and board 3 switches to the blue maze. A clear is detected from the RAM level byte advancing after the items run out.</li>
+<li><b>Metrics:</b> <i>clear rate</i> (board finished, lives may be lost), <i>clean clear rate</i> (finished with no life lost), deaths per game and boards cleared per game. Confirmation evals use 300 held-out seeds (50000+). Clean-clear evals use 200 board-1 seeds and 200 fixed board-2 start states, repeated over 3 seed sets for final numbers.</li></ul></section>
+
+<section id="arch"><h2>2. Architecture</h2>
+<p><b>Teacher (RAM, M1–M5).</b> An HRA agent runs on a maze graph learned from 300k observed RAM transitions. It has one general value function per target position, solved exactly on the empirical model, plus an aggregator that combines dot and power-pellet attraction with ghost-avoidance heads at γ ∈ {0.7, 0.9}. Endgame normalisation and an escape head fix the failure HRA's own paper reports: with few dots left, the ghost terms drown out the pellet terms. The teacher clears board 1 in 79.7 ± 2.3% of 300 held-out games.</p>
+<p><b>Student (pixels, "SWA").</b> A CNN encoder turns each 4×84×84 stack into one token. Two causal attention layers (d = 512, 8 heads) attend over a sliding window of the last W = 8 tokens with an ALiBi-style recency bias. A KV cache makes acting O(W) per step and is bit-exact with the full computation (parity-tested). Dueling policy/value heads sit on top. The network has <b>7,992,501 parameters</b> (CNN 77,984; projection 1,606,144; attention blocks 6,304,784; heads 3,589), counted from the M22 checkpoint. In M22 the value function is a <b>separate copy of the same network</b> (another 7,992,501 parameters, used only during training), so value regression can no longer reshape the policy's features.</p>
+<pre class="diagram">frames (4×84×84) ─► CNN ─► token_t ─┐
+          tokens t−7 … t (KV cache) ─┴► causal SWA attention (2 layers, d=512, 8 heads, ALiBi recency bias)
+                                       ├► policy head  π(a|·)
+  M22: separate copy of the net ──────► value head    V(·)   (training only)</pre></section>
+
+<section id="pipeline"><h2>3. Training pipeline &amp; timeline</h2>
+<table><thead><tr><th>Stage</th><th>What changed</th><th>Outcome (logged)</th></tr></thead><tbody>
+<tr><td>M0–M2</td><td>Verified RAM map and 150-dot bitmap; maze graph and GVF tables; pellets-only navigation with ghosts pinned</td><td>Building blocks verified by tests</td></tr>
+<tr><td>M3–M5</td><td>Full HRA with real ghosts; aggregator tuning; bigger M1 model; endgame, escape and Blinky fixes</td><td>Board-1 clears 61% → 59% → 77.3% → <b>79.7%</b></td></tr>
+<tr><td>M6</td><td>Pixel SWA student: behaviour cloning on 1,627,080 HRA transitions (set cross-entropy + margin), 3 DAgger rounds</td><td>6.0% board-1 clears (134 / 154 items)</td></tr>
+<tr><td>M7–M8</td><td>PPO with a KL leash to the student; endgame start-state pool</td><td>9.7% → 22.3%</td></tr>
+<tr><td>M9</td><td>Long PPO run (36M steps), stall penalty, exact fast last-token path, batched GPU eval</td><td><b>83.7% ± 2.1%</b> (300 held-out)</td></tr>
+<tr><td>M10–M11</td><td>ALiBi + KV-cache net distilled from M9 (80.3%); multi-board PPO with board-2/3 starts</td><td>M11: board 1 90%, 1.40 boards/game, 50% reach board 3</td></tr>
+<tr><td>M12–M17</td><td>Blue-maze curricula, dot-distance shaping, search-teacher distillation, board-2 focus</td><td>Plateau: 1.5–1.78 boards/game, ~90–100 of 154 items on board 3</td></tr>
+<tr><td>Search teacher</td><td>Lookahead search on RAM with a lives top-up, then distillation and DAgger</td><td>Teacher clears 78% (14/18) from 60-dots-left states; student matches it at most 45.5% of the time</td></tr>
+<tr><td>M18</td><td>Survival reward: −50 per death, +50 clean clear, speed bonus; episodes end at the first death (Kaggle)</td><td>Single-eval peak 47.5% / 31.5% clean (multi-seed re-eval 46.0% / 32.3%)</td></tr>
+<tr><td>M18 s2, M19–M21</td><td>Board-2-heavy starts, endgame dot shaping, EMA weight averaging, full-life episodes</td><td>All drifted below the start (≈30–37% mean clean)</td></tr>
+<tr><td><b>M22</b></td><td><b>Separate value network</b> + fixed value warm-up</td><td><b>53.8% / 37.8% clean</b> (3 seeds), no drift</td></tr></tbody></table>
+<p><b>Reward design (M18+).</b> +0.1 per item with distance-to-dot shaping, a per-step cost of 0.002, −50 per death on boards 1–2, +15 for any clear, +50 for a clean clear and up to +20 for clearing fast. Before training, a check confirmed that the rewards rank outcomes correctly: fast clean clear 91 &gt; slow clean clear 77 &gt; clear with a death −22 &gt; death −38 to −46. PPO used γ = 0.995, λ = 0.95, clip 0.1, a KL penalty to the reference policy on maze 1, and 128-step rollouts. M22 used learning rates of 3e-5 for the policy and 3e-4 for the value net.</p></section>
+
+<section id="results"><h2>4. Key results</h2>
+<figure><img src="assets/progression.png" alt="Board-1 clear rate across milestones"><figcaption><b>Fig. 1.</b> Board-1 clear rate from confirmation evals, with standard-error bars. M3/M4 use seeds 0–99. M4+ (bigger model), M5 and M6–M10 use 300 held-out games. M11 uses the 100-game multi-board eval. Grey bars are the RAM teacher and blue bars are pixel-only.</figcaption></figure>
+<figure><img src="assets/m11.png" alt="M11 training curve"><figcaption><b>Fig. 2.</b> M11 multi-board PPO over 54M steps. Boards cleared per game peaked at 1.58 in training evals. The 100-game confirmation eval gave 1.40, against 1.14 for M9.</figcaption></figure>
+<figure><img src="assets/plateau.png" alt="M12-M17 plateau"><figcaption><b>Fig. 3.</b> M12–M17 tried six different ideas for boards 2–3. Boards cleared per game stayed between 1.3 and 1.8, and board-3 items stayed around 90–100 of 154.</figcaption></figure>
+<figure><img src="assets/m18.png" alt="M18 clean clears over training"><figcaption><b>Fig. 4.</b> M18 (survival + speed reward). Board-1 clean clears roughly doubled, while board 2 barely moved. Single evals of 200 games swing by ~10 points.</figcaption></figure>
+<figure><img src="assets/drift.png" alt="Drift of fine-tunes vs separate value net"><figcaption><b>Fig. 5.</b> Five fine-tunes resumed from the same M18 checkpoint. The four shared-network runs (M18 s2, M19 dot shaping, M20 EMA, M21 full-life episodes) slid below the start, while M22 with a separate value network stayed at or above it. M20's EMA peaked at 42.2% in one eval but fell back to 38.3%.</figcaption></figure>
+<figure><img src="assets/multiseed.png" alt="Multi-seed eval"><figcaption><b>Fig. 6.</b> Multi-seed re-evaluation: 3 seed sets × 200 games per board, with dots for individual seed sets. M22 best: board 1 53.8% clean (97.7% any clear, 0.57 deaths/game), board 2 37.8% clean (66.7% any clear, 0.79 deaths/game). On the same protocol the M18 start scores 46.0% / 32.3%, and the last iterates of M18 and M19 score lower still.</figcaption></figure>
+<figure><img src="assets/throughput.png" alt="Throughput"><figcaption><b>Fig. 7.</b> Training throughput. The emulator runs on CPU, so Kaggle's 4 vCPUs give roughly 55% of the laptop's speed despite two T4s. The second network in M22 costs another ~25%.</figcaption></figure></section>
+
+<section id="negative"><h2>5. Negative results &amp; lessons</h2>
+<ul><li><b>You can't imitate a clear you never saw.</b> Two months of pixel work produced 0 clears because no teacher, tape or demo had ever cleared a board. Building a teacher that clears (HRA on verified RAM) came first, and everything after it worked.</li>
+<li><b>Verify the measuring stick.</b> Score was a misleading goal (ghost farming), and the old "pellet bits" counter did not match the 150 real dots. M0 rebuilt the dot map and clear detector from RAM and checked them before any training.</li>
+<li><b>Distillation alone is weak, and RL on top of it is strong.</b> The cloned student cleared only 6% despite a 78%-clear teacher. PPO with a KL leash to the student took it to 83.7%.</li>
+<li><b>DAgger toward a search teacher failed.</b> The teacher cleared 78% of late-board states, but the student's action agreement topped out at 45.5%. Eight frames of history can't represent the teacher's lookahead.</li>
+<li><b>Reward tweaks didn't move board 2.</b> Dot shaping did not help: M13 stayed flat and was stopped, and M19 made the agent rush and die more. Board 2 stayed at about 30% clean clears for ~60M steps.</li>
+<li><b>Fine-tune drift came from the value side.</b> With ±50 terminal rewards, value regression through shared features dominated the gradient. A bug also skipped the value warm-up whenever training resumed from a checkpoint (fixed in commit 9013921). Separating the networks and fixing the warm-up stopped the drift. M22 changed both at once, so this report doesn't separate their effects.</li>
+<li><b>Measure the noise.</b> 200-game evals swing by 5–10 points. M18's 47.5% single-eval peak re-evaluates to 46.0% over 3 seed sets, and M20's 42.2% peak did not hold. Final comparisons use the same multi-seed protocol.</li></ul></section>
+
+<section id="limits"><h2>6. Limitations &amp; future work</h2>
+<ul><li>Board 2 clean clears (~38%) remain the bottleneck, and the blue maze (board 3) plateaus at ~90–100 of 154 items.</li>
+<li>No ablation separates the separate value net from the warm-up fix.</li>
+<li>The input is 84×84 grayscale, where ghosts are ~4×3-pixel blobs, with only ~1 s of memory. Higher resolution or colour plus longer context is the next step, which would need a distillation stage from M22.</li>
+<li>Single training runs on modest compute, with no seed replicates of training.</li></ul></section>
+
+<section id="repro"><h2>7. Reproducibility</h2>
+<ul><li><b>Code:</b> <a href="https://github.com/TharunChougoni/mspacman-swa">github.com/TharunChougoni/mspacman-swa</a>. The README covers setup, training and evaluation commands. The charts on this page are rebuilt by <code>tools/report/make_charts.py</code> from the eval extracts in <code>results/</code>.</li>
+<li><b>Compute:</b> a laptop with an RTX 3060 (6 GB) and an i7-12700H, plus Kaggle notebooks (4 vCPU, 2× Tesla T4, 12-hour sessions with checkpoints every 3 minutes and automatic resume).</li>
+<li><b>Software:</b> Python 3.11, PyTorch 2.11 (CUDA 12.8), gymnasium 1.3, ale-py 0.12.</li>
+<li><b>Sources:</b> every number comes from run logs (<code>metrics.jsonl</code>, <code>confirm.json</code>, <code>multiboard.json</code>, <code>multiseed.json</code>, <code>reeval.json</code>). The Phase-1 numbers come from the project's archived session notes. Throughput ranges are as observed in training logs.</li></ul></section>
+<footer><p>© 2026 Tharun Chougoni · MIT licensed · static page, charts made with matplotlib from run logs.</p></footer>
+</main></body></html>
