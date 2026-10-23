@@ -49,7 +49,7 @@ def num(v):
 
 
 def write(run, fill):
-    tmp = OUT / (run + "_tmp"); shutil.rmtree(tmp, ignore_errors=True)
+    tmp = OUT.parent / "tb_simple_tmp" / run; shutil.rmtree(tmp, ignore_errors=True)
     w = SummaryWriter(str(tmp)); fill(w); w.close()
     dst = OUT / run; shutil.rmtree(dst, ignore_errors=True); tmp.rename(dst)
 
