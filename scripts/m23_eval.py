@@ -1,8 +1,9 @@
 """M23 fp32 multiseed eval (same protocol as scripts/multiseed_eval.py: board-1 set runs/m19/b1_test, first 200 of the
 board-2 set runs/m17/b2_test, REP=3 sticky seeds k*1000+i, snapshot = file i, until the start board is cleared,
 game over, or 8000 decisions). The M22 teacher runs alongside every student for argmax agreement.
-Resumable: one json per (model, board, rep) in OUT. Usage: m23_eval.py OUT name=ckpt|m22 [...]"""
+Resumable: one json per (model, board, rep) in OUT. Usage: m23_eval.py OUT name=ckpt|m22 [...]  (env CHUNK=50 games per rollout call)"""
 import glob, json, os, sys, time
+os.environ.setdefault("PYTORCH_CUDA_ALLOC_CONF", "expandable_segments:True")
 from pathlib import Path
 import numpy as np
 import torch
@@ -10,7 +11,7 @@ sys.path.insert(0, ".")
 from msclear import m23_env as E
 from msclear.m23_net import load_student
 torch.backends.cuda.matmul.allow_tf32 = False; torch.backends.cudnn.allow_tf32 = False
-OUT = Path(sys.argv[1]); OUT.mkdir(parents=True, exist_ok=True); REP = int(os.environ.get("REP", "3")); dev = "cuda"
+OUT = Path(sys.argv[1]); OUT.mkdir(parents=True, exist_ok=True); REP = int(os.environ.get("REP", "3")); CHUNK = int(os.environ.get("CHUNK", "50")); dev = "cuda"
 sets = dict(b1=sorted(glob.glob("runs/m19/b1_test/*.pkl")), b2=sorted(glob.glob("runs/m17/b2_test/*.pkl"))[:200])
 teacher = E.load_teacher(os.environ.get("TEACHER", "runs/m23/m22_teacher.pt"), dev); pool = E.Pool(int(os.environ.get("WORKERS", "14")))
 summary = json.load(open(OUT / "summary.json")) if (OUT / "summary.json").exists() else {}
@@ -24,9 +25,12 @@ for spec in sys.argv[2:]:
             f = OUT / f"{name}_{b}_{k}.json"
             if not f.exists():
                 t0 = time.time()
-                res = E.rollout(pool, [(k * 1000 + i, files[i]) for i in range(len(files))], teacher, student,
-                                actor="teacher" if student is None else "student", cap=8000,
-                                progress=lambda t, n: print(f"  {name} {b} rep{k} step {t} alive {n}", flush=True))
+                specs = [(k * 1000 + i, files[i]) for i in range(len(files))]; res = []
+                for c0 in range(0, len(specs), CHUNK):        # chunked so teacher + ViT student fit in 6 GB; same seeds/order
+                    res += E.rollout(pool, specs[c0:c0 + CHUNK], teacher, student,
+                                     actor="teacher" if student is None else "student", cap=8000,
+                                     progress=lambda t, n, c0=c0: print(f"  {name} {b} rep{k} games {c0}+ step {t} alive {n}", flush=True))
+                    torch.cuda.empty_cache()
                 json.dump(res, open(f, "w")); print(f"EVAL {name} {b} rep{k} clean={np.mean([x['clean'] for x in res]):.3f} ({time.time() - t0:.0f}s)", flush=True)
             reps.append(json.load(open(f)))
         cl = [float(np.mean([x["clean"] for x in rs])) for rs in reps]
